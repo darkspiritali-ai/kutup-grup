@@ -1,0 +1,107 @@
+.newsletter {
+    background: linear-gradient(135deg, rgba(64, 156, 255, 0.1) 0%, rgba(104, 182, 255, 0.05) 100%);
+    border: 1px solid rgba(64, 156, 255, 0.2);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xxl);
+    text-align: center;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.inputGroup {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.input {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-md);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--color-arctic-blue);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.input::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+}
+
+.button {
+    padding: var(--spacing-md) var(--spacing-xl);
+    min-height: 44px;
+    background: linear-gradient(135deg, var(--color-arctic-blue) 0%, var(--color-ice-blue) 100%);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(64, 156, 255, 0.4);
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.message {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+}
+
+.success {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.error {
+    background: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+@media (max-width: 768px) {
+    .newsletter {
+        padding: var(--spacing-lg);
+    }
+
+    .inputGroup {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

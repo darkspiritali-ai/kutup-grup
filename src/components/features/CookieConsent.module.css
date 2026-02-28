@@ -1,0 +1,107 @@
+.cookieBanner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, var(--color-deep-navy) 0%, rgba(13, 27, 42, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid var(--color-arctic-blue);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    padding: var(--spacing-lg) 0;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cookieContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.cookieText {
+    color: var(--color-polar-white);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+.cookieLink {
+    color: var(--color-ice-blue);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.cookieLink:hover {
+    color: var(--color-arctic-blue);
+}
+
+.cookieButtons {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.acceptButton,
+.declineButton {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    min-height: 44px;
+    min-width: 44px;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.acceptButton {
+    background: linear-gradient(135deg, var(--color-arctic-blue) 0%, var(--color-ice-blue) 100%);
+    color: white;
+}
+
+.acceptButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(64, 156, 255, 0.4);
+}
+
+.declineButton {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-polar-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.declineButton:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 768px) {
+    .cookieContent {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookieButtons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .acceptButton,
+    .declineButton {
+        width: 100%;
+    }
+}

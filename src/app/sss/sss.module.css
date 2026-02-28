@@ -1,0 +1,235 @@
+.sssPage {
+    min-height: 100vh;
+    background: var(--color-polar-white, #fff);
+}
+
+.hero {
+    position: relative;
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, var(--color-deep-navy) 0%, var(--color-arctic-blue) 100%);
+    color: white;
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.heroTitle {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--spacing-md);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.heroSubtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xxl) var(--spacing-md);
+}
+
+/* Filter Section */
+.filterSection {
+    margin-bottom: var(--spacing-xxl);
+    text-align: center;
+}
+
+.filterButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.filterButton {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: white;
+    border: 2px solid var(--color-light-gray, #E2E8F0);
+    border-radius: 999px;
+    color: var(--color-steel-gray, #4A5568);
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+    border-color: var(--color-arctic-blue);
+    color: var(--color-arctic-blue);
+}
+
+.filterButtonActive {
+    background: linear-gradient(135deg, var(--color-deep-navy) 0%, var(--color-arctic-blue) 100%);
+    border-color: var(--color-arctic-blue);
+    color: white;
+}
+
+.filterCount {
+    color: var(--color-text-tertiary);
+    font-size: 0.9rem;
+}
+
+/* FAQ List */
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xxl);
+}
+
+.faqItem {
+    background: white;
+    border: 2px solid var(--color-light-gray, #E2E8F0);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(10, 36, 99, 0.04);
+}
+
+.faqItem:hover {
+    border-color: var(--color-arctic-blue);
+    box-shadow: 0 4px 12px rgba(62, 146, 204, 0.1);
+}
+
+.faqItemOpen {
+    background: #F7FAFC;
+    border-color: var(--color-arctic-blue);
+}
+
+.faqQuestion {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faqQuestion:hover {
+    color: var(--color-arctic-blue);
+}
+
+.faqQuestionText {
+    flex: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.faqCategory {
+    display: inline-block;
+    padding: 2px var(--spacing-sm);
+    background: rgba(64, 156, 255, 0.15);
+    border: 1px solid rgba(64, 156, 255, 0.3);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    color: var(--color-arctic-blue);
+    margin-right: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.faqIcon {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--color-arctic-blue);
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(64, 156, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.faqItem:hover .faqIcon {
+    background: rgba(64, 156, 255, 0.2);
+}
+
+.faqAnswer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faqItemOpen .faqAnswer {
+    max-height: 500px;
+    padding: 0 var(--spacing-lg) var(--spacing-lg);
+}
+
+.faqAnswer p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* CTA Section */
+.ctaSection {
+    margin-top: var(--spacing-xxl);
+}
+
+.ctaCard {
+    text-align: center;
+    padding: var(--spacing-xxl);
+    background: linear-gradient(135deg, var(--color-deep-navy) 0%, var(--color-arctic-blue) 100%);
+    border-radius: var(--border-radius-lg);
+}
+
+.ctaTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.ctaText {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-xl);
+}
+
+.ctaButton {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xxl);
+    background: white;
+    color: var(--color-deep-navy);
+    text-decoration: none;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(64, 156, 255, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

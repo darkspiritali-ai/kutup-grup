@@ -1,0 +1,229 @@
+.legalPage {
+    min-height: 100vh;
+    background: var(--color-polar-white, #fff);
+}
+
+.hero {
+    position: relative;
+    padding: 140px 0 60px;
+    background: linear-gradient(135deg, var(--color-deep-navy) 0%, var(--color-arctic-blue) 100%);
+    color: white;
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.heroTitle {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--spacing-sm);
+}
+
+.heroSubtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xxl) var(--spacing-md);
+}
+
+.content {
+    background: #F7FAFC;
+    border: 1px solid var(--color-light-gray, #E2E8F0);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xxl);
+}
+
+.section {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-arctic-blue);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid rgba(64, 156, 255, 0.2);
+}
+
+.section h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.section p {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.section p:last-child {
+    margin-bottom: 0;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0;
+}
+
+.section li {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+.section li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-arctic-blue);
+    font-weight: 700;
+}
+
+.section li strong {
+    color: var(--color-text-primary);
+}
+
+.section a {
+    color: var(--color-arctic-blue);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.section a:hover {
+    color: var(--color-ice-blue);
+}
+
+.contactBox {
+    background: rgba(64, 156, 255, 0.08);
+    border: 1px solid rgba(64, 156, 255, 0.2);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.contactBox p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.contactBox p:last-child {
+    margin-bottom: 0;
+}
+
+.warningBox {
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.warningBox p {
+    margin: 0;
+    color: var(--color-text-primary);
+}
+
+/* Table Styles */
+.tableContainer {
+    overflow-x: auto;
+    margin: var(--spacing-lg) 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border: 1px solid var(--color-light-gray, #E2E8F0);
+    border-radius: var(--border-radius-md);
+}
+
+.table thead {
+    background: rgba(64, 156, 255, 0.15);
+}
+
+.table th {
+    padding: var(--spacing-md);
+    text-align: left;
+    color: var(--color-arctic-blue);
+    font-weight: 600;
+    border-bottom: 2px solid rgba(64, 156, 255, 0.3);
+}
+
+.table td {
+    padding: var(--spacing-md);
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-light-gray, #E2E8F0);
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background: #F7FAFC;
+}
+
+/* Button Group */
+.buttonGroup {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.primaryButton {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--color-arctic-blue) 0%, var(--color-ice-blue) 100%);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primaryButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(64, 156, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        padding: var(--spacing-lg);
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .table th,
+    .table td {
+        padding: var(--spacing-sm);
+    }
+}

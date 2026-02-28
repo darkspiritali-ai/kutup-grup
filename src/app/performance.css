@@ -1,0 +1,80 @@
+/* Performance Optimizations for Core Web Vitals */
+
+/* 1. Prevent Layout Shift (CLS) */
+img,
+video {
+    /* Reserve space before loading */
+    aspect-ratio: attr(width) / attr(height);
+}
+
+
+/* 2. Font Loading handled by Next.js with display:swap */
+
+/* 3. Contain Layout Repaints */
+.card,
+.feature-card,
+.service-card {
+    contain: layout style paint;
+}
+
+/* 4. Smooth Scroll Performance */
+* {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 5. GPU Acceleration for Animations */
+.animate,
+.hover-effect,
+[class*="transition"] {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* 6. Reduce Paint Complexity */
+.glassmorphism,
+.card-premium {
+    /* Browser hint for composite layer */
+    isolation: isolate;
+}
+
+/* 7. Optimize Animations */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* 8. Critical CSS - Above the Fold */
+.hero,
+.header {
+    /* Prioritize hero and header rendering */
+    contain: layout style;
+}
+
+/* 9. Defer Off-Screen Content */
+.lazy-load {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
+}
+
+/* 10. Optimize Backdrop Filter */
+@supports (backdrop-filter: blur(10px)) {
+    .glassmorphism {
+        backdrop-filter: blur(10px);
+    }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .glassmorphism {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
