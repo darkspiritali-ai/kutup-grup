@@ -8,5 +8,5 @@ cmds = ["npm install --legacy-peer-deps"]
 cmds = ["npm run build"]
 
 [start]
-cmd = "caddy run --config Caddyfile --adapter caddyfile 2>&1"
+cmd = "ls -la /app && ls -la /app/dist && caddy run --config Caddyfile --adapter caddyfile 2>&1"
 
