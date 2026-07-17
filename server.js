@@ -24,19 +24,22 @@ app.use((req, res) => {
   });
 });
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
-if (PORT) {
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server listening on port ${PORT}`);
-  });
-} else {
-  // Listen on 3000 (Next.js/default fallback)
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server listening on port ${PORT}`);
+});
+
+// Ensure we also listen on port 3000 if PORT is not 3000
+if (PORT !== '3000' && PORT !== 3000) {
   app.listen(3000, '0.0.0.0', () => {
-    console.log('Server listening on port 3000');
+    console.log('Server also listening on port 3000');
   });
-  // Also listen on 80 (standard HTTP port) to cover any container port mapping mismatch
+}
+
+// Ensure we also listen on port 80 if PORT is not 80
+if (PORT !== '80' && PORT !== 80) {
   app.listen(80, '0.0.0.0', () => {
-    console.log('Server listening on port 80');
+    console.log('Server also listening on port 80');
   });
 }
