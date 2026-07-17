@@ -8,8 +8,8 @@ WORKDIR /app
 COPY package.json ./
 COPY server.js ./
 
-# We only need express for the production server, so we install it directly
-RUN npm install express
+# We install dependencies using legacy-peer-deps to avoid React 19 conflicts
+RUN npm install --omit=dev --legacy-peer-deps
 
 # Copy the pre-built dist folder from the repository
 COPY dist ./dist
