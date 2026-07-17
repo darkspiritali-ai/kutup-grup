@@ -1,14 +1,21 @@
-# ---- Builder ----
-FROM node:20-alpine AS builder
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
+# Use official Node.js 20 image
+FROM node:20-alpine
 
-# ---- Runner ----
-FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx-container.conf /etc/nginx/conf.d/default.conf
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and server.js
+COPY package.json ./
+COPY server.js ./
+
+# We only need express for the production server, so we install it directly
+RUN npm install express
+
+# Copy the pre-built dist folder from the repository
+COPY dist ./dist
+
+# Expose port 3000
 EXPOSE 3000
-CMD ["nginx", "-g", "daemon off;"]
+
+# Start the server
+CMD ["node", "server.js"]
