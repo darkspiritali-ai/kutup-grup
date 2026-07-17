@@ -9,7 +9,17 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // SPA Fallback: Route all unknown requests to index.html
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'), (err) => {
+    if (err) {
+      console.error("Error serving index.html:", err);
+      res.status(500).send(`
+        <h1>Internal Server Error</h1>
+        <p>Could not find dist/index.html.</p>
+        <pre>${err.message}</pre>
+        <p>Current directory: ${__dirname}</p>
+      `);
+    }
+  });
 });
 
 app.listen(PORT, '0.0.0.0', () => {
