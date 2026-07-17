@@ -1,8 +1,16 @@
 [variables]
 PORT = "3000"
+NODE_ENV = "development"
+NPM_CONFIG_PRODUCTION = "false"
 
 [phases.setup]
 nixPkgs = ["nodejs_20", "npm-9_x"]
+
+[phases.install]
+cmds = ["npm ci"]
+
+[phases.build]
+cmds = ["npm run build"]
 
 [start]
 cmd = "npm start"
