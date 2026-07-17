@@ -30,31 +30,24 @@ app.use((req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
+// Deployment platforms expose the application through the port supplied in
+// PORT. Binding additional ports (especially 80) can cause port conflicts and
+// prevents the platform's proxy from detecting the service reliably.
+const PORT = Number(process.env.PORT) || 3000;
 
-const mainServer = app.listen(PORT, '0.0.0.0', () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
 });
-mainServer.on('error', (e) => {
-  console.error(`Failed to listen on port ${PORT}:`, e);
+
+server.on('error', (error) => {
+  console.error(`Failed to listen on port ${PORT}:`, error);
+  process.exitCode = 1;
 });
 
-// Ensure we also listen on port 3000 if PORT is not 3000
-if (PORT !== '3000' && PORT !== 3000) {
-  const fallback3000 = app.listen(3000, '0.0.0.0', () => {
-    console.log('Server also listening on port 3000');
-  });
-  fallback3000.on('error', (e) => {
-    console.error('Failed to listen on fallback port 3000:', e);
-  });
+function shutdown(signal) {
+  console.log(`${signal} received. Shutting down gracefully.`);
+  server.close(() => process.exit(0));
 }
 
-// Ensure we also listen on port 80 if PORT is not 80
-if (PORT !== '80' && PORT !== 80) {
-  const fallback80 = app.listen(80, '0.0.0.0', () => {
-    console.log('Server also listening on port 80');
-  });
-  fallback80.on('error', (e) => {
-    console.error('Failed to listen on fallback port 80:', e);
-  });
-}
+process.once('SIGTERM', () => shutdown('SIGTERM'));
+process.once('SIGINT', () => shutdown('SIGINT'));
