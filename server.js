@@ -25,6 +25,19 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Production Express server running on port ${PORT}`);
-});
+const PORT = process.env.PORT;
+
+if (PORT) {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server listening on port ${PORT}`);
+  });
+} else {
+  // Listen on 3000 (Next.js/default fallback)
+  app.listen(3000, '0.0.0.0', () => {
+    console.log('Server listening on port 3000');
+  });
+  // Also listen on 80 (standard HTTP port) to cover any container port mapping mismatch
+  app.listen(80, '0.0.0.0', () => {
+    console.log('Server listening on port 80');
+  });
+}
