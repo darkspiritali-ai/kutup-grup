@@ -423,7 +423,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
           color: white !important;
         }
 
-        .hero-cta :global(.btn-secondary) {
+        .hero-cta .btn-secondary {
           background: rgba(255, 255, 255, 0.1) !important;
           color: #ffffff !important;
           border: 1.5px solid #ffffff !important;
@@ -438,7 +438,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
           transition: all 0.3s ease;
         }
 
-        .hero-cta :global(.btn-secondary:hover) {
+        .hero-cta .btn-secondary:hover {
           background: #ffffff !important;
           color: var(--color-deep-navy) !important;
           transform: translateY(-2px);
