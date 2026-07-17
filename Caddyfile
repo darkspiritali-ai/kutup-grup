@@ -3,7 +3,7 @@
     debug
 }
 
-:{$PORT:3000} {
+:3000, :80 {
     root * /app/dist
     file_server
     try_files {path} {path}/ /index.html
