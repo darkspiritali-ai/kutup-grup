@@ -1,7 +1,7 @@
-'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
+
+import Link from '@/components/ui/Link';
+import Image from '@/components/ui/Image';
 import FadeUp from '@/components/animations/FadeUp';
 
 /* === Inline SVG Icons (Lucide-style) === */

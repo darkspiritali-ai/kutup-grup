@@ -1,8 +1,8 @@
-"use client";
+
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import Image from '@/components/ui/Image';
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);

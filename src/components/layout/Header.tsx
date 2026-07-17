@@ -1,9 +1,9 @@
-'use client';
+
 
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Image from '@/components/ui/Image';
+import Link from '@/components/ui/Link';
+import { useLocation } from 'react-router-dom';
 import './header.css';
 
 /* ===== Mega Menu Service Data ===== */
@@ -77,7 +77,7 @@ export default function Header() {
   const [activeMobileCategory, setActiveMobileCategory] = useState<string | null>(null);
   const megaRef = useRef<HTMLLIElement>(null);
   const megaTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const pathname = usePathname();
+  const { pathname } = useLocation();
 
   const toggleMobileCategory = (title: string) => {
     setActiveMobileCategory(activeMobileCategory === title ? null : title);

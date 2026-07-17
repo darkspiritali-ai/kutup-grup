@@ -1,7 +1,7 @@
-'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
+
+import Link from '@/components/ui/Link';
+import Image from '@/components/ui/Image';
 import { ServiceContent, SERVICES_DATA } from '@/lib/services-data';
 
 /* ===== SVG Icon Map for Service Icons ===== */

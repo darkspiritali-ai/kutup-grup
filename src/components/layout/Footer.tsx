@@ -1,7 +1,7 @@
-'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
+
+import Image from '@/components/ui/Image';
+import Link from '@/components/ui/Link';
 import Newsletter from '../features/Newsletter';
 import CookieConsent from '../features/CookieConsent';
 import WhatsAppButton from '../features/WhatsAppButton';
