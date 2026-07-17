@@ -7,6 +7,9 @@ const PORT = process.env.PORT || 3000;
 // Serve static files from the dist directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
+// Ignore favicon.ico requests to prevent console errors
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 // SPA Fallback: Route all unknown requests to index.html
 app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'), (err) => {
