@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src",
-    "start": "serve dist -s -l tcp://0.0.0.0:3000"
+    "start": "vite preview --port 3000 --host 0.0.0.0"
   },
   "dependencies": {
     "@studio-freight/react-lenis": "^0.0.47",
