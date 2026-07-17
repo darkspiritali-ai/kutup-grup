@@ -1,5 +1,8 @@
+providers = ["node"]
+
 [variables]
 PORT = "3000"
+NIXPACKS_SPA_CADDY = "false"
 
 [phases.install]
 cmds = ["npm install --legacy-peer-deps"]
