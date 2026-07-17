@@ -3,6 +3,12 @@ const path = require('path');
 
 const app = express();
 
+// Simple request logging for diagnostics
+app.use((req, res, next) => {
+  console.log(`[Diagnostic Log] Request: ${req.method} ${req.url}`);
+  next();
+});
+
 // Serve static files from the dist directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
@@ -26,20 +32,32 @@ app.use((req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+try {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server listening on port ${PORT}`);
+  });
+} catch (e) {
+  console.error(`Failed to listen on port ${PORT}:`, e);
+}
 
 // Ensure we also listen on port 3000 if PORT is not 3000
 if (PORT !== '3000' && PORT !== 3000) {
-  app.listen(3000, '0.0.0.0', () => {
-    console.log('Server also listening on port 3000');
-  });
+  try {
+    app.listen(3000, '0.0.0.0', () => {
+      console.log('Server also listening on port 3000');
+    });
+  } catch (e) {
+    console.error('Failed to listen on fallback port 3000:', e);
+  }
 }
 
 // Ensure we also listen on port 80 if PORT is not 80
 if (PORT !== '80' && PORT !== 80) {
-  app.listen(80, '0.0.0.0', () => {
-    console.log('Server also listening on port 80');
-  });
+  try {
+    app.listen(80, '0.0.0.0', () => {
+      console.log('Server also listening on port 80');
+    });
+  } catch (e) {
+    console.error('Failed to listen on fallback port 80:', e);
+  }
 }
