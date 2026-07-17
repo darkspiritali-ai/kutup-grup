@@ -8,7 +8,7 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   quality?: number;
 }
 
-export default function Image({ src, alt, fill, priority, quality, className, style, ...props }: ImageProps) {
+export default function Image({ src, alt, fill, priority, quality: _quality, className, style, ...props }: ImageProps) {
   const finalStyle: React.CSSProperties = fill ? {
     position: 'absolute',
     height: '100%',

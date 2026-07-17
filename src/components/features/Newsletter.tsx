@@ -25,7 +25,7 @@ export default function Newsletter() {
                 setStatus('idle');
                 setMessage('');
             }, 5000);
-        } catch (error) {
+        } catch {
             setStatus('error');
             setMessage('Bir hata oluştu. Lütfen tekrar deneyin.');
         }
