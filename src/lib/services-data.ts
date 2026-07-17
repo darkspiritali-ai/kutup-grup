@@ -159,30 +159,81 @@ export const SERVICES_DATA: Record<string, ServiceContent> = {
         relatedServices: ['guvenlik-agi-kurulumu'],
     },
 
-    'ic-ve-dis-cephe-temizlik-hizmetleri': {
+        'ic-ve-dis-cephe-temizlik-hizmetleri': {
         slug: 'ic-ve-dis-cephe-temizlik-hizmetleri',
         title: 'İç ve Dış Cephe Temizlik Hizmetleri',
-        metaDescription: 'Yüksek yapılarda profesyonel iç ve dış cephe temizlik hizmetleri. Cam temizliği, façade yıkama, yüksek basınçlı yıkama ve koruyucu kaplama uygulamaları.',
-        keywords: ['cephe temizliği', 'yüksek yapı temizliği', 'cam temizliği', 'facade temizleme'],
+        metaDescription: 'Yüksek yapılarda profesyonel iç ve dış cephe temizlik hizmetleri. Cam temizliği, gökdelen yıkama, saf su teknolojisi ve atrium temizliği.',
+        keywords: ['cephe temizliği', 'yüksek yapı temizliği', 'cam temizliği', 'gökdelen cam temizleme', 'saf su cam yıkama'],
         category: 'endustriyel',
         icon: '✨',
         heroImage: '/services/cephe-temizlik.png',
-        intro: 'Yüksek yapılarda profesyonel iç ve dış cephe temizlik hizmetleri sunuyoruz. İple erişim teknikleri ile güvenli ve etkili temizlik, binanızın görünümünü yeniler ve değerini artırır.',
+        intro: 'Yüksek yapılarda, gökdelenlerde ve plazalarda profesyonel iç ve dış cephe temizlik hizmetleri sunuyoruz. Klasik vinç ve iskele yöntemlerinin ulaşamadığı sarp cephelerde, IRATA ve SPRAT sertifikalı endüstriyel dağcı ekibimizle, iş güvenliğinden taviz vermeden lekesiz, ekolojik ve kalıcı çözümler üretiyoruz.',
         sections: [
             {
-                heading: 'Cephe Temizliği',
-                content: 'Yüksek yapıların dış cephelerinin düzenli temizliği önemlidir. İple erişim teknikleri ile güvenli ve ekonomik çözümler sunuyoruz.',
+                heading: 'Dış Cephe Temizliği ve Cam Yıkama',
+                content: 'Yüksek katlı binaların dış cephe camları ve kompozit panelleri, zamanla hava kirliliği, asit yağmurları ve toz nedeniyle yıpranır ve kirlenir. Bu kirlilik sadece kötü bir görünüme neden olmakla kalmaz, aynı zamanda cam yüzeyinde kalıcı korozyona (cam yanması) yol açar. İple erişim yöntemlerimizle, bina yapısına zarar vermeden her noktaya ulaşıyor; özel arıtılmış (deiyonize saf su) sistemlerimizle durulama gerektirmeden, lekesiz temizlik sağlıyoruz.',
+            },
+            {
+                heading: 'Ekolojik Temizlik ve Saf Su Teknolojisi',
+                content: 'Çevre dostu ve sürdürülebilir temizlik ilkemiz doğrultusunda, kimyasal deterjanlar yerine %100 saf su teknolojisini kullanıyoruz. Saf su, minerallerinden arındırıldığı için doğal bir çözücü görevi görür; kir, toz ve yağ parçacıklarını mıknatıs gibi çekerek cam ve kompozit yüzeyleri pürüzsüzleştirir. Kimyasal kalıntı bırakmadığı için cepheler daha geç kirlenir ve çevreye sıfır zarar verilir.',
+            },
+            {
+                heading: 'İç Cephe Galeri ve Atrium Temizliği',
+                content: 'AVM\'ler, oteller, plazalar ve iş merkezlerinin iç mekanlarında yer alan yüksek tavanlı atriumlar, galeri boşlukları, cam asansör kuyuları ve dekoratif aydınlatma armatürlerinin temizliği özel ekipman gerektirir. Endüstriyel dağcılarımız, iç mekan zeminlerine ağır platform yükü bindirmeden, yukarıdan sarkarak bu zorlu alanların temizliğini ve toz alımını hızlıca gerçekleştirir.',
             },
         ],
-        advantages: ['%30-50 maliyet tasarrufu', 'Hızlı tamamlama'],
-        applications: ['Ofis binaları', 'AVM\'ler'],
-        technicalDetails: ['Arıtılmış su sistemi'],
-        whyChooseUs: ['15+ yıl deneyim'],
-        faqs: [],
-        relatedServices: ['dis-cephe-dekoratif-aydinlatma'],
+        advantages: [
+            'İskele ve vinç maliyetlerine kıyasla %40-60 oranında bütçe tasarrufu',
+            'Kurulum süresi olmadığı için işe anında başlama ve hızlı teslimat',
+            'Sıfır zemin işgali ile bina giriş-çıkış trafiğini ve iş akışını engellememe',
+            'Ekolojik saf su teknolojisi sayesinde lekesiz ve daha geç kirlenen camlar',
+            'Vinçlerin ulaşamadığı dar açılı, eğimli veya girintili mimari cephelerde %100 erişim',
+            'Ağır iş makineleri kullanılmadığı için çevreye ve bina peyzajına sıfır zarar',
+        ],
+        applications: [
+            'Plazalar, gökdelenler ve yüksek katlı iş merkezleri',
+            'Alışveriş merkezleri (AVM) dış cephe ve iç atrium alanları',
+            'Oteller, hastaneler ve kamu binaları',
+            'Endüstriyel fabrikalar, depolar ve silo dış yüzeyleri',
+            'Tarihi yapılar, müzeler ve hassas cam kubbeli mimariler',
+            'Cam asansör kuyuları ve yüksek tavanlı iç mekan galerileri',
+        ],
+        technicalDetails: [
+            'Deiyonize Saf Su Üretim Cihazları: 0 PPM mineral seviyesinde saf su kullanımı',
+            'Karbon Fiber Teleskopik Uzatma Sistemleri: 20 metreye kadar teleskopik yıkama barları',
+            'Emniyet Sistemleri: EN 1891 Type A statik ipler ve EN 12841 emniyet araçları',
+            'Özel Temizlik Kimyasalları: PH nötr, biyolojik olarak parçalanabilir çevre dostu şampuanlar',
+            'Cam Kazıma ve Kireç Sökücüler: Cepheye zarar vermeyen özel cam kazıma aparatları',
+        ],
+        whyChooseUs: [
+            'İple erişimde uluslararası geçerli IRATA ve SPRAT Level 3 lider teknisyen gözetimi',
+            'Yüksekte çalışma güvenliğinde sıfır kaza (zero-accident) kurumsal geçmişi',
+            'Binanızın yapısal özelliklerine özel statik analiz ve risk değerlendirme planı',
+            'Çevre dostu yeşil temizlik standartlarına uygun teknolojik altyapı',
+            'Tüm temizlik operasyonları süresince 3. şahıs mali mesuliyet sigorta güvencesi',
+        ],
+        faqs: [
+            {
+                question: 'Dış cephe cam temizliği hangi sıklıkla yapılmalıdır?',
+                answer: 'Çevresel etkenlere ve binanın konumuna bağlı olarak yılda en az 2 veya 4 kez temizlik yapılması önerilir. Sanayi bölgelerindeki ve yoğun trafikli caddelerdeki binaların cepheleri daha sık temizlenmelidir.',
+            },
+            {
+                question: 'Saf su ile temizlik neden daha etkilidir?',
+                answer: 'Saf su, cam üzerinde leke bırakan kalsiyum, magnezyum gibi minerallerden tamamen arındırılmıştır. Yıkama sonrası cam kendi kendine kururken üzerinde hiçbir leke, dalgalanma veya deterjan kalıntısı kalmaz. Bu da camların daha geç kirlenmesini sağlar.',
+            },
+            {
+                question: 'İple erişim temizliği sırasında bina sakinleri rahatsız olur mu?',
+                answer: 'Hayır. İskele kurulumu gibi gürültülü veya vinçler gibi bina girişini kapatan işlemler olmadığı için günlük iş akışınız veya yaşam alanınız kesintiye uğramaz. Ekiplerimiz son derece sessiz ve hızlı çalışır.',
+            },
+            {
+                question: 'Hava koşulları çalışmayı nasıl etkiler?',
+                answer: 'Aşırı rüzgar (20 knot ve üzeri), şiddetli yağmur veya buzlanma durumlarında iş güvenliği standartlarımız gereği operasyon ertelenir. Uygun hava koşulları oluştuğunda çalışma hızla tamamlanır.',
+            },
+        ],
+        relatedServices: ['dis-cephe-dekoratif-aydinlatma', 'yatay-ve-dusey-yasam-hatti', 'guvenlik-agi-kurulumu'],
     },
 
-    'guvenlik-agi-kurulumu': {
+'guvenlik-agi-kurulumu': {
         slug: 'guvenlik-agi-kurulumu',
         title: 'Güvenlik Ağı Kurulumu',
         metaDescription: 'İş güvenliği için profesyonel güvenlik ağı kurulum hizmetleri. Kalıcı ve geçici güvenlik ağı sistemleri, yüksekten düşme koruması ve iş kazası önleme çözümleri.',
@@ -332,6 +383,78 @@ export const SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['guvenlik-agi-kurulumu', 'ic-ve-dis-cephe-temizlik-hizmetleri', 'ruzgar-enerji-santralleri'],
+    },
+
+    'jeoteknik-uygulamalar': {
+        slug: 'jeoteknik-uygulamalar',
+        title: 'Jeoteknik Uygulamalar',
+        metaDescription: 'Zorlu arazi ve yamaçlarda kaya bariyeri, şev örtüleme, kaya temizleme ve çığ kontrolü gibi profesyonel jeoteknik mühendislik uygulamaları.',
+        keywords: ['jeoteknik', 'şev stabilizasyonu', 'kaya bariyeri', 'heyelan önleme', 'kaya temizleme', 'yamaç güvenliği'],
+        category: 'jeoteknik',
+        heroImage: '/services/yamac-temizleme.png',
+        icon: '🏔️',
+        intro: 'Zorlu arazi şartlarında, yüksek riskli yamaçlarda ve şevlerde kaya düşmesi, heyelan ve çığ risklerine karşı profesyonel jeoteknik çözümler sunuyoruz. İple erişim yöntemlerimizle en sarp yamaçlara dahi ulaşıyor, kalıcı ve geçici güvenlik önlemlerini başarıyla hayata geçiriyoruz.',
+        sections: [
+            {
+                heading: 'Jeoteknik Uygulamalar Nelerdir?',
+                content: 'Jeoteknik uygulamalar, dik yamaçlar, karayolları kenarları, demiryolu güzergahları ve maden sahaları gibi heyelan ve kaya düşmesi riski taşıyan bölgelerde can ve mal güvenliğini sağlamak amacıyla uygulanan mühendislik çözümleridir. Gevşek kaya bloklarının temizlenmesinden yüksek enerjili kaya bariyerleri kurulumuna, şev yüzeylerinin yüksek mukavemetli çelik tel ağlarla örtülmesinden gabion duvar inşasına kadar geniş bir yelpazede çözümler içerir. Kutup Grup olarak, en dik ve sarp arazilerde dahi iple erişim tekniklerini kullanarak bu uygulamaları sıfır kaza prensibiyle hayata geçiriyoruz.',
+            },
+            {
+                heading: 'Kapsamlı Jeoteknik Çözümlerimiz',
+                content: 'Jeoteknik güvenlik zincirinin her bir halkasında uzmanlaşmış durumdayız. Yamaç yüzeyindeki tehlikeli blokların kontrollü bir şekilde düşürülmesi (yamaç yüzeyi temizleme), şev yüzeylerinin çelik ağlarla sarılması (şev örtüleme), düşebilecek kaya bloklarının yola veya tesise ulaşmasını engelleyen bariyerler (kaya ve moloz bariyerleri) ve çığ kontrol sistemleri gibi hayati önem taşıyan projeleri projelendirmeden montaja kadar anahtar teslim yürütüyoruz.',
+            },
+        ],
+        advantages: [
+            'En zorlu ve sarp yamaçlarda iple erişimle güvenli çalışma',
+            'Yüksek enerjili dinamik kaya bariyerleri ile %100 koruma',
+            'TSE, CE ve uluslararası standartlara uygun sertifikalı malzemeler',
+            'Heyelan, kaya düşmesi ve çığ risklerini mini düzeye indiren çözümler',
+            'Ulaşılması imkansız görülen dik yamaçlarda hızlı kurulum',
+            'Deneyimli ve sertifikalı endüstriyel dağcı mühendis ekibi',
+            'Minimum çevresel tahribatla doğa dostu uygulama teknikleri',
+            'Uzun ömürlü, korozyona dayanıklı çelik tel ağ ve bariyer sistemleri',
+        ],
+        applications: [
+            'Karayolları ve demiryolu güzergahları',
+            'Açık ocak maden sahaları ve ocak şevleri',
+            'Hes baraj gölleri ve su iletim hatları yamaçları',
+            'Tünel portal girişleri ve çıkışları',
+            'Yerleşim yerleri arkasındaki dik yamaçlar',
+            'Tarihi yapılar ve antik kent yamaç güvenlikleri',
+            'Sanayi tesisleri ve fabrika arkası dik şevler',
+            'Kayak merkezleri ve dağlık turizm yolları',
+        ],
+        technicalDetails: [
+            'Dinamik Kaya Bariyerleri: 100 kJ ile 9000 kJ arası enerji sönümleme kapasitesi',
+            'Çelik Tel Ağlar: Çift bükümlü galvanizli / yüksek mukavemetli çelik tel ağ sistemleri',
+            'Ankraj Sistemleri: Kendinden delen ibo bulon, halatlı ankraj ve epoksi enjeksiyon ankrajlar',
+            'Moloz Bariyerleri: Sel ve heyelan taşıntılarına karşı esnek çelik ağ tasarımları',
+            'Şev Örtüleme: Aktif ve pasif şev stabilizasyon sistemleri (Tecco, Maccaferri vb.)',
+            'Standartlar: ETAG 027 (Kaya Bariyerleri), EN 10223-3 (Çift Bükümlü Tel Ağlar)',
+        ],
+        whyChooseUs: [
+            '15+ yıllık jeoteknik saha ve iple erişim tecrübesi',
+            'Mühendislik analizleri ve detaylı risk değerlendirme raporlamaları',
+            'Anahtar teslim projelendirme ve uygulama desteği',
+            'Uluslararası sertifikalı (IRATA / SPRAT) dağcı teknisyen ekibi',
+            'Zor arazilerde hızlı mobilizasyon ve esnek şantiye yönetimi',
+            'Yüksek iş güvenliği standartları (Sıfır kaza hedefi)',
+        ],
+        faqs: [
+            {
+                question: 'Kaya düşmesi riski nasıl analiz edilir?',
+                answer: 'Mühendislerimiz ve iple erişim teknisyenlerimiz sahada jeolojik inceleme yapar. Yamaçtaki gevşek blokların hacmi, dikliği, çatlak yapısı ve düşme yörüngeleri özel simülasyon yazılımları ile analiz edilerek en uygun çözüm (temizleme, bariyer veya örtüleme) belirlenir.',
+            },
+            {
+                question: 'Dinamik kaya bariyerleri ne kadar güvenlidir?',
+                answer: 'Dinamik kaya bariyerleri uluslararası standartlara (ETAG 027) göre test edilmiş esnek çelik ağ yapısı ile yüksek hızda düşen dev kaya bloklarını sönümleyerek durdurur. 9000 kJ kapasiteye kadar olan bariyerlerimiz en zorlu heyelan alanlarında dahi tam koruma sağlar.',
+            },
+            {
+                question: 'Şev örtüleme pasif mi aktif mi yapılmalıdır?',
+                answer: 'Yamaçtaki kaya yapısı çok gevşekse ve yerinde tutulması gerekiyorsa aktif örtüleme (ankrajlar ve çelik tel ağların gerilerek yamaç yüzeyine bastırılması) uygulanır. Sadece kopan taşların kontrollüce tabana süzülmesi isteniyorsa pasif örtüleme tercih edilir.',
+            },
+        ],
+        relatedServices: ['yamac-yuzeyi-temizleme', 'sev-ortuleme', 'kaya-bariyeri', 'moloz-bariyer'],
     },
 
     'yamac-yuzeyi-temizleme': {
@@ -1037,74 +1160,6 @@ export const SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['sev-ortuleme', 'yamac-yuzeyi-temizleme', 'kaya-bariyeri'],
-    },
-
-    'kar-cig-kontrolu': {
-        slug: 'kar-cig-kontrolu',
-        title: 'Kar & Çığ Kontrolü Uygulamaları',
-        metaDescription: 'Profesyonel kar ve çığ kontrolü uygulamaları. Çığ bariyerleri, kar tutma sistemleri, kontrollü patlatma ve güvenlik önlemleri.',
-        keywords: ['çığ kontrolü', 'kar koruma sistemleri', 'çığ bariyeri', 'avalanche control', 'kar güvenliği'],
-        category: 'jeoteknik',
-        icon: '❄️',
-        heroImage: '/services/kar-cig.png',
-        intro: 'Dağlık ve karlı bölgelerde kar ve çığ tehlikesine karşı profesyonel kontrol ve koruma sistemleri kuruyoruz. Çığ bariyerleri, kar tutma yapıları ve acil müdahale hizmetleri.',
-        sections: [
-            {
-                heading: 'Kar & Çığ Kontrolü Nedir?',
-                content: 'Kar ve çığ kontrolü, dağlık bölgelerde kar birikmesi ve çığ oluşumu riskine karşı alınan teknik önlemlerdir. Çığlar, can ve mal kaybına yol açan doğal afetlerdir. Türkiye\'de özellikle Doğu Karadeniz, Doğu Anadolu ve iç kesimlerde çığ riski yüksektir. Kontrol yöntemleri: Pasif yapılar (çığ bariyeri, kar hendekleri, istinat yapıları), aktif methodlar (kontrollü patlatma, kar temizliği) ve erken uyarı sistemleri. Çığ bariyerleri, kar kütlesini tutarak veya yönlendirerek aşağıya inmesini önler. İsviçre, Avusturya standartlarına göre tasarlanır.',
-            },
-            {
-                heading: 'Hizmet Kapsamı',
-                content: 'Çığ risk analizi: Topoğrafya, kar kalınlığı, eğim analizi. Çığ bariyeri tasarım ve kurulumu: Çelik veya ağaç yapılar, sabit beton bariyerler. Kar hendekleri ve deflektör yapıları. Kar tutma ağları (Snow Net). Kontrollü patlatma: Explosif ile küçük çığların kontrollü olarak düşürülmesi. Monitoring ve erken uyarı: Kar kalınlığı sensörleri, meteoroloji istasyonu. Özellikle kayak merkezleri, dağ yolları, yerleşim alanları için kritik. Proje, jeoteknik ve orman mühendisi işbirliği ile hazırlanır.',
-            },
-        ],
-        advantages: [
-            'Can ve mal güvenliği',
-            'Yol ve tesis güvenliği',
-            'Avrupa standartlarında tasarım',
-            'Uzun ömürlü çözümler',
-            'Monitoring ve erken uyarı',
-            'Kontrollü patlatma hizmeti',
-            'Deneyimli ekip',
-            'Garanti ve bakım',
-        ],
-        applications: [
-            'Kayak merkezleri',
-            'Dağ yolları',
-            'Dağlık yerleşim alanları',
-            'Enerji nakil hatları',
-            'Askeri tesisler',
-            'Turistik tesisler',
-            'Geçitler ve tüneller',
-        ],
-        technicalDetails: [
-            'Bariyer tipi: Çelik çığ bariyeri, beton yapı, ağaç kazık',
-            'Yükseklik: 3-6m',
-            'Standartlar: SN/ONR (İsviçre/Avusturya)',
-            'Malzeme: Galvaniz çelik, ahşap, beton',
-            'Monitoring: Kar sensörleri, meteoroloji',
-            'Patlatma: ANFO, TNT (lisanslı)',
-        ],
-        whyChooseUs: [
-            'Avrupa tecrübesi',
-            'Jeoteknik mühendis desteği',
-            'Kaliteli malzeme',
-            'Kontrollü patlatma lisansı',
-            'Monitoring sistemleri',
-            'Türkiye referansları',
-            'Garanti ve destek',
-        ],
-        faqs: [
-            {
-                question: 'Çığ bariyeri maliyeti ne kadardır?',
-                answer: 'Maliyet, bariyer tipi, uzunluk, yükseklik ve montaj zorluğuna göre değişir. Detaylı keşif ve risk analizi sonrası teklif sunulur. İletişime geçebilirsiniz.',
-            },
-            {
-                question: 'Kontrollü patlatma nasıl yapılır?',
-                answer: 'Kontrollü patlatma, çığ riski yüksek bölgelerde, hava koşulları uygun olduğunda, lisanslı ekip tarafından explosif kullanılarak küçük çığların güvenli şekilde düşürülmesidir. Türkiye\'de Jandarma veya EGM izni gereklidir.',
-            },
-        ],
-        relatedServices: ['kaya-bariyeri', 'deflektör-tip-ortuleme', 'yamac-yuzeyi-temizleme'],
     },
 
     'sahne-isleri-rigging': {

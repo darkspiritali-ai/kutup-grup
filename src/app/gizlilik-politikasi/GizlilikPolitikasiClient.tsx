@@ -32,9 +32,9 @@ export default function GizlilikPolitikasiClient() {
                             belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan taraf Kutup Grup'tur.
                         </p>
                         <div className={styles.contactBox}>
-                            <p><strong>Adres:</strong> Merkez Mahallesi, Endüstri Caddesi No:123, Şişli / İstanbul</p>
+                            <p><strong>Adres:</strong> Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul</p>
                             <p><strong>E-posta:</strong> kvkk@kutupgrup.com</p>
-                            <p><strong>Telefon:</strong> +90 (212) 123 45 67</p>
+                            <p><strong>Telefon:</strong> +90 (533) 517 66 09</p>
                         </div>
                     </section>
 
@@ -116,7 +116,7 @@ export default function GizlilikPolitikasiClient() {
                             Yukarıda belirtilen haklarınızı kullanmak için kimliğinizi tespit edici belgeler ile birlikte talebinizi;
                         </p>
                         <ul>
-                            <li><strong>Yazılı olarak:</strong> Merkez Mahallesi, Endüstri Caddesi No:123, Şişli / İstanbul adresine</li>
+                            <li><strong>Yazılı olarak:</strong> Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul adresine</li>
                             <li><strong>E-posta ile:</strong> kvkk@kutupgrup.com adresine</li>
                             <li><strong>KEP adresi ile:</strong> kutupgrup@hs03.kep.tr adresine</li>
                         </ul>
@@ -158,7 +158,7 @@ export default function GizlilikPolitikasiClient() {
                         </p>
                         <div className={styles.contactBox}>
                             <p><strong>E-posta:</strong> kvkk@kutupgrup.com</p>
-                            <p><strong>Telefon:</strong> +90 (212) 123 45 67</p>
+                            <p><strong>Telefon:</strong> +90 (533) 517 66 09</p>
                         </div>
                     </section>
                 </article>

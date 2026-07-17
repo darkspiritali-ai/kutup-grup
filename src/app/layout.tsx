@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Open_Sans } from "next/font/google";
 import "./globals.css";
 import "./performance.css";
+import StyledJsxRegistry from "./registry";
+import Preloader from "@/components/animations/Preloader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -72,7 +74,10 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={`${inter.variable} ${openSans.variable}`}>
-        {children}
+        <Preloader />
+        <StyledJsxRegistry>
+          {children}
+        </StyledJsxRegistry>
       </body>
     </html>
   );

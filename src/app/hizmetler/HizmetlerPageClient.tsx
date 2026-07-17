@@ -72,16 +72,18 @@ export default function HizmetlerPageClient() {
                 <section className="section dot-grid" style={{ background: '#f8fafc' }}>
                     <div className="container">
                         {/* Category Filter */}
-                        <div className="filter-bar">
-                            {CATEGORIES.map((cat) => (
-                                <button
-                                    key={cat.key}
-                                    onClick={() => setActiveCategory(cat.key)}
-                                    className={`filter-btn ${activeCategory === cat.key ? 'active' : ''}`}
-                                >
-                                    {cat.label}
-                                </button>
-                            ))}
+                        <div className="filter-container">
+                            <div className="filter-bar filter-buttons">
+                                {CATEGORIES.map((cat) => (
+                                    <button
+                                        key={cat.key}
+                                        onClick={() => setActiveCategory(cat.key)}
+                                        className={`filter-btn ${activeCategory === cat.key ? 'active' : ''}`}
+                                    >
+                                        {cat.label}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
 
                         <p className="filter-count">{filteredServices.length} hizmet görüntüleniyor</p>

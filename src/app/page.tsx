@@ -48,9 +48,9 @@ const features = [
 ];
 
 const testimonials = [
-  { name: 'Mehmet Kaya', company: 'Yapı A.Ş.', text: 'Kutup Grup ile birçok projede çalıştık. Profesyonellikleri ve güvenlik odaklı yaklaşımları bizi her zaman etkiledi.', rating: 5 },
-  { name: 'Ayşe Demir', company: 'İnşaat Ltd.', text: 'Acil durumlarda bile hızlı müdahale kapasiteleri mükemmel. Her projede kaliteli iş çıkardılar.', rating: 5 },
-  { name: 'Can Özkan', company: 'Enerji Grubu', text: 'Rüzgar türbini bakım projelerimizde güvenle çalıştığımız tek firma. IRATA sertifikalı ekipleri fark yaratıyor.', rating: 5 },
+  { name: 'M. K.', company: 'Proje Müdürü, Yapı A.Ş.', text: 'Kutup Grup ile birçok projede çalıştık. Profesyonellikleri ve güvenlik odaklı yaklaşımları bizi her zaman etkiledi.', rating: 5 },
+  { name: 'A. D.', company: 'Şantiye Şefi, İnşaat Ltd.', text: 'Acil durumlarda bile hızlı müdahale kapasiteleri mükemmel. Her projede kaliteli iş çıkardılar.', rating: 5 },
+  { name: 'C. Ö.', company: 'Operasyon Yöneticisi, Enerji Grubu', text: 'Rüzgar türbini bakım projelerimizde güvenle çalıştığımız tek firma. IRATA sertifikalı ekipleri fark yaratıyor.', rating: 5 },
 ];
 
 const certifications = [
@@ -425,13 +425,13 @@ export default function Home() {
           margin-right: auto;
         }
         
-        .btn-cta-white {
+        :global(.btn-cta-white) {
           display: inline-flex;
           align-items: center;
           gap: var(--spacing-2);
-          background: white;
-          color: var(--color-deep-navy);
-          padding: var(--spacing-5) var(--spacing-10);
+          background: white !important;
+          color: var(--color-deep-navy) !important;
+          padding: var(--spacing-4) var(--spacing-8) !important;
           border-radius: var(--radius-md);
           font-weight: 700;
           font-family: var(--font-heading);
@@ -441,10 +441,11 @@ export default function Home() {
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-cta-white:hover {
+        :global(.btn-cta-white:hover) {
           transform: translateY(-4px);
           box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
-          color: var(--color-deep-navy);
+          color: var(--color-deep-navy) !important;
+          background: #f8fafc !important;
         }
         
         @media (max-width: 768px) {

@@ -5,7 +5,7 @@ import styles from './WhatsAppButton.module.css';
 
 export default function WhatsAppButton() {
     const [isHovered, setIsHovered] = useState(false);
-    const phoneNumber = '905320000000'; // TODO: Gerçek numara
+    const phoneNumber = '905335176609'; // Müşteri whatsapp numarası
     const message = encodeURIComponent('Merhaba, Kutup Grup hizmetleriniz hakkında bilgi almak istiyorum.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

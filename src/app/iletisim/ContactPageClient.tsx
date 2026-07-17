@@ -143,12 +143,22 @@ export default function ContactPageClient() {
                         <div className={styles.infoIcon}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z" /><circle cx="12" cy="10" r="3" /></svg>
                         </div>
-                        <h3 className={styles.infoTitle}>Adres</h3>
-                        <p className={styles.infoText}>
-                            Merkez Mahallesi, Endüstri Caddesi No:123
-                            <br />
-                            Şişli / İstanbul
-                        </p>
+                        <h3 className={styles.infoTitle}>Şirket Bilgileri</h3>
+                        <div className={styles.infoText} style={{ textAlign: 'left', width: '100%' }}>
+                            <strong style={{ display: 'block', marginBottom: '12px' }}>KUTUP GRUP İNŞAAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ</strong>
+                            
+                            <div style={{ marginBottom: '12px' }}>
+                                <strong style={{ color: 'var(--color-arctic-blue)' }}>İstanbul Merkez (Genel Müdürlük):</strong>
+                                <br />
+                                Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul
+                            </div>
+                            
+                            <div>
+                                <strong style={{ color: 'var(--color-arctic-blue)' }}>Balıkesir Şubesi:</strong>
+                                <br />
+                                Soma Cd. 111A Altıeylül Balıkesir / Türkiye
+                            </div>
+                        </div>
                     </div>
 
                     <div className={styles.infoCard}>
@@ -157,9 +167,7 @@ export default function ContactPageClient() {
                         </div>
                         <h3 className={styles.infoTitle}>Telefon</h3>
                         <p className={styles.infoText}>
-                            <a href="tel:+902121234567">+90 (212) 123 45 67</a>
-                            <br />
-                            <a href="tel:+905551234567">+90 (555) 123 45 67</a>
+                            <a href="tel:+905335176609">+90 (533) 517 66 09</a>
                         </p>
                     </div>
 
@@ -314,7 +322,7 @@ export default function ContactPageClient() {
                         <h2 className={styles.sectionTitle}>Konum</h2>
                         <div className={styles.mapContainer}>
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4286594757494!2d28.9784!3d41.0082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAwJzI5LjUiTiAyOMKwNTgnNDIuMiJF!5e0!3m2!1str!2str!4v1234567890"
+                                src="https://maps.google.com/maps?q=Levent%20199,%20Esentepe%20Mahallesi,%20%C5%9Ei%C5%9Fli,%20%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed"
                                 width="100%"
                                 height="400"
                                 style={{ border: 0 }}
@@ -356,7 +364,7 @@ export default function ContactPageClient() {
                             <p>Acil durumlar için WhatsApp üzerinden bize ulaşabilirsiniz</p>
                         </div>
                         <a
-                            href="https://wa.me/905551234567"
+                            href="https://wa.me/905335176609"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.whatsappButton}

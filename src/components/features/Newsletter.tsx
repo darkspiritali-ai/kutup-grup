@@ -33,10 +33,12 @@ export default function Newsletter() {
 
     return (
         <div className={styles.newsletter}>
-            <h3 className={styles.title}>Bültenimize Abone Olun</h3>
-            <p className={styles.subtitle}>
-                Yeni projeler, güncellemeler ve özel tekliflerden haberdar olun
-            </p>
+            <div className={styles.content}>
+                <h3 className={styles.title}>Bültenimize Abone Olun</h3>
+                <p className={styles.subtitle}>
+                    Yeni projeler, güncellemeler ve özel tekliflerden haberdar olun
+                </p>
+            </div>
 
             <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.inputGroup}>

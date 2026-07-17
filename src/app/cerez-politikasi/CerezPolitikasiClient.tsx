@@ -179,7 +179,7 @@ export default function CerezPolitikasiClient() {
                         </p>
                         <div className={styles.contactBox}>
                             <p><strong>E-posta:</strong> info@kutupgrup.com</p>
-                            <p><strong>Telefon:</strong> +90 (212) 123 45 67</p>
+                            <p><strong>Telefon:</strong> +90 (533) 517 66 09</p>
                         </div>
                     </section>
                 </article>

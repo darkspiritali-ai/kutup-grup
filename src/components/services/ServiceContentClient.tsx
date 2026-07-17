@@ -110,9 +110,6 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
 
             <div className="service-hero-layout">
               <div className="service-hero-text">
-                <div className="service-icon-wrap">
-                  {getServiceIcon(service.icon)}
-                </div>
                 <h1>{service.title}</h1>
                 <p className="service-intro">{service.intro}</p>
                 <Link href="/iletisim" className="btn btn-cta">
@@ -146,6 +143,50 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                     <p>{section.content}</p>
                   </div>
                 ))}
+
+                {/* Geoteknik Alt Hizmetleri Listesi */}
+                {service.slug === 'jeoteknik-uygulamalar' && (
+                  <div className="content-section sub-services-section">
+                    <h2>Jeoteknik Çözümlerimiz & Hizmetlerimiz</h2>
+                    <p className="sub-services-intro">
+                      Kutup Grup olarak, zorlu arazi koşullarında kaya düşmesini önleme, şev stabilizasyonu ve yamaç güvenliği konularında uzman ekiplerimizle profesyonel mühendislik çözümleri sunuyoruz. İşte bu kapsamda sunduğumuz temel hizmetlerimiz:
+                    </p>
+                    <div className="sub-services-grid">
+                      {Object.values(SERVICES_DATA)
+                        .filter((s) => s.category === 'jeoteknik' && s.slug !== 'jeoteknik-uygulamalar')
+                        .map((s) => (
+                          <div key={s.slug} className="sub-service-card">
+                            {s.heroImage && (
+                              <div className="sub-service-image-wrapper">
+                                <Image
+                                  src={s.heroImage}
+                                  alt={s.title}
+                                  width={360}
+                                  height={200}
+                                  className="sub-service-img"
+                                />
+                              </div>
+                            )}
+                            <div className="sub-service-content-wrap">
+                              <div className="sub-service-header">
+                                <span className="sub-service-icon">
+                                  {getServiceIcon(s.icon)}
+                                </span>
+                                <h3>{s.title}</h3>
+                              </div>
+                              <p>{s.intro}</p>
+                              <Link href={`/hizmetler/${s.slug}`} className="sub-service-link">
+                                Detaylı Bilgi
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                                </svg>
+                              </Link>
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Advantages */}
                 {service.advantages.length > 0 && (
@@ -250,6 +291,121 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
       </main>
 
       <style jsx>{`
+        /* Sub Services Grid (for Category Page) */
+        .sub-services-section {
+          margin-top: var(--spacing-8);
+        }
+        .sub-services-intro {
+          margin-bottom: var(--spacing-8) !important;
+          font-size: 1.05rem !important;
+        }
+        .sub-services-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: var(--spacing-6);
+        }
+        @media (min-width: 640px) {
+          .sub-services-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+        .sub-service-card {
+          background: white;
+          border: 1px solid var(--border-default);
+          border-radius: 16px;
+          overflow: hidden;
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 4px 12px rgba(10, 36, 99, 0.02);
+        }
+        .sub-service-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(16, 185, 129, 0.3);
+          box-shadow: 0 12px 24px rgba(10, 36, 99, 0.06);
+        }
+        .sub-service-image-wrapper {
+          width: 100%;
+          height: 180px;
+          position: relative;
+          overflow: hidden;
+          background: var(--bg-secondary);
+        }
+        .sub-service-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+        .sub-service-card:hover .sub-service-img {
+          transform: scale(1.06);
+        }
+        .sub-service-content-wrap {
+          padding: var(--spacing-5) var(--spacing-6) var(--spacing-6);
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+        .sub-service-header {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-4);
+          margin-bottom: var(--spacing-4);
+        }
+        .sub-service-icon {
+          width: 44px;
+          height: 44px;
+          border-radius: 10px;
+          background: rgba(16, 185, 129, 0.1);
+          color: #10B981;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transition: all 0.3s ease;
+        }
+        .sub-service-card:hover .sub-service-icon {
+          transform: scale(1.08) rotate(2deg);
+        }
+        .sub-service-icon :global(svg) {
+          width: 22px;
+          height: 22px;
+        }
+        .sub-service-header h3 {
+          margin: 0;
+          font-size: 1.15rem;
+          color: var(--color-deep-navy);
+          font-family: var(--font-heading);
+          font-weight: 700;
+        }
+        .sub-service-card p {
+          color: var(--text-secondary);
+          font-size: 0.9rem;
+          line-height: 1.6;
+          margin-bottom: var(--spacing-5);
+          flex: 1;
+        }
+        .sub-service-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          color: #10B981;
+          font-weight: 700;
+          font-size: 0.9rem;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          width: fit-content;
+        }
+        .sub-service-link svg {
+          transition: transform 0.2s ease;
+        }
+        .sub-service-link:hover {
+          color: var(--color-deep-navy);
+        }
+        .sub-service-link:hover svg {
+          transform: translateX(4px);
+        }
+
         .service-page {
           margin-top: 80px;
         }
