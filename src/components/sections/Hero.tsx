@@ -325,7 +325,6 @@ export default function Hero() {
           .hero {
             min-height: 85vh;
             padding: var(--spacing-12) 0;
-            margin-top: 70px;
           }
           
           .hero-cta {

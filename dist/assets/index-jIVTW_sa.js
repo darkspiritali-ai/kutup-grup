@@ -515,7 +515,6 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
           .hero {
             min-height: 85vh;
             padding: var(--spacing-12) 0;
-            margin-top: 70px;
           }
           
           .hero-cta {
