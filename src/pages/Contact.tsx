@@ -1,6 +1,8 @@
 
 
 import { useState } from 'react';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import styles from './contact.module.css';
 
 interface FormData {
@@ -128,7 +130,9 @@ export default function ContactPageClient() {
     };
 
     return (
-        <div className={styles.contactPage}>
+        <div>
+            <Header />
+            <div className={styles.contactPage}>
             {/* Hero Section */}
             <section className={styles.hero}>
                 <div className={styles.heroContent}>
@@ -375,6 +379,8 @@ export default function ContactPageClient() {
                     </div>
                 </section>
             </div>
+            </div>
+            <Footer />
         </div>
     );
 }
