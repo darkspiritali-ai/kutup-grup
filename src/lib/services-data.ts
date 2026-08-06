@@ -14,6 +14,7 @@ export interface ServiceContent {
     whyChooseUs: string[];
     faqs: FAQ[];
     relatedServices: string[];
+    updatedAt?: string;
 }
 
 export interface ServiceSection {

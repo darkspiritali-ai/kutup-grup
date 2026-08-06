@@ -14,49 +14,29 @@ if (!fs.existsSync(PUBLIC_DIR)) {
   fs.mkdirSync(PUBLIC_DIR, { recursive: true });
 }
 
-// 1. Parse service slugs from services-data.ts
-const getServiceSlugs = () => {
+// 1. Dynamic import of services data to query fields like slug and updatedAt
+const getServicesData = async () => {
   try {
-    const content = fs.readFileSync(SERVICES_DATA_PATH, 'utf-8');
-    // Extract key names from const SERVICES_DATA: Record<string, ServiceContent> = { ... }
-    // Matching patterns like: 'dis-cephe-dekoratif-aydinlatma': {
-    const regex = /['"]([^'"]+)['"]\s*:\s*\{/g;
-    const slugs = [];
-    let match;
-    
-    // Skip interface definitions by finding the start of SERVICES_DATA
-    const startIdx = content.indexOf('SERVICES_DATA');
-    const searchableContent = startIdx !== -1 ? content.substring(startIdx) : content;
-
-    while ((match = regex.exec(searchableContent)) !== null) {
-      // Avoid duplicate or internal config keys
-      if (match[1] !== 'category' && match[1] !== 'slug' && match[1] !== 'title') {
-        slugs.push(match[1]);
-      }
-    }
-    return slugs;
+    const module = await import(SERVICES_DATA_PATH);
+    return module.SERVICES_DATA || {};
   } catch (error) {
-    console.error('Error reading services data for sitemap generation:', error);
-    return [];
+    console.error('Error importing services data for sitemap generation:', error);
+    return {};
   }
 };
 
 // 2. Generate XML Sitemap
-const generateSitemap = (slugs) => {
+const generateSitemap = (services) => {
   const domain = 'https://kutupgrup.com';
-  
-  // W3C date format
-  const lastmod = new Date().toISOString().split('T')[0];
 
+  // Static pages list (Gizlilik and Cerez omitted since they do not carry organic search value)
   const staticPages = [
-    '',
-    '/hakkimizda',
-    '/hizmetler',
-    '/iletisim',
-    '/sss',
-    '/gizlilik-politikasi',
-    '/cerez-politikasi',
-    '/referanslar'
+    { path: '', lastmod: null },
+    { path: '/hakkimizda', lastmod: null },
+    { path: '/hizmetler', lastmod: null },
+    { path: '/iletisim', lastmod: null },
+    { path: '/sss', lastmod: null },
+    { path: '/referanslar', lastmod: null }
   ];
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -65,23 +45,29 @@ const generateSitemap = (slugs) => {
   // Add static routes
   staticPages.forEach((page) => {
     xml += '  <url>\n';
-    xml += `    <loc>${domain}${page}</loc>\n`;
-    xml += `    <lastmod>${lastmod}</lastmod>\n`;
+    xml += `    <loc>${domain}${page.path}</loc>\n`;
+    if (page.lastmod) {
+      xml += `    <lastmod>${page.lastmod}</lastmod>\n`;
+    }
     xml += '  </url>\n';
   });
 
   // Add dynamic service pages
-  slugs.forEach((slug) => {
+  let count = staticPages.length;
+  Object.values(services).forEach((s) => {
     xml += '  <url>\n';
-    xml += `    <loc>${domain}/hizmetler/${slug}</loc>\n`;
-    xml += `    <lastmod>${lastmod}</lastmod>\n`;
+    xml += `    <loc>${domain}/hizmetler/${s.slug}</loc>\n`;
+    if (s.updatedAt) {
+      xml += `    <lastmod>${s.updatedAt}</lastmod>\n`;
+    }
     xml += '  </url>\n';
+    count++;
   });
 
   xml += '</urlset>\n';
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), xml, 'utf-8');
-  console.log(`[Sitemap] Generated sitemap.xml with ${staticPages.length + slugs.length} URLs.`);
+  console.log(`[Sitemap] Generated sitemap.xml with ${count} URLs.`);
 };
 
 // 3. Generate Robots.txt
@@ -121,9 +107,10 @@ Sitemap: https://kutupgrup.com/sitemap.xml
 };
 
 // Execution Flow
-const slugs = getServiceSlugs();
-if (slugs.length === 0) {
-  console.warn('[Warning] No service slugs found. Generating static sitemap only.');
-}
-generateSitemap(slugs);
-generateRobotsTxt();
+const run = async () => {
+  const services = await getServicesData();
+  generateSitemap(services);
+  generateRobotsTxt();
+};
+
+run();

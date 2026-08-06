@@ -6,10 +6,15 @@
     "dev": "vite",
     "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-llms.mjs",
     "build": "tsc && vite build",
+    "postbuild": "node scripts/prerender.mjs",
     "preview": "vite preview",
     "lint": "eslint src",
     "validate:sitemap": "node scripts/validate-sitemap.mjs",
+    "validate:routes": "node scripts/validate-routes.mjs",
+    "validate:canonicals": "node scripts/validate-canonicals.mjs",
+    "validate:status-codes": "node scripts/validate-status-codes.mjs",
     "validate:llms": "node scripts/validate-llms.mjs",
+    "validate:all-seo": "node scripts/validate-all-seo.mjs",
     "start": "node server.js"
   },
   "dependencies": {

@@ -9,3 +9,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <App />
   </React.StrictMode>,
 )
+
+// Notify vite-plugin-prerender that the page is fully loaded and ready to be pre-rendered
+setTimeout(() => {
+  document.dispatchEvent(new Event('custom-render-trigger'));
+}, 100);

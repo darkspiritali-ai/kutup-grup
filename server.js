@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 let nodemailer;
 try {
   nodemailer = require('nodemailer');
@@ -148,6 +149,22 @@ app.post('/api/newsletter', async (req, res) => {
   }
 });
 
+// Force trailing slash redirect to non-trailing slash canonicals
+app.use((req, res, next) => {
+  // Ignore API requests and static assets
+  if (req.path.startsWith('/api/') || req.path.includes('.')) {
+    return next();
+  }
+
+  // If path ends with slash and is not root, redirect 301 to non-slash canonical URL path
+  if (req.path.substr(-1) === '/' && req.path.length > 1) {
+    const query = req.url.slice(req.path.length);
+    res.header('Cache-Control', 'public, max-age=31536000');
+    return res.redirect(301, req.path.slice(0, -1) + query);
+  }
+  next();
+});
+
 // Serve sitemap.xml with correct content-type
 app.get('/sitemap.xml', (req, res) => {
   res.header('Content-Type', 'application/xml');
@@ -172,25 +189,103 @@ app.get('/llms-full.txt', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'llms-full.txt'));
 });
 
+// Serve static HTML pre-rendered files directly to prevent SPA 301 folder redirects
+app.get('/:page', (req, res, next) => {
+  const pagePath = path.join(__dirname, 'dist', req.params.page, 'index.html');
+  if (fs.existsSync(pagePath)) {
+    return res.sendFile(pagePath);
+  }
+  next();
+});
+
+// Serve static services pre-rendered pages directly
+app.get('/hizmetler/:service', (req, res, next) => {
+  const servicePath = path.join(__dirname, 'dist', 'hizmetler', req.params.service, 'index.html');
+  if (fs.existsSync(servicePath)) {
+    return res.sendFile(servicePath);
+  }
+  next();
+});
+
 // Serve static files from the dist directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Ignore favicon.ico requests
 app.get('/favicon.ico', (req, res) => res.status(204).end());
 
-// SPA Fallback: Route all unknown requests to index.html
+// SPA Fallback: Route all unknown requests to index.html OR return a real HTTP 404 if it's a completely invalid route
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'), (err) => {
-    if (err) {
-      console.error("Error serving index.html:", err);
-      res.status(500).send(`
-        <h1>Internal Server Error</h1>
-        <p>Could not find dist/index.html.</p>
-        <pre>${err.message}</pre>
-        <p>Current directory: ${__dirname}</p>
-      `);
+  // Array of valid frontend routes that should render index.html
+  const validRoutes = [
+    '/',
+    '/hakkimizda',
+    '/hizmetler',
+    '/iletisim',
+    '/sss',
+    '/referanslar',
+    '/gizlilik-politikasi',
+    '/cerez-politikasi'
+  ];
+
+  const reqPath = req.path;
+  
+  // Dynamic validation for services slugs to avoid soft-404 on invalid dynamic paths
+  let isValidService = false;
+  if (reqPath.startsWith('/hizmetler/')) {
+    const slug = reqPath.replace('/hizmetler/', '');
+    // Import SERVICES_DATA dynamically or parse the file to obtain dynamic slugs
+    try {
+      const servicesData = require('./src/lib/services-data.ts');
+      const SERVICES_DATA = servicesData.SERVICES_DATA || {};
+      isValidService = !!SERVICES_DATA[slug];
+    } catch (e) {
+      // Fallback: parse via regex if typescript import fails in raw node context
+      const content = fs.readFileSync(path.join(__dirname, 'src/lib/services-data.ts'), 'utf-8');
+      isValidService = content.includes(`'${slug}':`) || content.includes(`"${slug}":`);
     }
-  });
+  }
+
+  const isValidStatic = validRoutes.includes(reqPath);
+
+  if (isValidStatic || isValidService) {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'), (err) => {
+      if (err) {
+        console.error("Error serving index.html:", err);
+        res.status(500).send(`
+          <h1>Internal Server Error</h1>
+          <p>Could not find dist/index.html.</p>
+          <pre>${err.message}</pre>
+          <p>Current directory: ${__dirname}</p>
+        `);
+      }
+    });
+  } else {
+    // Completely invalid route: return real HTTP 404 status code
+    res.status(404).sendFile(path.join(__dirname, 'dist', '404.html'), (err) => {
+      if (err) {
+        // Fallback if 404.html pre-render isn't found
+        res.status(404).send(`
+          <!DOCTYPE html>
+          <html lang="tr">
+          <head>
+            <meta charset="UTF-8">
+            <title>Sayfa Bulunamadı - Kutup Grup</title>
+            <style>
+              body { background: #030712; color: #fff; font-family: sans-serif; text-align: center; padding: 50px; }
+              h1 { color: #ef4444; }
+              a { color: #3e92cc; text-decoration: none; }
+            </style>
+          </head>
+          <body>
+            <h1>404 - Sayfa Bulunamadı</h1>
+            <p>Aradığınız sayfa mevcut değil veya taşınmış olabilir.</p>
+            <p><a href="/">Anasayfa'ya Dön</a></p>
+          </body>
+          </html>
+        `);
+      }
+    });
+  }
 });
 
 const PORT = Number(process.env.PORT) || 3000;

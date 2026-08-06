@@ -11,6 +11,7 @@ import Privacy from './pages/Privacy';
 import Cookies from './pages/Cookies';
 import NotFound from './pages/NotFound';
 import Preloader from './components/animations/Preloader';
+import MetaHelper from './components/seo/MetaHelper';
 
 // Scroll to top on route change helper
 function ScrollToTop() {
@@ -25,6 +26,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <MetaHelper />
       <Preloader />
       <Routes>
         <Route path="/" element={<Home />} />
