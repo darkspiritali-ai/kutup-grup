@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/generate-sitemap.mjs && node scripts/generate-llms.mjs",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && vite build --ssr src/entry-server.tsx --outDir dist-server",
     "postbuild": "node scripts/prerender.mjs",
     "preview": "vite preview",
     "lint": "eslint src",
@@ -43,6 +43,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
+    "playwright": "^1.62.1",
     "typescript": "^5",
     "vite": "^8.1.5"
   },

@@ -4,13 +4,25 @@ import App from './App'
 import './globals.css'
 import './performance.css'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const rootElement = document.getElementById('root')!
 
-// Notify vite-plugin-prerender that the page is fully loaded and ready to be pre-rendered
-setTimeout(() => {
-  document.dispatchEvent(new Event('custom-render-trigger'));
-}, 100);
+// Check if #root contains pre-rendered DOM elements
+if (rootElement.hasChildNodes() && rootElement.children.length > 0) {
+  ReactDOM.hydrateRoot(
+    rootElement,
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    {
+      onRecoverableError(error, errorInfo) {
+        console.error('[Hydration Recovery Error]', error, errorInfo);
+      }
+    }
+  );
+} else {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}

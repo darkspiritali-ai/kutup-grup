@@ -30,7 +30,10 @@ const runAllSeoValidation = () => {
   // 5. Audit Hydration Parity (pre vs post hydration checks)
   runScript('node scripts/validate-hydration.mjs', 'Hydration Parity Validation');
 
-  // 6. Audit AI Discoverability Files (llms.txt / llms-full.txt / robots.txt)
+  // 6. Audit Playwright Automated Filmstrip (0ms-3000ms visual consistency & throttling)
+  runScript('node scripts/validate-filmstrip.mjs', 'Playwright Automated Filmstrip Validation');
+
+  // 7. Audit AI Discoverability Files (llms.txt / llms-full.txt / robots.txt)
   runScript('node scripts/validate-llms.mjs', 'AI Discoverability Validation');
 
   console.log('\n==============================================================================');

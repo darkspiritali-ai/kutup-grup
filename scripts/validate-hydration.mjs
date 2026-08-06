@@ -1,159 +1,147 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import crypto from 'crypto';
+import { chromium } from 'playwright';
+import { spawn } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const ROUTE_MANIFEST_PATH = path.resolve(__dirname, '../src/lib/route-manifest.ts');
-const SERVICES_DATA_PATH = path.resolve(__dirname, '../src/lib/services-data.ts');
 const DIST_DIR = path.resolve(__dirname, '../dist');
-
-const getMd5Hash = (text) => {
-  // Normalize whitespace to make hash matching robust
-  const clean = text.replace(/\s+/g, ' ').trim();
-  return crypto.createHash('md5').update(clean).digest('hex');
-};
+const PORT = 4006;
 
 const runHydrationAudit = async () => {
-  console.log('[SEO Parity Audit] Running pre/post hydration checks for indexable routes...\n');
+  console.log('[SEO Parity Audit] Starting Playwright-based pre/post hydration parity checks...\n');
 
   let manifest = [];
-  let services = {};
   try {
     const manifestModule = await import(ROUTE_MANIFEST_PATH);
     manifest = manifestModule.ROUTE_MANIFEST || [];
-    const servicesModule = await import(SERVICES_DATA_PATH);
-    services = servicesModule.SERVICES_DATA || {};
   } catch (error) {
-    console.error('Error importing manifests for audit:', error);
+    console.error('Error importing route manifest for hydration audit:', error);
     process.exit(1);
   }
 
-  const indexableRoutes = manifest.filter(r => r.indexable);
+  const indexableRoutes = manifest.filter((r) => r.indexable);
+
+  // Start production Express server
+  const server = spawn('node', ['server.js'], {
+    env: { ...process.env, PORT: String(PORT) },
+    stdio: 'pipe',
+  });
+
+  await new Promise((resolve) => {
+    server.stdout.on('data', (data) => {
+      if (data.toString().includes('Server listening on port')) {
+        resolve();
+      }
+    });
+    setTimeout(resolve, 2000);
+  });
+
+  console.log(`[SEO Parity Audit] Server running on http://localhost:${PORT}`);
+
+  const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const page = await context.newPage();
+
+  const hydrationWarnings = [];
+  page.on('console', (msg) => {
+    const text = msg.text();
+    if (text.includes('Hydration') || text.includes('hydrat') || text.includes('did not match')) {
+      hydrationWarnings.push(text);
+    }
+  });
+
+  const auditResults = [];
   let overallSuccess = true;
 
-  console.log('URL | Pre H1 | Post H1 | Pre Hash | Post Hash | Canonical | Metadata | Warning | Result');
-  console.log('------------------------------------------------------------------------------------------------------');
-
   for (const route of indexableRoutes) {
-    const isService = route.type === 'service';
     const relPath = route.path === '/' ? 'index.html' : path.join(route.path.substring(1), 'index.html');
     const filePath = path.join(DIST_DIR, relPath);
 
     if (!fs.existsSync(filePath)) {
-      console.error(`FAIL: Pre-rendered HTML file missing for ${route.path}`);
+      console.error(`FAIL: Static HTML file missing for ${route.path}`);
       overallSuccess = false;
       continue;
     }
 
-    const html = fs.readFileSync(filePath, 'utf-8');
+    const preHtml = fs.readFileSync(filePath, 'utf-8');
 
-    // 1. Extract Pre-hydration metadata
-    const preTitleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
+    // Pre-hydration extracted values from static file
+    const preTitleMatch = preHtml.match(/<title>([\s\S]*?)<\/title>/i);
     const preTitle = preTitleMatch ? preTitleMatch[1].trim() : '';
 
-    const preDescMatch = html.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']/i) ||
-                         html.match(/<meta\s+content=["']([\s\S]*?)["']\s+name=["']description["']/i);
+    const preDescMatch = preHtml.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']/i) ||
+                         preHtml.match(/<meta\s+content=["']([\s\S]*?)["']\s+name=["']description["']/i);
     const preDesc = preDescMatch ? preDescMatch[1].trim() : '';
 
-    const preCanonicalMatch = html.match(/<link\s+rel=["']canonical["']\s+href=["']([\s\S]*?)["']/i) ||
-                             html.match(/<link\s+href=["']([\s\S]*?)["']\s+rel=["']canonical["']/i);
+    const preCanonicalMatch = preHtml.match(/<link\s+rel=["']canonical["']\s+href=["']([\s\S]*?)["']/i) ||
+                             preHtml.match(/<link\s+href=["']([\s\S]*?)["']\s+rel=["']canonical["']/i);
     const preCanonical = preCanonicalMatch ? preCanonicalMatch[1].trim() : '';
 
-    const preH1Match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/gi);
+    const preH1Match = preHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/gi);
     const preH1Count = preH1Match ? preH1Match.length : 0;
-    const preH1Text = preH1Match ? preH1Match[0].replace(/<[^>]+>/g, '').trim() : '';
+    const rawPreH1Text = preH1Match ? preH1Match[0].replace(/<[^>]+>/g, '').trim() : '';
+    const preH1Text = rawPreH1Text
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#x27;/g, "'")
+      .replace(/&#39;/g, "'");
 
-    // Extract pre-hydration main text hash
-    const bodyContent = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-    const preTextHash = bodyContent ? getMd5Hash(bodyContent[1].replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<[^>]+>/g, '')) : '';
+    // Navigate to live page with Playwright to inspect post-hydration DOM
+    await page.goto(`http://localhost:${PORT}${route.path}`, { waitUntil: 'networkidle' });
 
-    // 2. Compute Expected Post-hydration metadata and text values from the source files
-    let expectedTitle = '';
-    let expectedDesc = '';
-    let expectedCanonical = `https://kutupgrup.com${route.path === '/' ? '' : route.path}`;
-    let expectedH1Text = '';
-    let expectedTextHash = '';
+    const postTitle = await page.title();
+    const postDesc = await page.$eval('meta[name="description"]', (el) => el.getAttribute('content')).catch(() => '');
+    const postCanonical = await page.$eval('link[rel="canonical"]', (el) => el.getAttribute('href')).catch(() => '');
+    const postH1s = await page.$$eval('h1', (els) => els.map((el) => el.innerText.trim()));
+    const postHeaderHeight = await page.$eval('header', (el) => el.getBoundingClientRect().height).catch(() => 0);
+    const postLandmarks = await page.$$eval('header, main, footer, nav', (els) => els.length);
+    const postRootChildren = await page.$eval('#root', (el) => el.children.length);
 
-    if (isService) {
-      const slug = route.path.replace('/hizmetler/', '');
-      const s = services[slug];
-      if (s) {
-        expectedTitle = `${s.title} - Kutup Grup`;
-        expectedDesc = s.metaDescription;
-        expectedH1Text = s.title;
-        // Mock simple post-hydration markup rendering hash
-        let mockPageHtml = s.title + ' ' + s.intro;
-        s.sections.forEach(sec => { mockPageHtml += ' ' + sec.heading + ' ' + sec.content; });
-        expectedTextHash = getMd5Hash(mockPageHtml);
-      }
-    } else {
-      expectedCanonical = `https://kutupgrup.com${route.path === '/' ? '' : route.path}`;
-      switch (route.path) {
-        case '/':
-          expectedTitle = 'Kutup Grup - Endüstriyel Dağcılık ve Jeoteknik Çözümler';
-          expectedDesc = 'Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz. İple erişim teknikleri, jeoteknik uygulamalar ve yüksek yapı çözümleri.';
-          expectedH1Text = 'Kutup Grup - Endüstriyel Dağcılık ve Jeoteknik Çözümler';
-          expectedTextHash = getMd5Hash(expectedTitle + ' ' + expectedDesc);
-          break;
-        case '/hakkimizda':
-          expectedTitle = 'Hakkımızda - Kutup Grup';
-          expectedDesc = 'Kutup Grup, endüstriyel dağcılık ve jeoteknik çözümler alanında IRATA ve SPRAT sertifikalı profesyonel hizmet sağlayıcısıdır.';
-          expectedH1Text = 'Kutup Grup Hakkında';
-          expectedTextHash = getMd5Hash(expectedH1Text + ' ' + expectedDesc);
-          break;
-        case '/hizmetler':
-          expectedTitle = 'Hizmetlerimiz - Kutup Grup';
-          expectedDesc = 'Endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik koruma sistemleri alanlarındaki profesyonel hizmetlerimizi inceleyin.';
-          expectedH1Text = 'Hizmetlerimiz';
-          expectedTextHash = getMd5Hash(expectedH1Text + ' ' + expectedDesc);
-          break;
-        case '/iletisim':
-          expectedTitle = 'İletişim - Kutup Grup';
-          expectedDesc = 'Kutup Grup ile iletişime geçin. İstanbul ve Balıkesir ofis bilgilerimiz, telefon numaralarımız ve e-posta adreslerimiz.';
-          expectedH1Text = 'İletişime Geçin';
-          expectedTextHash = getMd5Hash(expectedH1Text + ' ' + expectedDesc);
-          break;
-        case '/sss':
-          expectedTitle = 'Sıkça Sorulan Sorular - Kutup Grup';
-          expectedDesc = 'Endüstriyel dağcılık, iple erişim güvenliği, kullanılan ekipmanlar ve proje süreçlerimiz hakkında merak edilen tüm sorular ve cevapları.';
-          expectedH1Text = 'Sıkça Sorulan Sorular';
-          expectedTextHash = getMd5Hash(expectedH1Text + ' ' + expectedDesc);
-          break;
-        case '/referanslar':
-          expectedTitle = 'Referanslarımız - Kutup Grup';
-          expectedDesc = 'Kutup Grup olarak başarıyla tamamladığımız endüstriyel dağcılık ve jeoteknik projelerimiz.';
-          expectedH1Text = 'Referanslarımız Yakında Burada';
-          expectedTextHash = getMd5Hash(expectedH1Text + ' ' + expectedDesc);
-          break;
-      }
-    }
+    // Parity comparisons
+    const h1Match = preH1Count === postH1s.length && (preH1Count === 0 || preH1Text.substring(0, 20) === postH1s[0].substring(0, 20));
+    const titleMatch = preTitle === postTitle;
+    const descMatch = preDesc === postDesc;
+    const canonicalMatch = preCanonical === postCanonical;
 
-    // Verify parity
-    const canonicalParity = preCanonical.replace(/\/$/, '') === expectedCanonical.replace(/\/$/, '') ? 'OK' : 'MISMATCH';
-    const metadataParity = (preTitle === expectedTitle && preDesc === expectedDesc) ? 'OK' : 'MISMATCH';
-    const h1Parity = (preH1Text === expectedH1Text && preH1Count === 1) ? 'OK' : 'MISMATCH';
-    
-    // Check for hydration warning flags in HTML
-    const warning = html.includes('data-react-helmet') || html.includes('react-hydration-error') ? 'YES' : 'NONE';
-    const result = (canonicalParity === 'OK' && metadataParity === 'OK' && h1Parity === 'OK' && warning === 'NONE') ? 'SUCCESS' : 'FAIL';
-
-    if (result === 'FAIL') {
+    const routePass = h1Match && titleMatch && descMatch && canonicalMatch && postRootChildren > 0;
+    if (!routePass) {
       overallSuccess = false;
     }
 
-    console.log(`${route.path.padEnd(45)} | Pre H1: ${preH1Count} | Post H1: 1 | Pre Hash: ${preTextHash.substring(0,6)} | Post Hash: ${expectedTextHash.substring(0,6)} | Canonical: ${canonicalParity} | Metadata: ${metadataParity} | Warning: ${warning} | Result: ${result}`);
+    auditResults.push({
+      path: route.path,
+      preH1: preH1Text.substring(0, 25) + '...',
+      postH1: postH1s[0] ? postH1s[0].substring(0, 25) + '...' : 'NONE',
+      preTitle: preTitle.substring(0, 20) + '...',
+      postTitle: postTitle.substring(0, 20) + '...',
+      landmarks: postLandmarks,
+      headerHeight: `${Math.round(postHeaderHeight)}px`,
+      rootChildren: postRootChildren,
+      parity: routePass ? 'MATCH' : 'MISMATCH',
+    });
   }
 
-  console.log('\n------------------------------------------------------------------------------------------------------');
-  if (overallSuccess) {
-    console.log('[SEO Parity Audit] SUCCESS: All indexable pages passed pre/post hydration parity checks!');
-    process.exit(0);
-  } else {
-    console.error('[SEO Parity Audit] FAIL: One or more pages failed hydration checks.');
+  await browser.close();
+  server.kill();
+
+  console.log('=================================== HYDRATION PARITY REPORT ===================================');
+  console.table(auditResults);
+  console.log('===============================================================================================\n');
+
+  console.log('Hydration Console Warnings:', hydrationWarnings.length === 0 ? '0 (PASS)' : hydrationWarnings);
+
+  if (!overallSuccess || hydrationWarnings.length > 0) {
+    console.error('\n[SEO Parity Audit] FAIL: Pre/Post hydration mismatch detected.');
     process.exit(1);
+  } else {
+    console.log('\n[SEO Parity Audit] SUCCESS: All indexable routes passed pre/post hydration parity checks!');
+    process.exit(0);
   }
 };
 

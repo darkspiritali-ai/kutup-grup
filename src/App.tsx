@@ -22,12 +22,11 @@ function ScrollToTop() {
   return null;
 }
 
-export default function App() {
+export function AppRoutes() {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <MetaHelper />
-      <Preloader />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hakkimizda" element={<About />} />
@@ -40,6 +39,14 @@ export default function App() {
         <Route path="/cerez-politikasi" element={<Cookies />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <AppRoutes />
     </Router>
   );
 }
