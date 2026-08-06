@@ -181,8 +181,6 @@ export default function ContactPageClient() {
                         <h3 className={styles.infoTitle}>E-posta</h3>
                         <p className={styles.infoText}>
                             <a href="mailto:info@kutupgrup.com">info@kutupgrup.com</a>
-                            <br />
-                            <a href="mailto:teklif@kutupgrup.com">teklif@kutupgrup.com</a>
                         </p>
                     </div>
                 </section>
