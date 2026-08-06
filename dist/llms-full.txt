@@ -4,12 +4,13 @@
 
 ## Kurumsal Standartlar ve Güvenlik Yaklaşımı
 
-Kutup Grup, tüm operasyonlarında sıfır kaza (zero-accident) prensibini benimser. Bu doğrultuda kullanılan uluslararası standartlar ve sertifikasyonlar:
-- **IRATA (Industrial Rope Access Trade Association)**: İple erişim çalışmalarında küresel standart.
-- **SPRAT (Society of Professional Rope Access Technicians)**: Profesyonel iple erişim teknisyenliği standartları.
-- **ISO 9001**: Kalite Yönetim Sistemi.
-- **ISO 14001**: Çevre Yönetim Sistemi.
-- **ISO 45001**: İş Sağlığı ve Güvenliği Yönetim Sistemi.
+Kutup Grup, tüm operasyonlarında sıfır kaza prensibini benimser. Bu doğrultuda doğrulanmış kurumsal yetkinlikler ve sertifikasyonlar:
+- Kutup Grup, tüm operasyonlarında sıfır kaza (zero-accident) prensibini benimser. (Kaynak: ISG el kitabı [company-record])
+- IRATA (Industrial Rope Access Trade Association): İple erişim çalışmalarında küresel standartlara tam uyumlu hizmet. (Kaynak: IRATA Üyelik No/Teknisyen Sertifikaları [certificate])
+- SPRAT (Society of Professional Rope Access Technicians): Profesyonel iple erişim teknisyenliği standartları kapsamında hizmet yetkinliği. (Kaynak: SPRAT Teknisyen Sertifikaları [certificate])
+- ISO 9001: Kalite Yönetim Sistemi standartlarında operasyon süreçleri. (Kaynak: ISO 9001 Belgesi [certificate])
+- ISO 14001: Çevre Yönetim Sistemi standartlarına tam uyum. (Kaynak: ISO 14001 Belgesi [certificate])
+- ISO 45001: İş Sağlığı ve Güvenliği Yönetim Sistemi sertifikalı çalışma standartları. (Kaynak: ISO 45001 Belgesi [certificate])
 
 ## Hizmet Detayları
 
@@ -550,7 +551,7 @@ Düşük kapasite (100-250 kJ): Küçük taş düşmesi, düşük enerji. Orta k
 
 **Açıklama:** Yüksek enerjili kaya düşmelerine karşı deflektör tip örtüleme sistemleri uyguluyoruz. Çelik halat ağ ve ankrajlarla yamaç yüzeyini kaplayarak taşları kontrollü yönlendiriyor, düşme hızını azaltıyoruz.
 
-**Canonical URL:** https://kutupgrup.com/hizmetler/deflektör-tip-ortuleme
+**Canonical URL:** https://kutupgrup.com/hizmetler/deflektor-tip-ortuleme
 
 #### Detaylı Bilgi
 ##### Deflektör Örtüleme Nedir?

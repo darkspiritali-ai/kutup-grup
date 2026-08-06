@@ -20,7 +20,7 @@ const MEGA_CATEGORIES = [
       { title: 'Yamaç Yüzeyi Temizleme', href: '/hizmetler/yamac-yuzeyi-temizleme' },
       { title: 'Şev Örtüleme Sistemleri', href: '/hizmetler/sev-ortuleme' },
       { title: 'Kaya Bariyeri Kurulumu', href: '/hizmetler/kaya-bariyeri' },
-      { title: 'Deflektör Tip Örtüleme', href: '/hizmetler/deflektör-tip-ortuleme' },
+      { title: 'Deflektör Tip Örtüleme', href: '/hizmetler/deflektor-tip-ortuleme' },
       { title: 'Moloz Bariyer Sistemleri', href: '/hizmetler/moloz-bariyer' },
       { title: 'Gabion Duvar', href: '/hizmetler/gabion-duvar' },
       { title: 'Kar ve Çığ Kontrolü', href: '/hizmetler/kar-ve-cig-kontrolu' },

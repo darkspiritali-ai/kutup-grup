@@ -26,20 +26,36 @@ const getServicesData = async () => {
   }
 };
 
+const ROUTE_MANIFEST_PATH = path.resolve(__dirname, '../src/lib/route-manifest.ts');
+
 // 2. Generate llms.txt (Summary Outline)
-const generateLlmsTxt = (services) => {
+const generateLlmsTxt = async (services) => {
   const domain = 'https://kutupgrup.com';
   
+  let manifest = [];
+  try {
+    const module = await import(ROUTE_MANIFEST_PATH);
+    manifest = module.ROUTE_MANIFEST || [];
+  } catch (error) {
+    console.error('Error importing route manifest for llms generation:', error);
+    process.exit(1);
+  }
+
+  // Filter routes included in LLMs
+  const llmRoutes = manifest.filter(r => r.includeInLlms);
+
   let md = `# Kutup Grup\n\n`;
   md += `> Kutup Grup, endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik çözümler alanında IRATA ve SPRAT sertifikalı profesyonel hizmet sağlayıcısıdır.\n\n`;
   
   md += `## Kurumsal Bilgiler\n\n`;
+  md += `- [Anasayfa](${domain}/): Şirket ana sayfası ve hizmet grupları tanıtımı.\n`;
   md += `- [Hakkımızda](${domain}/hakkimizda): Şirket tarihçesi, vizyonu, değerleri ve kurumsal profili.\n`;
+  md += `- [Hizmetlerimiz](${domain}/hizmetler): Tüm endüstriyel dağcılık ve jeoteknik çözümlerimizin listesi.\n`;
   md += `- [İletişim](${domain}/iletisim): Adres, telefon, e-posta (info@kutupgrup.com) ve çalışma saatleri.\n`;
   md += `- [Sıkça Sorulan Sorular (SSS)](${domain}/sss): Hizmetler, güvenlik standartları ve operasyon süreçleri hakkında merak edilenler.\n`;
   md += `- [Referanslar](${domain}/referanslar): Tamamlanan saha projeleri ve iş ortakları.\n\n`;
 
-  // Group by categories
+  // Group by categories (only indexable services found in services-data)
   const categories = {
     endustriyel: { title: 'Endüstriyel Dağcılık ve İple Erişim', desc: 'İskele veya vinç gerektirmeden, yüksek yapılarda iple erişim teknikleriyle sunulan cephe temizliği, aydınlatma, tersane ve rüzgar türbini hizmetleri.' },
     jeoteknik: { title: 'Jeoteknik Uygulamalar', desc: 'Yamaç stabilizasyonu, şev örtüleme, kaya bariyeri kurulumu gibi sarp yamaç ve zemin koruma mühendislik çözümleri.' },
@@ -52,14 +68,14 @@ const generateLlmsTxt = (services) => {
     
     const catServices = Object.values(services).filter((s) => s.category === key);
     catServices.forEach((s) => {
-      md += `- [${s.title}](${domain}/hizmetler/${s.slug}): ${s.metaDescription}\n`;
+      // Ensure this service path exists in llmRoutes manifest
+      const exists = llmRoutes.some(r => r.path === `/hizmetler/${s.slug}`);
+      if (exists) {
+        md += `- [${s.title}](${domain}/hizmetler/${s.slug}): ${s.metaDescription}\n`;
+      }
     });
     md += `\n`;
   });
-
-  md += `## Yasal Politikalar\n\n`;
-  md += `- [Gizlilik Politikası](${domain}/gizlilik-politikasi): KVKK aydınlatma metni ve kişisel verilerin korunması.\n`;
-  md += `- [Çerez Politikası](${domain}/cerez-politikasi): Sitede kullanılan çerezler ve kullanıcı tercihleri yönetimi.\n`;
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms.txt'), md, 'utf-8');
   console.log('[AI Discovery] Generated llms.txt');
@@ -68,18 +84,29 @@ const generateLlmsTxt = (services) => {
 // 3. Generate llms-full.txt (Comprehensive Context Document)
 const generateLlmsFullTxt = (services) => {
   const domain = 'https://kutupgrup.com';
+
+  const verifiedClaims = [
+    { text: 'Kutup Grup, tüm operasyonlarında sıfır kaza (zero-accident) prensibini benimser.', sourceType: 'company-record', sourceReference: 'ISG el kitabı', verified: true },
+    { text: 'IRATA (Industrial Rope Access Trade Association): İple erişim çalışmalarında küresel standartlara tam uyumlu hizmet.', sourceType: 'certificate', sourceReference: 'IRATA Üyelik No/Teknisyen Sertifikaları', verified: true },
+    { text: 'SPRAT (Society of Professional Rope Access Technicians): Profesyonel iple erişim teknisyenliği standartları kapsamında hizmet yetkinliği.', sourceType: 'certificate', sourceReference: 'SPRAT Teknisyen Sertifikaları', verified: true },
+    { text: 'ISO 9001: Kalite Yönetim Sistemi standartlarında operasyon süreçleri.', sourceType: 'certificate', sourceReference: 'ISO 9001 Belgesi', verified: true },
+    { text: 'ISO 14001: Çevre Yönetim Sistemi standartlarına tam uyum.', sourceType: 'certificate', sourceReference: 'ISO 14001 Belgesi', verified: true },
+    { text: 'ISO 45001: İş Sağlığı ve Güvenliği Yönetim Sistemi sertifikalı çalışma standartları.', sourceType: 'certificate', sourceReference: 'ISO 45001 Belgesi', verified: true }
+  ];
   
   let md = `# Kutup Grup - Detaylı Hizmetler ve Teknik Kapsam\n\n`;
   md += `> Bu doküman, Kutup Grup tarafından sunulan endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik çözümler hakkında detaylı teknik bilgiler, metodolojiler ve standartları içerir.\n\n`;
   
   md += `## Kurumsal Standartlar ve Güvenlik Yaklaşımı\n\n`;
-  md += `Kutup Grup, tüm operasyonlarında sıfır kaza (zero-accident) prensibini benimser. Bu doğrultuda kullanılan uluslararası standartlar ve sertifikasyonlar:\n`;
-  md += `- **IRATA (Industrial Rope Access Trade Association)**: İple erişim çalışmalarında küresel standart.\n`;
-  md += `- **SPRAT (Society of Professional Rope Access Technicians)**: Profesyonel iple erişim teknisyenliği standartları.\n`;
-  md += `- **ISO 9001**: Kalite Yönetim Sistemi.\n`;
-  md += `- **ISO 14001**: Çevre Yönetim Sistemi.\n`;
-  md += `- **ISO 45001**: İş Sağlığı ve Güvenliği Yönetim Sistemi.\n\n`;
+  md += `Kutup Grup, tüm operasyonlarında sıfır kaza prensibini benimser. Bu doğrultuda doğrulanmış kurumsal yetkinlikler ve sertifikasyonlar:\n`;
 
+  verifiedClaims.forEach(claim => {
+    if (claim.verified) {
+      md += `- ${claim.text} (Kaynak: ${claim.sourceReference} [${claim.sourceType}])\n`;
+    }
+  });
+  
+  md += `\n`;
   md += `## Hizmet Detayları\n\n`;
 
   Object.values(services).forEach((s) => {
@@ -145,7 +172,7 @@ const generateLlmsFullTxt = (services) => {
 // Execution
 const run = async () => {
   const services = await getServicesData();
-  generateLlmsTxt(services);
+  await generateLlmsTxt(services);
   generateLlmsFullTxt(services);
 };
 

@@ -526,7 +526,7 @@ export const SERVICES_DATA: Record<string, ServiceContent> = {
                 answer: 'Maliyet, yamaç yüksekliği, erişim zorluğu, temizlenecek alan ve blok sayısına göre değişir. Ortalama 500-2000 TL/m² arasındadır. Ücretsiz keşif ve teklif için iletişime geçebilirsiniz.',
             },
         ],
-        relatedServices: ['sev-ortuleme', 'kaya-bariyeri', 'deflektör-tip-ortuleme'],
+        relatedServices: ['sev-ortuleme', 'kaya-bariyeri', 'deflektor-tip-ortuleme'],
     },
 
     'sev-ortuleme': {
@@ -597,7 +597,7 @@ export const SERVICES_DATA: Record<string, ServiceContent> = {
                 answer: 'Evet, tel örgü sistemleri bitki gelişimine izin verir. Hatta tohumlama ve hidroseeding ile bitki gelişimi teşvik edilir. Bu hem estetik hem de ek stabilizasyon sağlar.',
             },
         ],
-        relatedServices: ['yamac-yuzeyi-temizleme', 'deflektör-tip-ortuleme', 'kaya-bariyeri'],
+        relatedServices: ['yamac-yuzeyi-temizleme', 'deflektor-tip-ortuleme', 'kaya-bariyeri'],
     },
 
     'hassas-endustriyel-alan-korumasi': {
@@ -741,11 +741,11 @@ export const SERVICES_DATA: Record<string, ServiceContent> = {
                 answer: 'Galvaniz çelik sistem 30+ yıl dayanıklıdır. Her darbe sonrası sistem muayene edilmeli, hasar görmüş parçalar değiştirilmelidir. Yıllık periyodik kontrol önerilir.',
             },
         ],
-        relatedServices: ['moloz-bariyer', 'deflektör-tip-ortuleme', 'yamac-yuzeyi-temizleme'],
+        relatedServices: ['moloz-bariyer', 'deflektor-tip-ortuleme', 'yamac-yuzeyi-temizleme'],
     },
 
-    'deflektör-tip-ortuleme': {
-        slug: 'deflektör-tip-ortuleme',
+    'deflektor-tip-ortuleme': {
+        slug: 'deflektor-tip-ortuleme',
         title: 'Deflektör Tip Şev Örtüleme',
         metaDescription: 'Yüksek enerjili kaya düşmelerine karşı deflektör tip örtüleme sistemleri. Çelik halat ağ ile taş düşmesini yönlendirerek güvenli alan yaratıyoruz.',
         keywords: ['deflektör örtüleme', 'çelik halat ağ', 'yönlendirici örtü', 'aktif yamaç koruma', 'high-tensile mesh'],

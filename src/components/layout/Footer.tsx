@@ -103,7 +103,7 @@ export default function Footer() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/hizmetler/deflektör-tip-ortuleme" className="sliding-link">
+                                    <Link href="/hizmetler/deflektor-tip-ortuleme" className="sliding-link">
                                         <span className="bullet"></span>Deflektör Örtüleme
                                     </Link>
                                 </li>

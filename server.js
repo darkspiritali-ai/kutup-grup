@@ -149,43 +149,56 @@ app.post('/api/newsletter', async (req, res) => {
   }
 });
 
-// Force trailing slash redirect to non-trailing slash canonicals
+// Force trailing slash redirect to non-trailing slash canonicals and old slug redirect
 app.use((req, res, next) => {
   // Ignore API requests and static assets
   if (req.path.startsWith('/api/') || req.path.includes('.')) {
     return next();
   }
 
-  // If path ends with slash and is not root, redirect 301 to non-slash canonical URL path
-  if (req.path.substr(-1) === '/' && req.path.length > 1) {
-    const query = req.url.slice(req.path.length);
+  const reqPath = req.path;
+  const decodedPath = decodeURIComponent(reqPath);
+
+  // 301 Redirect for the old Turkish-character slug
+  if (decodedPath === '/hizmetler/deflektör-tip-ortuleme' || reqPath === '/hizmetler/deflekt%C3%B6r-tip-ortuleme') {
     res.header('Cache-Control', 'public, max-age=31536000');
-    return res.redirect(301, req.path.slice(0, -1) + query);
+    return res.redirect(301, '/hizmetler/deflektor-tip-ortuleme');
+  }
+
+  // If path ends with slash and is not root, redirect 301 to non-slash canonical URL path
+  if (reqPath.substr(-1) === '/' && reqPath.length > 1) {
+    const query = req.url.slice(reqPath.length);
+    res.header('Cache-Control', 'public, max-age=31536000');
+    return res.redirect(301, reqPath.slice(0, -1) + query);
   }
   next();
 });
 
-// Serve sitemap.xml with correct content-type
+// Serve sitemap.xml with correct content-type and cache control
 app.get('/sitemap.xml', (req, res) => {
   res.header('Content-Type', 'application/xml');
+  res.header('Cache-Control', 'public, max-age=0, s-maxage=3600, must-revalidate');
   res.sendFile(path.join(__dirname, 'dist', 'sitemap.xml'));
 });
 
-// Serve robots.txt with correct content-type
+// Serve robots.txt with correct content-type and cache control
 app.get('/robots.txt', (req, res) => {
   res.header('Content-Type', 'text/plain');
+  res.header('Cache-Control', 'public, max-age=0, s-maxage=3600, must-revalidate');
   res.sendFile(path.join(__dirname, 'dist', 'robots.txt'));
 });
 
-// Serve llms.txt with correct content-type and encoding
+// Serve llms.txt with correct content-type, encoding and cache control
 app.get('/llms.txt', (req, res) => {
   res.header('Content-Type', 'text/plain; charset=utf-8');
+  res.header('Cache-Control', 'public, max-age=0, s-maxage=3600, must-revalidate');
   res.sendFile(path.join(__dirname, 'dist', 'llms.txt'));
 });
 
-// Serve llms-full.txt with correct content-type and encoding
+// Serve llms-full.txt with correct content-type, encoding and cache control
 app.get('/llms-full.txt', (req, res) => {
   res.header('Content-Type', 'text/plain; charset=utf-8');
+  res.header('Cache-Control', 'public, max-age=0, s-maxage=3600, must-revalidate');
   res.sendFile(path.join(__dirname, 'dist', 'llms-full.txt'));
 });
 

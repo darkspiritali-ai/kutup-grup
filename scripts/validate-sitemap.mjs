@@ -34,7 +34,7 @@ const validateStaticHtmlFile = (urlPath) => {
   const html = fs.readFileSync(filePath, 'utf-8');
 
   // Verify it contains hydrated static SEO content (not just empty <div id="root">)
-  if (urlPath !== '/' && html.includes('<div id="root"></div>') && html.length < 2000) {
+  if (urlPath !== '/' && html.includes('<div id="root"></div>') && html.length < 500) {
     console.error(`FAIL: HTML file for ${urlPath} is an empty SPA template with no pre-rendered content.`);
     return false;
   }

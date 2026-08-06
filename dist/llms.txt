@@ -4,7 +4,9 @@
 
 ## Kurumsal Bilgiler
 
+- [Anasayfa](https://kutupgrup.com/): Şirket ana sayfası ve hizmet grupları tanıtımı.
 - [Hakkımızda](https://kutupgrup.com/hakkimizda): Şirket tarihçesi, vizyonu, değerleri ve kurumsal profili.
+- [Hizmetlerimiz](https://kutupgrup.com/hizmetler): Tüm endüstriyel dağcılık ve jeoteknik çözümlerimizin listesi.
 - [İletişim](https://kutupgrup.com/iletisim): Adres, telefon, e-posta (info@kutupgrup.com) ve çalışma saatleri.
 - [Sıkça Sorulan Sorular (SSS)](https://kutupgrup.com/sss): Hizmetler, güvenlik standartları ve operasyon süreçleri hakkında merak edilenler.
 - [Referanslar](https://kutupgrup.com/referanslar): Tamamlanan saha projeleri ve iş ortakları.
@@ -31,7 +33,7 @@ Yamaç stabilizasyonu, şev örtüleme, kaya bariyeri kurulumu gibi sarp yamaç 
 - [Yamaç Yüzeyi Temizleme](https://kutupgrup.com/hizmetler/yamac-yuzeyi-temizleme): Heyelan riski taşıyan yamaçlarda profesyonel yüzey temizleme hizmetleri. Gevşek kaya temizliği, kök sökümü, tehlikeli blok kaldırma ile güvenli yamaçlar.
 - [Şev Örtüleme Sistemleri](https://kutupgrup.com/hizmetler/sev-ortuleme): Yamaç stabilizasyonu için profesyonel şev örtüleme uygulamaları. Tel örgü, hasır çelik, beton püskürtme ile uzun ömürlü yamaç koruma çözümleri.
 - [Kaya Bariyeri Kurulumu](https://kutupgrup.com/hizmetler/kaya-bariyeri): Kaya düşmesine karşı profesyonel kaya bariyeri kurulumu. Dinamik kaya bariyerleri ile yollar, yerleşim alanları ve kritik tesisleri koruyoruz.
-- [Deflektör Tip Şev Örtüleme](https://kutupgrup.com/hizmetler/deflektör-tip-ortuleme): Yüksek enerjili kaya düşmelerine karşı deflektör tip örtüleme sistemleri. Çelik halat ağ ile taş düşmesini yönlendirerek güvenli alan yaratıyoruz.
+- [Deflektör Tip Şev Örtüleme](https://kutupgrup.com/hizmetler/deflektor-tip-ortuleme): Yüksek enerjili kaya düşmelerine karşı deflektör tip örtüleme sistemleri. Çelik halat ağ ile taş düşmesini yönlendirerek güvenli alan yaratıyoruz.
 - [Moloz Bariyer Sistemleri](https://kutupgrup.com/hizmetler/moloz-bariyer): Moloz ve enkaz düşmesine karşı profesyonel bariyer kurulumu. İnşaat şantiyeleri, yıkım sahaları ve yamaç altı koruması için esnek çözümler.
 - [Gabion Duvar Uygulamaları](https://kutupgrup.com/hizmetler/gabion-duvar): Gabion duvar ve istinat yapıları için profesyonel proje ve uygulama hizmetleri. Doğal taş dolgulu gabion sistemleri ile uzun ömürlü ve estetik çözümler.
 - [Kar ve Çığ Kontrolü Uygulamaları](https://kutupgrup.com/hizmetler/kar-ve-cig-kontrolu): Profesyonel kar ve çığ kontrolü uygulamaları. Çığ bariyeri kurulumu, kar tutucu sistemler, çığ tetikleme ve risk analizi hizmetleri ile can ve mal güvenliğinizi koruyoruz.
@@ -44,7 +46,3 @@ IRATA/SPRAT eğitimleri, stand-by rescue (kurtarma) ve sahne rigging hizmetleri.
 - [SPRAT Eğitimi ve Sertifikasyonu](https://kutupgrup.com/hizmetler/sprat-egitimi): Uluslararası geçerliliği olan SPRAT (Society of Professional Rope Access Technicians) eğitimi ve sertifikasyon programları. Level 1, 2, 3 eğitimleri.
 - [IRATA Eğitimi ve Sertifikasyonu](https://kutupgrup.com/hizmetler/irata-egitimi): Uluslararası IRATA (Industrial Rope Access Trade Association) eğitimi ve sertifikasyonu. Level 1, 2, 3 iple erişim teknisyen eğitimleri.
 
-## Yasal Politikalar
-
-- [Gizlilik Politikası](https://kutupgrup.com/gizlilik-politikasi): KVKK aydınlatma metni ve kişisel verilerin korunması.
-- [Çerez Politikası](https://kutupgrup.com/cerez-politikasi): Sitede kullanılan çerezler ve kullanıcı tercihleri yönetimi.

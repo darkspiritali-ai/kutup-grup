@@ -8,6 +8,10 @@ import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema } fr
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
   const decodedSlug = decodeURIComponent(slug || '');
+  if (decodedSlug === 'deflektör-tip-ortuleme' || slug === 'deflekt%C3%B6r-tip-ortuleme') {
+    return <Navigate to="/hizmetler/deflektor-tip-ortuleme" replace />;
+  }
+
   const service = SERVICES_DATA[decodedSlug];
 
   if (!service) {

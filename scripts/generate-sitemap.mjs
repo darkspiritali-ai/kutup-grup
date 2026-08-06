@@ -25,49 +25,41 @@ const getServicesData = async () => {
   }
 };
 
-// 2. Generate XML Sitemap
-const generateSitemap = (services) => {
+const ROUTE_MANIFEST_PATH = path.resolve(__dirname, '../src/lib/route-manifest.ts');
+
+const generateSitemap = async () => {
   const domain = 'https://kutupgrup.com';
 
-  // Static pages list (Gizlilik and Cerez omitted since they do not carry organic search value)
-  const staticPages = [
-    { path: '', lastmod: null },
-    { path: '/hakkimizda', lastmod: null },
-    { path: '/hizmetler', lastmod: null },
-    { path: '/iletisim', lastmod: null },
-    { path: '/sss', lastmod: null },
-    { path: '/referanslar', lastmod: null }
-  ];
+  let manifest = [];
+  try {
+    const module = await import(ROUTE_MANIFEST_PATH);
+    manifest = module.ROUTE_MANIFEST || [];
+  } catch (error) {
+    console.error('Error importing route manifest for sitemap generation:', error);
+    process.exit(1);
+  }
+
+  // Filter routes that are indexable and should be included in sitemap
+  const sitemapRoutes = manifest.filter(r => r.indexable && r.includeInSitemap);
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-  // Add static routes
-  staticPages.forEach((page) => {
+  sitemapRoutes.forEach((route) => {
     xml += '  <url>\n';
-    xml += `    <loc>${domain}${page.path}</loc>\n`;
-    if (page.lastmod) {
-      xml += `    <lastmod>${page.lastmod}</lastmod>\n`;
+    // Ensure root path doesn't get trailing slash, other paths get full domain prefix
+    const pathSuffix = route.path === '/' ? '' : route.path;
+    xml += `    <loc>${domain}${pathSuffix}</loc>\n`;
+    if (route.updatedAt) {
+      xml += `    <lastmod>${route.updatedAt}</lastmod>\n`;
     }
     xml += '  </url>\n';
-  });
-
-  // Add dynamic service pages
-  let count = staticPages.length;
-  Object.values(services).forEach((s) => {
-    xml += '  <url>\n';
-    xml += `    <loc>${domain}/hizmetler/${s.slug}</loc>\n`;
-    if (s.updatedAt) {
-      xml += `    <lastmod>${s.updatedAt}</lastmod>\n`;
-    }
-    xml += '  </url>\n';
-    count++;
   });
 
   xml += '</urlset>\n';
 
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), xml, 'utf-8');
-  console.log(`[Sitemap] Generated sitemap.xml with ${count} URLs.`);
+  console.log(`[Sitemap] Generated sitemap.xml with ${sitemapRoutes.length} URLs from ROUTE_MANIFEST.`);
 };
 
 // 3. Generate Robots.txt
@@ -108,8 +100,7 @@ Sitemap: https://kutupgrup.com/sitemap.xml
 
 // Execution Flow
 const run = async () => {
-  const services = await getServicesData();
-  generateSitemap(services);
+  await generateSitemap();
   generateRobotsTxt();
 };
 

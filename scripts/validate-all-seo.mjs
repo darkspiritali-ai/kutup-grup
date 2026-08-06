@@ -27,7 +27,10 @@ const runAllSeoValidation = () => {
   // 4. Audit Live Local HTTP Responses & 404 Status Codes
   runScript('node scripts/validate-status-codes.mjs', 'Local HTTP Server & 404 Status Code Validation');
 
-  // 5. Audit AI Discoverability Files (llms.txt / llms-full.txt / robots.txt)
+  // 5. Audit Hydration Parity (pre vs post hydration checks)
+  runScript('node scripts/validate-hydration.mjs', 'Hydration Parity Validation');
+
+  // 6. Audit AI Discoverability Files (llms.txt / llms-full.txt / robots.txt)
   runScript('node scripts/validate-llms.mjs', 'AI Discoverability Validation');
 
   console.log('\n==============================================================================');

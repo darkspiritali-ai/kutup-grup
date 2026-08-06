@@ -37,7 +37,7 @@ const runValidation = () => {
       hasErrors = true;
     }
     // 4. Case sensitivity check
-    if (url !== url.toLowerCase() && !url.includes('deflekt%C3%B6r')) { // ignore encoded upper case chars
+    if (url !== url.toLowerCase()) {
       console.error(`FAIL: URL ${url} contains uppercase characters.`);
       hasErrors = true;
     }
