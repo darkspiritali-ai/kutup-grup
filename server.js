@@ -1,7 +1,16 @@
 const express = require('express');
 const path = require('path');
-const nodemailer = require('nodemailer');
-require('dotenv').config();
+let nodemailer;
+try {
+  nodemailer = require('nodemailer');
+} catch (err) {
+  console.warn('[Warning] nodemailer module could not be loaded:', err.message);
+}
+try {
+  require('dotenv').config();
+} catch (err) {
+  console.warn('[Warning] dotenv module could not be loaded:', err.message);
+}
 
 const app = express();
 
@@ -169,6 +178,14 @@ const server = app.listen(PORT, '0.0.0.0', () => {
 server.on('error', (error) => {
   console.error(`Failed to listen on port ${PORT}:`, error);
   process.exitCode = 1;
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('[Uncaught Exception]:', err);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('[Unhandled Rejection]:', reason);
 });
 
 function shutdown(signal) {
