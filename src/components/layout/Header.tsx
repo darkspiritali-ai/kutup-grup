@@ -9,6 +9,24 @@ import './header.css';
 /* ===== Mega Menu Service Data ===== */
 const MEGA_CATEGORIES = [
   {
+    title: 'Jeoteknik Çözümler',
+    color: '#10B981',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 22L12 2l10 20" /><path d="M6 16h12" />
+      </svg>
+    ),
+    services: [
+      { title: 'Yamaç Yüzeyi Temizleme', href: '/hizmetler/yamac-yuzeyi-temizleme' },
+      { title: 'Şev Örtüleme Sistemleri', href: '/hizmetler/sev-ortuleme' },
+      { title: 'Kaya Bariyeri Kurulumu', href: '/hizmetler/kaya-bariyeri' },
+      { title: 'Deflektör Tip Örtüleme', href: '/hizmetler/deflektör-tip-ortuleme' },
+      { title: 'Moloz Bariyer Sistemleri', href: '/hizmetler/moloz-bariyer' },
+      { title: 'Gabion Duvar', href: '/hizmetler/gabion-duvar' },
+      { title: 'Kar ve Çığ Kontrolü', href: '/hizmetler/kar-ve-cig-kontrolu' },
+    ],
+  },
+  {
     title: 'Endüstriyel Dağcılık',
     color: '#3E92CC',
     icon: (
@@ -25,24 +43,6 @@ const MEGA_CATEGORIES = [
       { title: 'Rüzgar Enerji Santralleri', href: '/hizmetler/ruzgar-enerji-santralleri' },
       { title: 'Hassas Endüstriyel Alan Koruması', href: '/hizmetler/hassas-endustriyel-alan-korumasi' },
       { title: 'Ormanda İple Erişim', href: '/hizmetler/ormanda-iple-erisim-hizmetleri' },
-    ],
-  },
-  {
-    title: 'Jeoteknik Çözümler',
-    color: '#10B981',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 22L12 2l10 20" /><path d="M6 16h12" />
-      </svg>
-    ),
-    services: [
-      { title: 'Yamaç Yüzeyi Temizleme', href: '/hizmetler/yamac-yuzeyi-temizleme' },
-      { title: 'Şev Örtüleme Sistemleri', href: '/hizmetler/sev-ortuleme' },
-      { title: 'Kaya Bariyeri Kurulumu', href: '/hizmetler/kaya-bariyeri' },
-      { title: 'Deflektör Tip Örtüleme', href: '/hizmetler/deflektör-tip-ortuleme' },
-      { title: 'Moloz Bariyer Sistemleri', href: '/hizmetler/moloz-bariyer' },
-      { title: 'Gabion Duvar', href: '/hizmetler/gabion-duvar' },
-      { title: 'Kar ve Çığ Kontrolü', href: '/hizmetler/kar-ve-cig-kontrolu' },
     ],
   },
   {
