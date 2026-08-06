@@ -160,6 +160,18 @@ app.get('/robots.txt', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'robots.txt'));
 });
 
+// Serve llms.txt with correct content-type and encoding
+app.get('/llms.txt', (req, res) => {
+  res.header('Content-Type', 'text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'dist', 'llms.txt'));
+});
+
+// Serve llms-full.txt with correct content-type and encoding
+app.get('/llms-full.txt', (req, res) => {
+  res.header('Content-Type', 'text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'dist', 'llms-full.txt'));
+});
+
 // Serve static files from the dist directory
 app.use(express.static(path.join(__dirname, 'dist')));
 

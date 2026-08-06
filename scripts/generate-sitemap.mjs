@@ -90,6 +90,29 @@ const generateRobotsTxt = () => {
 Allow: /
 Disallow: /api/
 
+# Block AI Model Training Crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+# Allow AI Search Crawlers for Discovery Visibility
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://kutupgrup.com/sitemap.xml
 `;
 
