@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/generate-sitemap.mjs",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src",
+    "validate:sitemap": "node scripts/validate-sitemap.mjs",
     "start": "node server.js"
   },
   "dependencies": {

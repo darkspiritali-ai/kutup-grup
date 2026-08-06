@@ -148,6 +148,18 @@ app.post('/api/newsletter', async (req, res) => {
   }
 });
 
+// Serve sitemap.xml with correct content-type
+app.get('/sitemap.xml', (req, res) => {
+  res.header('Content-Type', 'application/xml');
+  res.sendFile(path.join(__dirname, 'dist', 'sitemap.xml'));
+});
+
+// Serve robots.txt with correct content-type
+app.get('/robots.txt', (req, res) => {
+  res.header('Content-Type', 'text/plain');
+  res.sendFile(path.join(__dirname, 'dist', 'robots.txt'));
+});
+
 // Serve static files from the dist directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
