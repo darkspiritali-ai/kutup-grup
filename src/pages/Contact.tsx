@@ -74,21 +74,31 @@ export default function ContactPageClient() {
         setSubmitStatus('idle');
 
         try {
-            // Simulate network request delay for a native premium UX
-            await new Promise(resolve => setTimeout(resolve, 800));
-
-            console.log('Form submitted client-side (static export mode):', formData);
-
-            setSubmitStatus('success');
-            setFormData({
-                ad_soyad: '',
-                email: '',
-                telefon: '',
-                konu: '',
-                mesaj: '',
-                kvkk_onay: false,
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
             });
-            setErrors({});
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                setSubmitStatus('success');
+                setFormData({
+                    ad_soyad: '',
+                    email: '',
+                    telefon: '',
+                    konu: '',
+                    mesaj: '',
+                    kvkk_onay: false,
+                });
+                setErrors({});
+            } else {
+                console.error('Form submission failed:', data.message);
+                setSubmitStatus('error');
+            }
         } catch (error) {
             console.error('Form submission error:', error);
             setSubmitStatus('error');

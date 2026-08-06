@@ -13,18 +13,29 @@ export default function Newsletter() {
         setStatus('loading');
 
         try {
-            // TODO: Implement newsletter API endpoint
-            // For now, just simulate success
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            const response = await fetch('/api/newsletter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email }),
+            });
 
-            setStatus('success');
-            setMessage('Başarıyla abone oldunuz! E-postanızı kontrol edin.');
-            setEmail('');
+            const data = await response.json();
 
-            setTimeout(() => {
-                setStatus('idle');
-                setMessage('');
-            }, 5000);
+            if (response.ok && data.success) {
+                setStatus('success');
+                setMessage('Başarıyla abone oldunuz!');
+                setEmail('');
+
+                setTimeout(() => {
+                    setStatus('idle');
+                    setMessage('');
+                }, 5000);
+            } else {
+                setStatus('error');
+                setMessage(data.message || 'Bir hata oluştu. Lütfen tekrar deneyin.');
+            }
         } catch {
             setStatus('error');
             setMessage('Bir hata oluştu. Lütfen tekrar deneyin.');
