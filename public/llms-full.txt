@@ -1039,4 +1039,4 @@ Aşağıdaki yazılar Kutup Grup blogunda yayınlanan editoryal içeriklerdir. K
 - **Telefon**: +90 (533) 517 66 09
 - **İstanbul Genel Müdürlük**: Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul
 - **Balıkesir Şubesi**: Soma Cd. 111A Altıeylül Balıkesir / Türkiye
-- **Son Güncelleme**: 15.09.2026
+- **Son Güncelleme**: 16.09.2026

@@ -2,21 +2,25 @@
 
 import styles from './legal.module.css';
 import { CONSENT_MANAGE_EVENT } from '@/lib/analytics';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 export default function CerezPolitikasiClient() {
     return (
-        <div className={styles.legalPage}>
-            <section className={styles.hero}>
-                <div className={styles.heroContent}>
-                    <h1 className={styles.heroTitle}>Çerez Politikası</h1>
-                    <p className={styles.heroSubtitle}>
-                        Son Güncelleme: 15 Şubat 2026
-                    </p>
-                </div>
-            </section>
+        <>
+            <Header />
+            <div className={styles.legalPage}>
+                <section className={styles.hero}>
+                    <div className={styles.heroContent}>
+                        <h1 className={styles.heroTitle}>Çerez Politikası</h1>
+                        <p className={styles.heroSubtitle}>
+                            Son Güncelleme: 15 Şubat 2026
+                        </p>
+                    </div>
+                </section>
 
-            <div className={styles.container}>
-                <article className={styles.content}>
+                <div className={styles.container}>
+                    <article className={styles.content}>
                     <section className={styles.section}>
                         <h2>1. Giriş</h2>
                         <p>
@@ -188,8 +192,10 @@ export default function CerezPolitikasiClient() {
                             <p><strong>Telefon:</strong> +90 (533) 517 66 09</p>
                         </div>
                     </section>
-                </article>
+                    </article>
+                </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 }

@@ -10135,337 +10135,345 @@ var legal_module_default = {
 //#endregion
 //#region src/pages/Privacy.tsx
 function GizlilikPolitikasiClient() {
-	return /* @__PURE__ */ jsxs("div", {
-		className: legal_module_default.legalPage,
-		children: [/* @__PURE__ */ jsx("section", {
-			className: legal_module_default.hero,
-			children: /* @__PURE__ */ jsxs("div", {
-				className: legal_module_default.heroContent,
-				children: [/* @__PURE__ */ jsx("h1", {
-					className: legal_module_default.heroTitle,
-					children: "Gizlilik Politikası ve KVKK"
-				}), /* @__PURE__ */ jsx("p", {
-					className: legal_module_default.heroSubtitle,
-					children: "Son Güncelleme: 15 Şubat 2026"
-				})]
-			})
-		}), /* @__PURE__ */ jsx("div", {
-			className: legal_module_default.container,
-			children: /* @__PURE__ */ jsxs("article", {
-				className: legal_module_default.content,
-				children: [
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "1. Giriş" }), /* @__PURE__ */ jsx("p", { children: "Kutup Grup olarak, kişisel verilerinizin gizliliğini ve güvenliğini korumayı en önemli önceliklerimiz arasında tutmaktayız. Bu Gizlilik Politikası, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "2. Veri Sorumlusu" }),
-							/* @__PURE__ */ jsx("p", { children: "KVKK kapsamında veri sorumlusu Kutup Grup olup, toplanan kişisel verilerinizin işlenme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan taraf Kutup Grup'tur." }),
-							/* @__PURE__ */ jsxs("div", {
-								className: legal_module_default.contactBox,
-								children: [
-									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Adres:" }), " Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul"] }),
-									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " kvkk@kutupgrup.com"] }),
-									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })
-								]
-							})
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "3. Toplanan Kişisel Veriler" }),
-							/* @__PURE__ */ jsx("p", { children: "Şirketimiz tarafından toplanan kişisel veriler aşağıdaki kategorilerde sınıflandırılmaktadır:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Kimlik Bilgileri:" }), " Ad, soyad, T.C. kimlik numarası (yasal zorunluluk halinde)"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İletişim Bilgileri:" }), " Telefon numarası, e-posta adresi, açık adres"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Müşteri İşlem Bilgileri:" }), " Talep edilen hizmet bilgileri, proje detayları, teklif bilgileri"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İşlem Güvenliği Bilgileri:" }), " IP adresi, çerez verileri, oturum kayıtları"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Finansal Bilgiler:" }), " Fatura bilgileri, ödeme bilgileri (ödeme işlemcisi üzerinden)"] })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "4. Kişisel Verilerin İşlenme Amaçları" }),
-							/* @__PURE__ */ jsx("p", { children: "Toplanan kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsx("li", { children: "Hizmet taleplerinizi değerlendirmek ve teklif sunmak" }),
-								/* @__PURE__ */ jsx("li", { children: "Sözleşme süreçlerini yürütmek ve hizmet sağlamak" }),
-								/* @__PURE__ */ jsx("li", { children: "Faturalandırma ve ödeme işlemlerini gerçekleştirmek" }),
-								/* @__PURE__ */ jsx("li", { children: "Yasal yükümlülükleri yerine getirmek" }),
-								/* @__PURE__ */ jsx("li", { children: "Müşteri memnuniyetini ölçmek ve hizmet kalitesini artırmak" }),
-								/* @__PURE__ */ jsx("li", { children: "İstatistiksel analiz ve raporlama yapmak" }),
-								/* @__PURE__ */ jsx("li", { children: "Pazarlama ve iletişim faaliyetleri yürütmek (açık rıza ile)" })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "5. Kişisel Verilerin Aktarımı" }),
-							/* @__PURE__ */ jsx("p", { children: "Kişisel verileriniz, KVKK'nın 8. ve 9. maddelerinde belirtilen şartlar çerçevesinde ve bu Gizlilik Politikası'nda belirtilen amaçlarla sınırlı olarak:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsx("li", { children: "İş ortaklarımız ve tedarikçilerimiz ile (proje gereksinimleri kapsamında)" }),
-								/* @__PURE__ */ jsx("li", { children: "Yasal yükümlülükler gereği kamu kurum ve kuruluşları ile" }),
-								/* @__PURE__ */ jsx("li", { children: "Hukuki işlemlerin yürütülmesi amacıyla hukuk danışmanları ve denetçiler ile" }),
-								/* @__PURE__ */ jsx("li", { children: "Bilişim altyapı hizmeti sağlayıcıları ile (veri güvenliği sağlanarak)" })
-							] }),
-							/* @__PURE__ */ jsx("p", { children: "paylaşılabilmektedir." })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "6. Kişisel Verilerin Saklanma Süresi" }),
-							/* @__PURE__ */ jsx("p", { children: "Kişisel verileriniz, ilgili mevzuatta öngörülen ve işlendikleri amaç için gerekli olan azami süre ve herhalde kanuni zamanaşımı süreleri kadar muhafaza edilmektedir. Saklama süreleri sona erdiğinde kişisel veriler silinir, yok edilir veya anonim hale getirilir." }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Sözleşme ve Fatura Bilgileri:" }), " 10 yıl (Vergi Usul Kanunu gereği)"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İletişim Kayıtları:" }), " 2 yıl"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Pazarlama Onayları:" }), " Onay geri çekilene kadar"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Website Logları:" }), " 6 ay"] })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "7. KVKK Kapsamındaki Haklarınız" }),
-							/* @__PURE__ */ jsx("p", { children: "KVKK'nın 11. maddesi uyarınca, kişisel veri sahibi olarak aşağıdaki haklara sahipsiniz:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin işlenip işlenmediğini öğrenme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme" }),
-								/* @__PURE__ */ jsx("li", { children: "Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme" }),
-								/* @__PURE__ */ jsx("li", { children: "KVKK'da öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin aktarıldığı üçüncü kişilere yukarıdaki değişikliklerin bildirilmesini isteme" }),
-								/* @__PURE__ */ jsx("li", { children: "İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize sonuç çıkmasına itiraz etme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme" })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "8. Haklarınızı Kullanma" }),
-							/* @__PURE__ */ jsx("p", { children: "Yukarıda belirtilen haklarınızı kullanmak için kimliğinizi tespit edici belgeler ile birlikte talebinizi;" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Yazılı olarak:" }), " Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul adresine"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta ile:" }), " kvkk@kutupgrup.com adresine"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "KEP adresi ile:" }), " kutupgrup@hs03.kep.tr adresine"] })
-							] }),
-							/* @__PURE__ */ jsx("p", { children: "iletebilirsiniz. Talebiniz en geç 30 gün içinde ücretsiz olarak sonuçlandırılacaktır. Ancak, işlemin ayrıca bir maliyeti gerektirmesi hâlinde, Kişisel Verileri Koruma Kurulu tarafından belirlenen tarifedeki ücret alınabilir." })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "9. Çerezler (Cookies)" }), /* @__PURE__ */ jsxs("p", { children: [
-							"Web sitemizde kullanıcı deneyimini geliştirmek amacıyla çerezler kullanılmaktadır. Çerezlerin kullanımı hakkında detaylı bilgi için ",
-							/* @__PURE__ */ jsx("a", {
-								href: "/cerez-politikasi",
-								children: "Çerez Politikamızı"
-							}),
-							" inceleyebilirsiniz."
-						] })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "10. Güvenlik" }), /* @__PURE__ */ jsx("p", { children: "Kişisel verilerinizin güvenliğini sağlamak için teknik ve idari tedbirler alınmaktadır. Verileriniz, yetkisiz erişime, kaybolmaya, kötüye kullanıma karşı korunmaktadır. SSL sertifikası, güvenlik duvarları, şifreleme teknolojileri ve erişim kontrolleri kullanılarak verileriniz korunmaktadır." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "11. Değişiklikler" }), /* @__PURE__ */ jsx("p", { children: "Bu Gizlilik Politikası'nda yapılacak değişiklikler web sitemizde yayınlanacaktır. Politika'nın güncel versiyonunu düzenli olarak kontrol etmenizi öneririz." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "12. İletişim" }),
-							/* @__PURE__ */ jsx("p", { children: "Gizlilik Politikamız ile ilgili sorularınız için bizimle iletişime geçebilirsiniz:" }),
-							/* @__PURE__ */ jsxs("div", {
-								className: legal_module_default.contactBox,
-								children: [/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " kvkk@kutupgrup.com"] }), /* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })]
-							})
-						]
-					})
-				]
-			})
-		})]
-	});
+	return /* @__PURE__ */ jsxs(Fragment, { children: [
+		/* @__PURE__ */ jsx(Header, {}),
+		/* @__PURE__ */ jsxs("div", {
+			className: legal_module_default.legalPage,
+			children: [/* @__PURE__ */ jsx("section", {
+				className: legal_module_default.hero,
+				children: /* @__PURE__ */ jsxs("div", {
+					className: legal_module_default.heroContent,
+					children: [/* @__PURE__ */ jsx("h1", {
+						className: legal_module_default.heroTitle,
+						children: "Gizlilik Politikası ve KVKK"
+					}), /* @__PURE__ */ jsx("p", {
+						className: legal_module_default.heroSubtitle,
+						children: "Son Güncelleme: 15 Şubat 2026"
+					})]
+				})
+			}), /* @__PURE__ */ jsx("div", {
+				className: legal_module_default.container,
+				children: /* @__PURE__ */ jsxs("article", {
+					className: legal_module_default.content,
+					children: [
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [/* @__PURE__ */ jsx("h2", { children: "1. Giriş" }), /* @__PURE__ */ jsx("p", { children: "Kutup Grup olarak, kişisel verilerinizin gizliliğini ve güvenliğini korumayı en önemli önceliklerimiz arasında tutmaktayız. Bu Gizlilik Politikası, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır." })]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "2. Veri Sorumlusu" }),
+								/* @__PURE__ */ jsx("p", { children: "KVKK kapsamında veri sorumlusu Kutup Grup olup, toplanan kişisel verilerinizin işlenme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan taraf Kutup Grup'tur." }),
+								/* @__PURE__ */ jsxs("div", {
+									className: legal_module_default.contactBox,
+									children: [
+										/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Adres:" }), " Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul"] }),
+										/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " kvkk@kutupgrup.com"] }),
+										/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })
+									]
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "3. Toplanan Kişisel Veriler" }),
+								/* @__PURE__ */ jsx("p", { children: "Şirketimiz tarafından toplanan kişisel veriler aşağıdaki kategorilerde sınıflandırılmaktadır:" }),
+								/* @__PURE__ */ jsxs("ul", { children: [
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Kimlik Bilgileri:" }), " Ad, soyad, T.C. kimlik numarası (yasal zorunluluk halinde)"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İletişim Bilgileri:" }), " Telefon numarası, e-posta adresi, açık adres"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Müşteri İşlem Bilgileri:" }), " Talep edilen hizmet bilgileri, proje detayları, teklif bilgileri"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İşlem Güvenliği Bilgileri:" }), " IP adresi, çerez verileri, oturum kayıtları"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Finansal Bilgiler:" }), " Fatura bilgileri, ödeme bilgileri (ödeme işlemcisi üzerinden)"] })
+								] })
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "4. Kişisel Verilerin İşlenme Amaçları" }),
+								/* @__PURE__ */ jsx("p", { children: "Toplanan kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:" }),
+								/* @__PURE__ */ jsxs("ul", { children: [
+									/* @__PURE__ */ jsx("li", { children: "Hizmet taleplerinizi değerlendirmek ve teklif sunmak" }),
+									/* @__PURE__ */ jsx("li", { children: "Sözleşme süreçlerini yürütmek ve hizmet sağlamak" }),
+									/* @__PURE__ */ jsx("li", { children: "Faturalandırma ve ödeme işlemlerini gerçekleştirmek" }),
+									/* @__PURE__ */ jsx("li", { children: "Yasal yükümlülükleri yerine getirmek" }),
+									/* @__PURE__ */ jsx("li", { children: "Müşteri memnuniyetini ölçmek ve hizmet kalitesini artırmak" }),
+									/* @__PURE__ */ jsx("li", { children: "İstatistiksel analiz ve raporlama yapmak" }),
+									/* @__PURE__ */ jsx("li", { children: "Pazarlama ve iletişim faaliyetleri yürütmek (açık rıza ile)" })
+								] })
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "5. Kişisel Verilerin Aktarımı" }),
+								/* @__PURE__ */ jsx("p", { children: "Kişisel verileriniz, KVKK'nın 8. ve 9. maddelerinde belirtilen şartlar çerçevesinde ve bu Gizlilik Politikası'nda belirtilen amaçlarla sınırlı olarak:" }),
+								/* @__PURE__ */ jsxs("ul", { children: [
+									/* @__PURE__ */ jsx("li", { children: "İş ortaklarımız ve tedarikçilerimiz ile (proje gereksinimleri kapsamında)" }),
+									/* @__PURE__ */ jsx("li", { children: "Yasal yükümlülükler gereği kamu kurum ve kuruluşları ile" }),
+									/* @__PURE__ */ jsx("li", { children: "Hukuki işlemlerin yürütülmesi amacıyla hukuk danışmanları ve denetçiler ile" }),
+									/* @__PURE__ */ jsx("li", { children: "Bilişim altyapı hizmeti sağlayıcıları ile (veri güvenliği sağlanarak)" })
+								] }),
+								/* @__PURE__ */ jsx("p", { children: "paylaşılabilmektedir." })
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "6. Kişisel Verilerin Saklanma Süresi" }),
+								/* @__PURE__ */ jsx("p", { children: "Kişisel verileriniz, ilgili mevzuatta öngörülen ve işlendikleri amaç için gerekli olan azami süre ve herhalde kanuni zamanaşımı süreleri kadar muhafaza edilmektedir. Saklama süreleri sona erdiğinde kişisel veriler silinir, yok edilir veya anonim hale getirilir." }),
+								/* @__PURE__ */ jsxs("ul", { children: [
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Sözleşme ve Fatura Bilgileri:" }), " 10 yıl (Vergi Usul Kanunu gereği)"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İletişim Kayıtları:" }), " 2 yıl"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Pazarlama Onayları:" }), " Onay geri çekilene kadar"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Website Logları:" }), " 6 ay"] })
+								] })
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "7. KVKK Kapsamındaki Haklarınız" }),
+								/* @__PURE__ */ jsx("p", { children: "KVKK'nın 11. maddesi uyarınca, kişisel veri sahibi olarak aşağıdaki haklara sahipsiniz:" }),
+								/* @__PURE__ */ jsxs("ul", { children: [
+									/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin işlenip işlenmediğini öğrenme" }),
+									/* @__PURE__ */ jsx("li", { children: "Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme" }),
+									/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme" }),
+									/* @__PURE__ */ jsx("li", { children: "Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme" }),
+									/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme" }),
+									/* @__PURE__ */ jsx("li", { children: "KVKK'da öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme" }),
+									/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin aktarıldığı üçüncü kişilere yukarıdaki değişikliklerin bildirilmesini isteme" }),
+									/* @__PURE__ */ jsx("li", { children: "İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize sonuç çıkmasına itiraz etme" }),
+									/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme" })
+								] })
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "8. Haklarınızı Kullanma" }),
+								/* @__PURE__ */ jsx("p", { children: "Yukarıda belirtilen haklarınızı kullanmak için kimliğinizi tespit edici belgeler ile birlikte talebinizi;" }),
+								/* @__PURE__ */ jsxs("ul", { children: [
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Yazılı olarak:" }), " Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul adresine"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta ile:" }), " kvkk@kutupgrup.com adresine"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "KEP adresi ile:" }), " kutupgrup@hs03.kep.tr adresine"] })
+								] }),
+								/* @__PURE__ */ jsx("p", { children: "iletebilirsiniz. Talebiniz en geç 30 gün içinde ücretsiz olarak sonuçlandırılacaktır. Ancak, işlemin ayrıca bir maliyeti gerektirmesi hâlinde, Kişisel Verileri Koruma Kurulu tarafından belirlenen tarifedeki ücret alınabilir." })
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [/* @__PURE__ */ jsx("h2", { children: "9. Çerezler (Cookies)" }), /* @__PURE__ */ jsxs("p", { children: [
+								"Web sitemizde kullanıcı deneyimini geliştirmek amacıyla çerezler kullanılmaktadır. Çerezlerin kullanımı hakkında detaylı bilgi için ",
+								/* @__PURE__ */ jsx("a", {
+									href: "/cerez-politikasi",
+									children: "Çerez Politikamızı"
+								}),
+								" inceleyebilirsiniz."
+							] })]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [/* @__PURE__ */ jsx("h2", { children: "10. Güvenlik" }), /* @__PURE__ */ jsx("p", { children: "Kişisel verilerinizin güvenliğini sağlamak için teknik ve idari tedbirler alınmaktadır. Verileriniz, yetkisiz erişime, kaybolmaya, kötüye kullanıma karşı korunmaktadır. SSL sertifikası, güvenlik duvarları, şifreleme teknolojileri ve erişim kontrolleri kullanılarak verileriniz korunmaktadır." })]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [/* @__PURE__ */ jsx("h2", { children: "11. Değişiklikler" }), /* @__PURE__ */ jsx("p", { children: "Bu Gizlilik Politikası'nda yapılacak değişiklikler web sitemizde yayınlanacaktır. Politika'nın güncel versiyonunu düzenli olarak kontrol etmenizi öneririz." })]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "12. İletişim" }),
+								/* @__PURE__ */ jsx("p", { children: "Gizlilik Politikamız ile ilgili sorularınız için bizimle iletişime geçebilirsiniz:" }),
+								/* @__PURE__ */ jsxs("div", {
+									className: legal_module_default.contactBox,
+									children: [/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " kvkk@kutupgrup.com"] }), /* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })]
+								})
+							]
+						})
+					]
+				})
+			})]
+		}),
+		/* @__PURE__ */ jsx(Footer, {})
+	] });
 }
 //#endregion
 //#region src/pages/Cookies.tsx
 function CerezPolitikasiClient() {
-	return /* @__PURE__ */ jsxs("div", {
-		className: legal_module_default.legalPage,
-		children: [/* @__PURE__ */ jsx("section", {
-			className: legal_module_default.hero,
-			children: /* @__PURE__ */ jsxs("div", {
-				className: legal_module_default.heroContent,
-				children: [/* @__PURE__ */ jsx("h1", {
-					className: legal_module_default.heroTitle,
-					children: "Çerez Politikası"
-				}), /* @__PURE__ */ jsx("p", {
-					className: legal_module_default.heroSubtitle,
-					children: "Son Güncelleme: 15 Şubat 2026"
-				})]
-			})
-		}), /* @__PURE__ */ jsx("div", {
-			className: legal_module_default.container,
-			children: /* @__PURE__ */ jsxs("article", {
-				className: legal_module_default.content,
-				children: [
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "1. Giriş" }), /* @__PURE__ */ jsx("p", { children: "Bu Çerez Politikası, Kutup Grup'un web sitesinde (kutupgrup.com) kullanılan çerezler ve benzeri teknolojiler hakkında sizi bilgilendirmek amacıyla hazırlanmıştır. Web sitemizi ziyaret ettiğinizde çerezlerin kullanımına ilişkin tercihlerinizi belirtebilirsiniz." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "2. Çerez Nedir?" }), /* @__PURE__ */ jsx("p", { children: "Çerezler, bir web sitesini ziyaret ettiğinizde bilgisayarınıza veya mobil cihazınıza kaydedilen küçük metin dosyalarıdır.  Çerezler, web sitelerinin daha verimli çalışmasını sağlamak ve web sitesi sahiplerine bilgi sağlamak için yaygın olarak kullanılır." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "3. Çerez Türleri" }),
-							/* @__PURE__ */ jsx("p", { children: "Web sitemizde kullanılan çerezler aşağıdaki kategorilerde sınıflandırılabilir:" }),
-							/* @__PURE__ */ jsx("div", {
-								className: legal_module_default.tableContainer,
-								children: /* @__PURE__ */ jsxs("table", {
-									className: legal_module_default.table,
-									children: [/* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { children: [
-										/* @__PURE__ */ jsx("th", { children: "Çerez Türü" }),
-										/* @__PURE__ */ jsx("th", { children: "Amaç" }),
-										/* @__PURE__ */ jsx("th", { children: "Süre" })
-									] }) }), /* @__PURE__ */ jsxs("tbody", { children: [
-										/* @__PURE__ */ jsxs("tr", { children: [
-											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Zorunlu Çerezler" }) }),
-											/* @__PURE__ */ jsx("td", { children: "Web sitesinin temel işlevlerini yerine getirmesi için gereklidir" }),
-											/* @__PURE__ */ jsx("td", { children: "Oturum / Kalıcı" })
-										] }),
-										/* @__PURE__ */ jsxs("tr", { children: [
-											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Performans Çerezleri" }) }),
-											/* @__PURE__ */ jsx("td", { children: "Web sitesinin performansını analiz etmek ve iyileştirmek için kullanılır" }),
-											/* @__PURE__ */ jsx("td", { children: "1-2 yıl" })
-										] }),
-										/* @__PURE__ */ jsxs("tr", { children: [
-											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "İşlevsellik Çerezleri" }) }),
-											/* @__PURE__ */ jsx("td", { children: "Tercihlerinizi hatırlamak ve kişiselleştirilmiş deneyim sunmak için kullanılır" }),
-											/* @__PURE__ */ jsx("td", { children: "1 yıl" })
-										] }),
-										/* @__PURE__ */ jsxs("tr", { children: [
-											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Hedefleme/Reklam Çerezleri" }) }),
-											/* @__PURE__ */ jsx("td", { children: "İlgi alanlarınıza uygun reklamlar göstermek için kullanılır" }),
-											/* @__PURE__ */ jsx("td", { children: "1-2 yıl" })
-										] })
-									] })]
-								})
-							})
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "4. Kullandığımız Çerezler" }),
-							/* @__PURE__ */ jsx("h3", { children: "4.1. Zorunlu Çerezler" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Oturum Çerezleri:" }), " Web sitesinde gezinmenizi sağlar ve güvenlik için gereklidir"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Form Çerezleri:" }), " İletişim formlarının doğru çalışmasını sağlar"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Güvenlik Çerezleri:" }), " Güvenlik önlemlerini destekler ve kötüye kullanımı önler"] })
-							] }),
-							/* @__PURE__ */ jsx("h3", { children: "4.2. Analitik Çerezler" }),
-							/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Google Analytics:" }), " Ziyaretçi istatistikleri, sayfa görüntülemeleri, kaynak analizi"] }), /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Kullanım verileri:" }), " Hangi sayfaların ziyaret edildiği, ne kadar süre kalındığı"] })] }),
-							/* @__PURE__ */ jsx("h3", { children: "4.3. İşlevsellik Çerezleri" }),
-							/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Dil tercihleri:" }), " Seçtiğiniz dil ayarını hatırlar"] }), /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Filtreleme tercihleri:" }), " Hizmet filtreleme seçimlerinizi saklar"] })] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "5. Üçüncü Taraf Çerezleri" }),
-							/* @__PURE__ */ jsx("p", { children: "Web sitemizde aşağıdaki üçüncü taraf hizmetleri kullanılmaktadır:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [
-									/* @__PURE__ */ jsx("strong", { children: "Google Analytics:" }),
-									" Web sitesi performansını ve kullanıcı davranışlarını analiz etmek için. Daha fazla bilgi için: ",
-									/* @__PURE__ */ jsx("a", {
-										href: "https://policies.google.com/privacy",
-										target: "_blank",
-										rel: "noopener",
-										children: "Google Gizlilik Politikası"
+	return /* @__PURE__ */ jsxs(Fragment, { children: [
+		/* @__PURE__ */ jsx(Header, {}),
+		/* @__PURE__ */ jsxs("div", {
+			className: legal_module_default.legalPage,
+			children: [/* @__PURE__ */ jsx("section", {
+				className: legal_module_default.hero,
+				children: /* @__PURE__ */ jsxs("div", {
+					className: legal_module_default.heroContent,
+					children: [/* @__PURE__ */ jsx("h1", {
+						className: legal_module_default.heroTitle,
+						children: "Çerez Politikası"
+					}), /* @__PURE__ */ jsx("p", {
+						className: legal_module_default.heroSubtitle,
+						children: "Son Güncelleme: 15 Şubat 2026"
+					})]
+				})
+			}), /* @__PURE__ */ jsx("div", {
+				className: legal_module_default.container,
+				children: /* @__PURE__ */ jsxs("article", {
+					className: legal_module_default.content,
+					children: [
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [/* @__PURE__ */ jsx("h2", { children: "1. Giriş" }), /* @__PURE__ */ jsx("p", { children: "Bu Çerez Politikası, Kutup Grup'un web sitesinde (kutupgrup.com) kullanılan çerezler ve benzeri teknolojiler hakkında sizi bilgilendirmek amacıyla hazırlanmıştır. Web sitemizi ziyaret ettiğinizde çerezlerin kullanımına ilişkin tercihlerinizi belirtebilirsiniz." })]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [/* @__PURE__ */ jsx("h2", { children: "2. Çerez Nedir?" }), /* @__PURE__ */ jsx("p", { children: "Çerezler, bir web sitesini ziyaret ettiğinizde bilgisayarınıza veya mobil cihazınıza kaydedilen küçük metin dosyalarıdır.  Çerezler, web sitelerinin daha verimli çalışmasını sağlamak ve web sitesi sahiplerine bilgi sağlamak için yaygın olarak kullanılır." })]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "3. Çerez Türleri" }),
+								/* @__PURE__ */ jsx("p", { children: "Web sitemizde kullanılan çerezler aşağıdaki kategorilerde sınıflandırılabilir:" }),
+								/* @__PURE__ */ jsx("div", {
+									className: legal_module_default.tableContainer,
+									children: /* @__PURE__ */ jsxs("table", {
+										className: legal_module_default.table,
+										children: [/* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { children: [
+											/* @__PURE__ */ jsx("th", { children: "Çerez Türü" }),
+											/* @__PURE__ */ jsx("th", { children: "Amaç" }),
+											/* @__PURE__ */ jsx("th", { children: "Süre" })
+										] }) }), /* @__PURE__ */ jsxs("tbody", { children: [
+											/* @__PURE__ */ jsxs("tr", { children: [
+												/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Zorunlu Çerezler" }) }),
+												/* @__PURE__ */ jsx("td", { children: "Web sitesinin temel işlevlerini yerine getirmesi için gereklidir" }),
+												/* @__PURE__ */ jsx("td", { children: "Oturum / Kalıcı" })
+											] }),
+											/* @__PURE__ */ jsxs("tr", { children: [
+												/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Performans Çerezleri" }) }),
+												/* @__PURE__ */ jsx("td", { children: "Web sitesinin performansını analiz etmek ve iyileştirmek için kullanılır" }),
+												/* @__PURE__ */ jsx("td", { children: "1-2 yıl" })
+											] }),
+											/* @__PURE__ */ jsxs("tr", { children: [
+												/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "İşlevsellik Çerezleri" }) }),
+												/* @__PURE__ */ jsx("td", { children: "Tercihlerinizi hatırlamak ve kişiselleştirilmiş deneyim sunmak için kullanılır" }),
+												/* @__PURE__ */ jsx("td", { children: "1 yıl" })
+											] }),
+											/* @__PURE__ */ jsxs("tr", { children: [
+												/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Hedefleme/Reklam Çerezleri" }) }),
+												/* @__PURE__ */ jsx("td", { children: "İlgi alanlarınıza uygun reklamlar göstermek için kullanılır" }),
+												/* @__PURE__ */ jsx("td", { children: "1-2 yıl" })
+											] })
+										] })]
 									})
-								] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Google Maps:" }), " Konum bilgilerini görüntülemek için."] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Font Providers (Google Fonts):" }), " Web fontlarını yüklemek için."] })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "6. Çerezleri Nasıl Kontrol Edebilirsiniz?" }),
-							/* @__PURE__ */ jsx("p", { children: "Çerezleri kontrol etmek ve yönetmek için tarayıcı ayarlarınızı kullanabilirsiniz. Çoğu tarayıcı otomatik olarak çerezleri kabul eder, ancak bunu değiştirmek için tarayıcı ayarlarınızı düzenleyebilirsiniz." }),
-							/* @__PURE__ */ jsx("h3", { children: "Popüler Tarayıcılarda Çerez Ayarları:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Chrome:" }), " Ayarlar → Gizlilik ve güvenlik → Çerezler ve diğer site verileri"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Firefox:" }), " Ayarlar → Gizlilik ve Güvenlik → Çerezler ve Site Verileri"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Safari:" }), " Tercihler → Gizlilik → Çerezleri ve web sitesi verilerini yönet"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Edge:" }), " Ayarlar → Çerezler ve site izinleri → Çerezleri yönet ve sil"] })
-							] }),
-							/* @__PURE__ */ jsx("div", {
-								className: legal_module_default.warningBox,
-								children: /* @__PURE__ */ jsxs("p", { children: [
-									"⚠️ ",
-									/* @__PURE__ */ jsx("strong", { children: "Önemli:" }),
-									" Çerezleri tamamen devre dışı bırakırsanız, web sitemizin bazı özellikleri düzgün çalışmayabilir veya bazı hizmetlere erişiminiz kısıtlanabilir."
-								] })
-							})
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "7. Çerez Tercihlerinizi Değiştirme" }),
-							/* @__PURE__ */ jsx("p", { children: "Çerez tercihlerinizi istediğiniz zaman değiştirebilirsiniz. Daha önce verdiğiniz onayı geri çekmek için tarayıcınızın ayarlarından çerezleri silebilir veya bu sayfanın altındaki bağlantıyı kullanabilirsiniz." }),
-							/* @__PURE__ */ jsx("div", {
-								className: legal_module_default.buttonGroup,
-								children: /* @__PURE__ */ jsx("button", {
-									className: legal_module_default.primaryButton,
-									onClick: () => window.dispatchEvent(new CustomEvent(CONSENT_MANAGE_EVENT)),
-									children: "Çerez Tercihlerini Yönet"
 								})
-							})
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "8. \"Do Not Track\" (İzleme Yapma) Sinyalleri" }), /* @__PURE__ */ jsx("p", { children: "Bazı tarayıcılar \"Do Not Track\" (DNT) sinyali gönderme özelliğine sahiptir. Şu anda DNT sinyallerini nasıl ele alacağımız konusunda evrensel bir standart bulunmamaktadır. Bu nedenle, web sitemiz şu anda DNT sinyallerine otomatik olarak yanıt vermemektedir." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "9. Çocukların Gizliliği" }), /* @__PURE__ */ jsx("p", { children: "Web sitemiz 18 yaşın altındaki çocuklara yönelik değildir ve bilerek 18 yaşın altındaki bireylerden kişisel veri toplamayız." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "10. Politika Güncellemeleri" }), /* @__PURE__ */ jsx("p", { children: "Bu Çerez Politikası'nı zaman zaman güncelleyebiliriz. Yapılan değişiklikler bu sayfada yayınlanacaktır ve \"Son Güncelleme\" tarihi değiştirilecektir. Düzenli olarak bu sayfayı kontrol etmenizi öneririz." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "11. İletişim" }),
-							/* @__PURE__ */ jsx("p", { children: "Çerez Politikamız hakkında sorularınız için bizimle iletişime geçebilirsiniz:" }),
-							/* @__PURE__ */ jsxs("div", {
-								className: legal_module_default.contactBox,
-								children: [/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " info@kutupgrup.com"] }), /* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })]
-							})
-						]
-					})
-				]
-			})
-		})]
-	});
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "4. Kullandığımız Çerezler" }),
+								/* @__PURE__ */ jsx("h3", { children: "4.1. Zorunlu Çerezler" }),
+								/* @__PURE__ */ jsxs("ul", { children: [
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Oturum Çerezleri:" }), " Web sitesinde gezinmenizi sağlar ve güvenlik için gereklidir"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Form Çerezleri:" }), " İletişim formlarının doğru çalışmasını sağlar"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Güvenlik Çerezleri:" }), " Güvenlik önlemlerini destekler ve kötüye kullanımı önler"] })
+								] }),
+								/* @__PURE__ */ jsx("h3", { children: "4.2. Analitik Çerezler" }),
+								/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Google Analytics:" }), " Ziyaretçi istatistikleri, sayfa görüntülemeleri, kaynak analizi"] }), /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Kullanım verileri:" }), " Hangi sayfaların ziyaret edildiği, ne kadar süre kalındığı"] })] }),
+								/* @__PURE__ */ jsx("h3", { children: "4.3. İşlevsellik Çerezleri" }),
+								/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Dil tercihleri:" }), " Seçtiğiniz dil ayarını hatırlar"] }), /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Filtreleme tercihleri:" }), " Hizmet filtreleme seçimlerinizi saklar"] })] })
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "5. Üçüncü Taraf Çerezleri" }),
+								/* @__PURE__ */ jsx("p", { children: "Web sitemizde aşağıdaki üçüncü taraf hizmetleri kullanılmaktadır:" }),
+								/* @__PURE__ */ jsxs("ul", { children: [
+									/* @__PURE__ */ jsxs("li", { children: [
+										/* @__PURE__ */ jsx("strong", { children: "Google Analytics:" }),
+										" Web sitesi performansını ve kullanıcı davranışlarını analiz etmek için. Daha fazla bilgi için: ",
+										/* @__PURE__ */ jsx("a", {
+											href: "https://policies.google.com/privacy",
+											target: "_blank",
+											rel: "noopener",
+											children: "Google Gizlilik Politikası"
+										})
+									] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Google Maps:" }), " Konum bilgilerini görüntülemek için."] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Font Providers (Google Fonts):" }), " Web fontlarını yüklemek için."] })
+								] })
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "6. Çerezleri Nasıl Kontrol Edebilirsiniz?" }),
+								/* @__PURE__ */ jsx("p", { children: "Çerezleri kontrol etmek ve yönetmek için tarayıcı ayarlarınızı kullanabilirsiniz. Çoğu tarayıcı otomatik olarak çerezleri kabul eder, ancak bunu değiştirmek için tarayıcı ayarlarınızı düzenleyebilirsiniz." }),
+								/* @__PURE__ */ jsx("h3", { children: "Popüler Tarayıcılarda Çerez Ayarları:" }),
+								/* @__PURE__ */ jsxs("ul", { children: [
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Chrome:" }), " Ayarlar → Gizlilik ve güvenlik → Çerezler ve diğer site verileri"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Firefox:" }), " Ayarlar → Gizlilik ve Güvenlik → Çerezler ve Site Verileri"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Safari:" }), " Tercihler → Gizlilik → Çerezleri ve web sitesi verilerini yönet"] }),
+									/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Edge:" }), " Ayarlar → Çerezler ve site izinleri → Çerezleri yönet ve sil"] })
+								] }),
+								/* @__PURE__ */ jsx("div", {
+									className: legal_module_default.warningBox,
+									children: /* @__PURE__ */ jsxs("p", { children: [
+										"⚠️ ",
+										/* @__PURE__ */ jsx("strong", { children: "Önemli:" }),
+										" Çerezleri tamamen devre dışı bırakırsanız, web sitemizin bazı özellikleri düzgün çalışmayabilir veya bazı hizmetlere erişiminiz kısıtlanabilir."
+									] })
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "7. Çerez Tercihlerinizi Değiştirme" }),
+								/* @__PURE__ */ jsx("p", { children: "Çerez tercihlerinizi istediğiniz zaman değiştirebilirsiniz. Daha önce verdiğiniz onayı geri çekmek için tarayıcınızın ayarlarından çerezleri silebilir veya bu sayfanın altındaki bağlantıyı kullanabilirsiniz." }),
+								/* @__PURE__ */ jsx("div", {
+									className: legal_module_default.buttonGroup,
+									children: /* @__PURE__ */ jsx("button", {
+										className: legal_module_default.primaryButton,
+										onClick: () => window.dispatchEvent(new CustomEvent(CONSENT_MANAGE_EVENT)),
+										children: "Çerez Tercihlerini Yönet"
+									})
+								})
+							]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [/* @__PURE__ */ jsx("h2", { children: "8. \"Do Not Track\" (İzleme Yapma) Sinyalleri" }), /* @__PURE__ */ jsx("p", { children: "Bazı tarayıcılar \"Do Not Track\" (DNT) sinyali gönderme özelliğine sahiptir. Şu anda DNT sinyallerini nasıl ele alacağımız konusunda evrensel bir standart bulunmamaktadır. Bu nedenle, web sitemiz şu anda DNT sinyallerine otomatik olarak yanıt vermemektedir." })]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [/* @__PURE__ */ jsx("h2", { children: "9. Çocukların Gizliliği" }), /* @__PURE__ */ jsx("p", { children: "Web sitemiz 18 yaşın altındaki çocuklara yönelik değildir ve bilerek 18 yaşın altındaki bireylerden kişisel veri toplamayız." })]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [/* @__PURE__ */ jsx("h2", { children: "10. Politika Güncellemeleri" }), /* @__PURE__ */ jsx("p", { children: "Bu Çerez Politikası'nı zaman zaman güncelleyebiliriz. Yapılan değişiklikler bu sayfada yayınlanacaktır ve \"Son Güncelleme\" tarihi değiştirilecektir. Düzenli olarak bu sayfayı kontrol etmenizi öneririz." })]
+						}),
+						/* @__PURE__ */ jsxs("section", {
+							className: legal_module_default.section,
+							children: [
+								/* @__PURE__ */ jsx("h2", { children: "11. İletişim" }),
+								/* @__PURE__ */ jsx("p", { children: "Çerez Politikamız hakkında sorularınız için bizimle iletişime geçebilirsiniz:" }),
+								/* @__PURE__ */ jsxs("div", {
+									className: legal_module_default.contactBox,
+									children: [/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " info@kutupgrup.com"] }), /* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })]
+								})
+							]
+						})
+					]
+				})
+			})]
+		}),
+		/* @__PURE__ */ jsx(Footer, {})
+	] });
 }
 var blog_module_default = {
 	page: "_page_1mgtx_1",
