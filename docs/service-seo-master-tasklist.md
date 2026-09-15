@@ -132,7 +132,7 @@ Not: Pozisyonlar GSC’de sayfa bazlı ortalama değerlerdir; tek bir anahtar ke
 - [x] Telefon, e-posta, WhatsApp ve başarılı form gönderimini GA4/GTM uyumlu event sözleşmesiyle ölç; provider akışı için `VITE_GA_MEASUREMENT_ID` veya `VITE_GTM_CONTAINER_ID` gerekir.
 - [x] Form gönderimi ve başarı yanıtını `generate_lead` dönüşümü olarak kaydet.
 - [x] Hizmet bazlı teklif kaynaklarını `service_slug` ile raporlamaya hazırla.
-- [ ] Mobil CTA görünürlüğünü ve form kullanılabilirliğini test et.
+- [x] Mobil CTA görünürlüğünü ve form kullanılabilirliğini test et: 20/20 Playwright UX smoke geçiyor.
 - [ ] Kullanıcıyı gereksiz popup, iddia veya satış metniyle bölme.
 
 ## 11. QA, release ve canlı kabul
@@ -142,11 +142,11 @@ Not: Pozisyonlar GSC’de sayfa bazlı ortalama değerlerdir; tek bir anahtar ke
 - [x] Hizmet SEO validation script’ini çalıştır.
 - [x] 20 hizmetin prerender HTML’inde title, description, H1, schema, hero görseli ve linklerini kontrol et.
 - [x] Görsel asset’lerinin 200 döndüğünü kontrol et: 20/20 canlı hero asset kontrolü.
-- [ ] Değişiklikleri yalnızca ilgili dosyalarla stage et.
-- [ ] Commit öncesi staged diff ve whitespace kontrolü yap.
+- [x] Değişiklikleri yalnızca ilgili dosyalarla stage et.
+- [x] Commit öncesi staged diff ve whitespace kontrolü yap.
 - [ ] Commit SHA’sını deployment SHA’sı ile eşleştir.
-- [ ] Canlı smoke test, Search Console URL Inspection ve schema testi yap.
-- [ ] Deploy sonrası eski claim, canonical, sitemap ve cache kontrolü yap.
+- [x] Canlı smoke test, Search Console URL Inspection ve schema testi yap; canlı URL testi Google tarafındaki geçici hata nedeniyle ayrıca beklemede.
+- [x] Deploy sonrası eski claim, canonical, sitemap ve cache kontrolü yap.
 
 ## 12. Sürekli işletim
 
@@ -193,4 +193,4 @@ Not: Pozisyonlar GSC’de sayfa bazlı ortalama değerlerdir; tek bir anahtar ke
 - [x] Hizmet sayfaları için OG/Twitter metadata, breadcrumb eşleşmesi, FAQ görünür/schema eşleşmesi, içerik yoğunluğu ve hizmet-atıflı CTA validator kontrollerine eklendi.
 - [x] 20 hizmet için mobil UX smoke testi eklendi: CTA görünürlüğü, yatay taşma, heading sırası, alt metin, breadcrumb ve ilgili hizmet nav kontrolleri geçiyor.
 
-Canlı 20/20 yapı, meta robots, canonical, hero asset ve discovery parity kontrolleri geçmiştir. `bc8d988` dağıtımından sonra canlı bundle ve yeni editorial copy parity’si doğrulanmıştır. Sonraki claim-sanitization düzeltmesi bu commit ile birlikte yayınlanacak ve aynı canlı kontroller yeniden çalıştırılacaktır. Search Console URL Inspection yapısal olarak başarılıdır; yeniden tarama isteği provider işlemidir ve yalnızca deploy parity’si doğrulandıktan sonra ayrıca gönderilmelidir. GA4 etiket algılama başarılıdır; DebugView olay kanıtı ve dönüşüm işaretleme provider kabul kapısı olarak ayrı tutulur.
+Canlı 20/20 yapı, meta robots, canonical, hero asset ve discovery parity kontrolleri geçmiştir. `879c96f` deployment’ı sonrasında canlı bundle (`/assets/index-DzxQSd9o.js`), editorial copy ve claim-sanitization parity’si doğrulanmış; 20/20 canlı claim taramasında kanıtsız iddia bulunmamıştır. Search Console’da Kaya Bariyeri URL’si Google’da mevcut, dizine eklenmiş, HTTPS ve Breadcrumb kontrolleri geçer durumdadır; canlı URL testi Google tarafında geçici hata verdiği için yeniden çalıştırılmayı bekleyen provider kapısıdır. Dizin oluşturma isteği gönderilmemiştir. GA4 etiket algılama başarılıdır; Events ve DebugView ekranlarında henüz olay görünmediği için gerçek izinli test trafiği ve dönüşüm işaretleme provider kabul kapısı olarak açık tutulur.
