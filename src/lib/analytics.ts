@@ -17,6 +17,7 @@ interface AnalyticsWindow extends Window {
 const GA_MEASUREMENT_ID = (import.meta.env.VITE_GA_MEASUREMENT_ID || '').trim();
 const GTM_CONTAINER_ID = (import.meta.env.VITE_GTM_CONTAINER_ID || '').trim();
 const CONSENT_EVENT = 'kutup:consent-change';
+export const CONSENT_MANAGE_EVENT = 'kutup:consent-manage';
 
 const getAnalyticsWindow = (): AnalyticsWindow => window as AnalyticsWindow;
 

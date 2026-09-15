@@ -691,6 +691,7 @@ var CookieConsent_module_default = {
 var GA_MEASUREMENT_ID = "G-79T22B37EE".trim();
 "".trim();
 var CONSENT_EVENT = "kutup:consent-change";
+var CONSENT_MANAGE_EVENT = "kutup:consent-manage";
 var getAnalyticsWindow = () => window;
 var isAnalyticsConfigured = () => Boolean(GA_MEASUREMENT_ID);
 var hasAnalyticsConsent = () => {
@@ -763,6 +764,9 @@ function CookieConsent() {
 	const [showBanner, setShowBanner] = useState(false);
 	useEffect(() => {
 		if (!localStorage.getItem("cookie-consent")) setShowBanner(true);
+		const handleManageConsent = () => setShowBanner(true);
+		window.addEventListener(CONSENT_MANAGE_EVENT, handleManageConsent);
+		return () => window.removeEventListener(CONSENT_MANAGE_EVENT, handleManageConsent);
 	}, []);
 	const handleAccept = () => {
 		localStorage.setItem("cookie-consent", "accepted");
@@ -10429,6 +10433,7 @@ function CerezPolitikasiClient() {
 								className: legal_module_default.buttonGroup,
 								children: /* @__PURE__ */ jsx("button", {
 									className: legal_module_default.primaryButton,
+									onClick: () => window.dispatchEvent(new CustomEvent(CONSENT_MANAGE_EVENT)),
 									children: "Çerez Tercihlerini Yönet"
 								})
 							})

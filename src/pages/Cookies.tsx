@@ -1,6 +1,7 @@
 
 
 import styles from './legal.module.css';
+import { CONSENT_MANAGE_EVENT } from '@/lib/analytics';
 
 export default function CerezPolitikasiClient() {
     return (
@@ -143,7 +144,12 @@ export default function CerezPolitikasiClient() {
                             tarayıcınızın ayarlarından çerezleri silebilir veya bu sayfanın altındaki bağlantıyı kullanabilirsiniz.
                         </p>
                         <div className={styles.buttonGroup}>
-                            <button className={styles.primaryButton}>Çerez Tercihlerini Yönet</button>
+                            <button
+                                className={styles.primaryButton}
+                                onClick={() => window.dispatchEvent(new CustomEvent(CONSENT_MANAGE_EVENT))}
+                            >
+                                Çerez Tercihlerini Yönet
+                            </button>
                         </div>
                     </section>
 
