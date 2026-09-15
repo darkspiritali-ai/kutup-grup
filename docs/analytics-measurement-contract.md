@@ -36,7 +36,7 @@ Canlı GA4 etiket algılama testi başarılı olarak raporlandı. Olayların Deb
 1. `G-79T22B37EE` yalnızca production deployment env’de tanımlı tutulmalı; kaynak koduna veya commit’e secret eklenmemeli.
 2. GA4’te `generate_lead`, `click_to_call`, `click_to_email` ve `click_to_whatsapp` olayları iş hedeflerine göre dönüşüm olarak işaretlenmeli.
 3. GTM kullanılacaksa doğrudan GA4 akışı kapatılmalı veya tek bir gönderim yolu seçilerek çift sayım önlenmeli.
-4. GA4 DebugView ve gerçek zamanlı raporda izin kabulü, sayfa görüntüleme ve iletişim tıklamaları kişisel veri göndermeden test edilmeli.
+4. GA4 DebugView ve gerçek zamanlı raporda izin kabulü, sayfa görüntüleme ve iletişim tıklamaları kişisel veri göndermeden test edilmeli. Yetkili test oturumunda URL’ye yalnızca `?ga_debug=1` eklenebilir; bu işaret normal ziyaretlerde etkin değildir ve çerez izni yoksa olay gönderimini açmaz.
 5. Başarılı form gönderimi testi gerçek kişi verisi veya uydurma iletişim bilgisi ile otomatik çalıştırılmamalı; backend kabulü ve GA4 `generate_lead` doğrulaması yetkili test verisiyle ayrı yapılmalı.
 
 Bu doküman kodun hazır olduğunu gösterir; provider kurulumu, production env erişimi ve gerçek zamanlı veri doğrulaması ayrı canlı kanıtlardır.

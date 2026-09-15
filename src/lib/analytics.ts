@@ -27,6 +27,11 @@ export const hasAnalyticsConsent = (): boolean => {
     return window.localStorage.getItem('cookie-consent') === 'accepted';
 };
 
+const hasAnalyticsDebugFlag = (): boolean => {
+    if (typeof window === 'undefined') return false;
+    return new URLSearchParams(window.location.search).get('ga_debug') === '1';
+};
+
 const ensureDataLayer = (): unknown[] => {
     const analyticsWindow = getAnalyticsWindow();
     analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
@@ -101,12 +106,13 @@ export const trackEvent = (name: AnalyticsEventName, params: AnalyticsEventParam
 
     initializeAnalytics();
     const event = { event: name, ...params };
+    const eventParams = hasAnalyticsDebugFlag() ? { ...params, debug_mode: true } : params;
 
     const analyticsWindow = getAnalyticsWindow();
     if (GTM_CONTAINER_ID) {
-        ensureDataLayer().push(event);
+        ensureDataLayer().push({ ...event, ...eventParams });
     } else if (GA_MEASUREMENT_ID && analyticsWindow.gtag) {
-        analyticsWindow.gtag('event', name, params);
+        analyticsWindow.gtag('event', name, eventParams);
     }
 };
 
