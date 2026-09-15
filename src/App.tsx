@@ -13,6 +13,7 @@ import BlogIndex from './pages/BlogIndex';
 import BlogPost from './pages/BlogPost';
 import NotFound from './pages/NotFound';
 import MetaHelper from './components/seo/MetaHelper';
+import Analytics from './components/seo/Analytics';
 
 // Scroll to top on route change helper
 function ScrollToTop() {
@@ -54,6 +55,7 @@ function BlogPostRoute() {
 export default function App() {
   return (
     <Router>
+      <Analytics />
       <AppRoutes />
     </Router>
   );

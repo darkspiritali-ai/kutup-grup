@@ -687,6 +687,32 @@ var CookieConsent_module_default = {
 	declineButton: "_declineButton_8qw0y_60"
 };
 //#endregion
+//#region src/lib/analytics.ts
+"".trim();
+var GTM_CONTAINER_ID = "".trim();
+var CONSENT_EVENT = "kutup:consent-change";
+var getAnalyticsWindow = () => window;
+var isAnalyticsConfigured = () => Boolean(GTM_CONTAINER_ID);
+var hasAnalyticsConsent = () => {
+	if (typeof window === "undefined") return false;
+	return window.localStorage.getItem("cookie-consent") === "accepted";
+};
+var ensureDataLayer = () => {
+	const analyticsWindow = getAnalyticsWindow();
+	analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+	return analyticsWindow.dataLayer;
+};
+var initializeAnalytics = () => {
+	if (typeof window === "undefined" || !hasAnalyticsConsent() || !isAnalyticsConfigured()) return;
+	ensureDataLayer();
+};
+var trackEvent = (name, params = {}) => {
+	if (typeof window === "undefined" || !hasAnalyticsConsent() || !isAnalyticsConfigured()) return;
+	initializeAnalytics();
+	({ ...params });
+};
+var CONSENT_CHANGE_EVENT = CONSENT_EVENT;
+//#endregion
 //#region src/components/features/CookieConsent.tsx
 function CookieConsent() {
 	const [showBanner, setShowBanner] = useState(false);
@@ -695,10 +721,12 @@ function CookieConsent() {
 	}, []);
 	const handleAccept = () => {
 		localStorage.setItem("cookie-consent", "accepted");
+		window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: "accepted" }));
 		setShowBanner(false);
 	};
 	const handleDecline = () => {
 		localStorage.setItem("cookie-consent", "declined");
+		window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: "declined" }));
 		setShowBanner(false);
 	};
 	if (!showBanner) return null;
@@ -2624,11 +2652,17 @@ function generateOrganizationSchema() {
 		"@type": "Organization",
 		"@id": `${SITE_URL$3}/#organization`,
 		name: SITE_NAME,
+		legalName: "KUTUP GRUP İNŞAAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ",
+		alternateName: "Kutup Grup",
 		url: SITE_URL$3,
 		logo: `${SITE_URL$3}/logo/logo.png`,
 		description: SITE_DESCRIPTION,
+		email: "info@kutupgrup.com",
+		telephone: "+90-533-517-6609",
+		sameAs: ["https://www.instagram.com/kutup_endustriyel_dagcilik"],
 		address: {
 			"@type": "PostalAddress",
+			addressLocality: "İstanbul",
 			addressCountry: "TR"
 		},
 		contactPoint: {
@@ -7772,6 +7806,22 @@ function getRelatedPostTitle(slug) {
 	const post = getBlogPost(slug);
 	return post ? post.title : slug;
 }
+var OFFICIAL_SOURCES = {
+	"irata-egitimi": [{
+		label: "IRATA International — üye dizini",
+		url: "https://irata.org/members"
+	}, {
+		label: "IRATA International — üyelik gereklilikleri",
+		url: "https://irata.org/uploads/documents/QP-300ENG_IRATA_Membership_Requirements_003_01.01.2025.pdf"
+	}],
+	"sprat-egitimi": [{
+		label: "SPRAT — üyelik ve kamuya açık üye listesi bilgisi",
+		url: "https://sprat.org/member-benefits/"
+	}, {
+		label: "SPRAT — rope access ve standartlar",
+		url: "https://sprat.org/rope-access/"
+	}]
+};
 function renderRichText(content, className) {
 	return content.split(/\n\s*\n/u).map((paragraph) => paragraph.trim()).filter(Boolean).map((paragraph, index) => /* @__PURE__ */ jsx("p", {
 		className,
@@ -7983,6 +8033,26 @@ function ServiceContentClient({ service }) {
 											href: `/blog/${postSlug}`,
 											children: getRelatedPostTitle(postSlug)
 										}) }, postSlug))
+									})
+								]
+							}),
+							OFFICIAL_SOURCES[service.slug] && /* @__PURE__ */ jsxs("section", {
+								className: "content-section related-reading-section",
+								"aria-labelledby": "service-official-sources-title",
+								children: [
+									/* @__PURE__ */ jsx("h2", {
+										id: "service-official-sources-title",
+										children: "Resmi kaynaklar"
+									}),
+									/* @__PURE__ */ jsx("p", { children: "Program ve üyelik koşulları için güncel referanslar ilgili kuruluşların yayınladığı sayfalardır." }),
+									/* @__PURE__ */ jsx("ul", {
+										className: "related-reading-list",
+										children: OFFICIAL_SOURCES[service.slug].map((source) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", {
+											href: source.url,
+											target: "_blank",
+											rel: "noopener noreferrer",
+											children: source.label
+										}) }, source.url))
 									})
 								]
 							})
@@ -8653,6 +8723,11 @@ function ContactPageClient() {
 			});
 			const data = await response.json();
 			if (response.ok && data.success) {
+				trackEvent("generate_lead", {
+					form_name: "contact",
+					lead_type: "contact_form",
+					topic: formData.konu || "unspecified"
+				});
 				setSubmitStatus("success");
 				setFormData({
 					ad_soyad: "",

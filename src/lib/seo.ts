@@ -12,11 +12,17 @@ export function generateOrganizationSchema() {
         '@type': 'Organization',
         '@id': `${SITE_URL}/#organization`,
         name: SITE_NAME,
+        legalName: 'KUTUP GRUP İNŞAAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ',
+        alternateName: 'Kutup Grup',
         url: SITE_URL,
         logo: `${SITE_URL}/logo/logo.png`,
         description: SITE_DESCRIPTION,
+        email: 'info@kutupgrup.com',
+        telephone: '+90-533-517-6609',
+        sameAs: ['https://www.instagram.com/kutup_endustriyel_dagcilik'],
         address: {
             '@type': 'PostalAddress',
+            addressLocality: 'İstanbul',
             addressCountry: 'TR',
         },
         contactPoint: {

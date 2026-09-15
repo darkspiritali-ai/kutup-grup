@@ -95,6 +95,17 @@ function getRelatedPostTitle(slug: string): string {
   return post ? post.title : slug;
 }
 
+const OFFICIAL_SOURCES: Record<string, { label: string; url: string }[]> = {
+  'irata-egitimi': [
+    { label: 'IRATA International — üye dizini', url: 'https://irata.org/members' },
+    { label: 'IRATA International — üyelik gereklilikleri', url: 'https://irata.org/uploads/documents/QP-300ENG_IRATA_Membership_Requirements_003_01.01.2025.pdf' },
+  ],
+  'sprat-egitimi': [
+    { label: 'SPRAT — üyelik ve kamuya açık üye listesi bilgisi', url: 'https://sprat.org/member-benefits/' },
+    { label: 'SPRAT — rope access ve standartlar', url: 'https://sprat.org/rope-access/' },
+  ],
+};
+
 function renderRichText(content: string, className?: string) {
   return content
     .split(/\n\s*\n/u)
@@ -273,6 +284,22 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                           <Link href={`/blog/${postSlug}`}>
                             {getRelatedPostTitle(postSlug)}
                           </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+
+                {OFFICIAL_SOURCES[service.slug] && (
+                  <section className="content-section related-reading-section" aria-labelledby="service-official-sources-title">
+                    <h2 id="service-official-sources-title">Resmi kaynaklar</h2>
+                    <p>Program ve üyelik koşulları için güncel referanslar ilgili kuruluşların yayınladığı sayfalardır.</p>
+                    <ul className="related-reading-list">
+                      {OFFICIAL_SOURCES[service.slug].map((source) => (
+                        <li key={source.url}>
+                          <a href={source.url} target="_blank" rel="noopener noreferrer">
+                            {source.label}
+                          </a>
                         </li>
                       ))}
                     </ul>

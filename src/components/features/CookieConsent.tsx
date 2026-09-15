@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from '@/components/ui/Link';
 import styles from './CookieConsent.module.css';
+import { CONSENT_CHANGE_EVENT } from '@/lib/analytics';
 
 export default function CookieConsent() {
     const [showBanner, setShowBanner] = useState(false);
@@ -17,11 +18,13 @@ export default function CookieConsent() {
 
     const handleAccept = () => {
         localStorage.setItem('cookie-consent', 'accepted');
+        window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: 'accepted' }));
         setShowBanner(false);
     };
 
     const handleDecline = () => {
         localStorage.setItem('cookie-consent', 'declined');
+        window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: 'declined' }));
         setShowBanner(false);
     };
 

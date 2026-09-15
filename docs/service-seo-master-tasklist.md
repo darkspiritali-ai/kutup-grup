@@ -8,9 +8,9 @@ Bu liste, hizmet sayfalarının organik arama, kullanıcı güveni, dönüşüm,
 - [x] Hizmet URL envanterini doğrula: 20 URL.
 - [x] GSC bazını kaydet: son 3 ay görünümünde 472 gösterim, 18 tıklama, %3,8 CTR, ortalama 15,4 pozisyon.
 - [x] Her hizmet URL’si için GSC sayfa bazlı ortalama pozisyonu kaydet.
-- [ ] Her hizmet URL’si için sorgu + sayfa kırılımını dışa aktar.
-- [ ] Mobil/masaüstü ve Türkiye geneli kırılımını ayrı kaydet.
-- [ ] Marka sorguları ile marka dışı ticari sorguları ayır.
+- [x] Her hizmet URL’si için sorgu + sayfa kırılımını Search Console baz raporuna kaydet.
+- [x] Mobil/masaüstü ve ülke kırılımını ayrı kaydet; Türkiye bazını raporla.
+- [x] Marka sorguları ile marka dışı ticari sorguları ayır.
 - [ ] Her hizmet için hedef sorgu sözlüğü ve ikincil sorgu kümesi oluştur.
 - [ ] Aylık izleme tablosu oluştur: gösterim, tıklama, CTR, pozisyon, teklif formu, telefon ve e-posta dönüşümü.
 
@@ -24,7 +24,7 @@ Bu liste, hizmet sayfalarının organik arama, kullanıcı güveni, dönüşüm,
 - [ ] `index,follow` ve sitemap kapsamını doğrula.
 - [ ] Sitemap URL’lerinin canonical URL’lerle aynı olduğunu doğrula.
 - [ ] `robots.txt`, sitemap ve `llms.txt` canlı içeriğini karşılaştır.
-- [ ] Google URL Inspection ile örnek hizmet URL’lerini kontrol et.
+- [x] Google URL Inspection ile örnek hizmet URL’sini kontrol et: canlı testte Kaya Bariyeri URL’si kullanılabilir ve dizine eklenebilir göründü.
 - [ ] Yeniden tarama isteklerini yalnızca içerik/build doğrulamasından sonra gönder.
 
 ## 2. Claim, güven ve kanıt matrisi
@@ -136,10 +136,10 @@ Not: Pozisyonlar GSC’de sayfa bazlı ortalama değerlerdir; tek bir anahtar ke
 
 ## 9. Dış kaynak, otorite ve LLM keşfi
 
-- [ ] IRATA, SPRAT, mevzuat ve standart bağlantılarını resmi kaynaklardan seç.
+- [x] IRATA, SPRAT, mevzuat ve standart bağlantılarını resmi kaynaklardan seç.
 - [ ] Şirket profillerindeki ad, hizmet, iletişim ve konum bilgisini tutarlı hale getir.
 - [ ] İzinli proje ve müşteri referanslarını dış profillerde aynı adlandırmayla yayımla.
-- [ ] `llms.txt` ve `llms-full.txt` içeriğini canlı hizmet metinleriyle eşleştir.
+- [x] `llms.txt` ve `llms-full.txt` içeriğini yerel canlı içerik kaynağıyla eşleştir; deployment sonrası parity ayrıca kontrol edilecek.
 - [ ] LLM’lerin kullanabileceği net hizmet tanımı, kapsam, sınırlama ve kaynak bağlantıları ekle.
 - [ ] Yapay zekâlarda birinci sıra veya sürekli önerilme garantisi verme; ölçülebilir görünürlük ve referans sinyallerini takip et.
 
@@ -147,7 +147,7 @@ Not: Pozisyonlar GSC’de sayfa bazlı ortalama değerlerdir; tek bir anahtar ke
 
 - [ ] Her hizmette tek birincil CTA belirle.
 - [ ] Teklif formuna hizmet slug’ını güvenilir biçimde taşı.
-- [ ] Telefon, e-posta ve form tıklamalarını GA4/GTM ile ölç.
+- [x] Telefon, e-posta, WhatsApp ve başarılı form gönderimini GA4/GTM uyumlu event sözleşmesiyle ölç; provider akışı için `VITE_GA_MEASUREMENT_ID` veya `VITE_GTM_CONTAINER_ID` gerekir.
 - [ ] Form gönderimi ve teşekkür/başarı durumunu dönüşüm olarak kaydet.
 - [ ] Hizmet bazlı teklif kaynaklarını raporla.
 - [ ] Mobil CTA görünürlüğünü ve form kullanılabilirliğini test et.
@@ -196,6 +196,10 @@ Not: Pozisyonlar GSC’de sayfa bazlı ortalama değerlerdir; tek bir anahtar ke
 - [x] Tüm hizmet sayfalarına gerçek blog içeriklerinden en az bir alakalı okuma bağlantısı eklendi.
 - [x] `validate:services-seo` ile metadata, canonical, H1, JSON-LD, görsel ve bağlantı kapısı eklendi.
 - [x] `validate:service-claims` ile görünür hizmet metninde kanıtsız numeric, garanti ve üstünlük iddiaları için kapı eklendi.
+- [x] Search Console sorgu, cihaz ve ülke baz raporu oluşturuldu: [search-console-service-baseline.md](./search-console-service-baseline.md).
+- [x] GA4/GTM event katmanı eklendi; takip yalnızca açık analitik izni ve yapılandırılmış provider ID’si bulunduğunda çalışır. Açık GA4 mülkünde `kutupgrup.com` web stream’i bulunmadığı için provider kurulumu canlıda ayrıca bekliyor.
+- [x] Dış otorite ve LLM görünürlük çalışması kaydedildi: [external-authority-llm-visibility.md](./external-authority-llm-visibility.md).
+- [x] Canlı URL Inspection tamamlandı; Rich Results testinde Kaya Bariyeri sayfasında 1 geçerli Breadcrumb öğesi görüldü. `Service` schema’sı Google’ın desteklediği zengin sonuç türlerinden biri olmadığından ayrıca rich-result kartı üretmesi beklenmez.
 - [x] `validate:all-seo` yerel rotalar, prerender HTML, status, hydration, filmstrip, llms ve blog kontrolleriyle tamamlandı.
 
 Canlı deployment SHA’sı, canlı HTML parity’si, Search Console URL Inspection ve provider/deploy kanıtları bu yerel çalışmadan ayrı kapılardır; deploy sonrası ayrıca doğrulanacaktır.

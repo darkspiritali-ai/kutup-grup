@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import styles from './contact.module.css';
+import { trackEvent } from '@/lib/analytics';
 
 interface FormData {
     ad_soyad: string;
@@ -87,6 +88,11 @@ export default function ContactPageClient() {
             const data = await response.json();
 
             if (response.ok && data.success) {
+                trackEvent('generate_lead', {
+                    form_name: 'contact',
+                    lead_type: 'contact_form',
+                    topic: formData.konu || 'unspecified',
+                });
                 setSubmitStatus('success');
                 setFormData({
                     ad_soyad: '',
