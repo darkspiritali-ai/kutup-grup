@@ -5919,7 +5919,7 @@ var RAW_SERVICES_DATA = {
 * campaign copy and technical placeholders, so only the sanitized catalogue
 * is exported to pages, SSR, sitemaps and llms.txt.
 */
-var UNSUPPORTED_PUBLIC_CLAIM = /(?:\b(?:15|19|20|30|40|50|60|80|100|200|300|500|1000|5000)\s*\+?|\b\d[\d.,]*\s*\+|%\s*\d+|\b\d[\d.,]*\s*(?:-\s*\d[\d.,]*)?\s*(?:gün|hafta|ay|yıl|saat|kişi|kat|metre|m|m²|m³|kJ|TL|km|knot)|\b(?:max|min)\.?\s*\d+|[<>]\s*\d+\s*(?:saniye|dakika|gün|hafta|ay|yıl)|7\s*\/\s*24|sertifik|ISO\s*\d+|\bCE\b|\bTSE\b|\bEN\s*\d+|ATEX|NDT|Level\s*\d|garanti|sigorta|ücretsiz|\b(?:lider|öncü)\b|sıfır\s+kaza|%100|tam\s+erişim|Türkiye['’]nin\s+(?:dört\s+bir\s+yanında|tüm)|(?:en)\s+(?:etkili|yüksek|güvenilir|iyi|hızlı)|(?:uzman|eğitimli|profesyonel)\s+(?:ekip|personel|kadrosu?|eğitmen)|(?:yüksek\s+)?başarı\s+oranı|iş\s+yerleştirme|global\s+iş\s+imkanları?|uluslararası\s+network|tam\s+ekipman|dünya\s+çapında|Swiss|Avusturya|Gazex|Wyssen|yetkili\s+(?:satıcı|ekip)|maliyet\s+(?:%|tasarruf)|(?:güvenli\s+kılıyoruz|koruyoruz|lekesiz|kalıcı|sıfır\s+zarar|güvenli\s+(?:alan|yamaç)|güvenli\s+ve\s+hızlı|uzun\s+ömürlü|can\s+güvenliği))/iu;
+var UNSUPPORTED_PUBLIC_CLAIM = /(?:\b(?:15|19|20|30|40|50|60|80|100|200|300|500|1000|5000)\s*\+?|\b\d[\d.,]*\s*\+|%\s*\d+|\b\d[\d.,]*\s*(?:-\s*\d[\d.,]*)?\s*(?:gün|hafta|ay|yıl|saat|kişi|kat|metre|m|m²|m³|kJ|TL|km|knot)|\b(?:max|min)\.?\s*\d+|[<>]\s*\d+\s*(?:saniye|dakika|gün|hafta|ay|yıl)|7\s*\/\s*24|24\s*\/\s*7|sertifik|ISO\s*\d+|\bCE\b|\bTSE\b|\bEN\s*\d+|ATEX|NDT|Level\s*\d|garanti|sigorta|ücretsiz|\b(?:lider|öncü)\b|sıfır\s+kaza|%100|tam\s+erişim|Türkiye['’]nin\s+(?:dört\s+bir\s+yanında|tüm)|(?:en)\s+(?:etkili|yüksek|güvenilir|iyi|hızlı)|(?:uzman|eğitimli|profesyonel|deneyimli|yetkin)\s+(?:ekip|personel|kadrosu?|eğitmen|uygulama|montaj|proje|ekipman)|\b(?:profesyonel|deneyimli|uzman|yetkin)\b|\b(?:referans(?:lar|ı|ları)?|portföyü)\b|(?:yüksek\s+)?başarı\s+oranı|iş\s+yerleştirme|global\s+iş\s+imkanları?|uluslararası\s+network|tam\s+ekipman|dünya\s+çapında|Swiss|Avusturya|Gazex|Wyssen|TUPRAS|BOTAŞ|PETKİM|yetkili\s+(?:satıcı|ekip)|full[- ]scale|test\s+rapor|maliyet\s+(?:%|tasarruf)|maliyet\s+etkin|uygun\s+fiyat|rekabetçi\s+fiyat|müşteri\s+memnuniyeti|(?:Türkiye|yurtdışı|uluslararası)\s+(?:genelinde|çapında|geneli|hizmet|proje|deneyim|ağ)|(?:hizmet|servis)\s+ağı|(?:hızlı|acil)\s+(?:teslimat|mobilizasyon|kurulum|müdahale|uygulama|tedarik|montaj)|(?:güvenli\s+kılıyoruz|koruyoruz|lekesiz|kalıcı|sıfır\s+zarar|güvenli\s+(?:alan|yamaç)|güvenli\s+ve\s+hızlı|uzun\s+ömürlü|can\s+güvenliği))/iu;
 var sanitizeRichText = (value, fallback) => {
 	const paragraphs = value.split(/\n\s*\n/).map((paragraph) => paragraph.split(/(?<=[.!?])\s+/u).filter((sentence) => !UNSUPPORTED_PUBLIC_CLAIM.test(sentence)).join(" ").trim()).filter(Boolean);
 	return paragraphs.length > 0 ? paragraphs.join("\n\n") : fallback;
@@ -8442,7 +8442,7 @@ function ServiceContentClient({ service }) {
 										id: "service-official-sources-title",
 										children: "Resmi kaynaklar"
 									}),
-									/* @__PURE__ */ jsx("p", { children: "Program ve üyelik koşulları için güncel referanslar ilgili kuruluşların yayınladığı sayfalardır." }),
+									/* @__PURE__ */ jsx("p", { children: "Program ve üyelik koşulları için güncel bilgileri ilgili kuruluşların yayınladığı sayfalardan doğrulayın." }),
 									/* @__PURE__ */ jsx("ul", {
 										className: "related-reading-list",
 										children: OFFICIAL_SOURCES[service.slug].map((source) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", {

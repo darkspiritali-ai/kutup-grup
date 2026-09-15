@@ -43,7 +43,6 @@ Teslim kapsamında yapılan işin özeti, kullanılan ürünlerin bilgisi, bakı
 
 #### Teknik Özellikler ve Ekipmanlar
 - IP65/IP67 koruma sınıfı: Su ve toz geçirmez
-- DMX512 kontrol protokolü: Profesyonel ışık yönetimi
 - Akıllı sistemler: Zamanlama, sensör entegrasyonu
 
 #### Sıkça Sorulan Sorular (SSS)
@@ -110,7 +109,6 @@ Erişim yöntemi; cephe yüksekliği, girinti ve çıkıntılar, ankraj imkânı
 Teslim sonrasında temizlenen alanlar, görülen yüzey kusurları ve tekrar kontrol edilmesi gereken noktalar kayda alınabilir. Temizlik sıklığı; binanın konumu, trafik ve üretim ortamı, yüzey malzemesi ve estetik beklentiye göre belirlenmelidir. Teklif için cephe fotoğrafları, yaklaşık alan ve erişim bilgileri paylaşılabilir.
 
 #### Avantajlar ve Farklar
-- Kurulum süresi olmadığı için işe anında başlama ve hızlı teslimat
 - Sıfır zemin işgali ile bina giriş-çıkış trafiğini ve iş akışını engellememe
 
 #### Uygulama Alanları
@@ -153,11 +151,8 @@ Montaj öncesinde ağın sınırları, bağlantı noktaları, çalışma alanı 
 Teslim kaydı; kurulan alanı, gözlenen kısıtları, kontrol tarihini ve takip edilmesi gereken noktaları içerebilir. Ağın kapasitesi ve kullanım koşulları, seçilen sistemin teknik dokümanlarıyla doğrulanmadan kesin bir uygunluk ifadesi kullanılmamalıdır.
 
 #### Avantajlar ve Farklar
-- Hızlı kurulum ve söküm imkanı
 - İSG mevzuatına tam uyum
-- Profesyonel montaj ekibi
 - UV dayanımlı, hava koşullarına dirençli
-- Maliyet etkin iş güvenliği çözümü
 
 #### Uygulama Alanları
 - İnşaat şantiyeleri
@@ -203,7 +198,6 @@ Periyodik kontrol; sistemin kullanım yoğunluğuna, çevreye ve üretici talima
 #### Avantajlar ve Farklar
 - Paslanmaz çelik (AISI 316) ve galvaniz seçenekleri
 - Kolay kullanım, minimal eğitim gereksinimi
-- Profesyonel proje ve statik hesaplama
 - Her türlü yapıya uygun çözümler
 - Bakım gereksinimleri minimal
 
@@ -251,7 +245,6 @@ Teslim kapsamında saha bulguları, önerilen sonraki adımlar, erişim kısıtl
 #### Avantajlar ve Farklar
 - En zorlu ve sarp yamaçlarda iple erişimle güvenli çalışma
 - Heyelan, kaya düşmesi ve çığ risklerini mini düzeye indiren çözümler
-- Ulaşılması imkansız görülen dik yamaçlarda hızlı kurulum
 - Minimum çevresel tahribatla doğa dostu uygulama teknikleri
 
 #### Uygulama Alanları
@@ -303,7 +296,6 @@ Bu durumda şev örtüleme, kaya bariyeri, drenaj veya başka bir mühendislik �
 - Çevre ve altyapıya zarar vermeden temizlik
 - Kamu güvenliği sağlanır
 - Altyapı tesislerinin korunması
-- Maliyet etkin risk azaltma
 
 #### Uygulama Alanları
 - Karayolu kenarı yamaçlar
@@ -344,14 +336,12 @@ Bu durumda şev örtüleme, kaya bariyeri, drenaj veya başka bir mühendislik �
 Keşifte eğim, yüzey sürekliliği, su izleri, mevcut drenaj, üst ve alt kot kullanımı ve erişim rotası kaydedilir. Örtünün yalnızca yüzeyde durması değil, kenar ve ara ankrajlarla sürekliliğinin sağlanması da tasarımın parçasıdır.
 
 ##### Montaj ve bakım planı
-Montaj öncesinde yüzeyin temizlenmesi, gevşek parçaların alınması, ankraj yerlerinin belirlenmesi ve malzeme taşıma yöntemi planlanır. Uygulama sırasında örtü ekleri, bindirmeler, kenarlar, ankrajlar ve drenajla kesişen noktalar kontrol edilir. Çalışma tamamlandığında yüzeyin erişilebilirliği ve sonraki kontroller için referans noktaları kayda alınabilir.
+Montaj öncesinde yüzeyin temizlenmesi, gevşek parçaların alınması, ankraj yerlerinin belirlenmesi ve malzeme taşıma yöntemi planlanır. Uygulama sırasında örtü ekleri, bindirmeler, kenarlar, ankrajlar ve drenajla kesişen noktalar kontrol edilir.
 
 Örtüleme her zaman tek başına çözüm değildir. Su akışı, blok hareketi veya alt kot riski devam ediyorsa bariyer, drenaj, temizlik veya izleme gibi ek başlıklar gündeme gelir. Bakım aralığı çevre koşullarına ve yüzeydeki değişime göre belirlenmelidir.
 
 #### Avantajlar ve Farklar
 - Bitki gelişimine izin verir (ekolojik çözüm)
-- Maliyet etkin koruma çözümü
-- Hızlı uygulama
 - Minimal bakım gereksinimi
 - Esnekliğiyle şiddetli darbeleri emer
 
@@ -395,10 +385,8 @@ Görevin muayene, fotoğraflama, temizlik, küçük bakım veya malzeme taşıma
 Teslim; erişilen noktalar, yapılan işlem, gözlenen durum, fotoğraf veya kontrol notları üzerinden hazırlanabilir. Proses ekipmanı ve özel alan prosedürleri, tesisin kendi talimatlarıyla birlikte doğrulanmadan kesin uygunluk veya süre vaadi verilmemelidir.
 
 #### Avantajlar ve Farklar
-- Gaz algılayıcı ve acil müdahale ekipmanları
 - Tesis prosedürlerine tam uyum
 - Minimal duruş süresi (tesis verimliliği)
-- Deneyimli proje yönetimi
 
 #### Uygulama Alanları
 - Rafineri ve petrokimya tesisleri
@@ -445,10 +433,8 @@ Bariyerin düzenli kontrolü; yeni taş düşmesi, korozyon, deformasyon, ankraj
 #### Avantajlar ve Farklar
 - Yüksek enerji emme kapasitesi
 - Düşük bakım gereksinimi
-- Hızlı kurulum (beton duvara göre)
 - Manzara engellenmez (şeffaf)
 - Modüler sistem, genişletilebilir
-- Maliyet etkin (uzun vadede)
 
 #### Uygulama Alanları
 - Karayolu kenarı koruma
@@ -494,7 +480,6 @@ Yeni kazı, dolgu, drenaj değişikliği veya yamaç hareketi deflektörün çal
 - Yüksek mukavemet ve enerji emme
 - Büyük blokları yönlendirir
 - Kaya bariyerine göre ekonomik
-- Hızlı montaj
 - Esnek sistem, darbeleri emer
 - Bitki gelişimine izin verir
 - Modüler, genişletilebilir
@@ -539,7 +524,6 @@ Kurulum öncesinde zemin hazırlığı, ankraj veya temel ihtiyacı, malzeme sev
 Yağış, kazı, yol genişletme veya yamaç temizliği gibi değişiklikler sistemi etkileyebilir. Bu nedenle bakım ve gözlem sorumluluğu, saha sahibine aktarılacak açık bir kontrol notuyla birlikte belirlenir.
 
 #### Avantajlar ve Farklar
-- Hızlı kurulum ve söküm
 - Taşınabilir, tekrar kullanılabilir
 - Düşük maliyet
 - Hafif ve kolay taşınır
@@ -644,7 +628,6 @@ Gerçek acil durumlar için tesisin kendi prosedürleri, yerel acil yardım düz
 - Tam kurtarma ekipmanı
 - Tesis özel tatbikat ve eğitim
 - İSG mevzuatına tam uyum
-- Deneyimli proje yönetimi
 
 #### Uygulama Alanları
 - Rafineri ve petrokimya tesisleri
@@ -688,7 +671,6 @@ Rüzgâr, yağış, görüş, yıldırım ve enerji izolasyonu kararın temel pa
 Teslim raporu; türbin veya bölüm bilgisi, görev kapsamı, gözlenen durumlar ve önerilen takip adımlarını içerir. Üretici talimatı, tesis prosedürü veya enerji izolasyonu ile çelişen bir uygulama yapılmamalıdır.
 
 #### Avantajlar ve Farklar
-- Hızlı müdahale
 - Minimal türbin duruşu
 - OEM prosedürlerine uygun
 - Kapsamlı raporlama
@@ -737,7 +719,6 @@ Teslimde uygulanan bölümler, kullanılan malzeme bilgisi, drenaj ve bakım not
 - Esnek yapı, oturmalara uyumlu
 - Drenaj sağlar, su baskısı yok
 - Doğal ve estetik görünüm
-- Hızlı uygulama
 - Bakım gerektirmez
 - Çevre dostu
 
@@ -781,9 +762,7 @@ Kurulum öncesinde ekipman kabulü, kaldırma yöntemi, çalışma alanı, haber
 Söküm, kurulum kadar planlı yapılmalıdır. Parçaların indirme sırası, sahne trafiği ve depolama alanı belirlenir. Teslim kaydı, kurulan veya sökülen ekipmanları ve takip gerektiren noktaları ayırabilir.
 
 #### Avantajlar ve Farklar
-- Deneyimli rigging ekibi
 - Yapısal mühendis onaylı plan
-- Hızlı kurulum-söküm
 - Güvenlik öncelikli
 - Uluslararası standartlar
 
@@ -827,7 +806,6 @@ Uygulamalı çalışmalarda kişisel ekipman, bağlantı noktaları, yükselme v
 Eğitim sonunda sınav, kayıt, yenileme veya saha deneyimi gibi sonraki adımlar katılımcıya yazılı biçimde anlatılmalıdır. Güncel şartlar değişebileceği için kayıt öncesi resmi SPRAT sayfaları kontrol edilmelidir.
 
 #### Avantajlar ve Farklar
-- Deneyimli SPRAT eğitmenler
 - Teorik + pratik eğitim
 - Sınav dahil
 
@@ -918,7 +896,6 @@ Teslim; risk alanlarını, gözlem tarihini, önerilen kontrolleri ve ek veri ih
 - GIS tabanlı dijital çığ haritalama
 - Otomatik erken uyarı sistemi kurulumu
 - Kontrollü çığ tetikleme operasyonları
-- Türkiye genelinde hizmet ağı
 
 #### Uygulama Alanları
 - Karayolları ve otoyollar çığ koruması

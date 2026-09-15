@@ -293,7 +293,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                 {OFFICIAL_SOURCES[service.slug] && (
                   <section className="content-section related-reading-section" aria-labelledby="service-official-sources-title">
                     <h2 id="service-official-sources-title">Resmi kaynaklar</h2>
-                    <p>Program ve üyelik koşulları için güncel referanslar ilgili kuruluşların yayınladığı sayfalardır.</p>
+                    <p>Program ve üyelik koşulları için güncel bilgileri ilgili kuruluşların yayınladığı sayfalardan doğrulayın.</p>
                     <ul className="related-reading-list">
                       {OFFICIAL_SOURCES[service.slug].map((source) => (
                         <li key={source.url}>

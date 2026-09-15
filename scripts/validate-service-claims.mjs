@@ -18,6 +18,13 @@ const CLAIM_PATTERNS = [
   /\b(?:garanti|sigorta|ücretsiz|lider|öncü|sıfır\s+kaza)\b/iu,
   /(?:başarı\s+oranı|iş\s+yerleştirme|global\s+iş\s+imkanları?|uluslararası\s+network|tam\s+ekipman|dünya\s+çapında)/iu,
   /(?:Swiss|Avusturya|Gazex|Wyssen)/iu,
+  /\b(?:profesyonel|deneyimli|uzman|yetkin)\b/iu,
+  /\b(?:full[- ]scale|test\s+rapor)\b/iu,
+  /\b(?:TUPRAS|BOTAŞ|PETKİM)\b/iu,
+  /\b(?:maliyet\s+etkin|uygun\s+fiyat|rekabetçi\s+fiyat|müşteri\s+memnuniyeti)\b/iu,
+  /\b(?:Türkiye|yurtdışı|uluslararası)\s+(?:genelinde|çapında|geneli|hizmet|proje|deneyim|ağ)\b/iu,
+  /\b(?:hizmet|servis)\s+ağı\b/iu,
+  /\b(?:hızlı|acil)\s+(?:teslimat|mobilizasyon|kurulum|müdahale|uygulama|tedarik|montaj)\b/iu,
 ];
 
 const decodeEntities = (value) => value
@@ -42,6 +49,13 @@ const visibleMainText = (html) => {
     .trim());
 };
 
+const visibleWhyText = (html) => {
+  const whyLists = [...html.matchAll(/<ul[^>]+class=["'][^"']*why-list[^"']*["'][^>]*>[\s\S]*?<\/ul>/gi)]
+    .map((match) => match[0])
+    .join(' ');
+  return decodeEntities(whyLists.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+};
+
 const routes = extractServiceRoutes();
 const findings = [];
 
@@ -51,9 +65,13 @@ for (const routePath of routes) {
   const matches = CLAIM_PATTERNS
     .map((pattern) => text.match(pattern)?.[0])
     .filter(Boolean);
+  const whyText = visibleWhyText(fs.readFileSync(filePath, 'utf-8'));
+  const whyMatches = [
+    /\b(?:referans(?:lar|ı|ları)?|portföyü)\b/iu,
+  ].map((pattern) => whyText.match(pattern)?.[0]).filter(Boolean);
 
-  if (matches.length > 0) {
-    findings.push({ routePath, matches: [...new Set(matches)].join(' | ') });
+  if (matches.length > 0 || whyMatches.length > 0) {
+    findings.push({ routePath, matches: [...new Set([...matches, ...whyMatches])].join(' | ') });
   }
 }
 
