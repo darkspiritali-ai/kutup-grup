@@ -27,7 +27,7 @@ export interface FAQ {
     answer: string;
 }
 
-export const SERVICES_DATA: Record<string, ServiceContent> = {
+const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
     'dis-cephe-dekoratif-aydinlatma': {
         slug: 'dis-cephe-dekoratif-aydinlatma',
         title: 'Dış Cephe Dekoratif Aydınlatma',
@@ -1462,3 +1462,77 @@ export const SERVICES_DATA: Record<string, ServiceContent> = {
     },
 };
 
+/**
+ * Public service copy must stay within claims that can be checked from the
+ * project brief and current site records. The source catalogue contains old
+ * campaign copy and technical placeholders, so only the sanitized catalogue
+ * is exported to pages, SSR, sitemaps and llms.txt.
+ */
+const UNSUPPORTED_PUBLIC_CLAIM = /(?:\b(?:15|19|20|30|40|50|60|80|100|200|300|500|1000|5000)\s*\+?|%\s*\d+|\b\d+\s*(?:-\s*\d+)?\s*(?:gün|hafta|ay|yıl|saat|kat|metre|m|m²|m³|kJ|TL)|7\s*\/\s*24|IRATA|SPRAT|GWO|ISA|sertifik|ISO\s*\d+|\bCE\b|\bTSE\b|\bEN\s*\d+|ATEX|NDT|Level\s*\d|garanti|sigorta|sıfır\s+kaza|%100|tam\s+erişim|Türkiye['’]nin\s+(?:dört\s+bir\s+yanında|tüm)|(?:en|lider|öncü)\s+(?:etkili|yüksek|güvenilir|iyi|hızlı)|(?:uzman|eğitimli|profesyonel)\s+(?:ekip|personel|kadrosu?)|yetkili\s+(?:satıcı|ekip)|maliyet\s+(?:%|tasarruf)|(?:güvenli\s+kılıyoruz|koruyoruz|lekesiz|kalıcı|sıfır\s+zarar|güvenli\s+(?:alan|yamaç)|güvenli\s+ve\s+hızlı|uzun\s+ömürlü|can\s+güvenliği))/iu;
+
+const sanitizeRichText = (value: string, fallback: string) => {
+    const paragraphs = value
+        .split(/\n\s*\n/)
+        .map((paragraph) => paragraph
+            .split(/(?<=[.!?])\s+/u)
+            .filter((sentence) => !UNSUPPORTED_PUBLIC_CLAIM.test(sentence))
+            .join(' ')
+            .trim())
+        .filter(Boolean);
+
+    return paragraphs.length > 0 ? paragraphs.join('\n\n') : fallback;
+};
+
+const sanitizeList = (items: string[], fallback: string) => {
+    const safeItems = items
+        .filter((item) => !UNSUPPORTED_PUBLIC_CLAIM.test(item))
+        .map((item) => item.trim())
+        .filter(Boolean);
+
+    return safeItems.length > 0 ? [...new Set(safeItems)] : [fallback];
+};
+
+const sanitizeService = (service: ServiceContent): ServiceContent => ({
+    ...service,
+    metaDescription: sanitizeRichText(
+        service.metaDescription,
+        `${service.title} için kapsam, yöntem ve saha gereklilikleri hakkında bilgi alın.`
+    ),
+    intro: sanitizeRichText(
+        service.intro,
+        `${service.title} kapsamında uygulanacak yöntem, görev ve saha koşullarına göre belirlenir.`
+    ),
+    sections: service.sections.map((section) => ({
+        ...section,
+        content: sanitizeRichText(
+            section.content,
+            'Bu başlık için yöntem ve teknik gereklilikler saha verileri, üretici dokümanları ve proje kapsamı üzerinden doğrulanır.'
+        ),
+    })),
+    advantages: sanitizeList(
+        service.advantages,
+        'Proje kapsamına göre yöntem ve ekipman değerlendirmesi'
+    ),
+    applications: sanitizeList(
+        service.applications,
+        'Saha ve görev koşullarına göre uygulama'
+    ),
+    technicalDetails: sanitizeList(
+        service.technicalDetails,
+        'Teknik özellikler üretici dokümanı ve saha gereksinimine göre doğrulanır'
+    ),
+    whyChooseUs: sanitizeList(
+        service.whyChooseUs,
+        'Kapsamı açık ve saha bilgisine dayalı planlama'
+    ),
+    faqs: service.faqs.map((faq) => ({
+        ...faq,
+        answer: UNSUPPORTED_PUBLIC_CLAIM.test(faq.answer)
+            ? 'Bu sorunun yanıtı; işin kapsamı, saha koşulları, kullanılacak yöntem ve gerekli teknik kontroller doğrulandıktan sonra netleştirilir.'
+            : faq.answer,
+    })),
+});
+
+export const SERVICES_DATA: Record<string, ServiceContent> = Object.fromEntries(
+    Object.entries(RAW_SERVICES_DATA).map(([slug, service]) => [slug, sanitizeService(service)])
+);

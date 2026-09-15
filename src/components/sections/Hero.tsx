@@ -30,7 +30,7 @@ export default function Hero() {
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 <path d="m9 12 2 2 4-4" />
               </svg>
-              Türkiye&apos;nin Öncü Endüstriyel Dağcılık Firması
+              Endüstriyel dağcılık ve jeoteknik uygulamalar
             </div>
 
             <h1 className="hero-title">
@@ -41,14 +41,14 @@ export default function Hero() {
             
             <p className="hero-subtitle">
               Endüstriyel dağcılık, jeoteknik uygulamalar ve yüksek yapı çözümlerinde
-              15+ yıllık deneyim. Heyelan, kaya düşmesi ve yüksekte çalışma
-              problemlerinize profesyonel çözümler sunuyoruz.
+              saha koşullarına göre planlı çalışma yaklaşımı sunuyoruz. İşin kapsamını,
+              erişim yöntemini ve güvenlik gerekliliklerini birlikte değerlendiriyoruz.
             </p>
 
             <div className="hero-cta">
               <MagneticButton>
                 <Link href="/iletisim" className="btn btn-cta">
-                  Ücretsiz Teklif Alın
+                  Teklif talebi oluşturun
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                   </svg>
@@ -65,17 +65,17 @@ export default function Hero() {
             <div className="hero-trust">
               <div className="trust-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-                <span>IRATA Sertifikalı</span>
+                <span>Saha özel risk değerlendirmesi</span>
               </div>
               <div className="trust-divider" />
               <div className="trust-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-                <span>ISO 9001 & 45001</span>
+                <span>Ekipman ve çevre kontrolü</span>
               </div>
               <div className="trust-divider" />
               <div className="trust-item">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-                <span>500+ Proje</span>
+                <span>İletişim ve kurtarma planı</span>
               </div>
             </div>
           </div>

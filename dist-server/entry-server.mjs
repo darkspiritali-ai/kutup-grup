@@ -358,11 +358,11 @@ function Header() {
 															}),
 															/* @__PURE__ */ jsx("h5", {
 																className: "mega-cta-title",
-																children: "20+ Hizmet Alanında Uzman Çözümler"
+																children: "Endüstriyel dağcılık ve jeoteknik çözümler"
 															}),
 															/* @__PURE__ */ jsx("p", {
 																className: "mega-cta-desc",
-																children: "Endüstriyel dağcılık ve jeoteknik alanında profesyonel çözümler."
+																children: "Hizmet kapsamını ve saha gerekliliklerini birlikte değerlendirelim."
 															})
 														]
 													}), /* @__PURE__ */ jsxs(Link$1, {
@@ -830,113 +830,44 @@ function Footer() {
 									}),
 									/* @__PURE__ */ jsx("p", {
 										className: "footer-desc",
-										children: "Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz."
+										children: "Heyelan, kaya ve taş düşmesi riskleri ile yüksek yapı çalışmalarında kapsamı birlikte netleştiriyoruz."
 									}),
-									/* @__PURE__ */ jsxs("div", {
+									/* @__PURE__ */ jsx("div", {
 										className: "social-links",
-										children: [
-											/* @__PURE__ */ jsx(Link$1, {
-												href: "https://facebook.com",
-												target: "_blank",
-												rel: "noopener noreferrer",
-												className: "social-btn",
-												"aria-label": "Facebook",
-												children: /* @__PURE__ */ jsx("svg", {
-													width: "18",
-													height: "18",
-													viewBox: "0 0 24 24",
-													fill: "none",
-													stroke: "currentColor",
-													strokeWidth: "2",
-													strokeLinecap: "round",
-													strokeLinejoin: "round",
-													children: /* @__PURE__ */ jsx("path", { d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" })
-												})
-											}),
-											/* @__PURE__ */ jsx(Link$1, {
-												href: "https://www.instagram.com/kutup_endustriyel_dagcilik",
-												target: "_blank",
-												rel: "noopener noreferrer",
-												className: "social-btn",
-												"aria-label": "Instagram",
-												children: /* @__PURE__ */ jsxs("svg", {
-													width: "18",
-													height: "18",
-													viewBox: "0 0 24 24",
-													fill: "none",
-													stroke: "currentColor",
-													strokeWidth: "2",
-													strokeLinecap: "round",
-													strokeLinejoin: "round",
-													children: [
-														/* @__PURE__ */ jsx("rect", {
-															width: "20",
-															height: "20",
-															x: "2",
-															y: "2",
-															rx: "5",
-															ry: "5"
-														}),
-														/* @__PURE__ */ jsx("path", { d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" }),
-														/* @__PURE__ */ jsx("line", {
-															x1: "17.5",
-															x2: "17.51",
-															y1: "6.5",
-															y2: "6.5"
-														})
-													]
-												})
-											}),
-											/* @__PURE__ */ jsx(Link$1, {
-												href: "https://linkedin.com",
-												target: "_blank",
-												rel: "noopener noreferrer",
-												className: "social-btn",
-												"aria-label": "LinkedIn",
-												children: /* @__PURE__ */ jsxs("svg", {
-													width: "18",
-													height: "18",
-													viewBox: "0 0 24 24",
-													fill: "none",
-													stroke: "currentColor",
-													strokeWidth: "2",
-													strokeLinecap: "round",
-													strokeLinejoin: "round",
-													children: [
-														/* @__PURE__ */ jsx("path", { d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" }),
-														/* @__PURE__ */ jsx("rect", {
-															width: "4",
-															height: "12",
-															x: "2",
-															y: "9"
-														}),
-														/* @__PURE__ */ jsx("circle", {
-															cx: "4",
-															cy: "4",
-															r: "2"
-														})
-													]
-												})
-											}),
-											/* @__PURE__ */ jsx(Link$1, {
-												href: "https://youtube.com",
-												target: "_blank",
-												rel: "noopener noreferrer",
-												className: "social-btn",
-												"aria-label": "YouTube",
-												children: /* @__PURE__ */ jsxs("svg", {
-													width: "18",
-													height: "18",
-													viewBox: "0 0 24 24",
-													fill: "none",
-													stroke: "currentColor",
-													strokeWidth: "2",
-													strokeLinecap: "round",
-													strokeLinejoin: "round",
-													children: [/* @__PURE__ */ jsx("path", { d: "M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z" }), /* @__PURE__ */ jsx("polygon", { points: "10 15 15 12 10 9 10 15" })]
-												})
+										children: /* @__PURE__ */ jsx(Link$1, {
+											href: "https://www.instagram.com/kutup_endustriyel_dagcilik",
+											target: "_blank",
+											rel: "noopener noreferrer",
+											className: "social-btn",
+											"aria-label": "Instagram",
+											children: /* @__PURE__ */ jsxs("svg", {
+												width: "18",
+												height: "18",
+												viewBox: "0 0 24 24",
+												fill: "none",
+												stroke: "currentColor",
+												strokeWidth: "2",
+												strokeLinecap: "round",
+												strokeLinejoin: "round",
+												children: [
+													/* @__PURE__ */ jsx("rect", {
+														width: "20",
+														height: "20",
+														x: "2",
+														y: "2",
+														rx: "5",
+														ry: "5"
+													}),
+													/* @__PURE__ */ jsx("path", { d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" }),
+													/* @__PURE__ */ jsx("line", {
+														x1: "17.5",
+														x2: "17.51",
+														y1: "6.5",
+														y2: "6.5"
+													})
+												]
 											})
-										]
+										})
 									})
 								]
 							}),
@@ -1543,7 +1474,7 @@ function Hero() {
 									strokeLinecap: "round",
 									strokeLinejoin: "round",
 									children: [/* @__PURE__ */ jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }), /* @__PURE__ */ jsx("path", { d: "m9 12 2 2 4-4" })]
-								}), "Türkiye'nin Öncü Endüstriyel Dağcılık Firması"]
+								}), "Endüstriyel dağcılık ve jeoteknik uygulamalar"]
 							}),
 							/* @__PURE__ */ jsxs("h1", {
 								className: "hero-title",
@@ -1559,14 +1490,14 @@ function Hero() {
 							}),
 							/* @__PURE__ */ jsx("p", {
 								className: "hero-subtitle",
-								children: "Endüstriyel dağcılık, jeoteknik uygulamalar ve yüksek yapı çözümlerinde 15+ yıllık deneyim. Heyelan, kaya düşmesi ve yüksekte çalışma problemlerinize profesyonel çözümler sunuyoruz."
+								children: "Endüstriyel dağcılık, jeoteknik uygulamalar ve yüksek yapı çözümlerinde saha koşullarına göre planlı çalışma yaklaşımı sunuyoruz. İşin kapsamını, erişim yöntemini ve güvenlik gerekliliklerini birlikte değerlendiriyoruz."
 							}),
 							/* @__PURE__ */ jsxs("div", {
 								className: "hero-cta",
 								children: [/* @__PURE__ */ jsx(MagneticButton, { children: /* @__PURE__ */ jsxs(Link$1, {
 									href: "/iletisim",
 									className: "btn btn-cta",
-									children: ["Ücretsiz Teklif Alın", /* @__PURE__ */ jsxs("svg", {
+									children: ["Teklif talebi oluşturun", /* @__PURE__ */ jsxs("svg", {
 										width: "18",
 										height: "18",
 										viewBox: "0 0 24 24",
@@ -1596,7 +1527,7 @@ function Hero() {
 											stroke: "currentColor",
 											strokeWidth: "2.5",
 											children: [/* @__PURE__ */ jsx("path", { d: "M22 11.08V12a10 10 0 11-5.93-9.14" }), /* @__PURE__ */ jsx("polyline", { points: "22 4 12 14.01 9 11.01" })]
-										}), /* @__PURE__ */ jsx("span", { children: "IRATA Sertifikalı" })]
+										}), /* @__PURE__ */ jsx("span", { children: "Saha özel risk değerlendirmesi" })]
 									}),
 									/* @__PURE__ */ jsx("div", { className: "trust-divider" }),
 									/* @__PURE__ */ jsxs("div", {
@@ -1609,7 +1540,7 @@ function Hero() {
 											stroke: "currentColor",
 											strokeWidth: "2.5",
 											children: [/* @__PURE__ */ jsx("path", { d: "M22 11.08V12a10 10 0 11-5.93-9.14" }), /* @__PURE__ */ jsx("polyline", { points: "22 4 12 14.01 9 11.01" })]
-										}), /* @__PURE__ */ jsx("span", { children: "ISO 9001 & 45001" })]
+										}), /* @__PURE__ */ jsx("span", { children: "Ekipman ve çevre kontrolü" })]
 									}),
 									/* @__PURE__ */ jsx("div", { className: "trust-divider" }),
 									/* @__PURE__ */ jsxs("div", {
@@ -1622,7 +1553,7 @@ function Hero() {
 											stroke: "currentColor",
 											strokeWidth: "2.5",
 											children: [/* @__PURE__ */ jsx("path", { d: "M22 11.08V12a10 10 0 11-5.93-9.14" }), /* @__PURE__ */ jsx("polyline", { points: "22 4 12 14.01 9 11.01" })]
-										}), /* @__PURE__ */ jsx("span", { children: "500+ Proje" })]
+										}), /* @__PURE__ */ jsx("span", { children: "İletişim ve kurtarma planı" })]
 									})
 								]
 							})
@@ -2026,7 +1957,7 @@ var ArrowRightIcon = () => /* @__PURE__ */ jsxs("svg", {
 var services = [
 	{
 		title: "Jeoteknik Uygulamalar",
-		description: "Şev stabilizasyonu, kaya bariyeri ve heyelan önleme sistemleri.",
+		description: "Şev stabilizasyonu, kaya bariyeri ve yamaç koruma uygulamaları.",
 		icon: /* @__PURE__ */ jsx(MountainIcon, {}),
 		href: "/hizmetler/jeoteknik-uygulamalar",
 		color: "#10B981",
@@ -2042,7 +1973,7 @@ var services = [
 	},
 	{
 		title: "İç ve Dış Cephe Temizliği",
-		description: "Yüksek yapılarda profesyonel temizlik ve bakım hizmetleri.",
+		description: "Yüksek yapılarda iç ve dış cephe temizlik süreçleri.",
 		icon: /* @__PURE__ */ jsx(SparklesIcon, {}),
 		href: "/hizmetler/ic-ve-dis-cephe-temizlik-hizmetleri",
 		color: "#3E92CC",
@@ -2058,7 +1989,7 @@ var services = [
 	},
 	{
 		title: "Yatay & Düşey Yaşam Hattı",
-		description: "Yüksekte çalışan personel için can güvenliği sistemleri.",
+		description: "Yüksekte çalışma için yatay ve düşey yaşam hattı sistemleri.",
 		icon: /* @__PURE__ */ jsx(LinkIcon, {}),
 		href: "/hizmetler/yatay-ve-dusey-yasam-hatti",
 		color: "#8B5CF6",
@@ -2085,7 +2016,7 @@ function ServicesShowcase() {
 					children: "Hizmetlerimiz"
 				}), /* @__PURE__ */ jsx("p", {
 					className: "section-subtitle",
-					children: "Yüksekte çalışma, jeoteknik ve iş güvenliğinde kapsamlı çözümler sunuyoruz"
+					children: "Yüksekte çalışma, jeoteknik ve iş güvenliği hizmetlerinin kapsamını inceleyin"
 				})]
 			}), /* @__PURE__ */ jsx("div", {
 				className: "services-grid",
@@ -2307,9 +2238,9 @@ function ServicesShowcase() {
 //#region src/components/sections/Stats.tsx
 var stats$1 = [
 	{
-		number: 500,
-		suffix: "+",
-		label: "Tamamlanan Proje",
+		number: "01",
+		suffix: "",
+		label: "Keşif ve kapsam",
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "28",
 			height: "28",
@@ -2327,9 +2258,9 @@ var stats$1 = [
 		})
 	},
 	{
-		number: 15,
-		suffix: "+",
-		label: "Yıllık Deneyim",
+		number: "02",
+		suffix: "",
+		label: "Risk ve yöntem",
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "28",
 			height: "28",
@@ -2370,9 +2301,9 @@ var stats$1 = [
 		})
 	},
 	{
-		number: 200,
-		suffix: "+",
-		label: "Mutlu Müşteri",
+		number: "03",
+		suffix: "",
+		label: "Saha uygulaması",
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "28",
 			height: "28",
@@ -2395,9 +2326,9 @@ var stats$1 = [
 		})
 	},
 	{
-		number: 50,
-		suffix: "+",
-		label: "Uzman Ekip",
+		number: "04",
+		suffix: "",
+		label: "Kontrol ve kayıt",
 		icon: /* @__PURE__ */ jsxs("svg", {
 			width: "28",
 			height: "28",
@@ -2684,7 +2615,7 @@ function StructuredData({ data }) {
 //#region src/lib/seo.ts
 var SITE_NAME = "Kutup Grup";
 var SITE_URL$3 = "https://kutupgrup.com";
-var SITE_DESCRIPTION = "Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz. İple erişim teknikleri, jeoteknik uygulamalar ve yüksek yapı çözümleri.";
+var SITE_DESCRIPTION = "Heyelan, kaya ve taş düşmesi riskleri, iple erişim, jeoteknik uygulamalar ve yüksek yapı çalışmalarında kapsamı birlikte netleştirmeye yönelik bilgi alın.";
 function generateOrganizationSchema() {
 	return {
 		"@context": "https://schema.org",
@@ -2798,71 +2729,57 @@ var CheckCircleIcon = () => /* @__PURE__ */ jsxs("svg", {
 	strokeLinejoin: "round",
 	children: [/* @__PURE__ */ jsx("path", { d: "M22 11.08V12a10 10 0 11-5.93-9.14" }), /* @__PURE__ */ jsx("polyline", { points: "22 4 12 14.01 9 11.01" })]
 });
-var QuoteIcon = () => /* @__PURE__ */ jsx("svg", {
-	width: "24",
-	height: "24",
-	viewBox: "0 0 24 24",
-	fill: "currentColor",
-	opacity: "0.15",
-	children: /* @__PURE__ */ jsx("path", { d: "M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" })
-});
 var features = [
 	{
 		icon: /* @__PURE__ */ jsx(TrophyIcon, {}),
-		title: "Deneyimli Ekip",
-		description: "15 yılı aşkın sektör deneyimi ile uzman kadromuz her projede yanınızda.",
+		title: "Kapsamı netleştirme",
+		description: "Yapı, görev ve beklenen çıktıyı ilk değerlendirmede birlikte netleştiririz.",
 		color: "#F59E0B",
 		bg: "rgba(245, 158, 11, 0.1)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(ShieldIcon$1, {}),
-		title: "Güvenlik Odaklı",
-		description: "İş güvenliği standartlarına tam uyum, sertifikalı ekipman ve süreçler.",
+		title: "Risk odaklı planlama",
+		description: "Erişim yöntemi, çalışma alanı, çevre ve kurtarma gerekliliklerini birlikte ele alırız.",
 		color: "#3E92CC",
 		bg: "rgba(62, 146, 204, 0.1)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(BoltIcon$1, {}),
-		title: "Hızlı Çözüm",
-		description: "Acil durumlarda 7/24 müdahale, projelerde zamanında teslimat.",
+		title: "Sahaya uygun yöntem",
+		description: "İskele, platform veya iple erişim seçeneklerini işin koşullarına göre karşılaştırırız.",
 		color: "#8B5CF6",
 		bg: "rgba(139, 92, 246, 0.1)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(CheckCircleIcon, {}),
-		title: "Kalite Garantisi",
-		description: "ISO sertifikalı süreçler, kaliteli malzeme ve işçilik garantisi.",
+		title: "İzlenebilir teslim",
+		description: "Kontrol, iletişim ve teslim kayıtlarını çalışma kapsamının bir parçası olarak planlarız.",
 		color: "#10B981",
 		bg: "rgba(16, 185, 129, 0.1)"
 	}
 ];
-var testimonials = [
+var workingApproach = [
 	{
-		name: "M. K.",
-		company: "Proje Müdürü, Yapı A.Ş.",
-		text: "Kutup Grup ile birçok projede çalıştık. Profesyonellikleri ve güvenlik odaklı yaklaşımları bizi her zaman etkiledi.",
-		rating: 5
+		title: "İlk görüşme",
+		text: "Yapı, saha, görev ve erişimle ilgili mevcut bilgileri toplar; hangi verilerin eksik olduğunu açıkça belirtiriz."
 	},
 	{
-		name: "A. D.",
-		company: "Şantiye Şefi, İnşaat Ltd.",
-		text: "Acil durumlarda bile hızlı müdahale kapasiteleri mükemmel. Her projede kaliteli iş çıkardılar.",
-		rating: 5
+		title: "Saha ve risk değerlendirmesi",
+		text: "Çalışma alanını, çevredeki kişileri, düşen cisim riskini, ekipman gerekliliklerini ve acil durum senaryosunu inceleriz."
 	},
 	{
-		name: "C. Ö.",
-		company: "Operasyon Yöneticisi, Enerji Grubu",
-		text: "Rüzgar türbini bakım projelerimizde güvenle çalıştığımız tek firma. IRATA sertifikalı ekipleri fark yaratıyor.",
-		rating: 5
+		title: "Yöntem ve teslim kapsamı",
+		text: "Uygun yöntemi, sorumlulukları, kontrol adımlarını ve teslim kayıtlarını proje kapsamına göre netleştiririz."
 	}
 ];
 var certifications$1 = [
-	"IRATA Sertifikası",
-	"SPRAT Belgesi",
-	"ISO 9001",
-	"ISO 14001",
-	"ISO 45001",
-	"CE Belgesi"
+	"Saha ve görev kapsamı",
+	"Ekipman ve üretici talimatları",
+	"Risk değerlendirmesi",
+	"İş metodu ve iletişim",
+	"Acil durum ve kurtarma",
+	"Teslim ve kayıt düzeni"
 ];
 function Home() {
 	return /* @__PURE__ */ jsxs(Fragment, { children: [
@@ -2890,7 +2807,7 @@ function Home() {
 							}),
 							/* @__PURE__ */ jsx("p", {
 								className: "section-subtitle",
-								children: "Yüksekte çalışma ve jeoteknik alanında güvenilir çözüm ortağınız"
+								children: "Yüksekte çalışma ve jeoteknik hizmetlerinin kapsamını saha koşullarına göre değerlendirin"
 							})
 						]
 					}) }), /* @__PURE__ */ jsx("div", {
@@ -2926,20 +2843,20 @@ function Home() {
 						children: [
 							/* @__PURE__ */ jsx("p", {
 								className: "section-eyebrow",
-								children: "Müşteri Yorumları"
+								children: "Çalışma yaklaşımımız"
 							}),
 							/* @__PURE__ */ jsx("h2", {
 								className: "section-title",
-								children: "Müşterilerimiz Ne Diyor?"
+								children: "İlk görüşmeden teslimata"
 							}),
 							/* @__PURE__ */ jsx("p", {
 								className: "section-subtitle",
-								children: "Birlikte çalıştığımız firmalardan geri bildirimler"
+								children: "Her işin kapsamı ve saha koşulu farklıdır; bu nedenle planlamayı gerçek ihtiyaç üzerinden kurarız."
 							})
 						]
 					}) }), /* @__PURE__ */ jsx("div", {
 						className: "testimonials-grid",
-						children: testimonials.map((t, index) => /* @__PURE__ */ jsx(ScrollReveal, {
+						children: workingApproach.map((item, index) => /* @__PURE__ */ jsx(ScrollReveal, {
 							variant: "fadeUp",
 							delay: index * 150,
 							children: /* @__PURE__ */ jsxs("div", {
@@ -2947,36 +2864,15 @@ function Home() {
 								children: [
 									/* @__PURE__ */ jsx("div", {
 										className: "testimonial-quote",
-										children: /* @__PURE__ */ jsx(QuoteIcon, {})
+										children: /* @__PURE__ */ jsx(CheckCircleIcon, {})
+									}),
+									/* @__PURE__ */ jsx("h3", {
+										className: "testimonial-name",
+										children: item.title
 									}),
 									/* @__PURE__ */ jsx("p", {
 										className: "testimonial-text",
-										children: t.text
-									}),
-									/* @__PURE__ */ jsx("div", {
-										className: "testimonial-stars",
-										children: [...Array(t.rating)].map((_, i) => /* @__PURE__ */ jsx("svg", {
-											width: "16",
-											height: "16",
-											viewBox: "0 0 24 24",
-											fill: "#F59E0B",
-											stroke: "#F59E0B",
-											strokeWidth: "1",
-											children: /* @__PURE__ */ jsx("polygon", { points: "12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" })
-										}, i))
-									}),
-									/* @__PURE__ */ jsxs("div", {
-										className: "testimonial-author",
-										children: [/* @__PURE__ */ jsx("div", {
-											className: "testimonial-avatar",
-											children: t.name.charAt(0)
-										}), /* @__PURE__ */ jsxs("div", { children: [/* @__PURE__ */ jsx("div", {
-											className: "testimonial-name",
-											children: t.name
-										}), /* @__PURE__ */ jsx("div", {
-											className: "testimonial-company",
-											children: t.company
-										})] })]
+										children: item.text
 									})
 								]
 							})
@@ -3033,8 +2929,8 @@ function Home() {
 						children: /* @__PURE__ */ jsxs("div", {
 							className: "cta-content",
 							children: [
-								/* @__PURE__ */ jsx("h2", { children: "Projeniz İçin Ücretsiz Teklif Alın" }),
-								/* @__PURE__ */ jsx("p", { children: "Uzman ekibimiz projenizi değerlendirip size en uygun çözümü sunmaya hazır." }),
+								/* @__PURE__ */ jsx("h2", { children: "Projenizin kapsamını birlikte netleştirelim" }),
+								/* @__PURE__ */ jsx("p", { children: "Yapı ve saha bilgilerinizi paylaşın; uygun değerlendirme adımlarını birlikte belirleyelim." }),
 								/* @__PURE__ */ jsxs(Link$1, {
 									href: "/iletisim",
 									className: "btn btn-cta-white",
@@ -3566,29 +3462,29 @@ var RocketIcon = () => /* @__PURE__ */ jsxs("svg", {
 var stats = [
 	{
 		icon: /* @__PURE__ */ jsx(CalendarIcon, {}),
-		label: "Deneyim",
-		value: "15+ Yıl",
+		label: "Başlangıç",
+		value: "Keşif",
 		color: "#F59E0B",
 		bg: "rgba(245, 158, 11, 0.1)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(BuildingIcon$1, {}),
-		label: "Tamamlanan Proje",
-		value: "500+",
+		label: "Planlama",
+		value: "Yöntem",
 		color: "#3E92CC",
 		bg: "rgba(62, 146, 204, 0.1)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(UsersIcon, {}),
-		label: "Mutlu Müşteri",
-		value: "200+",
+		label: "Koordinasyon",
+		value: "İletişim",
 		color: "#10B981",
 		bg: "rgba(16, 185, 129, 0.1)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(StarIcon, {}),
-		label: "Başarı Oranı",
-		value: "%100",
+		label: "Kapanış",
+		value: "Kayıt",
 		color: "#8B5CF6",
 		bg: "rgba(139, 92, 246, 0.1)"
 	}
@@ -3597,53 +3493,53 @@ var values = [
 	{
 		icon: /* @__PURE__ */ jsx(ShieldIcon, {}),
 		title: "Güvenlik",
-		description: "İş güvenliği ve personel sağlığı bizim için en öncelikli konudur. IRATA ve SPRAT standartlarına uygun çalışmalarla sıfır kaza hedefleriz.",
+		description: "İşin risklerini, çevreyi ve çalışanların korunmasını planlamanın başlangıç noktası olarak ele alırız.",
 		color: "#EF4444",
 		bg: "rgba(239, 68, 68, 0.08)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(BoltIcon, {}),
 		title: "Kalite",
-		description: "ISO sertifikalı süreçler, CE onaylı ekipmanlar ve deneyimli ekibimizle en yüksek kalite standartlarını garanti ediyoruz.",
+		description: "Malzeme ve ekipman seçimini üretici talimatları, görev ve saha koşullarıyla birlikte değerlendiririz.",
 		color: "#F59E0B",
 		bg: "rgba(245, 158, 11, 0.08)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(LightbulbIcon, {}),
 		title: "İnovasyon",
-		description: "Sektördeki en son teknolojileri takip eder, yenilikçi çözümler geliştirerek müşterilerimize değer katarız.",
+		description: "Yöntem ve ekipman seçeneklerini güncel teknik bilgiler ışığında karşılaştırarak işe uygun çözümü ararız.",
 		color: "#3E92CC",
 		bg: "rgba(62, 146, 204, 0.08)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(HandshakeIcon, {}),
-		title: "Müşteri Memnuniyeti",
-		description: "Her projede müşteri beklentilerini aşmayı hedefleriz. Şeffaf iletişim ve zamanında teslimat prensiplerimizdir.",
+		title: "Açık iletişim",
+		description: "Kapsamı, sorumlulukları, varsayımları ve teslim adımlarını çalışma başlamadan önce görünür kılmaya önem veririz.",
 		color: "#10B981",
 		bg: "rgba(16, 185, 129, 0.08)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(GlobeIcon, {}),
-		title: "Çevre Bilinci",
-		description: "Doğaya saygılı çalışma prensipleriyle çevresel etkiyi minimuma indirerek sürdürülebilir projeler gerçekleştiririz.",
+		title: "Çevre bilinci",
+		description: "Çalışmanın çevreye, yapıya ve üçüncü kişilere etkisini planlama sırasında ayrıca değerlendiririz.",
 		color: "#8B5CF6",
 		bg: "rgba(139, 92, 246, 0.08)"
 	},
 	{
 		icon: /* @__PURE__ */ jsx(BookIcon, {}),
-		title: "Sürekli Gelişim",
-		description: "Ekibimize düzenli eğitimler vererek sektördeki gelişmeleri takip eder, kendimizi sürekli geliştiririz.",
+		title: "Sürekli gelişim",
+		description: "Görev ve ekipman gereklilikleri için güncel bilgi, eğitim ve saha geri bildirimi ihtiyacını takip ederiz.",
 		color: "#EC4899",
 		bg: "rgba(236, 72, 153, 0.08)"
 	}
 ];
 var certifications = [
-	"IRATA Sertifikalı Teknisyenler",
-	"SPRAT Eğitimli Personel",
-	"ISO 9001 Kalite Yönetim Sistemi",
-	"ISO 14001 Çevre Yönetim Sistemi",
-	"ISO 45001 İş Sağlığı ve Güvenliği",
-	"CE Sertifikalı Ekipmanlar"
+	"Saha ve görev kapsamı",
+	"Ekipman ve üretici talimatları",
+	"Risk değerlendirmesi",
+	"İş metodu ve iletişim",
+	"Acil durum ve kurtarma",
+	"Teslim ve kayıt düzeni"
 ];
 function AboutPageClient() {
 	return /* @__PURE__ */ jsxs("div", { children: [
@@ -3663,7 +3559,7 @@ function AboutPageClient() {
 							/* @__PURE__ */ jsx("h1", { children: "Kutup Grup Hakkında" }),
 							/* @__PURE__ */ jsx("p", {
 								className: "hero-subtitle",
-								children: "Endüstriyel dağcılık ve jeoteknik çözümler alanında Türkiye'nin önde gelen şirketi"
+								children: "Endüstriyel dağcılık ve jeoteknik uygulamalara odaklanan şirket"
 							})
 						]
 					})
@@ -3721,11 +3617,11 @@ function AboutPageClient() {
 									}),
 									/* @__PURE__ */ jsx("h2", {
 										className: "section-title",
-										children: "2008'den Bugüne Güçlü Bir Yolculuk"
+										children: "Sahaya göre şekillenen çalışma yaklaşımı"
 									}),
-									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Kutup Grup" }), ", 2008 yılında endüstriyel dağcılık ve iple erişim teknikleri alanında uzmanlaşmış bir ekip tarafından kuruldu. Kuruluşumuzdan bu yana, heyelan, kaya düşmesi ve yüksek yapı çözümleri konusunda Türkiye'nin en güvenilir firmalarından biri haline geldik."] }),
-									/* @__PURE__ */ jsx("p", { children: "İlk projelerimizde küçük ölçekli cephe temizleme işleriyle başlayan yolculuğumuz, bugün 500'den fazla büyük ölçekli projeyi başarıyla tamamlamış, sektörün öncü firmalarından biri konumuna ulaşmıştır." }),
-									/* @__PURE__ */ jsx("p", { children: "Türkiye'nin dört bir yanında, enerji santrallerinden köprü bakımlarına, tersane işlerinden yüksek bina aydınlatmalarına kadar geniş bir yelpazede hizmet sunuyoruz." })
+									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Kutup Grup" }), "; endüstriyel dağcılık, iple erişim, yüksek yapı çalışmaları ve jeoteknik uygulamalarda proje kapsamına göre çalışma yaklaşımı sunar."] }),
+									/* @__PURE__ */ jsx("p", { children: "Çalışmanın başında yapı veya tesis, erişim koşulları, tehlikeler, çevredeki insanlar ve beklenen çıktı birlikte değerlendirilir." }),
+									/* @__PURE__ */ jsx("p", { children: "Hizmet kapsamı; saha bilgileri, görev ve gerekli teknik değerlendirme netleştirildikten sonra belirlenir." })
 								]
 							})
 						}), /* @__PURE__ */ jsx(ScrollReveal, {
@@ -3736,10 +3632,10 @@ function AboutPageClient() {
 									className: "story-card",
 									children: [/* @__PURE__ */ jsx("div", {
 										className: "story-card-number",
-										children: "15+"
+										children: "Saha"
 									}), /* @__PURE__ */ jsx("div", {
 										className: "story-card-text",
-										children: "Yıllık Sektör Deneyimi"
+										children: "Önce kapsam, sonra yöntem"
 									})]
 								})
 							})
@@ -3772,7 +3668,7 @@ function AboutPageClient() {
 										children: /* @__PURE__ */ jsx(TargetIcon, {})
 									}),
 									/* @__PURE__ */ jsx("h3", { children: "Misyonumuz" }),
-									/* @__PURE__ */ jsx("p", { children: "Endüstriyel dağcılık ve jeoteknik uygulamalar alanında, uluslararası standartlara uygun, güvenli ve kaliteli hizmet sunarak müşterilerimizin ihtiyaçlarına en uygun çözümleri üretmek." })
+									/* @__PURE__ */ jsx("p", { children: "Endüstriyel dağcılık ve jeoteknik uygulamalarda; ilgili mevzuatı, üretici talimatlarını ve proje koşullarını dikkate alan güvenli ve izlenebilir çalışma süreçleri kurmak." })
 								]
 							})
 						}), /* @__PURE__ */ jsx(ScrollReveal, {
@@ -3785,7 +3681,7 @@ function AboutPageClient() {
 										children: /* @__PURE__ */ jsx(RocketIcon, {})
 									}),
 									/* @__PURE__ */ jsx("h3", { children: "Vizyonumuz" }),
-									/* @__PURE__ */ jsx("p", { children: "Türkiye ve bölge ülkelerinde endüstriyel dağcılık ve jeoteknik çözümler alanında lider konumunu pekiştirerek, global standartlarda hizmet sunan bir organizasyon olmak." })
+									/* @__PURE__ */ jsx("p", { children: "Endüstriyel dağcılık ve jeoteknik çözümlerde kapsamı açık, saha bilgisine dayalı, güvenilir ve izlenebilir bir çalışma organizasyonu olmak." })
 								]
 							})
 						})]
@@ -3877,7 +3773,7 @@ function AboutPageClient() {
 							className: "cta-inner",
 							children: [
 								/* @__PURE__ */ jsx("h2", { children: "Bizimle Çalışmaya Hazır Mısınız?" }),
-								/* @__PURE__ */ jsx("p", { children: "Projeleriniz için profesyonel çözümler sunmaya hazırız." }),
+								/* @__PURE__ */ jsx("p", { children: "Projenizin kapsamını ve gerekli değerlendirme adımlarını birlikte netleştirelim." }),
 								/* @__PURE__ */ jsxs("div", {
 									className: "cta-buttons",
 									children: [/* @__PURE__ */ jsxs(Link$1, {
@@ -4034,7 +3930,7 @@ function AboutPageClient() {
 //#endregion
 //#region src/lib/services-data.ts
 var services_data_exports = /* @__PURE__ */ __exportAll({ SERVICES_DATA: () => SERVICES_DATA });
-var SERVICES_DATA = {
+var RAW_SERVICES_DATA = {
 	"dis-cephe-dekoratif-aydinlatma": {
 		slug: "dis-cephe-dekoratif-aydinlatma",
 		title: "Dış Cephe Dekoratif Aydınlatma",
@@ -5548,6 +5444,39 @@ var SERVICES_DATA = {
 		]
 	}
 };
+/**
+* Public service copy must stay within claims that can be checked from the
+* project brief and current site records. The source catalogue contains old
+* campaign copy and technical placeholders, so only the sanitized catalogue
+* is exported to pages, SSR, sitemaps and llms.txt.
+*/
+var UNSUPPORTED_PUBLIC_CLAIM = /(?:\b(?:15|19|20|30|40|50|60|80|100|200|300|500|1000|5000)\s*\+?|%\s*\d+|\b\d+\s*(?:-\s*\d+)?\s*(?:gün|hafta|ay|yıl|saat|kat|metre|m|m²|m³|kJ|TL)|7\s*\/\s*24|IRATA|SPRAT|GWO|ISA|sertifik|ISO\s*\d+|\bCE\b|\bTSE\b|\bEN\s*\d+|ATEX|NDT|Level\s*\d|garanti|sigorta|sıfır\s+kaza|%100|tam\s+erişim|Türkiye['’]nin\s+(?:dört\s+bir\s+yanında|tüm)|(?:en|lider|öncü)\s+(?:etkili|yüksek|güvenilir|iyi|hızlı)|(?:uzman|eğitimli|profesyonel)\s+(?:ekip|personel|kadrosu?)|yetkili\s+(?:satıcı|ekip)|maliyet\s+(?:%|tasarruf)|(?:güvenli\s+kılıyoruz|koruyoruz|lekesiz|kalıcı|sıfır\s+zarar|güvenli\s+(?:alan|yamaç)|güvenli\s+ve\s+hızlı|uzun\s+ömürlü|can\s+güvenliği))/iu;
+var sanitizeRichText = (value, fallback) => {
+	const paragraphs = value.split(/\n\s*\n/).map((paragraph) => paragraph.split(/(?<=[.!?])\s+/u).filter((sentence) => !UNSUPPORTED_PUBLIC_CLAIM.test(sentence)).join(" ").trim()).filter(Boolean);
+	return paragraphs.length > 0 ? paragraphs.join("\n\n") : fallback;
+};
+var sanitizeList = (items, fallback) => {
+	const safeItems = items.filter((item) => !UNSUPPORTED_PUBLIC_CLAIM.test(item)).map((item) => item.trim()).filter(Boolean);
+	return safeItems.length > 0 ? [...new Set(safeItems)] : [fallback];
+};
+var sanitizeService = (service) => ({
+	...service,
+	metaDescription: sanitizeRichText(service.metaDescription, `${service.title} için kapsam, yöntem ve saha gereklilikleri hakkında bilgi alın.`),
+	intro: sanitizeRichText(service.intro, `${service.title} kapsamında uygulanacak yöntem, görev ve saha koşullarına göre belirlenir.`),
+	sections: service.sections.map((section) => ({
+		...section,
+		content: sanitizeRichText(section.content, "Bu başlık için yöntem ve teknik gereklilikler saha verileri, üretici dokümanları ve proje kapsamı üzerinden doğrulanır.")
+	})),
+	advantages: sanitizeList(service.advantages, "Proje kapsamına göre yöntem ve ekipman değerlendirmesi"),
+	applications: sanitizeList(service.applications, "Saha ve görev koşullarına göre uygulama"),
+	technicalDetails: sanitizeList(service.technicalDetails, "Teknik özellikler üretici dokümanı ve saha gereksinimine göre doğrulanır"),
+	whyChooseUs: sanitizeList(service.whyChooseUs, "Kapsamı açık ve saha bilgisine dayalı planlama"),
+	faqs: service.faqs.map((faq) => ({
+		...faq,
+		answer: UNSUPPORTED_PUBLIC_CLAIM.test(faq.answer) ? "Bu sorunun yanıtı; işin kapsamı, saha koşulları, kullanılacak yöntem ve gerekli teknik kontroller doğrulandıktan sonra netleştirilir." : faq.answer
+	}))
+});
+var SERVICES_DATA = Object.fromEntries(Object.entries(RAW_SERVICES_DATA).map(([slug, service]) => [slug, sanitizeService(service)]));
 //#endregion
 //#region src/pages/Services.tsx
 var CATEGORIES$1 = [
@@ -6638,7 +6567,7 @@ function ServiceContentClient({ service }) {
 							/* @__PURE__ */ jsx(Link$1, {
 								href: "/iletisim",
 								className: "btn btn-cta",
-								children: "Ücretsiz Teklif Alın"
+								children: "Teklif talebi oluşturun"
 							})
 						]
 					}), service.heroImage && /* @__PURE__ */ jsx("div", {
@@ -6678,7 +6607,7 @@ function ServiceContentClient({ service }) {
 									/* @__PURE__ */ jsx("h2", { children: "Jeoteknik Çözümlerimiz & Hizmetlerimiz" }),
 									/* @__PURE__ */ jsx("p", {
 										className: "sub-services-intro",
-										children: "Kutup Grup olarak, zorlu arazi koşullarında kaya düşmesini önleme, şev stabilizasyonu ve yamaç güvenliği konularında uzman ekiplerimizle profesyonel mühendislik çözümleri sunuyoruz. İşte bu kapsamda sunduğumuz temel hizmetlerimiz:"
+										children: "Zorlu arazi koşullarında kaya düşmesi, şev stabilizasyonu ve yamaç güvenliği başlıkları; saha verileri ve proje gereklilikleri birlikte değerlendirilerek ele alınır. İlgili hizmet başlıklarını aşağıda inceleyebilirsiniz:"
 									}),
 									/* @__PURE__ */ jsx("div", {
 										className: "sub-services-grid",
@@ -6773,7 +6702,7 @@ function ServiceContentClient({ service }) {
 								className: "sidebar-card card-premium",
 								children: [
 									/* @__PURE__ */ jsx("h3", { children: "İletişime Geçin" }),
-									/* @__PURE__ */ jsx("p", { children: "Projeniz için ücretsiz keşif ve teklif almak ister misiniz?" }),
+									/* @__PURE__ */ jsx("p", { children: "Projenizin kapsamını ve ilk değerlendirme adımlarını birlikte netleştirelim." }),
 									/* @__PURE__ */ jsx(Link$1, {
 										href: "/iletisim",
 										className: "btn btn-primary",
@@ -7464,7 +7393,7 @@ function ContactPageClient() {
 						children: "İletişime Geçin"
 					}), /* @__PURE__ */ jsx("p", {
 						className: contact_module_default.heroSubtitle,
-						children: "Projeleriniz için bize ulaşın, size en uygun çözümü sunalım"
+						children: "Projenizin kapsamını ve gerekli değerlendirme adımlarını birlikte netleştirelim"
 					})]
 				})
 			}), /* @__PURE__ */ jsxs("div", {
@@ -7608,7 +7537,7 @@ function ContactPageClient() {
 								}),
 								submitStatus === "success" && /* @__PURE__ */ jsx("div", {
 									className: contact_module_default.successMessage,
-									children: "✓ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız."
+									children: "✓ Mesajınız alınmıştır. Gerekli görülürse iletişim bilgileriniz üzerinden dönüş yapılacaktır."
 								}),
 								submitStatus === "error" && /* @__PURE__ */ jsx("div", {
 									className: contact_module_default.errorMessage,
@@ -8151,109 +8080,109 @@ var FAQS = [
 		id: 1,
 		category: "Genel",
 		question: "Kutup Grup hangi hizmetleri sunuyor?",
-		answer: "Kutup Grup olarak endüstriyel dağcılık (iple erişim teknikleri) ve jeoteknik uygulamalar olmak üzere iki ana kategoride hizmet sunuyoruz. Cephe temizliği, aydınlatma kurulumu, tersane işleri, rüzgar türbini bakımı, kaya bariyeri, şev örtüleme, yamaç stabilizasyonu gibi 19 farklı hizmet alanımız bulunmaktadır."
+		answer: "Endüstriyel dağcılık, iple erişim, yüksek yapı çalışmaları ve jeoteknik uygulamalarla ilgili hizmet başlıklarını Hizmetler sayfasında bulabilirsiniz. Bir işin uygulanabilirliği; yapı, görev, erişim ve saha koşulları incelendikten sonra netleştirilir."
 	},
 	{
 		id: 2,
 		category: "Genel",
 		question: "Hangi bölgelerde hizmet veriyorsunuz?",
-		answer: "Türkiye'nin tüm bölgelerinde hizmet vermekteyiz. Merkez ofisimiz İstanbul'da olmakla birlikte, mobil ekiplerimiz sayesinde ülkenin her noktasında proje gerçekleştirebiliyoruz. Özellikle İstanbul, Ankara, İzmir, Bursa, Kocaeli ve çevre illerde yoğun olarak çalışmaktayız."
+		answer: "Hizmet alanı; projenin kapsamı, saha koşulları ve ekip planına göre belirlenir. İletişim sayfasındaki bilgilerle yapı, görev ve konum bilgisini paylaşarak ön değerlendirme başlatabilirsiniz."
 	},
 	{
 		id: 3,
 		category: "Sertifikasyon",
 		question: "IRATA nedir ve neden önemlidir?",
-		answer: "IRATA (Industrial Rope Access Trade Association), endüstriyel iple erişim çalışmaları için dünya çapında kabul görmüş bir sertifikasyon sistemidir. IRATA sertifikalı teknisyenlerimiz uluslararası güvenlik standartlarına uygun olarak eğitilmiş ve düzenli olarak yetkinlikleri denetlenmektedir. Bu, çalışanlarımızın en yüksek güvenlik düzeyinde iş yapmasını garanti eder."
+		answer: "IRATA (Industrial Rope Access Trade Association), endüstriyel iple erişim alanında eğitim, yetkinlik ve uygulama çerçevesi sunan uluslararası bir kuruluştur. Bir şirketin veya personelin güncel belge durumu ayrıca doğrulanmalıdır; sertifika ifadesi tek başına saha risk değerlendirmesinin yerine geçmez."
 	},
 	{
 		id: 4,
 		category: "Sertifikasyon",
 		question: "SPRAT ve IRATA arasındaki fark nedir?",
-		answer: "SPRAT (Society of Professional Rope Access Technicians) ve IRATA, iple erişim alanında kabul görmüş iki ana sertifikasyon kuruluşudur. Her ikisi de benzer güvenlik standartlarına sahiptir. IRATA daha çok Avrupa ve Asya'da, SPRAT ise Amerika kıtasında yaygındır. Kutup Grup olarak her iki sertifikaya sahip teknisyenlere sahibiz."
+		answer: "SPRAT (Society of Professional Rope Access Technicians) ve IRATA, iple erişim alanında eğitim ve uygulama çerçeveleri sunan iki ayrı kuruluştur. Kapsam, seviye ve güncel belge durumu personel ve proje bazında doğrulanmalıdır."
 	},
 	{
 		id: 5,
 		category: "Güvenlik",
 		question: "İş güvenliği önlemleriniz nelerdir?",
-		answer: "İş güvenliği bizim için en öncelikli konudur. Tüm projelerimizde ISO 45001 İş Sağlığı ve Güvenliği Yönetim Sistemi standartlarına uygun çalışırız. IRATA/SPRAT sertifikalı teknisyenler, CE onaylı ekipmanlar, kapsamlı risk analizleri, iş öncesi güvenlik brifingleri, kurtarma planları ve 7/24 güvenlik gözetimi sağlarız."
+		answer: "İşin kapsamına göre risk değerlendirmesi, iş metodu, ekipman kontrolü, çalışma alanının ve çevrenin korunması, iletişim düzeni ve kurtarma planı ele alınır. Gerekli yetkinlik ve belgeler proje öncesi doğrulanır; tek bir standart veya sertifika her saha için yeterli kabul edilmez."
 	},
 	{
 		id: 6,
 		category: "Güvenlik",
-		question: "Çalışanlarınız sigortalı mı?",
-		answer: "Evet, tüm çalışanlarımız SGK sigortalıdır ve ek olarak özel iş kazası sigortası kapsamındadır. Ayrıca yaptığımız her proje için sorumluluk sigortası poliçesi mevcuttur."
+		question: "Proje öncesi hangi iş güvenliği bilgileri paylaşılır?",
+		answer: "İşin niteliğine göre görev, sorumluluk, yetkinlik, ekipman, saha kuralları, sigorta ve gerekli belge kapsamı teklif veya sözleşme öncesi karşılıklı olarak netleştirilir. Kesin bilgiler proje özelindeki kayıtlarla doğrulanmalıdır."
 	},
 	{
 		id: 7,
 		category: "Proje Süreci",
 		question: "Proje süreci nasıl işliyor?",
-		answer: "Proje sürecimiz şu adımlardan oluşur: 1) İlk görüşme ve ihtiyaç analizi, 2) Saha keşfi ve teknik inceleme, 3) Risk analizi ve metod belirleme, 4) Detaylı teklif sunumu, 5) Sözleşme imzalama, 6) Proje uygulama, 7) Kalite kontrol ve teslimat, 8) Garanti ve periyodik bakım desteği."
+		answer: "Süreç genellikle ilk görüşme ve bilgi toplama, saha keşfi veya teknik inceleme, risk ve yöntem değerlendirmesi, kapsamı açık teklif, sözleşme, saha uygulaması, kontrol ve teslim kayıtlarından oluşur. Bakım veya takip ihtiyacı varsa kapsamı ayrıca yazılı olarak belirlenir."
 	},
 	{
 		id: 8,
 		category: "Proje Süreci",
 		question: "Teklif almak için ne yapmam gerekiyor?",
-		answer: "İletişim sayfamızdaki formu doldurarak veya telefon/e-posta ile bize ulaşabilirsiniz. Projeniz hakkında temel bilgileri paylaştığınızda, ekibimiz en kısa sürede sizinle iletişime geçerek detaylı bilgi alacak ve saha keşfi için randevu ayarlayacaktır. Saha keşfi sonrası 3-5 iş günü içinde detaylı teklifimizi sunuyoruz."
+		answer: "İletişim sayfasındaki form, telefon veya e-posta üzerinden yapı, konum, görev, erişim ve beklenen çıktı hakkında temel bilgileri paylaşabilirsiniz. Teklif süresi; kapsamın açıklığı, saha incelemesi ve gerekli teknik değerlendirmeye göre netleştirilir."
 	},
 	{
 		id: 9,
 		category: "Hizmet Detayları",
 		question: "Cephe temizliği ne kadar sürer?",
-		answer: "Cephe temizliği süresi binanın yüksekliği, toplam metrekaresi, cam yüzeyinin kirliliği ve hava koşullarına göre değişir. Ortalama bir 10 katlı binanın cephesi 2-3 gün içinde tamamlanabilir. Detaylı süre tahmini için saha keşfi yapmamız gerekir."
+		answer: "Cephe temizliği süresi binanın yüksekliği, toplam alanı, yüzey ve kirlilik türü, erişim yöntemi, çevre güvenliği ve hava koşullarına göre değişir. Takvim, saha bilgileri ve iş kapsamı incelendikten sonra gerçekçi biçimde belirlenir."
 	},
 	{
 		id: 10,
 		category: "Hizmet Detayları",
 		question: "Kaya bariyeri fiyatı nasıl hesaplanır?",
-		answer: "Kaya bariyeri fiyatı şu faktörlere göre belirlenir: 1) Bariyerin enerji emme kapasitesi (kJ cinsinden), 2) Metre cinsinden uzunluk, 3) Arazinin tehlike derecesi ve erişilebilirliği, 4) Montaj zorluk derecesi, 5) Kullanılacak malzeme standardı (EN 1317). Her proje özeldir, bu nedenle kesin fiyat için saha incelemesi gerekir."
+		answer: "Kaya bariyeri maliyeti; kaynak alan, hareket yolu, tasarım senaryosu, gerekli enerji kapasitesi, güzergâh uzunluğu, zemin ve ankraj koşulları, erişim ve montaj gereklilikleriyle birlikte değerlendirilir. Kesin kapsam ve fiyat için saha verisi gerekir; ilgili ürün standardı üretici ve tasarım dokümanlarından doğrulanmalıdır."
 	},
 	{
 		id: 11,
 		category: "Hizmet Detayları",
 		question: "Rüzgar türbini bakımı ne sıklıkla yapılmalıdır?",
-		answer: "Rüzgar türbinlerinin periyodik bakımı yılda en az 2 kez (bahar ve sonbahar) yapılmalıdır. İlave olarak fırtına sonrası acil kontroller, kanat temizliği (performans için), ve üretici tavsiyelerine göre major bakımlar gerekebilir. Kutup Grup olarak yıllık bakım kontratları sunuyoruz."
+		answer: "Rüzgâr türbinlerinde bakım periyodu; üretici talimatları, işletme koşulları, ekipmanın durumu ve saha riskine göre belirlenir. Fırtına veya olağan dışı olay sonrasında ek kontrol gerekebilir. Takvim ve bakım kapsamı proje dokümanında açıkça yazılmalıdır."
 	},
 	{
 		id: 12,
 		category: "Hizmet Detayları",
 		question: "Şev örtüleme nedir ve neden gereklidir?",
-		answer: "Şev örtüleme, eğimli arazilerde (yamaçlarda) toprak erozyonunu ve kaya/moloz düşmesini önlemek için yapılan jeoteknik bir uygulamadır. Özellikle karayolu kenarları, demiryolu hatları ve yerleşim alanlarına yakın yamaçlarda can ve mal güvenliği için kritik önem taşır. Çelik tel örgü veya özel sentezik ağlarla yamaç yüzeyi sabitlenir."
+		answer: "Şev örtüleme, eğimli arazilerde yüzey erozyonunu ve gevşek malzemenin hareketini sınırlamaya veya yönlendirmeye yardımcı olabilen jeoteknik bir uygulamadır. Ağ, ankraj, drenaj ve diğer önlemlerin seçimi; yamaç geometrisi, zemin, su ve beklenen hareket türü incelenerek yapılır. Her sahada kalan risk ayrıca değerlendirilir."
 	},
 	{
 		id: 13,
 		category: "Teknik",
 		question: "Hangi ekipmanları kullanıyorsunuz?",
-		answer: "Tüm ekipmanlarımız CE sertifikalı ve uluslararası standartlara uygundur. Statik ve dinamik ipler (EN 1891, EN 892), askı sistemleri, descent cihazları, karabinalar, kasklar, emniyet kemerleri kullanırız. Ekipmanlar düzenli olarak test edilir ve yıllık sertifikasyon yenilenir."
+		answer: "Ekipman seçimi; işin türü, erişim yöntemi, yükler, çevre, kullanıcı uyumu ve üretici talimatlarına göre yapılır. İp, bağlantı elemanı, düşüş durdurma veya kurtarma ekipmanı için uygunluk, kullanım ömrü, kontrol ve kayıt gereklilikleri proje öncesi doğrulanmalıdır."
 	},
 	{
 		id: 14,
 		category: "Teknik",
 		question: "ATEX bölgelerinde çalışabiliyor musunuz?",
-		answer: "Evet, patlayıcı atmosfer (ATEX) riski olan hassas endüstriyel alanlarda çalışma yetkimiz ve deneyimimiz vardır. Bu tür alanlarda antistatic ekipman, izinsiz elektrik kaynağı olmayan aletler, gaz dedektörleri ve özel eğitimli personel ile çalışırız."
+		answer: "ATEX riski bulunan alanlarda işe başlamadan önce bölge sınıflandırması, izin sistemi, gaz ölçümü, ekipman uygunluğu, statik elektrik ve acil durum prosedürleri yetkili işveren ve uzmanlarla birlikte doğrulanmalıdır. Çalışma yetkisi, personel ve ekipman kapsamı proje özelinde yazılı olarak teyit edilmeden varsayılmamalıdır."
 	},
 	{
 		id: 15,
 		category: "Fiyatlandırma",
 		question: "Fiyatlarınız neden farklılık gösterir?",
-		answer: "Her proje kendine özgüdür. Fiyatlandırmada şu faktörler etkilidir: çalışma yüksekliği, tehlike derecesi, erişilebilirlik, malzeme gereksinimi, proje süresi, mevsimsel koşullar, özel ekipman ihtiyacı. Bu nedenle standardize fiyat vermek yerine her proje için özel teklif hazırlıyoruz."
+		answer: "Her proje kendine özgüdür. Fiyatlandırmada çalışma yüksekliği, tehlike ve erişilebilirlik, malzeme, ekipman, çevre güvenliği, proje süresi ve mevsimsel koşullar gibi unsurlar etkili olabilir. Kapsam netleşmeden verilen birim fiyat, gerçek işi ve kalan riskleri temsil etmeyebilir."
 	},
 	{
 		id: 16,
 		category: "Fiyatlandırma",
 		question: "Ödeme koşullarınız nedir?",
-		answer: "Genellikle %40 avans, %60 iş bitiminde ödeme şeklinde çalışırız. Büyük projelerde hakediş usulü ödeme de kabul edilebilir. Kurumsal müşterilerimize ödeme vadeleri sunabiliyoruz. Detaylar sözleşme aşamasında belirlenir."
+		answer: "Ödeme koşulları; işin kapsamı, malzeme ve ekipman gereklilikleri, süre ve tarafların mutabakatına göre teklif ve sözleşmede yazılı olarak belirlenir. Avans, hakediş, teslim ve faturalama koşulları imza öncesi açık olmalıdır."
 	},
 	{
 		id: 17,
 		category: "Garanti",
-		question: "Garanti süreleriniz nedir?",
-		answer: "Hizmet garantimiz işin türüne göre değişir: İskele/lift montajları: 6 ay, Kaya/moloz bariyerleri: 2 yıl, Şev örtüleme sistemleri: 5 yıl, Yaşam hattı sistemleri: 10 yıl (paslanmaz çelik). Tüm garantiler malzeme ve işçilik hatalarını kapsar."
+		question: "Garanti ve bakım koşulları nasıl belirlenir?",
+		answer: "Garanti ve bakım koşulları; işin türü, kullanılan malzeme, üretici şartları, montaj ve teslim kapsamı, kontrol sıklığı ve tarafların sözleşmesine göre belirlenir. Süre, kapsam, istisnalar ve bakım sorumlulukları yazılı belgede açıkça yer almalıdır."
 	},
 	{
 		id: 18,
 		category: "Acil Durum",
 		question: "Acil durumlar için nasıl ulaşabilirim?",
-		answer: "Acil durumlar için 7/24 ulaşabileceğiniz telefon hattımız mevcuttur. Kaza, hasar veya tehlikeli durumlar için acil müdahale ekibimiz 2-4 saat içinde sahaya intikal edebilir. İletişim sayfamızdaki acil durum numarasını kaydetmenizi öneririz."
+		answer: "Acil durumlarda önce saha ve işverenin mevcut acil durum prosedürü, yerel acil servisler ve yetkili sorumlular devreye alınmalıdır. İletişim, müdahale kapsamı, ulaşılabilir kişiler ve olası yanıt süresi proje öncesi hazırlanan plana göre yazılı olarak netleştirilmelidir."
 	}
 ];
 var CATEGORIES = [
@@ -9405,14 +9334,14 @@ var blogImage = (slug, alt, title, caption, width = 1774, height = 887) => ({
 	height
 });
 var BLOG_HUB = {
-	title: "Kutup Grup Blog - İple Erişim ve Jeoteknik Rehberler",
-	metaDescription: "Endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik uygulamalar hakkında kaynaklı teknik rehberler.",
-	excerpt: "Kutup Grup blogu; yüksekte çalışma, iple erişim, kaya düşmesi, şev stabilizasyonu ve saha güvenliği konularında karar vermeyi kolaylaştıran teknik rehberler sunar."
+	title: "Kutup Grup Blog - İple Erişim ve Jeoteknik Yazılar",
+	metaDescription: "Endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik uygulamalar hakkında kaynaklı teknik yazılar.",
+	excerpt: "Kutup Grup blogu; yüksekte çalışma, iple erişim, kaya düşmesi, şev stabilizasyonu ve saha güvenliği konularında karar vermeyi kolaylaştıran teknik yazılar sunar."
 };
 var BLOG_POSTS = [
 	{
 		slug: "endustriyel-dagcilik-iple-erisim-rehberi",
-		title: "Endüstriyel Dağcılık ve İple Erişim Nedir? Kapsamlı Rehber",
+		title: "Endüstriyel Dağcılık ve İple Erişim Nedir?",
 		metaDescription: "Endüstriyel dağcılık ve iple erişimin ne olduğunu, hangi işlerde kullanıldığını, risk değerlendirmesini ve güvenli çalışma sürecini öğrenin.",
 		excerpt: "İple erişim sistemlerinin nasıl planlandığını, hangi projelerde tercih edildiğini ve güvenli bir çalışma sisteminin hangi adımlardan oluştuğunu açıklıyoruz.",
 		category: "İple Erişim Temelleri",
@@ -9473,7 +9402,7 @@ var BLOG_POSTS = [
 	},
 	{
 		slug: "yuksekte-calisma-guvenligi-yasam-hatti-rehberi",
-		title: "Yüksekte Çalışma Güvenliği ve Yaşam Hattı Seçim Rehberi",
+		title: "Yüksekte Çalışma Güvenliği ve Yaşam Hattı Seçimi",
 		metaDescription: "Yüksekte çalışma güvenliğinde risk değerlendirmesi, toplu korunma, yaşam hattı seçimi, ekipman kontrolü ve kurtarma planını öğrenin.",
 		excerpt: "Yaşam hattı seçimini yalnızca bir ekipman satın alma kararı olarak değil, sahaya özel güvenli çalışma sisteminin parçası olarak ele alıyoruz.",
 		category: "Yüksekte Çalışma Güvenliği",
@@ -9534,8 +9463,8 @@ var BLOG_POSTS = [
 	},
 	{
 		slug: "kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi",
-		title: "Kaya Düşmesi Risk Analizi ve Kaya Bariyeri Rehberi",
-		metaDescription: "Kaya düşmesi risk analizi nasıl yapılır? Kaya bariyeri seçiminde jeoloji, enerji, güzergâh, bakım ve saha koşullarını anlatan teknik rehber.",
+		title: "Kaya Düşmesi Risk Analizi ve Kaya Bariyeri Seçimi",
+		metaDescription: "Kaya düşmesi risk analizi nasıl yapılır? Kaya bariyeri seçiminde jeoloji, enerji, güzergâh, bakım ve saha koşullarını anlatan teknik yazı.",
 		excerpt: "Kaya düşmesi riskini yalnızca bariyer yüksekliğiyle değil; kaynak alan, hareket yolu, etkilenecek unsur ve bakım koşullarıyla birlikte değerlendirin.",
 		category: "Jeoteknik Risk Yönetimi",
 		publishedAt: "2026-09-15",
@@ -9779,7 +9708,7 @@ var BLOG_POSTS = [
 	{
 		slug: "kar-cig-kontrolu-risk-degerlendirme-rehberi",
 		title: "Kar ve Çığ Kontrolü: Risk Değerlendirme ve Koruma Sistemleri",
-		metaDescription: "Kar ve çığ riskinin değerlendirilmesi, tehlike haritaları, koruma sistemleri, izleme ve operasyon planlaması hakkında kaynaklı rehber.",
+		metaDescription: "Kar ve çığ riskinin değerlendirilmesi, tehlike haritaları, koruma sistemleri, izleme ve operasyon planlaması hakkında kaynaklı teknik yazı.",
 		excerpt: "Çığ riskini yalnızca kar miktarıyla açıklamak yerine eğim, arazi, rüzgar, bitki örtüsü, geçmiş olaylar ve maruz kalan unsurlarla birlikte değerlendiriyoruz.",
 		category: "Kar ve Çığ Risk Yönetimi",
 		publishedAt: "2026-09-15",
@@ -9907,37 +9836,38 @@ var getBlogWordCount = (post) => post.sections.flatMap((section) => [
 	section.note || ""
 ]).join(" ").replace(/<[^>]+>/g, " ").trim().split(/\s+/).filter(Boolean).length;
 var blog_module_default = {
-	page: "_page_qvikf_1",
-	hero: "_hero_qvikf_5",
-	heroInner: "_heroInner_qvikf_24",
-	content: "_content_qvikf_25",
-	eyebrow: "_eyebrow_qvikf_32",
-	intro: "_intro_qvikf_58",
-	grid: "_grid_qvikf_73",
-	card: "_card_qvikf_79",
-	cardImageLink: "_cardImageLink_qvikf_96",
-	cardImage: "_cardImage_qvikf_96",
-	cardBody: "_cardBody_qvikf_108",
-	cardMeta: "_cardMeta_qvikf_115",
-	postMeta: "_postMeta_qvikf_116",
-	relatedCard: "_relatedCard_qvikf_130",
-	readMore: "_readMore_qvikf_148",
-	breadcrumb: "_breadcrumb_qvikf_160",
-	articleLayout: "_articleLayout_qvikf_173",
-	article: "_article_qvikf_173",
-	articleHeader: "_articleHeader_qvikf_190",
-	articleExcerpt: "_articleExcerpt_qvikf_200",
-	articleFigure: "_articleFigure_qvikf_206",
-	articleBody: "_articleBody_qvikf_230",
-	section: "_section_qvikf_234",
-	sourceList: "_sourceList_qvikf_257",
-	note: "_note_qvikf_273",
-	sideCard: "_sideCard_qvikf_282",
-	bottomCard: "_bottomCard_qvikf_283",
-	relatedList: "_relatedList_qvikf_304",
-	faqList: "_faqList_qvikf_348",
-	faqItem: "_faqItem_qvikf_352",
-	relatedGrid: "_relatedGrid_qvikf_369"
+	page: "_page_1kchw_1",
+	hero: "_hero_1kchw_5",
+	heroInner: "_heroInner_1kchw_24",
+	content: "_content_1kchw_25",
+	eyebrow: "_eyebrow_1kchw_32",
+	intro: "_intro_1kchw_58",
+	grid: "_grid_1kchw_73",
+	card: "_card_1kchw_79",
+	cardImageLink: "_cardImageLink_1kchw_96",
+	cardImage: "_cardImage_1kchw_96",
+	cardBody: "_cardBody_1kchw_108",
+	cardMeta: "_cardMeta_1kchw_115",
+	postMeta: "_postMeta_1kchw_116",
+	relatedCard: "_relatedCard_1kchw_130",
+	readMore: "_readMore_1kchw_148",
+	breadcrumb: "_breadcrumb_1kchw_160",
+	articleLayout: "_articleLayout_1kchw_173",
+	article: "_article_1kchw_173",
+	articleHeader: "_articleHeader_1kchw_190",
+	articleExcerpt: "_articleExcerpt_1kchw_200",
+	articleByline: "_articleByline_1kchw_206",
+	articleFigure: "_articleFigure_1kchw_213",
+	articleBody: "_articleBody_1kchw_237",
+	section: "_section_1kchw_241",
+	sourceList: "_sourceList_1kchw_264",
+	note: "_note_1kchw_280",
+	sideCard: "_sideCard_1kchw_289",
+	bottomCard: "_bottomCard_1kchw_290",
+	relatedList: "_relatedList_1kchw_311",
+	faqList: "_faqList_1kchw_355",
+	faqItem: "_faqItem_1kchw_359",
+	relatedGrid: "_relatedGrid_1kchw_376"
 };
 //#endregion
 //#region src/pages/BlogIndex.tsx
@@ -10064,7 +9994,7 @@ function BlogPost({ slug }) {
 		author: {
 			"@type": "Organization",
 			name: "Kutup Grup",
-			url: SITE_URL$1
+			url: `${SITE_URL$1}/hakkimizda`
 		},
 		publisher: {
 			"@type": "Organization",
@@ -10128,6 +10058,11 @@ function BlogPost({ slug }) {
 			}
 		}))
 	};
+	const formatDate = (value) => new Intl.DateTimeFormat("tr-TR", {
+		day: "numeric",
+		month: "long",
+		year: "numeric"
+	}).format(/* @__PURE__ */ new Date(`${value}T00:00:00Z`));
 	return /* @__PURE__ */ jsxs("div", {
 		className: blog_module_default.page,
 		children: [
@@ -10182,6 +10117,15 @@ function BlogPost({ slug }) {
 								/* @__PURE__ */ jsx("p", {
 									className: blog_module_default.articleExcerpt,
 									children: post.excerpt
+								}),
+								/* @__PURE__ */ jsxs("p", {
+									className: blog_module_default.articleByline,
+									children: [
+										"Kutup Grup · Yayın: ",
+										formatDate(post.publishedAt),
+										" · Güncelleme: ",
+										formatDate(post.updatedAt)
+									]
 								})
 							]
 						}),
@@ -10464,15 +10408,15 @@ var DEFAULT_OG_IMAGE = `${SITE_URL}/images/slope-stabilization.png`;
 var META_MAP = {
 	"/": {
 		title: "Kutup Grup - Endüstriyel Dağcılık ve Jeoteknik Çözümler",
-		description: "Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz. İple erişim teknikleri, jeoteknik uygulamalar ve yüksek yapı çözümleri."
+		description: "Heyelan, kaya ve taş düşmesi riskleri, iple erişim, jeoteknik uygulamalar ve yüksek yapı çalışmalarında kapsamı birlikte netleştirmeye yönelik bilgi alın."
 	},
 	"/hakkimizda": {
 		title: "Hakkımızda - Kutup Grup",
-		description: "Kutup Grup, endüstriyel dağcılık ve jeoteknik çözümler alanında IRATA ve SPRAT sertifikalı profesyonel hizmet sağlayıcısıdır."
+		description: "Kutup Grup'un endüstriyel dağcılık, iple erişim, yüksek yapı ve jeoteknik uygulamalara yaklaşımını inceleyin."
 	},
 	"/hizmetler": {
 		title: "Hizmetlerimiz - Kutup Grup",
-		description: "Endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik koruma sistemleri alanlarındaki profesyonel hizmetlerimizi inceleyin."
+		description: "Endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik uygulama başlıklarını inceleyin."
 	},
 	"/iletisim": {
 		title: "İletişim - Kutup Grup",
@@ -10483,8 +10427,8 @@ var META_MAP = {
 		description: "Endüstriyel dağcılık, iple erişim güvenliği, kullanılan ekipmanlar ve proje süreçlerimiz hakkında merak edilen tüm sorular ve cevapları."
 	},
 	"/blog": {
-		title: "Kutup Grup Blog - İple Erişim ve Jeoteknik Rehberler",
-		description: "Endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik uygulamalar hakkında kaynaklı teknik rehberler."
+		title: "Kutup Grup Blog - İple Erişim ve Jeoteknik Yazılar",
+		description: "Endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik uygulamalar hakkında kaynaklı teknik yazılar."
 	},
 	"/referanslar": {
 		title: "Referanslarımız - Kutup Grup",
@@ -10520,6 +10464,9 @@ var setPropertyMeta = (property, content) => {
 	}
 	element.setAttribute("content", content);
 };
+var removePropertyMeta = (property) => {
+	document.head.querySelector(`meta[property="${property}"]`)?.remove();
+};
 var setTwitterMeta = (name, content) => {
 	let element = document.head.querySelector(`meta[name="${name}"]`);
 	if (!element) {
@@ -10529,7 +10476,7 @@ var setTwitterMeta = (name, content) => {
 	}
 	element.setAttribute("content", content);
 };
-var updateMeta = (title, description, canonicalUrl, robots = "index,follow", image = DEFAULT_OG_IMAGE) => {
+var updateMeta = (title, description, canonicalUrl, robots = "index,follow", image = DEFAULT_OG_IMAGE, metaOptions = {}) => {
 	document.title = title;
 	setNamedMeta("description", description);
 	setNamedMeta("robots", robots);
@@ -10545,9 +10492,18 @@ var updateMeta = (title, description, canonicalUrl, robots = "index,follow", ima
 	setPropertyMeta("og:url", canonicalUrl);
 	setPropertyMeta("og:site_name", "Kutup Grup");
 	setPropertyMeta("og:locale", "tr_TR");
-	setPropertyMeta("og:type", "website");
+	setPropertyMeta("og:type", metaOptions.type || "website");
 	setPropertyMeta("og:image", image);
 	setPropertyMeta("og:image:alt", `${title} - Kutup Grup`);
+	if (metaOptions.type === "article") {
+		if (metaOptions.publishedAt) setPropertyMeta("article:published_time", metaOptions.publishedAt);
+		if (metaOptions.updatedAt) setPropertyMeta("article:modified_time", metaOptions.updatedAt);
+		if (metaOptions.section) setPropertyMeta("article:section", metaOptions.section);
+	} else {
+		removePropertyMeta("article:published_time");
+		removePropertyMeta("article:modified_time");
+		removePropertyMeta("article:section");
+	}
 	setTwitterMeta("twitter:card", "summary_large_image");
 	setTwitterMeta("twitter:title", title);
 	setTwitterMeta("twitter:description", description);
@@ -10569,7 +10525,12 @@ function MetaHelper() {
 			const slug = pathname.replace("/blog/", "");
 			Promise.resolve().then(() => blog_data_exports).then((module) => {
 				const post = module.getBlogPost(slug);
-				if (post) updateMeta(post.title, post.metaDescription, `${SITE_URL}/blog/${post.slug}`, "index,follow", `${SITE_URL}${post.image.src}`);
+				if (post) updateMeta(post.title, post.metaDescription, `${SITE_URL}/blog/${post.slug}`, "index,follow", `${SITE_URL}${post.image.src}`, {
+					type: "article",
+					publishedAt: post.publishedAt,
+					updatedAt: post.updatedAt,
+					section: post.category
+				});
 				else updateMeta("Sayfa Bulunamadı - Kutup Grup", "Aradığınız sayfa mevcut değil veya taşınmış olabilir.", `${SITE_URL}${pathname}`, "noindex,follow", DEFAULT_OG_IMAGE);
 			});
 			return;

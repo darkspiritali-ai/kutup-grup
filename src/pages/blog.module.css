@@ -203,6 +203,13 @@
   line-height: var(--line-height-relaxed);
 }
 
+.articleByline {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  margin-top: var(--spacing-4);
+}
+
 .articleFigure {
   margin: 0;
 }

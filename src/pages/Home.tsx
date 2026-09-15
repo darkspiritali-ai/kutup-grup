@@ -34,27 +34,22 @@ const CheckCircleIcon = () => (
     <polyline points="22 4 12 14.01 9 11.01" />
   </svg>
 );
-const QuoteIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" opacity="0.15">
-    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-  </svg>
-);
-
 const features = [
-  { icon: <TrophyIcon />, title: 'Deneyimli Ekip', description: '15 yılı aşkın sektör deneyimi ile uzman kadromuz her projede yanınızda.', color: '#F59E0B', bg: 'rgba(245, 158, 11, 0.1)' },
-  { icon: <ShieldIcon />, title: 'Güvenlik Odaklı', description: 'İş güvenliği standartlarına tam uyum, sertifikalı ekipman ve süreçler.', color: '#3E92CC', bg: 'rgba(62, 146, 204, 0.1)' },
-  { icon: <BoltIcon />, title: 'Hızlı Çözüm', description: 'Acil durumlarda 7/24 müdahale, projelerde zamanında teslimat.', color: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)' },
-  { icon: <CheckCircleIcon />, title: 'Kalite Garantisi', description: 'ISO sertifikalı süreçler, kaliteli malzeme ve işçilik garantisi.', color: '#10B981', bg: 'rgba(16, 185, 129, 0.1)' },
+  { icon: <TrophyIcon />, title: 'Kapsamı netleştirme', description: 'Yapı, görev ve beklenen çıktıyı ilk değerlendirmede birlikte netleştiririz.', color: '#F59E0B', bg: 'rgba(245, 158, 11, 0.1)' },
+  { icon: <ShieldIcon />, title: 'Risk odaklı planlama', description: 'Erişim yöntemi, çalışma alanı, çevre ve kurtarma gerekliliklerini birlikte ele alırız.', color: '#3E92CC', bg: 'rgba(62, 146, 204, 0.1)' },
+  { icon: <BoltIcon />, title: 'Sahaya uygun yöntem', description: 'İskele, platform veya iple erişim seçeneklerini işin koşullarına göre karşılaştırırız.', color: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)' },
+  { icon: <CheckCircleIcon />, title: 'İzlenebilir teslim', description: 'Kontrol, iletişim ve teslim kayıtlarını çalışma kapsamının bir parçası olarak planlarız.', color: '#10B981', bg: 'rgba(16, 185, 129, 0.1)' },
 ];
 
-const testimonials = [
-  { name: 'M. K.', company: 'Proje Müdürü, Yapı A.Ş.', text: 'Kutup Grup ile birçok projede çalıştık. Profesyonellikleri ve güvenlik odaklı yaklaşımları bizi her zaman etkiledi.', rating: 5 },
-  { name: 'A. D.', company: 'Şantiye Şefi, İnşaat Ltd.', text: 'Acil durumlarda bile hızlı müdahale kapasiteleri mükemmel. Her projede kaliteli iş çıkardılar.', rating: 5 },
-  { name: 'C. Ö.', company: 'Operasyon Yöneticisi, Enerji Grubu', text: 'Rüzgar türbini bakım projelerimizde güvenle çalıştığımız tek firma. IRATA sertifikalı ekipleri fark yaratıyor.', rating: 5 },
+const workingApproach = [
+  { title: 'İlk görüşme', text: 'Yapı, saha, görev ve erişimle ilgili mevcut bilgileri toplar; hangi verilerin eksik olduğunu açıkça belirtiriz.' },
+  { title: 'Saha ve risk değerlendirmesi', text: 'Çalışma alanını, çevredeki kişileri, düşen cisim riskini, ekipman gerekliliklerini ve acil durum senaryosunu inceleriz.' },
+  { title: 'Yöntem ve teslim kapsamı', text: 'Uygun yöntemi, sorumlulukları, kontrol adımlarını ve teslim kayıtlarını proje kapsamına göre netleştiririz.' },
 ];
 
 const certifications = [
-  'IRATA Sertifikası', 'SPRAT Belgesi', 'ISO 9001', 'ISO 14001', 'ISO 45001', 'CE Belgesi',
+  'Saha ve görev kapsamı', 'Ekipman ve üretici talimatları', 'Risk değerlendirmesi',
+  'İş metodu ve iletişim', 'Acil durum ve kurtarma', 'Teslim ve kayıt düzeni',
 ];
 
 export default function Home() {
@@ -77,7 +72,7 @@ export default function Home() {
                 <p className="section-eyebrow">Avantajlarımız</p>
                 <h2 className="section-title">Neden Kutup Grup?</h2>
                 <p className="section-subtitle">
-                  Yüksekte çalışma ve jeoteknik alanında güvenilir çözüm ortağınız
+                  Yüksekte çalışma ve jeoteknik hizmetlerinin kapsamını saha koşullarına göre değerlendirin
                 </p>
               </div>
             </ScrollReveal>
@@ -98,41 +93,26 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
+        {/* Working approach section */}
         <section className="section">
           <div className="container">
             <ScrollReveal>
               <div className="section-header text-center">
-                <p className="section-eyebrow">Müşteri Yorumları</p>
-                <h2 className="section-title">Müşterilerimiz Ne Diyor?</h2>
+                <p className="section-eyebrow">Çalışma yaklaşımımız</p>
+                <h2 className="section-title">İlk görüşmeden teslimata</h2>
                 <p className="section-subtitle">
-                  Birlikte çalıştığımız firmalardan geri bildirimler
+                  Her işin kapsamı ve saha koşulu farklıdır; bu nedenle planlamayı gerçek ihtiyaç üzerinden kurarız.
                 </p>
               </div>
             </ScrollReveal>
 
             <div className="testimonials-grid">
-              {testimonials.map((t, index) => (
+              {workingApproach.map((item, index) => (
                 <ScrollReveal key={index} variant="fadeUp" delay={index * 150}>
                   <div className="testimonial-card">
-                    <div className="testimonial-quote"><QuoteIcon /></div>
-                    <p className="testimonial-text">{t.text}</p>
-                    <div className="testimonial-stars">
-                      {[...Array(t.rating)].map((_, i) => (
-                        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" strokeWidth="1">
-                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                      ))}
-                    </div>
-                    <div className="testimonial-author">
-                      <div className="testimonial-avatar">
-                        {t.name.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="testimonial-name">{t.name}</div>
-                        <div className="testimonial-company">{t.company}</div>
-                      </div>
-                    </div>
+                    <div className="testimonial-quote"><CheckCircleIcon /></div>
+                    <h3 className="testimonial-name">{item.title}</h3>
+                    <p className="testimonial-text">{item.text}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -175,8 +155,8 @@ export default function Home() {
           <div className="container">
             <ScrollReveal variant="scaleIn">
               <div className="cta-content">
-                <h2>Projeniz İçin Ücretsiz Teklif Alın</h2>
-                <p>Uzman ekibimiz projenizi değerlendirip size en uygun çözümü sunmaya hazır.</p>
+                <h2>Projenizin kapsamını birlikte netleştirelim</h2>
+                <p>Yapı ve saha bilgilerinizi paylaşın; uygun değerlendirme adımlarını birlikte belirleyelim.</p>
                 <Link href="/iletisim" className="btn btn-cta-white">
                   Hemen İletişime Geçin
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

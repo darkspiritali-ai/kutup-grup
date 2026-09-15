@@ -176,8 +176,8 @@ export default function Header() {
                     <div className="mega-cta-content">
                       <div className="mega-cta-text">
                         <p className="mega-cta-eyebrow">Tüm Hizmetler</p>
-                        <h5 className="mega-cta-title">20+ Hizmet Alanında Uzman Çözümler</h5>
-                        <p className="mega-cta-desc">Endüstriyel dağcılık ve jeoteknik alanında profesyonel çözümler.</p>
+                        <h5 className="mega-cta-title">Endüstriyel dağcılık ve jeoteknik çözümler</h5>
+                        <p className="mega-cta-desc">Hizmet kapsamını ve saha gerekliliklerini birlikte değerlendirelim.</p>
                       </div>
                       <Link href="/hizmetler" className="mega-cta-btn">
                         Tüm Hizmetleri Gör

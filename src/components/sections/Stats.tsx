@@ -4,9 +4,9 @@ import { useEffect, useState, useRef } from 'react';
 
 const stats = [
   {
-    number: 500,
-    suffix: '+',
-    label: 'Tamamlanan Proje',
+    number: '01',
+    suffix: '',
+    label: 'Keşif ve kapsam',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 20h20" /><path d="M5 20V10l7-7 7 7v10" />
@@ -15,9 +15,9 @@ const stats = [
     ),
   },
   {
-    number: 15,
-    suffix: '+',
-    label: 'Yıllık Deneyim',
+    number: '02',
+    suffix: '',
+    label: 'Risk ve yöntem',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
@@ -27,9 +27,9 @@ const stats = [
     ),
   },
   {
-    number: 200,
-    suffix: '+',
-    label: 'Mutlu Müşteri',
+    number: '03',
+    suffix: '',
+    label: 'Saha uygulaması',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2" />
@@ -39,9 +39,9 @@ const stats = [
     ),
   },
   {
-    number: 50,
-    suffix: '+',
-    label: 'Uzman Ekip',
+    number: '04',
+    suffix: '',
+    label: 'Kontrol ve kayıt',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -51,7 +51,7 @@ const stats = [
   },
 ];
 
-function Counter({ end }: { end: number }) {
+function Counter({ end }: { end: string }) {
   // Keep the factual value in the server-rendered HTML. The surrounding card
   // can still animate into view without exposing a misleading 0+ placeholder
   // to crawlers, no-JS users, or assistive technology.

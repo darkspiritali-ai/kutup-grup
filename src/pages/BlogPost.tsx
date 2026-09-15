@@ -37,7 +37,7 @@ export default function BlogPost({ slug }: BlogPostProps) {
     dateModified: post.updatedAt,
     inLanguage: 'tr-TR',
     keywords: post.keywords.join(', '),
-    author: { '@type': 'Organization', name: 'Kutup Grup', url: SITE_URL },
+    author: { '@type': 'Organization', name: 'Kutup Grup', url: `${SITE_URL}/hakkimizda` },
     publisher: {
       '@type': 'Organization',
       name: 'Kutup Grup',
@@ -76,6 +76,11 @@ export default function BlogPost({ slug }: BlogPostProps) {
       acceptedAnswer: { '@type': 'Answer', text: faq.answer },
     })),
   };
+  const formatDate = (value: string) => new Intl.DateTimeFormat('tr-TR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(`${value}T00:00:00Z`));
 
   return (
     <div className={styles.page}>
@@ -97,6 +102,9 @@ export default function BlogPost({ slug }: BlogPostProps) {
               <p className={styles.postMeta}>{post.category} · {getBlogWordCount(post)}+ kelime</p>
               <h1>{post.title}</h1>
               <p className={styles.articleExcerpt}>{post.excerpt}</p>
+              <p className={styles.articleByline}>
+                Kutup Grup · Yayın: {formatDate(post.publishedAt)} · Güncelleme: {formatDate(post.updatedAt)}
+              </p>
             </header>
 
             <figure className={styles.articleFigure}>

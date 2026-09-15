@@ -113,7 +113,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                 <h1>{service.title}</h1>
                 <p className="service-intro">{service.intro}</p>
                 <Link href="/iletisim" className="btn btn-cta">
-                  Ücretsiz Teklif Alın
+                  Teklif talebi oluşturun
                 </Link>
               </div>
               {service.heroImage && (
@@ -149,7 +149,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                   <div className="content-section sub-services-section">
                     <h2>Jeoteknik Çözümlerimiz & Hizmetlerimiz</h2>
                     <p className="sub-services-intro">
-                      Kutup Grup olarak, zorlu arazi koşullarında kaya düşmesini önleme, şev stabilizasyonu ve yamaç güvenliği konularında uzman ekiplerimizle profesyonel mühendislik çözümleri sunuyoruz. İşte bu kapsamda sunduğumuz temel hizmetlerimiz:
+                      Zorlu arazi koşullarında kaya düşmesi, şev stabilizasyonu ve yamaç güvenliği başlıkları; saha verileri ve proje gereklilikleri birlikte değerlendirilerek ele alınır. İlgili hizmet başlıklarını aşağıda inceleyebilirsiniz:
                     </p>
                     <div className="sub-services-grid">
                       {Object.values(SERVICES_DATA)
@@ -250,7 +250,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
               <aside className="service-sidebar">
                 <div className="sidebar-card card-premium">
                   <h3>İletişime Geçin</h3>
-                  <p>Projeniz için ücretsiz keşif ve teklif almak ister misiniz?</p>
+                  <p>Projenizin kapsamını ve ilk değerlendirme adımlarını birlikte netleştirelim.</p>
                   <Link href="/iletisim" className="btn btn-primary" style={{ width: '100%' }}>
                     Teklif İsteyin
                   </Link>

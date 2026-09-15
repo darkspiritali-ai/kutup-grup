@@ -120,7 +120,7 @@ const buildPrerenderPages = async () => {
       ['og:url', seoData.canonical],
       ['og:site_name', 'Kutup Grup'],
       ['og:locale', 'tr_TR'],
-      ['og:type', 'website'],
+      ['og:type', seoData.type || 'website'],
       ['og:image', seoData.image],
       ['og:image:alt', `${seoData.title} - Kutup Grup`],
     ].forEach(([property, content]) => {
@@ -135,6 +135,16 @@ const buildPrerenderPages = async () => {
     ].forEach(([name, content]) => {
       outputHtml = upsertMeta(outputHtml, 'name', name, content);
     });
+
+    if (seoData.type === 'article') {
+      [
+        ['article:published_time', seoData.publishedAt],
+        ['article:modified_time', seoData.updatedAt],
+        ['article:section', seoData.section],
+      ].filter(([, content]) => content).forEach(([property, content]) => {
+        outputHtml = upsertMeta(outputHtml, 'property', property, content);
+      });
+    }
 
     // Inject Self-Referencing Canonical Link tag
     const canonicalLink = `<link rel="canonical" href="${escapeHtml(seoData.canonical)}" />`;
@@ -163,10 +173,14 @@ const buildPrerenderPages = async () => {
   // Pre-render each route using exact React component rendering
   prerenderRoutes.forEach((route) => {
     let title = 'Kutup Grup - Endüstriyel Dağcılık ve Jeoteknik Çözümler';
-    let description = 'Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz. İple erişim teknikleri, jeoteknik uygulamalar ve yüksek yapı çözümleri.';
+    let description = 'Heyelan, kaya ve taş düşmesi riskleri, iple erişim, jeoteknik uygulamalar ve yüksek yapı çalışmalarında kapsamı birlikte netleştirmeye yönelik bilgi alın.';
     const canonical = `https://kutupgrup.com${route.path === '/' ? '' : route.path}`;
     const robots = route.indexable ? 'index,follow' : 'noindex,follow';
     let image = DEFAULT_OG_IMAGE;
+    let type = 'website';
+    let publishedAt;
+    let updatedAt;
+    let section;
 
     if (route.type === 'service') {
       const slug = route.path.replace('/hizmetler/', '');
@@ -182,15 +196,15 @@ const buildPrerenderPages = async () => {
         switch (route.path) {
         case '/':
           title = 'Kutup Grup - Endüstriyel Dağcılık ve Jeoteknik Çözümler';
-          description = 'Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz. İple erişim teknikleri, jeoteknik uygulamalar ve yüksek yapı çözümleri.';
+          description = 'Heyelan, kaya ve taş düşmesi riskleri, iple erişim, jeoteknik uygulamalar ve yüksek yapı çalışmalarında kapsamı birlikte netleştirmeye yönelik bilgi alın.';
           break;
         case '/hakkimizda':
           title = 'Hakkımızda - Kutup Grup';
-          description = 'Kutup Grup, endüstriyel dağcılık ve jeoteknik çözümler alanında IRATA ve SPRAT sertifikalı profesyonel hizmet sağlayıcısıdır.';
+          description = 'Kutup Grup\'un endüstriyel dağcılık, iple erişim, yüksek yapı ve jeoteknik uygulamalara yaklaşımını inceleyin.';
           break;
         case '/hizmetler':
           title = 'Hizmetlerimiz - Kutup Grup';
-          description = 'Endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik koruma sistemleri alanlarındaki profesyonel hizmetlerimizi inceleyin.';
+          description = 'Endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik uygulama başlıklarını inceleyin.';
           break;
         case '/iletisim':
           title = 'İletişim - Kutup Grup';
@@ -206,7 +220,7 @@ const buildPrerenderPages = async () => {
           break;
         case '/referanslar':
           title = 'Referanslarımız - Kutup Grup';
-          description = 'Kutup Grup olarak başarıyla tamamladığımız endüstriyel dağcılık ve jeoteknik projelerimiz.';
+          description = 'İzinli saha proje arşivi hazırlanıyor; hizmet kapsamı ve iletişim bilgileri için canonical sayfaları inceleyin.';
           break;
         case '/gizlilik-politikasi':
           title = 'Gizlilik Politikası - Kutup Grup';
@@ -222,12 +236,16 @@ const buildPrerenderPages = async () => {
             title = post.title;
             description = post.metaDescription;
             image = `${SITE_URL}${post.image.src}`;
+            type = 'article';
+            publishedAt = post.publishedAt;
+            updatedAt = post.updatedAt;
+            section = post.category;
           }
         }
       }
     }
 
-    prerenderRoute(route.path, { title, description, canonical, robots, image });
+    prerenderRoute(route.path, { title, description, canonical, robots, image, type, publishedAt, updatedAt, section });
   });
 
   // Create dist/404.html page directly

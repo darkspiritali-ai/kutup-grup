@@ -14,6 +14,7 @@ try {
 }
 
 const app = express();
+app.disable('x-powered-by');
 
 // Keep the public host canonical. This only works when the www hostname is
 // routed to this application by DNS/hosting; provider-level routing still

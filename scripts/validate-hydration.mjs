@@ -83,7 +83,7 @@ const runHydrationAudit = async () => {
 
     const preDescMatch = preHtml.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']/i) ||
                          preHtml.match(/<meta\s+content=["']([\s\S]*?)["']\s+name=["']description["']/i);
-    const preDesc = preDescMatch ? preDescMatch[1].trim() : '';
+    const preDesc = preDescMatch ? decodeHtmlEntities(preDescMatch[1].trim()) : '';
 
     const preCanonicalMatch = preHtml.match(/<link\s+rel=["']canonical["']\s+href=["']([\s\S]*?)["']/i) ||
                              preHtml.match(/<link\s+href=["']([\s\S]*?)["']\s+rel=["']canonical["']/i);

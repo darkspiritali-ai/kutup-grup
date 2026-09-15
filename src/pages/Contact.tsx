@@ -138,7 +138,7 @@ export default function ContactPageClient() {
                 <div className={styles.heroContent}>
                     <h1 className={styles.heroTitle}>İletişime Geçin</h1>
                     <p className={styles.heroSubtitle}>
-                        Projeleriniz için bize ulaşın, size en uygun çözümü sunalım
+                        Projenizin kapsamını ve gerekli değerlendirme adımlarını birlikte netleştirelim
                     </p>
                 </div>
             </section>
@@ -197,7 +197,7 @@ export default function ContactPageClient() {
 
                         {submitStatus === 'success' && (
                             <div className={styles.successMessage}>
-                                ✓ Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.
+                                ✓ Mesajınız alınmıştır. Gerekli görülürse iletişim bilgileriniz üzerinden dönüş yapılacaktır.
                             </div>
                         )}
 

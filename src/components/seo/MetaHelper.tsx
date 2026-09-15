@@ -7,6 +7,10 @@ interface MetaData {
   canonical?: string;
   robots?: string;
   image?: string;
+  type?: 'website' | 'article';
+  publishedAt?: string;
+  updatedAt?: string;
+  section?: string;
 }
 
 const SITE_URL = 'https://kutupgrup.com';
@@ -15,15 +19,15 @@ const DEFAULT_OG_IMAGE = `${SITE_URL}/images/slope-stabilization.png`;
 const META_MAP: Record<string, MetaData> = {
   '/': {
     title: 'Kutup Grup - Endüstriyel Dağcılık ve Jeoteknik Çözümler',
-    description: 'Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz. İple erişim teknikleri, jeoteknik uygulamalar ve yüksek yapı çözümleri.'
+    description: 'Heyelan, kaya ve taş düşmesi riskleri, iple erişim, jeoteknik uygulamalar ve yüksek yapı çalışmalarında kapsamı birlikte netleştirmeye yönelik bilgi alın.'
   },
   '/hakkimizda': {
     title: 'Hakkımızda - Kutup Grup',
-    description: 'Kutup Grup, endüstriyel dağcılık ve jeoteknik çözümler alanında IRATA ve SPRAT sertifikalı profesyonel hizmet sağlayıcısıdır.'
+    description: 'Kutup Grup\'un endüstriyel dağcılık, iple erişim, yüksek yapı ve jeoteknik uygulamalara yaklaşımını inceleyin.'
   },
   '/hizmetler': {
     title: 'Hizmetlerimiz - Kutup Grup',
-    description: 'Endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik koruma sistemleri alanlarındaki profesyonel hizmetlerimizi inceleyin.'
+    description: 'Endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik uygulama başlıklarını inceleyin.'
   },
   '/iletisim': {
     title: 'İletişim - Kutup Grup',
@@ -34,8 +38,8 @@ const META_MAP: Record<string, MetaData> = {
     description: 'Endüstriyel dağcılık, iple erişim güvenliği, kullanılan ekipmanlar ve proje süreçlerimiz hakkında merak edilen tüm sorular ve cevapları.'
   },
   '/blog': {
-    title: 'Kutup Grup Blog - İple Erişim ve Jeoteknik Rehberler',
-    description: 'Endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik uygulamalar hakkında kaynaklı teknik rehberler.'
+    title: 'Kutup Grup Blog - İple Erişim ve Jeoteknik Yazılar',
+    description: 'Endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik uygulamalar hakkında kaynaklı teknik yazılar.'
   },
   '/referanslar': {
     title: 'Referanslarımız - Kutup Grup',
@@ -74,6 +78,10 @@ const setPropertyMeta = (property: string, content: string) => {
   element.setAttribute('content', content);
 };
 
+const removePropertyMeta = (property: string) => {
+  document.head.querySelector(`meta[property="${property}"]`)?.remove();
+};
+
 const setTwitterMeta = (name: string, content: string) => {
   let element = document.head.querySelector(`meta[name="${name}"]`);
   if (!element) {
@@ -89,7 +97,8 @@ const updateMeta = (
   description: string,
   canonicalUrl: string,
   robots = 'index,follow',
-  image = DEFAULT_OG_IMAGE
+  image = DEFAULT_OG_IMAGE,
+  metaOptions: Pick<MetaData, 'type' | 'publishedAt' | 'updatedAt' | 'section'> = {}
 ) => {
   document.title = title;
   setNamedMeta('description', description);
@@ -108,9 +117,19 @@ const updateMeta = (
   setPropertyMeta('og:url', canonicalUrl);
   setPropertyMeta('og:site_name', 'Kutup Grup');
   setPropertyMeta('og:locale', 'tr_TR');
-  setPropertyMeta('og:type', 'website');
+  setPropertyMeta('og:type', metaOptions.type || 'website');
   setPropertyMeta('og:image', image);
   setPropertyMeta('og:image:alt', `${title} - Kutup Grup`);
+
+  if (metaOptions.type === 'article') {
+    if (metaOptions.publishedAt) setPropertyMeta('article:published_time', metaOptions.publishedAt);
+    if (metaOptions.updatedAt) setPropertyMeta('article:modified_time', metaOptions.updatedAt);
+    if (metaOptions.section) setPropertyMeta('article:section', metaOptions.section);
+  } else {
+    removePropertyMeta('article:published_time');
+    removePropertyMeta('article:modified_time');
+    removePropertyMeta('article:section');
+  }
 
   setTwitterMeta('twitter:card', 'summary_large_image');
   setTwitterMeta('twitter:title', title);
@@ -156,7 +175,13 @@ export default function MetaHelper() {
             post.metaDescription,
             `${SITE_URL}/blog/${post.slug}`,
             'index,follow',
-            `${SITE_URL}${post.image.src}`
+            `${SITE_URL}${post.image.src}`,
+            {
+              type: 'article',
+              publishedAt: post.publishedAt,
+              updatedAt: post.updatedAt,
+              section: post.category,
+            }
           );
         } else {
           updateMeta(

@@ -56,7 +56,7 @@ const ArrowRightIcon = () => (
 const services = [
   {
     title: 'Jeoteknik Uygulamalar',
-    description: 'Şev stabilizasyonu, kaya bariyeri ve heyelan önleme sistemleri.',
+    description: 'Şev stabilizasyonu, kaya bariyeri ve yamaç koruma uygulamaları.',
     icon: <MountainIcon />,
     href: '/hizmetler/jeoteknik-uygulamalar',
     color: '#10B981',
@@ -72,7 +72,7 @@ const services = [
   },
   {
     title: 'İç ve Dış Cephe Temizliği',
-    description: 'Yüksek yapılarda profesyonel temizlik ve bakım hizmetleri.',
+    description: 'Yüksek yapılarda iç ve dış cephe temizlik süreçleri.',
     icon: <SparklesIcon />,
     href: '/hizmetler/ic-ve-dis-cephe-temizlik-hizmetleri',
     color: '#3E92CC',
@@ -88,7 +88,7 @@ const services = [
   },
   {
     title: 'Yatay & Düşey Yaşam Hattı',
-    description: 'Yüksekte çalışan personel için can güvenliği sistemleri.',
+    description: 'Yüksekte çalışma için yatay ve düşey yaşam hattı sistemleri.',
     icon: <LinkIcon />,
     href: '/hizmetler/yatay-ve-dusey-yasam-hatti',
     color: '#8B5CF6',
@@ -111,7 +111,7 @@ export default function ServicesShowcase() {
         <FadeUp className="section-header text-center">
           <h2 className="section-title">Hizmetlerimiz</h2>
           <p className="section-subtitle">
-            Yüksekte çalışma, jeoteknik ve iş güvenliğinde kapsamlı çözümler sunuyoruz
+            Yüksekte çalışma, jeoteknik ve iş güvenliği hizmetlerinin kapsamını inceleyin
           </p>
         </FadeUp>
 

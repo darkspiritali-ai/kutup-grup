@@ -2,7 +2,7 @@
 
 export const SITE_NAME = 'Kutup Grup'
 export const SITE_URL = 'https://kutupgrup.com'
-export const SITE_DESCRIPTION = 'Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz. İple erişim teknikleri, jeoteknik uygulamalar ve yüksek yapı çözümleri.'
+export const SITE_DESCRIPTION = 'Heyelan, kaya ve taş düşmesi riskleri, iple erişim, jeoteknik uygulamalar ve yüksek yapı çalışmalarında kapsamı birlikte netleştirmeye yönelik bilgi alın.'
 
 // JSON-LD Structured Data Generators
 
@@ -84,12 +84,14 @@ export function generateMetaTags({
     canonical,
     keywords,
     image = '/og-image.jpg',
+    type = 'website',
 }: {
     title: string
     description: string
     canonical?: string
     keywords?: string[]
     image?: string
+    type?: 'website' | 'article'
 }) {
     return {
         title: `${title} | ${SITE_NAME}`,
@@ -108,7 +110,7 @@ export function generateMetaTags({
                 },
             ],
             locale: 'tr_TR',
-            type: 'website',
+            type,
         },
         twitter: {
             card: 'summary_large_image',

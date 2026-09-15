@@ -62,15 +62,15 @@ const blogImage = (slug: string, alt: string, title: string, caption: string, wi
 });
 
 export const BLOG_HUB = {
-  title: 'Kutup Grup Blog - İple Erişim ve Jeoteknik Rehberler',
-  metaDescription: 'Endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik uygulamalar hakkında kaynaklı teknik rehberler.',
-  excerpt: 'Kutup Grup blogu; yüksekte çalışma, iple erişim, kaya düşmesi, şev stabilizasyonu ve saha güvenliği konularında karar vermeyi kolaylaştıran teknik rehberler sunar.',
+  title: 'Kutup Grup Blog - İple Erişim ve Jeoteknik Yazılar',
+  metaDescription: 'Endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik uygulamalar hakkında kaynaklı teknik yazılar.',
+  excerpt: 'Kutup Grup blogu; yüksekte çalışma, iple erişim, kaya düşmesi, şev stabilizasyonu ve saha güvenliği konularında karar vermeyi kolaylaştıran teknik yazılar sunar.',
 };
 
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'endustriyel-dagcilik-iple-erisim-rehberi',
-    title: 'Endüstriyel Dağcılık ve İple Erişim Nedir? Kapsamlı Rehber',
+    title: 'Endüstriyel Dağcılık ve İple Erişim Nedir?',
     metaDescription: 'Endüstriyel dağcılık ve iple erişimin ne olduğunu, hangi işlerde kullanıldığını, risk değerlendirmesini ve güvenli çalışma sürecini öğrenin.',
     excerpt: 'İple erişim sistemlerinin nasıl planlandığını, hangi projelerde tercih edildiğini ve güvenli bir çalışma sisteminin hangi adımlardan oluştuğunu açıklıyoruz.',
     category: 'İple Erişim Temelleri',
@@ -98,7 +98,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'yuksekte-calisma-guvenligi-yasam-hatti-rehberi',
-    title: 'Yüksekte Çalışma Güvenliği ve Yaşam Hattı Seçim Rehberi',
+    title: 'Yüksekte Çalışma Güvenliği ve Yaşam Hattı Seçimi',
     metaDescription: 'Yüksekte çalışma güvenliğinde risk değerlendirmesi, toplu korunma, yaşam hattı seçimi, ekipman kontrolü ve kurtarma planını öğrenin.',
     excerpt: 'Yaşam hattı seçimini yalnızca bir ekipman satın alma kararı olarak değil, sahaya özel güvenli çalışma sisteminin parçası olarak ele alıyoruz.',
     category: 'Yüksekte Çalışma Güvenliği',
@@ -126,8 +126,8 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi',
-    title: 'Kaya Düşmesi Risk Analizi ve Kaya Bariyeri Rehberi',
-    metaDescription: 'Kaya düşmesi risk analizi nasıl yapılır? Kaya bariyeri seçiminde jeoloji, enerji, güzergâh, bakım ve saha koşullarını anlatan teknik rehber.',
+    title: 'Kaya Düşmesi Risk Analizi ve Kaya Bariyeri Seçimi',
+    metaDescription: 'Kaya düşmesi risk analizi nasıl yapılır? Kaya bariyeri seçiminde jeoloji, enerji, güzergâh, bakım ve saha koşullarını anlatan teknik yazı.',
     excerpt: 'Kaya düşmesi riskini yalnızca bariyer yüksekliğiyle değil; kaynak alan, hareket yolu, etkilenecek unsur ve bakım koşullarıyla birlikte değerlendirin.',
     category: 'Jeoteknik Risk Yönetimi',
     publishedAt: '2026-09-15',
@@ -239,7 +239,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'kar-cig-kontrolu-risk-degerlendirme-rehberi',
     title: 'Kar ve Çığ Kontrolü: Risk Değerlendirme ve Koruma Sistemleri',
-    metaDescription: 'Kar ve çığ riskinin değerlendirilmesi, tehlike haritaları, koruma sistemleri, izleme ve operasyon planlaması hakkında kaynaklı rehber.',
+    metaDescription: 'Kar ve çığ riskinin değerlendirilmesi, tehlike haritaları, koruma sistemleri, izleme ve operasyon planlaması hakkında kaynaklı teknik yazı.',
     excerpt: 'Çığ riskini yalnızca kar miktarıyla açıklamak yerine eğim, arazi, rüzgar, bitki örtüsü, geçmiş olaylar ve maruz kalan unsurlarla birlikte değerlendiriyoruz.',
     category: 'Kar ve Çığ Risk Yönetimi',
     publishedAt: '2026-09-15',

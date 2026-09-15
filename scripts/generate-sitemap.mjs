@@ -68,12 +68,12 @@ const generateRobotsTxt = () => {
 Allow: /
 Disallow: /api/
 
-# Block AI Model Training Crawlers
+# Allow major AI crawlers so the site can be discovered in model and answer-search indexes.
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ClaudeBot
-Disallow: /
+Allow: /
 
 # Allow AI Search Crawlers for Discovery Visibility
 User-agent: ChatGPT-User

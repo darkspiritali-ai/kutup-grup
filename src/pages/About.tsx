@@ -81,28 +81,28 @@ const RocketIcon = () => (
 );
 
 const stats = [
-    { icon: <CalendarIcon />, label: 'Deneyim', value: '15+ Yıl', color: '#F59E0B', bg: 'rgba(245, 158, 11, 0.1)' },
-    { icon: <BuildingIcon />, label: 'Tamamlanan Proje', value: '500+', color: '#3E92CC', bg: 'rgba(62, 146, 204, 0.1)' },
-    { icon: <UsersIcon />, label: 'Mutlu Müşteri', value: '200+', color: '#10B981', bg: 'rgba(16, 185, 129, 0.1)' },
-    { icon: <StarIcon />, label: 'Başarı Oranı', value: '%100', color: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)' },
+    { icon: <CalendarIcon />, label: 'Başlangıç', value: 'Keşif', color: '#F59E0B', bg: 'rgba(245, 158, 11, 0.1)' },
+    { icon: <BuildingIcon />, label: 'Planlama', value: 'Yöntem', color: '#3E92CC', bg: 'rgba(62, 146, 204, 0.1)' },
+    { icon: <UsersIcon />, label: 'Koordinasyon', value: 'İletişim', color: '#10B981', bg: 'rgba(16, 185, 129, 0.1)' },
+    { icon: <StarIcon />, label: 'Kapanış', value: 'Kayıt', color: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)' },
 ];
 
 const values = [
-    { icon: <ShieldIcon />, title: 'Güvenlik', description: 'İş güvenliği ve personel sağlığı bizim için en öncelikli konudur. IRATA ve SPRAT standartlarına uygun çalışmalarla sıfır kaza hedefleriz.', color: '#EF4444', bg: 'rgba(239, 68, 68, 0.08)' },
-    { icon: <BoltIcon />, title: 'Kalite', description: 'ISO sertifikalı süreçler, CE onaylı ekipmanlar ve deneyimli ekibimizle en yüksek kalite standartlarını garanti ediyoruz.', color: '#F59E0B', bg: 'rgba(245, 158, 11, 0.08)' },
-    { icon: <LightbulbIcon />, title: 'İnovasyon', description: 'Sektördeki en son teknolojileri takip eder, yenilikçi çözümler geliştirerek müşterilerimize değer katarız.', color: '#3E92CC', bg: 'rgba(62, 146, 204, 0.08)' },
-    { icon: <HandshakeIcon />, title: 'Müşteri Memnuniyeti', description: 'Her projede müşteri beklentilerini aşmayı hedefleriz. Şeffaf iletişim ve zamanında teslimat prensiplerimizdir.', color: '#10B981', bg: 'rgba(16, 185, 129, 0.08)' },
-    { icon: <GlobeIcon />, title: 'Çevre Bilinci', description: 'Doğaya saygılı çalışma prensipleriyle çevresel etkiyi minimuma indirerek sürdürülebilir projeler gerçekleştiririz.', color: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.08)' },
-    { icon: <BookIcon />, title: 'Sürekli Gelişim', description: 'Ekibimize düzenli eğitimler vererek sektördeki gelişmeleri takip eder, kendimizi sürekli geliştiririz.', color: '#EC4899', bg: 'rgba(236, 72, 153, 0.08)' },
+    { icon: <ShieldIcon />, title: 'Güvenlik', description: 'İşin risklerini, çevreyi ve çalışanların korunmasını planlamanın başlangıç noktası olarak ele alırız.', color: '#EF4444', bg: 'rgba(239, 68, 68, 0.08)' },
+    { icon: <BoltIcon />, title: 'Kalite', description: 'Malzeme ve ekipman seçimini üretici talimatları, görev ve saha koşullarıyla birlikte değerlendiririz.', color: '#F59E0B', bg: 'rgba(245, 158, 11, 0.08)' },
+    { icon: <LightbulbIcon />, title: 'İnovasyon', description: 'Yöntem ve ekipman seçeneklerini güncel teknik bilgiler ışığında karşılaştırarak işe uygun çözümü ararız.', color: '#3E92CC', bg: 'rgba(62, 146, 204, 0.08)' },
+    { icon: <HandshakeIcon />, title: 'Açık iletişim', description: 'Kapsamı, sorumlulukları, varsayımları ve teslim adımlarını çalışma başlamadan önce görünür kılmaya önem veririz.', color: '#10B981', bg: 'rgba(16, 185, 129, 0.08)' },
+    { icon: <GlobeIcon />, title: 'Çevre bilinci', description: 'Çalışmanın çevreye, yapıya ve üçüncü kişilere etkisini planlama sırasında ayrıca değerlendiririz.', color: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.08)' },
+    { icon: <BookIcon />, title: 'Sürekli gelişim', description: 'Görev ve ekipman gereklilikleri için güncel bilgi, eğitim ve saha geri bildirimi ihtiyacını takip ederiz.', color: '#EC4899', bg: 'rgba(236, 72, 153, 0.08)' },
 ];
 
 const certifications = [
-    'IRATA Sertifikalı Teknisyenler',
-    'SPRAT Eğitimli Personel',
-    'ISO 9001 Kalite Yönetim Sistemi',
-    'ISO 14001 Çevre Yönetim Sistemi',
-    'ISO 45001 İş Sağlığı ve Güvenliği',
-    'CE Sertifikalı Ekipmanlar',
+    'Saha ve görev kapsamı',
+    'Ekipman ve üretici talimatları',
+    'Risk değerlendirmesi',
+    'İş metodu ve iletişim',
+    'Acil durum ve kurtarma',
+    'Teslim ve kayıt düzeni',
 ];
 
 export default function AboutPageClient() {
@@ -118,7 +118,7 @@ export default function AboutPageClient() {
                             <p className="hero-eyebrow">Hakkımızda</p>
                             <h1>Kutup Grup Hakkında</h1>
                             <p className="hero-subtitle">
-                                Endüstriyel dağcılık ve jeoteknik çözümler alanında Türkiye&apos;nin önde gelen şirketi
+                                Endüstriyel dağcılık ve jeoteknik uygulamalara odaklanan şirket
                             </p>
                         </div>
                     </div>
@@ -150,29 +150,27 @@ export default function AboutPageClient() {
                             <ScrollReveal variant="fadeLeft">
                                 <div className="story-text">
                                     <p className="section-eyebrow">Hikayemiz</p>
-                                    <h2 className="section-title">2008&apos;den Bugüne Güçlü Bir Yolculuk</h2>
+                                    <h2 className="section-title">Sahaya göre şekillenen çalışma yaklaşımı</h2>
                                     <p>
-                                        <strong>Kutup Grup</strong>, 2008 yılında endüstriyel dağcılık ve iple erişim
-                                        teknikleri alanında uzmanlaşmış bir ekip tarafından kuruldu. Kuruluşumuzdan bu
-                                        yana, heyelan, kaya düşmesi ve yüksek yapı çözümleri konusunda Türkiye&apos;nin en
-                                        güvenilir firmalarından biri haline geldik.
+                                        <strong>Kutup Grup</strong>; endüstriyel dağcılık, iple erişim, yüksek yapı
+                                        çalışmaları ve jeoteknik uygulamalarda proje kapsamına göre çalışma yaklaşımı
+                                        sunar.
                                     </p>
                                     <p>
-                                        İlk projelerimizde küçük ölçekli cephe temizleme işleriyle başlayan yolculuğumuz,
-                                        bugün 500&apos;den fazla büyük ölçekli projeyi başarıyla tamamlamış, sektörün öncü
-                                        firmalarından biri konumuna ulaşmıştır.
+                                        Çalışmanın başında yapı veya tesis, erişim koşulları, tehlikeler, çevredeki
+                                        insanlar ve beklenen çıktı birlikte değerlendirilir.
                                     </p>
                                     <p>
-                                        Türkiye&apos;nin dört bir yanında, enerji santrallerinden köprü bakımlarına, tersane
-                                        işlerinden yüksek bina aydınlatmalarına kadar geniş bir yelpazede hizmet sunuyoruz.
+                                        Hizmet kapsamı; saha bilgileri, görev ve gerekli teknik değerlendirme
+                                        netleştirildikten sonra belirlenir.
                                     </p>
                                 </div>
                             </ScrollReveal>
                             <ScrollReveal variant="fadeRight">
                                 <div className="story-visual">
                                     <div className="story-card">
-                                        <div className="story-card-number">15+</div>
-                                        <div className="story-card-text">Yıllık Sektör Deneyimi</div>
+                                        <div className="story-card-number">Saha</div>
+                                        <div className="story-card-text">Önce kapsam, sonra yöntem</div>
                                     </div>
                                 </div>
                             </ScrollReveal>
@@ -197,9 +195,9 @@ export default function AboutPageClient() {
                                     </div>
                                     <h3>Misyonumuz</h3>
                                     <p>
-                                        Endüstriyel dağcılık ve jeoteknik uygulamalar alanında, uluslararası standartlara
-                                        uygun, güvenli ve kaliteli hizmet sunarak müşterilerimizin ihtiyaçlarına en uygun
-                                        çözümleri üretmek.
+                                        Endüstriyel dağcılık ve jeoteknik uygulamalarda; ilgili mevzuatı, üretici
+                                        talimatlarını ve proje koşullarını dikkate alan güvenli ve izlenebilir çalışma
+                                        süreçleri kurmak.
                                     </p>
                                 </div>
                             </ScrollReveal>
@@ -210,8 +208,8 @@ export default function AboutPageClient() {
                                     </div>
                                     <h3>Vizyonumuz</h3>
                                     <p>
-                                        Türkiye ve bölge ülkelerinde endüstriyel dağcılık ve jeoteknik çözümler alanında
-                                        lider konumunu pekiştirerek, global standartlarda hizmet sunan bir organizasyon olmak.
+                                        Endüstriyel dağcılık ve jeoteknik çözümlerde kapsamı açık, saha bilgisine dayalı,
+                                        güvenilir ve izlenebilir bir çalışma organizasyonu olmak.
                                     </p>
                                 </div>
                             </ScrollReveal>
@@ -275,7 +273,7 @@ export default function AboutPageClient() {
                         <ScrollReveal variant="scaleIn">
                             <div className="cta-inner">
                                 <h2>Bizimle Çalışmaya Hazır Mısınız?</h2>
-                                <p>Projeleriniz için profesyonel çözümler sunmaya hazırız.</p>
+                                <p>Projenizin kapsamını ve gerekli değerlendirme adımlarını birlikte netleştirelim.</p>
                                 <div className="cta-buttons">
                                     <Link href="/iletisim" className="btn btn-cta">
                                         İletişime Geçin

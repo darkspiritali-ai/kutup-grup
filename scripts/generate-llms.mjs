@@ -61,9 +61,9 @@ const generateLlmsTxt = async (services, blogPosts) => {
 
   // Group by categories (only indexable services found in services-data)
   const categories = {
-    endustriyel: { title: 'Endüstriyel Dağcılık ve İple Erişim', desc: 'İskele veya vinç gerektirmeden, yüksek yapılarda iple erişim teknikleriyle sunulan cephe temizliği, aydınlatma, tersane ve rüzgar türbini hizmetleri.' },
+    endustriyel: { title: 'Endüstriyel Dağcılık ve İple Erişim', desc: 'Yüksek yapılarda erişim, cephe temizliği, aydınlatma, tersane ve rüzgâr türbini bakım başlıklarını kapsayan hizmetler.' },
     jeoteknik: { title: 'Jeoteknik Uygulamalar', desc: 'Yamaç stabilizasyonu, şev örtüleme, kaya bariyeri kurulumu gibi sarp yamaç ve zemin koruma mühendislik çözümleri.' },
-    diger: { title: 'Yüksekte Çalışma Güvenliği ve Diğer Hizmetler', desc: 'IRATA/SPRAT eğitimleri, stand-by rescue (kurtarma) ve sahne rigging hizmetleri.' }
+    diger: { title: 'Yüksekte Çalışma Güvenliği ve Diğer Hizmetler', desc: 'İple erişim eğitimleri, stand-by rescue (kurtarma) ve sahne rigging hizmetleri.' }
   };
 
   Object.entries(categories).forEach(([key, cat]) => {
@@ -83,9 +83,9 @@ const generateLlmsTxt = async (services, blogPosts) => {
 
   const blogHubExists = llmRoutes.some((route) => route.path === '/blog');
   if (blogHubExists) {
-    md += `## Teknik Rehberler\n\n`;
-    md += `İple erişim, yüksekte çalışma, jeoteknik risk ve saha güvenliği konularında kaynaklı, editoryal rehberler. Teknik uygunluk ve proje kararı gerçek saha verileriyle ayrıca doğrulanmalıdır.\n\n`;
-    md += `- [Tüm teknik rehberler](${domain}/blog): Konu kümelerinin tamamı.\n`;
+    md += `## Teknik Yazılar\n\n`;
+    md += `İple erişim, yüksekte çalışma, jeoteknik risk ve saha güvenliği konularında kaynaklı, editoryal yazılar. Teknik uygunluk ve proje kararı gerçek saha verileriyle ayrıca doğrulanmalıdır.\n\n`;
+    md += `- [Tüm teknik yazılar](${domain}/blog): Konu kümelerinin tamamı.\n`;
     blogPosts.forEach((post) => {
       if (llmRoutes.some((route) => route.path === `/blog/${post.slug}`)) {
         md += `- [${post.title}](${domain}/blog/${post.slug}): ${post.metaDescription}\n`;
@@ -157,8 +157,8 @@ const generateLlmsFullTxt = (services, blogPosts) => {
     md += `---\n\n`;
   });
 
-  md += `## Teknik Rehberler\n\n`;
-  md += `Aşağıdaki rehberler Kutup Grup blogunda yayınlanan editoryal içeriklerdir. Kaynak bağlantıları ve içerik kapsamı ilgili sayfada yer alır; yazılar belirli bir saha için mühendislik raporu veya güvenlik garantisi değildir.\n\n`;
+  md += `## Teknik Yazılar\n\n`;
+  md += `Aşağıdaki yazılar Kutup Grup blogunda yayınlanan editoryal içeriklerdir. Kaynak bağlantıları ve içerik kapsamı ilgili sayfada yer alır; yazılar belirli bir saha için mühendislik raporu veya güvenlik garantisi değildir.\n\n`;
   blogPosts.forEach((post) => {
     md += `### ${post.title}\n\n`;
     md += `**Canonical URL:** ${domain}/blog/${post.slug}\n\n`;
