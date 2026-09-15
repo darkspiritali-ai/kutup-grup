@@ -9322,8 +9322,7 @@ standByRescueContent.push({
 var blog_data_exports = /* @__PURE__ */ __exportAll({
 	BLOG_HUB: () => BLOG_HUB,
 	BLOG_POSTS: () => BLOG_POSTS,
-	getBlogPost: () => getBlogPost,
-	getBlogWordCount: () => getBlogWordCount
+	getBlogPost: () => getBlogPost
 });
 var blogImage = (slug, alt, title, caption, width = 1774, height = 887) => ({
 	src: `/images/blog/${slug}.webp`,
@@ -9829,45 +9828,45 @@ var BLOG_POSTS = [
 	}
 ];
 var getBlogPost = (slug) => BLOG_POSTS.find((post) => post.slug === slug);
-var getBlogWordCount = (post) => post.sections.flatMap((section) => [
-	section.heading,
-	...section.paragraphs,
-	...section.bullets || [],
-	section.note || ""
-]).join(" ").replace(/<[^>]+>/g, " ").trim().split(/\s+/).filter(Boolean).length;
 var blog_module_default = {
-	page: "_page_1kchw_1",
-	hero: "_hero_1kchw_5",
-	heroInner: "_heroInner_1kchw_24",
-	content: "_content_1kchw_25",
-	eyebrow: "_eyebrow_1kchw_32",
-	intro: "_intro_1kchw_58",
-	grid: "_grid_1kchw_73",
-	card: "_card_1kchw_79",
-	cardImageLink: "_cardImageLink_1kchw_96",
-	cardImage: "_cardImage_1kchw_96",
-	cardBody: "_cardBody_1kchw_108",
-	cardMeta: "_cardMeta_1kchw_115",
-	postMeta: "_postMeta_1kchw_116",
-	relatedCard: "_relatedCard_1kchw_130",
-	readMore: "_readMore_1kchw_148",
-	breadcrumb: "_breadcrumb_1kchw_160",
-	articleLayout: "_articleLayout_1kchw_173",
-	article: "_article_1kchw_173",
-	articleHeader: "_articleHeader_1kchw_190",
-	articleExcerpt: "_articleExcerpt_1kchw_200",
-	articleByline: "_articleByline_1kchw_206",
-	articleFigure: "_articleFigure_1kchw_213",
-	articleBody: "_articleBody_1kchw_237",
-	section: "_section_1kchw_241",
-	sourceList: "_sourceList_1kchw_264",
-	note: "_note_1kchw_280",
-	sideCard: "_sideCard_1kchw_289",
-	bottomCard: "_bottomCard_1kchw_290",
-	relatedList: "_relatedList_1kchw_311",
-	faqList: "_faqList_1kchw_355",
-	faqItem: "_faqItem_1kchw_359",
-	relatedGrid: "_relatedGrid_1kchw_376"
+	page: "_page_1mgtx_1",
+	hero: "_hero_1mgtx_5",
+	heroInner: "_heroInner_1mgtx_24",
+	content: "_content_1mgtx_25",
+	eyebrow: "_eyebrow_1mgtx_32",
+	hubLayout: "_hubLayout_1mgtx_58",
+	hubSidebar: "_hubSidebar_1mgtx_65",
+	hubMain: "_hubMain_1mgtx_72",
+	intro: "_intro_1mgtx_76",
+	grid: "_grid_1mgtx_91",
+	card: "_card_1mgtx_97",
+	cardImageLink: "_cardImageLink_1mgtx_114",
+	cardImage: "_cardImage_1mgtx_114",
+	cardBody: "_cardBody_1mgtx_126",
+	cardMeta: "_cardMeta_1mgtx_133",
+	postMeta: "_postMeta_1mgtx_134",
+	relatedCard: "_relatedCard_1mgtx_148",
+	readMore: "_readMore_1mgtx_166",
+	breadcrumb: "_breadcrumb_1mgtx_178",
+	articleLayout: "_articleLayout_1mgtx_191",
+	article: "_article_1mgtx_191",
+	articleHeader: "_articleHeader_1mgtx_208",
+	articleExcerpt: "_articleExcerpt_1mgtx_218",
+	articleByline: "_articleByline_1mgtx_224",
+	articleFigure: "_articleFigure_1mgtx_231",
+	articleBody: "_articleBody_1mgtx_255",
+	section: "_section_1mgtx_259",
+	sourceList: "_sourceList_1mgtx_282",
+	note: "_note_1mgtx_298",
+	sideCard: "_sideCard_1mgtx_307",
+	bottomCard: "_bottomCard_1mgtx_308",
+	sidebarCallout: "_sidebarCallout_1mgtx_323",
+	relatedList: "_relatedList_1mgtx_330",
+	topicList: "_topicList_1mgtx_365",
+	sidebarLink: "_sidebarLink_1mgtx_388",
+	faqList: "_faqList_1mgtx_408",
+	faqItem: "_faqItem_1mgtx_412",
+	relatedGrid: "_relatedGrid_1mgtx_429"
 };
 //#endregion
 //#region src/pages/BlogIndex.tsx
@@ -9913,50 +9912,98 @@ function BlogIndex() {
 						/* @__PURE__ */ jsx("p", { children: BLOG_HUB.excerpt })
 					]
 				})
-			}), /* @__PURE__ */ jsxs("div", {
+			}), /* @__PURE__ */ jsx("div", {
 				className: blog_module_default.content,
-				children: [/* @__PURE__ */ jsxs("div", {
-					className: blog_module_default.intro,
-					children: [/* @__PURE__ */ jsx("h2", { children: "Karar vermeyi kolaylaştıran saha yazıları" }), /* @__PURE__ */ jsx("p", { children: "Bu merkezdeki yazılar; erişim yöntemi, risk değerlendirmesi, koruma sistemi, bakım ve kurtarma planlamasını birlikte ele alır. Teknik kaynaklar ve ilgili hizmet sayfalarıyla bağlantılıdır. Proje kapsamı, uygunluk ve uygulama kararı her zaman gerçek saha verileriyle ayrıca doğrulanmalıdır." })]
-				}), /* @__PURE__ */ jsx("div", {
-					className: blog_module_default.grid,
-					children: BLOG_POSTS.map((post) => /* @__PURE__ */ jsxs("article", {
-						className: blog_module_default.card,
-						children: [/* @__PURE__ */ jsx(Link$1, {
-							href: `/blog/${post.slug}`,
-							className: blog_module_default.cardImageLink,
-							children: /* @__PURE__ */ jsx(Image, {
-								src: post.image.src,
-								alt: post.image.alt,
-								title: post.image.title,
-								width: post.image.width,
-								height: post.image.height,
-								className: blog_module_default.cardImage
-							})
-						}), /* @__PURE__ */ jsxs("div", {
-							className: blog_module_default.cardBody,
+				children: /* @__PURE__ */ jsxs("div", {
+					className: blog_module_default.hubLayout,
+					children: [/* @__PURE__ */ jsxs("aside", {
+						className: blog_module_default.hubSidebar,
+						"aria-label": "Blog yönlendirme",
+						children: [/* @__PURE__ */ jsxs("div", {
+							className: blog_module_default.sideCard,
 							children: [
 								/* @__PURE__ */ jsx("p", {
 									className: blog_module_default.cardMeta,
-									children: post.category
+									children: "İçerik haritası"
 								}),
-								/* @__PURE__ */ jsx("h2", { children: /* @__PURE__ */ jsx(Link$1, {
-									href: `/blog/${post.slug}`,
-									children: post.title
-								}) }),
-								/* @__PURE__ */ jsx("p", { children: post.excerpt }),
+								/* @__PURE__ */ jsx("h2", { children: "İhtiyacınıza göre ilerleyin" }),
+								/* @__PURE__ */ jsx("nav", {
+									"aria-label": "Blog konu başlıkları",
+									children: /* @__PURE__ */ jsx("ul", {
+										className: blog_module_default.topicList,
+										children: BLOG_POSTS.map((post) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", {
+											href: `#${post.slug}`,
+											children: post.category
+										}) }, post.slug))
+									})
+								})
+							]
+						}), /* @__PURE__ */ jsxs("div", {
+							className: blog_module_default.sidebarCallout,
+							children: [
+								/* @__PURE__ */ jsx("p", {
+									className: blog_module_default.cardMeta,
+									children: "Kutup Grup"
+								}),
+								/* @__PURE__ */ jsx("h2", { children: "Bir saha sorunuz mu var?" }),
+								/* @__PURE__ */ jsx("p", { children: "Yapı, yamaç veya endüstriyel alanınızla ilgili ilk bilgileri paylaşın; uygun değerlendirme başlıklarını birlikte netleştirelim." }),
 								/* @__PURE__ */ jsxs(Link$1, {
-									href: `/blog/${post.slug}`,
-									className: blog_module_default.readMore,
-									children: ["Devamını oku ", /* @__PURE__ */ jsx("span", {
+									href: "/iletisim",
+									className: blog_module_default.sidebarLink,
+									children: ["İletişime geçin ", /* @__PURE__ */ jsx("span", {
 										"aria-hidden": "true",
 										children: "→"
 									})]
 								})
 							]
 						})]
-					}, post.slug))
-				})]
+					}), /* @__PURE__ */ jsxs("div", {
+						className: blog_module_default.hubMain,
+						children: [/* @__PURE__ */ jsxs("div", {
+							className: blog_module_default.intro,
+							children: [/* @__PURE__ */ jsx("h2", { children: "Karar vermeyi kolaylaştıran saha yazıları" }), /* @__PURE__ */ jsx("p", { children: "Bu merkezdeki yazılar; erişim yöntemi, risk değerlendirmesi, koruma sistemi, bakım ve kurtarma planlamasını birlikte ele alır. Teknik kaynaklar ve ilgili hizmet sayfalarıyla bağlantılıdır. Proje kapsamı, uygunluk ve uygulama kararı her zaman gerçek saha verileriyle ayrıca doğrulanmalıdır." })]
+						}), /* @__PURE__ */ jsx("div", {
+							className: blog_module_default.grid,
+							children: BLOG_POSTS.map((post) => /* @__PURE__ */ jsxs("article", {
+								className: blog_module_default.card,
+								id: post.slug,
+								children: [/* @__PURE__ */ jsx(Link$1, {
+									href: `/blog/${post.slug}`,
+									className: blog_module_default.cardImageLink,
+									children: /* @__PURE__ */ jsx(Image, {
+										src: post.image.src,
+										alt: post.image.alt,
+										title: post.image.title,
+										width: post.image.width,
+										height: post.image.height,
+										className: blog_module_default.cardImage
+									})
+								}), /* @__PURE__ */ jsxs("div", {
+									className: blog_module_default.cardBody,
+									children: [
+										/* @__PURE__ */ jsx("p", {
+											className: blog_module_default.cardMeta,
+											children: post.category
+										}),
+										/* @__PURE__ */ jsx("h2", { children: /* @__PURE__ */ jsx(Link$1, {
+											href: `/blog/${post.slug}`,
+											children: post.title
+										}) }),
+										/* @__PURE__ */ jsx("p", { children: post.excerpt }),
+										/* @__PURE__ */ jsxs(Link$1, {
+											href: `/blog/${post.slug}`,
+											className: blog_module_default.readMore,
+											children: ["Devamını oku ", /* @__PURE__ */ jsx("span", {
+												"aria-hidden": "true",
+												children: "→"
+											})]
+										})
+									]
+								})]
+							}, post.slug))
+						})]
+					})]
+				})
 			})] }),
 			/* @__PURE__ */ jsx(Footer, {})
 		]
@@ -10008,8 +10055,7 @@ function BlogPost({ slug }) {
 		mainEntityOfPage: {
 			"@type": "WebPage",
 			"@id": canonical
-		},
-		wordCount: getBlogWordCount(post)
+		}
 	};
 	const imageSchema = {
 		"@context": "https://schema.org",
@@ -10104,14 +10150,9 @@ function BlogPost({ slug }) {
 						/* @__PURE__ */ jsxs("header", {
 							className: blog_module_default.articleHeader,
 							children: [
-								/* @__PURE__ */ jsxs("p", {
+								/* @__PURE__ */ jsx("p", {
 									className: blog_module_default.postMeta,
-									children: [
-										post.category,
-										" · ",
-										getBlogWordCount(post),
-										"+ kelime"
-									]
+									children: post.category
 								}),
 								/* @__PURE__ */ jsx("h1", { children: post.title }),
 								/* @__PURE__ */ jsx("p", {

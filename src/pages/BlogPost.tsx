@@ -2,7 +2,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Link from '@/components/ui/Link';
 import StructuredData from '@/components/seo/StructuredData';
-import { getBlogPost, getBlogWordCount } from '@/lib/blog-data';
+import { getBlogPost } from '@/lib/blog-data';
 import styles from './blog.module.css';
 
 const SITE_URL = 'https://kutupgrup.com';
@@ -45,7 +45,6 @@ export default function BlogPost({ slug }: BlogPostProps) {
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo/logo.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
-    wordCount: getBlogWordCount(post),
   };
   const imageSchema = {
     '@context': 'https://schema.org',
@@ -99,7 +98,7 @@ export default function BlogPost({ slug }: BlogPostProps) {
         <div className={`${styles.content} ${styles.articleLayout}`}>
           <article className={styles.article}>
             <header className={styles.articleHeader}>
-              <p className={styles.postMeta}>{post.category} · {getBlogWordCount(post)}+ kelime</p>
+              <p className={styles.postMeta}>{post.category}</p>
               <h1>{post.title}</h1>
               <p className={styles.articleExcerpt}>{post.excerpt}</p>
               <p className={styles.articleByline}>
