@@ -217,6 +217,15 @@ export default function Footer() {
                                 <Link href="/gizlilik-politikasi" className="bottom-link">Gizlilik Politikası</Link>
                                 <span className="separator">•</span>
                                 <Link href="/cerez-politikasi" className="bottom-link">Çerez Politikası</Link>
+                                <span className="separator">•</span>
+                                <a
+                                    href="https://innovationlabs.studio"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bottom-link studio-credit"
+                                >
+                                    Tasarım ve yazılım geliştirme: Innovation Labs Studio
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -448,6 +457,8 @@ export default function Footer() {
         .bottom-links {
           display: flex;
           align-items: center;
+          justify-content: flex-end;
+          flex-wrap: wrap;
           gap: 12px;
         }
 
@@ -489,6 +500,10 @@ export default function Footer() {
             flex-direction: column;
             text-align: center;
             gap: var(--spacing-3);
+          }
+
+          .bottom-links {
+            justify-content: center;
           }
         }
       `}</style>

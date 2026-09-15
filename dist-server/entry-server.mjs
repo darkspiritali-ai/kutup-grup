@@ -1186,6 +1186,17 @@ function Footer() {
 										href: "/cerez-politikasi",
 										className: "bottom-link",
 										children: "Çerez Politikası"
+									}),
+									/* @__PURE__ */ jsx("span", {
+										className: "separator",
+										children: "•"
+									}),
+									/* @__PURE__ */ jsx("a", {
+										href: "https://innovationlabs.studio",
+										target: "_blank",
+										rel: "noopener noreferrer",
+										className: "bottom-link studio-credit",
+										children: "Tasarım ve yazılım geliştirme: Innovation Labs Studio"
 									})
 								]
 							})]
@@ -1420,6 +1431,8 @@ function Footer() {
         .bottom-links {
           display: flex;
           align-items: center;
+          justify-content: flex-end;
+          flex-wrap: wrap;
           gap: 12px;
         }
 
@@ -1461,6 +1474,10 @@ function Footer() {
             flex-direction: column;
             text-align: center;
             gap: var(--spacing-3);
+          }
+
+          .bottom-links {
+            justify-content: center;
           }
         }
       `
