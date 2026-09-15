@@ -15,11 +15,18 @@ export default function Analytics() {
         if (!isAnalyticsConfigured()) return;
 
         const handleConsentChange = () => {
-            if (hasAnalyticsConsent()) initializeAnalytics();
+            initializeAnalytics();
+            if (hasAnalyticsConsent()) {
+                trackEvent('page_view', {
+                    page_location: window.location.href,
+                    page_path: `${window.location.pathname}${window.location.search}`,
+                    page_title: document.title,
+                });
+            }
         };
 
         window.addEventListener(CONSENT_CHANGE_EVENT, handleConsentChange);
-        if (hasAnalyticsConsent()) initializeAnalytics();
+        initializeAnalytics();
 
         return () => window.removeEventListener(CONSENT_CHANGE_EVENT, handleConsentChange);
     }, []);

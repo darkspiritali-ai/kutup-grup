@@ -688,11 +688,11 @@ var CookieConsent_module_default = {
 };
 //#endregion
 //#region src/lib/analytics.ts
+var GA_MEASUREMENT_ID = "G-79T22B37EE".trim();
 "".trim();
-var GTM_CONTAINER_ID = "".trim();
 var CONSENT_EVENT = "kutup:consent-change";
 var getAnalyticsWindow = () => window;
-var isAnalyticsConfigured = () => Boolean(GTM_CONTAINER_ID);
+var isAnalyticsConfigured = () => Boolean(GA_MEASUREMENT_ID);
 var hasAnalyticsConsent = () => {
 	if (typeof window === "undefined") return false;
 	return window.localStorage.getItem("cookie-consent") === "accepted";
@@ -702,14 +702,51 @@ var ensureDataLayer = () => {
 	analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
 	return analyticsWindow.dataLayer;
 };
+var loadScript = (src, id) => {
+	if (document.getElementById(id)) return;
+	const script = document.createElement("script");
+	script.id = id;
+	script.async = true;
+	script.src = src;
+	document.head.appendChild(script);
+};
+var updateConsent = (analyticsWindow) => {
+	if (!analyticsWindow.gtag) return;
+	const hasConsent = hasAnalyticsConsent();
+	analyticsWindow.gtag("consent", "update", {
+		analytics_storage: hasConsent ? "granted" : "denied",
+		ad_storage: "denied",
+		ad_user_data: "denied",
+		ad_personalization: "denied"
+	});
+};
 var initializeAnalytics = () => {
-	if (typeof window === "undefined" || !hasAnalyticsConsent() || !isAnalyticsConfigured()) return;
-	ensureDataLayer();
+	if (typeof window === "undefined" || !isAnalyticsConfigured()) return;
+	const analyticsWindow = getAnalyticsWindow();
+	const dataLayer = ensureDataLayer();
+	if (!analyticsWindow.gtag) {
+		analyticsWindow.gtag = (...args) => {
+			dataLayer.push(args);
+		};
+		analyticsWindow.gtag("consent", "default", {
+			analytics_storage: "denied",
+			ad_storage: "denied",
+			ad_user_data: "denied",
+			ad_personalization: "denied",
+			wait_for_update: 500
+		});
+		analyticsWindow.gtag("js", /* @__PURE__ */ new Date());
+		analyticsWindow.gtag("config", GA_MEASUREMENT_ID, { send_page_view: false });
+	}
+	updateConsent(analyticsWindow);
+	loadScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`, "kutup-google-analytics");
 };
 var trackEvent = (name, params = {}) => {
 	if (typeof window === "undefined" || !hasAnalyticsConsent() || !isAnalyticsConfigured()) return;
 	initializeAnalytics();
 	({ ...params });
+	const analyticsWindow = getAnalyticsWindow();
+	if (analyticsWindow.gtag) analyticsWindow.gtag("event", name, params);
 };
 var CONSENT_CHANGE_EVENT = CONSENT_EVENT;
 //#endregion

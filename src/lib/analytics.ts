@@ -43,8 +43,20 @@ const loadScript = (src: string, id: string): void => {
     document.head.appendChild(script);
 };
 
+const updateConsent = (analyticsWindow: AnalyticsWindow): void => {
+    if (!analyticsWindow.gtag) return;
+
+    const hasConsent = hasAnalyticsConsent();
+    analyticsWindow.gtag('consent', 'update', {
+        analytics_storage: hasConsent ? 'granted' : 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+    });
+};
+
 export const initializeAnalytics = (): void => {
-    if (typeof window === 'undefined' || !hasAnalyticsConsent() || !isAnalyticsConfigured()) return;
+    if (typeof window === 'undefined' || !isAnalyticsConfigured()) return;
 
     const analyticsWindow = getAnalyticsWindow();
     const dataLayer = ensureDataLayer();
@@ -60,13 +72,24 @@ export const initializeAnalytics = (): void => {
         return;
     }
 
-    if (!GA_MEASUREMENT_ID || analyticsWindow.gtag) return;
+    if (!GA_MEASUREMENT_ID) return;
 
-    analyticsWindow.gtag = (...args: unknown[]) => {
-        dataLayer.push(args);
-    };
-    analyticsWindow.gtag('js', new Date());
-    analyticsWindow.gtag('config', GA_MEASUREMENT_ID, { send_page_view: false });
+    if (!analyticsWindow.gtag) {
+        analyticsWindow.gtag = (...args: unknown[]) => {
+            dataLayer.push(args);
+        };
+        analyticsWindow.gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500,
+        });
+        analyticsWindow.gtag('js', new Date());
+        analyticsWindow.gtag('config', GA_MEASUREMENT_ID, { send_page_view: false });
+    }
+
+    updateConsent(analyticsWindow);
     loadScript(
         `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`,
         'kutup-google-analytics',
