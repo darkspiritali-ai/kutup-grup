@@ -69,7 +69,7 @@ Tersane sahalarında aynı anda birden fazla ekip, kaldırma faaliyeti, kaynak i
 ##### İzin, koordinasyon ve teslim
 Deniz yapılarında çalışma başlamadan önce saha yetkilisi, gemi operasyonu, erişim noktaları, kurtarma yaklaşımı ve malzeme indirme yöntemi birlikte koordine edilir. Çalışma alanının altında veya yanında devam eden operasyonlar varsa durdurma ve yeniden başlatma koşulları belirlenir. Hava, deniz hareketi ve yüzey koşulları da günlük planın parçasıdır.
 
-Teslim; yapılan işin kapsamı, kontrol edilen alanlar, tespit edilen durumlar ve takip gerektiren noktalar üzerinden hazırlanır. Boya veya onarım gibi uzmanlık gerektiren işlerde ürün ve uygulama talimatları ayrıca doğrulanır. Teklifin kapsamı, yerinde inceleme ve tesisin izin düzeni görüldükten sonra kesinleştirilir.
+Teslim; yapılan işin kapsamı, kontrol edilen alanlar, tespit edilen durumlar ve takip gerektiren noktalar üzerinden hazırlanır. Teklifin kapsamı, yerinde inceleme ve tesisin izin düzeni görüldükten sonra kesinleştirilir.
 
 #### Avantajlar ve Farklar
 - İskele ve vinç kullanımına gerek yok
@@ -240,7 +240,7 @@ Saha erişimi de teknik değerlendirmenin parçasıdır. Yaya yaklaşımı, iple
 ##### Koruma çözümünün seçimi ve teslim
 Kaya bariyeri, şev örtüleme, moloz bariyeri, yamaç temizliği veya başka bir koruma yaklaşımı; riskin kaynağı, beklenen hareket, korunacak alan ve bakım imkânı karşılaştırılarak ele alınır. Suyun yönlendirilmesi, yüzeyin temizlenmesi ve mevcut yapıların korunması çoğu projede çözümün tamamlayıcı parçalarıdır.
 
-Teslim kapsamında saha bulguları, önerilen sonraki adımlar, erişim kısıtları ve karar için gereken ek veriler açıkça ayrılır. Uygulama öncesinde zemin, malzeme ve yapısal gerekliliklerin ilgili uzmanlarca doğrulanması gerekir.
+Teslim kapsamında saha bulguları, önerilen sonraki adımlar, erişim kısıtları ve karar için gereken ek veriler açıkça ayrılır.
 
 #### Avantajlar ve Farklar
 - En zorlu ve sarp yamaçlarda iple erişimle güvenli çalışma
@@ -621,8 +621,6 @@ Plan hazırlanırken çalışma yüksekliği, alt ve üst erişim, ankrajlar, ta
 ##### Operasyon sırasında koordinasyon
 Stand-by ekibinin konumu, ana çalışma ekibiyle haberleşmesi ve müdahale için gerekli boş alan operasyon başlamadan belirlenir. Ekipman kontrolü, bağlantı noktaları ve kurtarma rotası görev değiştiğinde yeniden gözden geçirilir. Saha sorumlusu, durdurma koşullarını ve acil durumda haber verilecek kişileri bilmelidir.
 
-Gerçek acil durumlar için tesisin kendi prosedürleri, yerel acil yardım düzeni ve görev yetkinlikleri ayrıca doğrulanmalıdır.
-
 #### Avantajlar ve Farklar
 - İlk yardım ve AED (defibrilatör) donanımlı
 - Tam kurtarma ekipmanı
@@ -798,8 +796,6 @@ Söküm, kurulum kadar planlı yapılmalıdır. Parçaların indirme sırası, s
 ##### Eğitim seçerken hangi bilgiler kontrol edilir?
 Katılımcının amacı saha çalışmasına hazırlanmak, mevcut becerilerini geliştirmek veya resmi değerlendirme sürecine girmek olabilir. Bu hedefler aynı eğitim planı değildir. Başlangıç seviyesi, deneyim, fiziksel hazırlık, ekipman kullanımı ve sınav beklentisi ilk görüşmede açıklanmalıdır.
 
-Programın güncel içeriği, ders süresi, uygulama ortamı, eğitmen yetkinliği, sınav başvurusu ve belge süreci SPRAT’ın resmi yayınlarıyla karşılaştırılmalıdır.
-
 ##### Uygulamalı öğrenme ve eğitim sonrası adımlar
 Uygulamalı çalışmalarda kişisel ekipman, bağlantı noktaları, yükselme ve iniş, geçiş, konumlanma, kurtarma ve iletişim başlıkları görev üzerinden işlenir. Katılımcının yalnızca hareketi yapması değil, neden o yöntemi seçtiğini ve çalışma alanını nasıl kontrol edeceğini anlaması önemlidir.
 
@@ -893,7 +889,6 @@ Teslim; risk alanlarını, gözlem tarihini, önerilen kontrolleri ve ek veri ih
 
 #### Avantajlar ve Farklar
 - Uluslararası standartlarda (SLF, EAWS) çığ kontrol çözümleri
-- GIS tabanlı dijital çığ haritalama
 - Otomatik erken uyarı sistemi kurulumu
 - Kontrollü çığ tetikleme operasyonları
 
