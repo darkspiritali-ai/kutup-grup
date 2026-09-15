@@ -730,8 +730,8 @@ var initializeAnalytics = () => {
 	const analyticsWindow = getAnalyticsWindow();
 	const dataLayer = ensureDataLayer();
 	if (!analyticsWindow.gtag) {
-		analyticsWindow.gtag = (...args) => {
-			dataLayer.push(args);
+		analyticsWindow.gtag = function() {
+			dataLayer.push(arguments);
 		};
 		analyticsWindow.gtag("consent", "default", {
 			analytics_storage: "denied",
@@ -741,7 +741,10 @@ var initializeAnalytics = () => {
 			wait_for_update: 500
 		});
 		analyticsWindow.gtag("js", /* @__PURE__ */ new Date());
-		analyticsWindow.gtag("config", GA_MEASUREMENT_ID, { send_page_view: false });
+		analyticsWindow.gtag("config", GA_MEASUREMENT_ID, {
+			send_page_view: false,
+			...hasAnalyticsDebugFlag() ? { debug_mode: true } : {}
+		});
 	}
 	updateConsent(analyticsWindow);
 	loadScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`, "kutup-google-analytics");

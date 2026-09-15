@@ -81,8 +81,8 @@ export const initializeAnalytics = (): void => {
     if (!GA_MEASUREMENT_ID) return;
 
     if (!analyticsWindow.gtag) {
-        analyticsWindow.gtag = (...args: unknown[]) => {
-            dataLayer.push(args);
+        analyticsWindow.gtag = function () {
+            dataLayer.push(arguments);
         };
         analyticsWindow.gtag('consent', 'default', {
             analytics_storage: 'denied',
@@ -92,7 +92,10 @@ export const initializeAnalytics = (): void => {
             wait_for_update: 500,
         });
         analyticsWindow.gtag('js', new Date());
-        analyticsWindow.gtag('config', GA_MEASUREMENT_ID, { send_page_view: false });
+        analyticsWindow.gtag('config', GA_MEASUREMENT_ID, {
+            send_page_view: false,
+            ...(hasAnalyticsDebugFlag() ? { debug_mode: true } : {}),
+        });
     }
 
     updateConsent(analyticsWindow);
