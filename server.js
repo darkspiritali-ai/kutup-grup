@@ -30,6 +30,15 @@ app.use((req, res, next) => {
 // Middleware
 app.use(express.json());
 
+const escapeHtml = (value = '') => String(value)
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#39;');
+
+const safeSubjectPart = (value = '') => String(value).replace(/[\r\n]+/g, ' ').trim().slice(0, 160);
+
 // Diagnostic log
 app.use((req, res, next) => {
   console.log(`[Diagnostic Log] Request: ${req.method} ${req.url}`);
@@ -62,7 +71,7 @@ const createTransporter = () => {
 // API Route: Contact Form
 app.post('/api/contact', async (req, res) => {
   try {
-    const { ad_soyad, email, telefon, konu, mesaj } = req.body;
+    const { ad_soyad, email, telefon, konu, hizmet_slug, mesaj } = req.body;
 
     if (!ad_soyad || !email || !telefon || !mesaj) {
       return res.status(400).json({ success: false, message: 'Lütfen tüm zorunlu alanları doldurun.' });
@@ -71,11 +80,18 @@ app.post('/api/contact', async (req, res) => {
     const transporter = createTransporter();
     const recipient = process.env.NOTIFICATION_EMAIL || 'info@kutupgrup.com';
 
+    const safeName = escapeHtml(ad_soyad);
+    const safeEmail = escapeHtml(email);
+    const safePhone = escapeHtml(telefon);
+    const safeTopic = escapeHtml(konu || 'Yeni İletişim Mesajı');
+    const safeService = escapeHtml(hizmet_slug || 'Belirtilmedi');
+    const safeMessage = escapeHtml(mesaj);
+
     const mailOptions = {
       from: `"Kutup Grup Web Sitesi" <${process.env.SMTP_USER || 'info@kutupgrup.com'}>`,
       to: recipient,
       replyTo: email,
-      subject: `[Web İletişim Formu] ${konu || 'Yeni İletişim Mesajı'} - ${ad_soyad}`,
+      subject: `[Web İletişim Formu] ${safeSubjectPart(konu || 'Yeni İletişim Mesajı')} - ${safeSubjectPart(ad_soyad)}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 600px; border: 1px solid #eee; border-radius: 8px;">
           <h2 style="color: #0284c7; border-bottom: 2px solid #0284c7; padding-bottom: 8px;">Yeni İletişim Formu Mesajı</h2>
@@ -83,23 +99,27 @@ app.post('/api/contact', async (req, res) => {
           <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
             <tr>
               <td style="padding: 8px; font-weight: bold; width: 120px; border-bottom: 1px solid #eee;">Ad Soyad:</td>
-              <td style="padding: 8px; border-bottom: 1px solid #eee;">${ad_soyad}</td>
+              <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeName}</td>
             </tr>
             <tr>
               <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">E-Posta:</td>
-              <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${email}">${email}</a></td>
+              <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
             </tr>
             <tr>
               <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Telefon:</td>
-              <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="tel:${telefon}">${telefon}</a></td>
+              <td style="padding: 8px; border-bottom: 1px solid #eee;"><a href="tel:${safePhone}">${safePhone}</a></td>
             </tr>
             <tr>
               <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee;">Konu:</td>
-              <td style="padding: 8px; border-bottom: 1px solid #eee;">${konu || 'Belirtilmedi'}</td>
+              <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeTopic}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border-bottom: 1px solid #eee;">Hizmet:</td>
+              <td style="padding: 8px; border-bottom: 1px solid #eee;">${safeService}</td>
             </tr>
             <tr>
               <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #eee; vertical-align: top;">Mesaj:</td>
-              <td style="padding: 8px; border-bottom: 1px solid #eee; white-space: pre-wrap;">${mesaj}</td>
+              <td style="padding: 8px; border-bottom: 1px solid #eee; white-space: pre-wrap;">${safeMessage}</td>
             </tr>
           </table>
           <p style="font-size: 12px; color: #777; margin-top: 25px;">Tarih: ${new Date().toLocaleString('tr-TR')}</p>

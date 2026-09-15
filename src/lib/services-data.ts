@@ -1,3 +1,5 @@
+import { SERVICE_EDITORIAL_COPY } from './service-editorial-copy.ts';
+
 export interface ServiceContent {
     slug: string;
     title: string;
@@ -1533,46 +1535,53 @@ const sanitizeList = (items: string[], fallback: string) => {
     return safeItems.length > 0 ? [...new Set(safeItems)] : [fallback];
 };
 
-const sanitizeService = (service: ServiceContent): ServiceContent => ({
-    ...service,
-    metaDescription: sanitizeRichText(
-        service.metaDescription,
-        `${service.title} için kapsam, yöntem ve saha gereklilikleri hakkında bilgi alın.`
-    ),
-    intro: sanitizeRichText(
-        service.intro,
-        `${service.title} kapsamında uygulanacak yöntem, görev ve saha koşullarına göre belirlenir.`
-    ),
-    sections: service.sections.map((section) => ({
-        ...section,
-        content: sanitizeRichText(
-            section.content,
-            'Bu başlık için yöntem ve teknik gereklilikler saha verileri, üretici dokümanları ve proje kapsamı üzerinden doğrulanır.'
+const sanitizeService = (service: ServiceContent): ServiceContent => {
+    const publicService = {
+        ...service,
+        ...(SERVICE_EDITORIAL_COPY[service.slug] || {}),
+    };
+
+    return {
+        ...publicService,
+        metaDescription: sanitizeRichText(
+            publicService.metaDescription,
+            `${publicService.title} için kapsam, yöntem ve saha gereklilikleri hakkında bilgi alın.`
         ),
-    })),
-    advantages: sanitizeList(
-        service.advantages,
-        'Proje kapsamına göre yöntem ve ekipman değerlendirmesi'
-    ),
-    applications: sanitizeList(
-        service.applications,
-        'Saha ve görev koşullarına göre uygulama'
-    ),
-    technicalDetails: sanitizeList(
-        service.technicalDetails,
-        'Teknik özellikler üretici dokümanı ve saha gereksinimine göre doğrulanır'
-    ),
-    whyChooseUs: sanitizeList(
-        service.whyChooseUs,
-        'Kapsamı açık ve saha bilgisine dayalı planlama'
-    ),
-    faqs: service.faqs.map((faq) => ({
-        ...faq,
-        answer: UNSUPPORTED_PUBLIC_CLAIM.test(faq.answer)
-            ? 'Bu sorunun yanıtı; işin kapsamı, saha koşulları, kullanılacak yöntem ve gerekli teknik kontroller doğrulandıktan sonra netleştirilir.'
-            : faq.answer,
-    })),
-});
+        intro: sanitizeRichText(
+            publicService.intro,
+            `${publicService.title} kapsamında uygulanacak yöntem, görev ve saha koşullarına göre belirlenir.`
+        ),
+        sections: publicService.sections.map((section) => ({
+            ...section,
+            content: sanitizeRichText(
+                section.content,
+                'Bu başlık için yöntem ve teknik gereklilikler saha verileri, üretici dokümanları ve proje kapsamı üzerinden doğrulanır.'
+            ),
+        })),
+        advantages: sanitizeList(
+            publicService.advantages,
+            'Proje kapsamına göre yöntem ve ekipman değerlendirmesi'
+        ),
+        applications: sanitizeList(
+            publicService.applications,
+            'Saha ve görev koşullarına göre uygulama'
+        ),
+        technicalDetails: sanitizeList(
+            publicService.technicalDetails,
+            'Teknik özellikler üretici dokümanı ve saha gereksinimine göre doğrulanır'
+        ),
+        whyChooseUs: sanitizeList(
+            publicService.whyChooseUs,
+            'Kapsamı açık ve saha bilgisine dayalı planlama'
+        ),
+        faqs: publicService.faqs.map((faq) => ({
+            ...faq,
+            answer: UNSUPPORTED_PUBLIC_CLAIM.test(faq.answer)
+                ? 'Bu sorunun yanıtı; işin kapsamı, saha koşulları, kullanılacak yöntem ve gerekli teknik kontroller doğrulandıktan sonra netleştirilir.'
+                : faq.answer,
+        })),
+    };
+};
 
 export const SERVICES_DATA: Record<string, ServiceContent> = Object.fromEntries(
     Object.entries(RAW_SERVICES_DATA).map(([slug, service]) => [slug, sanitizeService(service)])

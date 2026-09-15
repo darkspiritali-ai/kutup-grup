@@ -194,6 +194,12 @@
     margin-top: 4px;
 }
 
+.fieldHint {
+    color: var(--color-steel-gray, #4A5568);
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0;
+}
+
 .textarea {
     resize: vertical;
     min-height: 120px;

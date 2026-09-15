@@ -1,16 +1,19 @@
 
 
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import styles from './contact.module.css';
 import { trackEvent } from '@/lib/analytics';
+import { SERVICES_DATA } from '@/lib/services-data';
 
 interface FormData {
     ad_soyad: string;
     email: string;
     telefon: string;
     konu: string;
+    hizmet_slug: string;
     mesaj: string;
     kvkk_onay: boolean;
 }
@@ -20,11 +23,16 @@ interface FormErrors {
 }
 
 export default function ContactPageClient() {
+    const [searchParams] = useSearchParams();
+    const requestedServiceSlug = searchParams.get('hizmet') || '';
+    const requestedService = SERVICES_DATA[requestedServiceSlug];
+
     const [formData, setFormData] = useState<FormData>({
         ad_soyad: '',
         email: '',
         telefon: '',
-        konu: '',
+        konu: requestedService ? 'hizmet' : '',
+        hizmet_slug: requestedService?.slug || '',
         mesaj: '',
         kvkk_onay: false,
     });
@@ -92,6 +100,7 @@ export default function ContactPageClient() {
                     form_name: 'contact',
                     lead_type: 'contact_form',
                     topic: formData.konu || 'unspecified',
+                    service_slug: formData.hizmet_slug || undefined,
                 });
                 setSubmitStatus('success');
                 setFormData({
@@ -99,6 +108,7 @@ export default function ContactPageClient() {
                     email: '',
                     telefon: '',
                     konu: '',
+                    hizmet_slug: '',
                     mesaj: '',
                     kvkk_onay: false,
                 });
@@ -276,11 +286,17 @@ export default function ContactPageClient() {
                                     className={styles.select}
                                 >
                                     <option value="">Konu Seçiniz</option>
+                                    <option value="hizmet">Hizmet Talebi</option>
                                     <option value="teklif">Teklif Talebi</option>
                                     <option value="genel">Genel Bilgi</option>
                                     <option value="proje">Proje Danışmanlığı</option>
                                     <option value="diger">Diğer</option>
                                 </select>
+                                {requestedService && (
+                                    <p className={styles.fieldHint}>
+                                        Seçilen hizmet: {requestedService.title}
+                                    </p>
+                                )}
                             </div>
 
                             <div className={styles.formGroup}>

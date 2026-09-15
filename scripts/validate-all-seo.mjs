@@ -42,7 +42,10 @@ const runAllSeoValidation = () => {
   // 9. Audit visible service copy for unsupported numeric and superiority claims
   runScript('node scripts/validate-service-claims.mjs', 'Service Claim Validation');
 
-  // 10. Audit long-form blog content, internal links and WebP assets
+  // 10. Audit mobile service page UX, accessibility and local network health
+  runScript('node scripts/validate-service-ux.mjs', 'Service UX Validation');
+
+  // 11. Audit long-form blog content, internal links and WebP assets
   runScript('node scripts/validate-blog.mjs', 'Blog Content Validation');
 
   console.log('\n==============================================================================');

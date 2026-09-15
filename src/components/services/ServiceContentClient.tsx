@@ -127,19 +127,19 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
         {/* Hero Section */}
         <section className="service-hero">
           <div className="container">
-            <div className="breadcrumb">
-              <Link href="/">Anasayfa</Link>
-              <span> / </span>
-              <Link href="/hizmetler">Hizmetler</Link>
-              <span> / </span>
-              <span>{service.title}</span>
-            </div>
+            <nav className="breadcrumb" aria-label="İçerik yolu">
+              <ol>
+                <li><Link href="/">Anasayfa</Link></li>
+                <li><Link href="/hizmetler">Hizmetler</Link></li>
+                <li aria-current="page">{service.title}</li>
+              </ol>
+            </nav>
 
             <div className="service-hero-layout">
               <div className="service-hero-text">
                 <h1 id="service-page-title">{service.title}</h1>
                 <p className="service-intro">{service.intro}</p>
-                <Link href="/iletisim" className="btn btn-cta">
+                <Link href={`/iletisim?hizmet=${service.slug}`} className="btn btn-cta">
                   Teklif talebi oluşturun
                 </Link>
               </div>
@@ -203,7 +203,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                               </div>
                               <p>{s.intro}</p>
                               <Link href={`/hizmetler/${s.slug}`} className="sub-service-link">
-                                Detaylı Bilgi
+                                {s.title} hizmetini inceleyin
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                   <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                                 </svg>
@@ -312,7 +312,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                 <div className="sidebar-card card-premium">
                   <h3>İletişime Geçin</h3>
                   <p>Projenizin kapsamını ve ilk değerlendirme adımlarını birlikte netleştirelim.</p>
-                  <Link href="/iletisim" className="btn btn-primary" style={{ width: '100%' }}>
+                  <Link href={`/iletisim?hizmet=${service.slug}`} className="btn btn-primary" style={{ width: '100%' }}>
                     Teklif İsteyin
                   </Link>
                 </div>
@@ -497,13 +497,24 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           color: var(--text-secondary);
           font-size: var(--font-size-sm);
         }
+
+        .breadcrumb ol {
+          display: flex;
+          flex-wrap: wrap;
+          gap: var(--spacing-2);
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+          content: '/';
+          margin-left: var(--spacing-2);
+          color: var(--text-muted);
+        }
         
         .breadcrumb a {
           color: var(--color-arctic-blue);
-        }
-        
-        .breadcrumb span {
-          margin: 0 var(--spacing-2);
         }
         
         .service-hero-text {

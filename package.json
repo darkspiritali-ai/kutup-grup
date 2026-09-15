@@ -16,9 +16,11 @@
     "validate:hydration": "node scripts/validate-hydration.mjs",
     "validate:llms": "node scripts/validate-llms.mjs",
     "validate:services-seo": "node scripts/validate-services-seo.mjs",
+    "validate:service-ux": "node scripts/validate-service-ux.mjs",
     "validate:service-claims": "node scripts/validate-service-claims.mjs",
     "validate:blog": "node scripts/validate-blog.mjs",
     "validate:all-seo": "node scripts/validate-all-seo.mjs",
+    "validate:live-seo": "node scripts/validate-live-seo.mjs",
     "start": "node server.js"
   },
   "dependencies": {
