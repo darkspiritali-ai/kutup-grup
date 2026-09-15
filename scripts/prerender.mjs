@@ -9,6 +9,29 @@ const DIST_DIR = path.resolve(__dirname, '../dist');
 const DIST_SERVER_DIR = path.resolve(__dirname, '../dist-server');
 const ROUTE_MANIFEST_PATH = path.resolve(__dirname, '../src/lib/route-manifest.ts');
 const SERVICES_DATA_PATH = path.resolve(__dirname, '../src/lib/services-data.ts');
+const BLOG_DATA_PATH = path.resolve(__dirname, '../src/lib/blog-data.ts');
+
+const SITE_URL = 'https://kutupgrup.com';
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/slope-stabilization.png`;
+
+const escapeHtml = (value) => String(value)
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&#39;');
+
+const escapeRegExp = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const upsertMeta = (html, attribute, key, content) => {
+  const attrPattern = `${escapeRegExp(attribute)}\\s*=\\s*["']${escapeRegExp(key)}["']`;
+  const tagPattern = new RegExp(`<meta\\b(?=[^>]*${attrPattern})[^>]*>`, 'i');
+  const tag = `<meta ${attribute}="${escapeHtml(key)}" content="${escapeHtml(content)}" />`;
+  if (tagPattern.test(html)) {
+    return html.replace(tagPattern, tag);
+  }
+  return html.replace('</head>', `  ${tag}\n  </head>`);
+};
 
 const buildPrerenderPages = async () => {
   console.log('[Prerender] Starting real React SSR pre-render page generation...');
@@ -44,6 +67,17 @@ const buildPrerenderPages = async () => {
     process.exit(1);
   }
 
+  let blogHub;
+  let blogPosts = [];
+  try {
+    const blogModule = await import(BLOG_DATA_PATH);
+    blogHub = blogModule.BLOG_HUB;
+    blogPosts = blogModule.BLOG_POSTS || [];
+  } catch (err) {
+    console.error('Error loading blog data for prerender:', err);
+    process.exit(1);
+  }
+
   // Load original index.html base template
   const templatePath = path.join(DIST_DIR, 'index.html');
   if (!fs.existsSync(templatePath)) {
@@ -74,24 +108,36 @@ const buildPrerenderPages = async () => {
     // Inject Title tag
     outputHtml = outputHtml.replace(
       /<title>([\s\S]*?)<\/title>/i,
-      `<title>${seoData.title}</title>`
+      `<title>${escapeHtml(seoData.title)}</title>`
     );
 
-    // Inject Meta Description tag
-    const descRegex = /<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']/i;
-    const descRegexAlt = /<meta\s+content=["']([\s\S]*?)["']\s+name=["']description["']/i;
-    const newMetaDesc = `<meta name="description" content="${seoData.description}"`;
+    outputHtml = upsertMeta(outputHtml, 'name', 'description', seoData.description);
+    outputHtml = upsertMeta(outputHtml, 'name', 'robots', seoData.robots);
 
-    if (outputHtml.match(descRegex)) {
-      outputHtml = outputHtml.replace(descRegex, newMetaDesc);
-    } else if (outputHtml.match(descRegexAlt)) {
-      outputHtml = outputHtml.replace(descRegexAlt, newMetaDesc);
-    } else {
-      outputHtml = outputHtml.replace('</head>', `  ${newMetaDesc}>\n  </head>`);
-    }
+    [
+      ['og:title', seoData.title],
+      ['og:description', seoData.description],
+      ['og:url', seoData.canonical],
+      ['og:site_name', 'Kutup Grup'],
+      ['og:locale', 'tr_TR'],
+      ['og:type', 'website'],
+      ['og:image', seoData.image],
+      ['og:image:alt', `${seoData.title} - Kutup Grup`],
+    ].forEach(([property, content]) => {
+      outputHtml = upsertMeta(outputHtml, 'property', property, content);
+    });
+
+    [
+      ['twitter:card', 'summary_large_image'],
+      ['twitter:title', seoData.title],
+      ['twitter:description', seoData.description],
+      ['twitter:image', seoData.image],
+    ].forEach(([name, content]) => {
+      outputHtml = upsertMeta(outputHtml, 'name', name, content);
+    });
 
     // Inject Self-Referencing Canonical Link tag
-    const canonicalLink = `<link rel="canonical" href="${seoData.canonical}" />`;
+    const canonicalLink = `<link rel="canonical" href="${escapeHtml(seoData.canonical)}" />`;
     outputHtml = outputHtml.replace('</head>', `  ${canonicalLink}\n  </head>`);
 
     // Inject exact React SSR markup into <div id="root">
@@ -119,6 +165,8 @@ const buildPrerenderPages = async () => {
     let title = 'Kutup Grup - Endüstriyel Dağcılık ve Jeoteknik Çözümler';
     let description = 'Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz. İple erişim teknikleri, jeoteknik uygulamalar ve yüksek yapı çözümleri.';
     const canonical = `https://kutupgrup.com${route.path === '/' ? '' : route.path}`;
+    const robots = route.indexable ? 'index,follow' : 'noindex,follow';
+    let image = DEFAULT_OG_IMAGE;
 
     if (route.type === 'service') {
       const slug = route.path.replace('/hizmetler/', '');
@@ -126,11 +174,12 @@ const buildPrerenderPages = async () => {
       if (s) {
         title = `${s.title} - Kutup Grup`;
         description = s.metaDescription;
+        if (s.heroImage) image = `${SITE_URL}${s.heroImage}`;
       } else {
         title = `${slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())} - Kutup Grup`;
       }
-    } else {
-      switch (route.path) {
+      } else {
+        switch (route.path) {
         case '/':
           title = 'Kutup Grup - Endüstriyel Dağcılık ve Jeoteknik Çözümler';
           description = 'Heyelan, kaya ve taş düşmesi problemlerinize en uygun çözümleri projelendirip uyguluyoruz. İple erişim teknikleri, jeoteknik uygulamalar ve yüksek yapı çözümleri.';
@@ -151,6 +200,10 @@ const buildPrerenderPages = async () => {
           title = 'Sıkça Sorulan Sorular - Kutup Grup';
           description = 'Endüstriyel dağcılık, iple erişim güvenliği, kullanılan ekipmanlar ve proje süreçlerimiz hakkında merak edilen tüm sorular ve cevapları.';
           break;
+        case '/blog':
+          title = blogHub.title;
+          description = blogHub.metaDescription;
+          break;
         case '/referanslar':
           title = 'Referanslarımız - Kutup Grup';
           description = 'Kutup Grup olarak başarıyla tamamladığımız endüstriyel dağcılık ve jeoteknik projelerimiz.';
@@ -163,10 +216,18 @@ const buildPrerenderPages = async () => {
           title = 'Çerez Politikası - Kutup Grup';
           description = 'Kutup Grup Çerez Politikası, web sitemizde kullanılan çerezler, çerezlerin kullanım amaçları ve yönetimi hakkında detaylar.';
           break;
+        default: {
+          const post = blogPosts.find((item) => `/blog/${item.slug}` === route.path);
+          if (post) {
+            title = post.title;
+            description = post.metaDescription;
+            image = `${SITE_URL}${post.image.src}`;
+          }
+        }
       }
     }
 
-    prerenderRoute(route.path, { title, description, canonical });
+    prerenderRoute(route.path, { title, description, canonical, robots, image });
   });
 
   // Create dist/404.html page directly
@@ -174,7 +235,8 @@ const buildPrerenderPages = async () => {
   const notFoundHtml = baseHtml
     .replace(/<title>([\s\S]*?)<\/title>/i, '<title>Sayfa Bulunamadı - Kutup Grup</title>')
     .replace('<div id="root"></div>', `<div id="root">${app404Html}</div>`);
-  fs.writeFileSync(path.join(DIST_DIR, '404.html'), notFoundHtml, 'utf-8');
+  const notFoundWithRobots = upsertMeta(notFoundHtml, 'name', 'robots', 'noindex,follow');
+  fs.writeFileSync(path.join(DIST_DIR, '404.html'), notFoundWithRobots, 'utf-8');
   console.log('[Prerender] Generated static dist/404.html');
 
   console.log('[Prerender] Static HTML pages pre-render compilation complete.');

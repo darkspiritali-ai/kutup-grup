@@ -15,6 +15,17 @@ try {
 
 const app = express();
 
+// Keep the public host canonical. This only works when the www hostname is
+// routed to this application by DNS/hosting; provider-level routing still
+// needs to be verified separately after deployment.
+app.use((req, res, next) => {
+  const host = (req.get('host') || '').split(':')[0].toLowerCase();
+  if (host === 'www.kutupgrup.com') {
+    return res.redirect(308, `https://kutupgrup.com${req.originalUrl}`);
+  }
+  next();
+});
+
 // Middleware
 app.use(express.json());
 
@@ -220,6 +231,15 @@ app.get('/hizmetler/:service', (req, res, next) => {
   next();
 });
 
+// Serve static blog articles generated during the prerender step.
+app.get('/blog/:slug', (req, res, next) => {
+  const blogPath = path.join(__dirname, 'dist', 'blog', req.params.slug, 'index.html');
+  if (fs.existsSync(blogPath)) {
+    return res.sendFile(blogPath);
+  }
+  next();
+});
+
 // Serve static files from the dist directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
@@ -235,6 +255,7 @@ app.use((req, res) => {
     '/hizmetler',
     '/iletisim',
     '/sss',
+    '/blog',
     '/referanslar',
     '/gizlilik-politikasi',
     '/cerez-politikasi'
@@ -258,9 +279,20 @@ app.use((req, res) => {
     }
   }
 
+  let isValidBlog = false;
+  if (reqPath.startsWith('/blog/')) {
+    const slug = reqPath.replace('/blog/', '');
+    try {
+      const content = fs.readFileSync(path.join(__dirname, 'src/lib/blog-data.ts'), 'utf-8');
+      isValidBlog = content.includes(`slug: '${slug}'`) || content.includes(`slug: "${slug}"`);
+    } catch (e) {
+      isValidBlog = false;
+    }
+  }
+
   const isValidStatic = validRoutes.includes(reqPath);
 
-  if (isValidStatic || isValidService) {
+  if (isValidStatic || isValidService || isValidBlog) {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'), (err) => {
       if (err) {
         console.error("Error serving index.html:", err);

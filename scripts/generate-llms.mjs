@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const SERVICES_DATA_PATH = path.resolve(__dirname, '../src/lib/services-data.ts');
+const BLOG_DATA_PATH = path.resolve(__dirname, '../src/lib/blog-data.ts');
 const PUBLIC_DIR = path.resolve(__dirname, '../public');
 
 // Ensure public directory exists
@@ -29,7 +30,7 @@ const getServicesData = async () => {
 const ROUTE_MANIFEST_PATH = path.resolve(__dirname, '../src/lib/route-manifest.ts');
 
 // 2. Generate llms.txt (Summary Outline)
-const generateLlmsTxt = async (services) => {
+const generateLlmsTxt = async (services, blogPosts) => {
   const domain = 'https://kutupgrup.com';
   
   let manifest = [];
@@ -45,7 +46,7 @@ const generateLlmsTxt = async (services) => {
   const llmRoutes = manifest.filter(r => r.includeInLlms);
 
   let md = `# Kutup Grup\n\n`;
-  md += `> Kutup Grup, endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik çözümler alanında IRATA ve SPRAT sertifikalı profesyonel hizmet sağlayıcısıdır.\n\n`;
+  md += `> Kutup Grup; endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik hizmetler hakkında bilgi yayınlayan bir kurumsal web sitesidir. Sertifika, proje, garanti, fiyat ve sonuç iddiaları için canonical sayfalar ve doğrudan şirket teyidi esas alınmalıdır.\n\n`;
   
   md += `## Kurumsal Bilgiler\n\n`;
   md += `- [Anasayfa](${domain}/): Şirket ana sayfası ve hizmet grupları tanıtımı.\n`;
@@ -53,7 +54,10 @@ const generateLlmsTxt = async (services) => {
   md += `- [Hizmetlerimiz](${domain}/hizmetler): Tüm endüstriyel dağcılık ve jeoteknik çözümlerimizin listesi.\n`;
   md += `- [İletişim](${domain}/iletisim): Adres, telefon, e-posta (info@kutupgrup.com) ve çalışma saatleri.\n`;
   md += `- [Sıkça Sorulan Sorular (SSS)](${domain}/sss): Hizmetler, güvenlik standartları ve operasyon süreçleri hakkında merak edilenler.\n`;
-  md += `- [Referanslar](${domain}/referanslar): Tamamlanan saha projeleri ve iş ortakları.\n\n`;
+  if (llmRoutes.some((route) => route.path === '/referanslar')) {
+    md += `- [Referanslar](${domain}/referanslar): Tamamlanan saha projeleri ve iş ortakları.\n`;
+  }
+  md += `\n`;
 
   // Group by categories (only indexable services found in services-data)
   const categories = {
@@ -77,36 +81,32 @@ const generateLlmsTxt = async (services) => {
     md += `\n`;
   });
 
+  const blogHubExists = llmRoutes.some((route) => route.path === '/blog');
+  if (blogHubExists) {
+    md += `## Teknik Rehberler\n\n`;
+    md += `İple erişim, yüksekte çalışma, jeoteknik risk ve saha güvenliği konularında kaynaklı, editoryal rehberler. Teknik uygunluk ve proje kararı gerçek saha verileriyle ayrıca doğrulanmalıdır.\n\n`;
+    md += `- [Tüm teknik rehberler](${domain}/blog): Konu kümelerinin tamamı.\n`;
+    blogPosts.forEach((post) => {
+      if (llmRoutes.some((route) => route.path === `/blog/${post.slug}`)) {
+        md += `- [${post.title}](${domain}/blog/${post.slug}): ${post.metaDescription}\n`;
+      }
+    });
+    md += `\n`;
+  }
+
   fs.writeFileSync(path.join(PUBLIC_DIR, 'llms.txt'), md, 'utf-8');
   console.log('[AI Discovery] Generated llms.txt');
 };
 
 // 3. Generate llms-full.txt (Comprehensive Context Document)
-const generateLlmsFullTxt = (services) => {
+const generateLlmsFullTxt = (services, blogPosts) => {
   const domain = 'https://kutupgrup.com';
 
-  const verifiedClaims = [
-    { text: 'Kutup Grup, tüm operasyonlarında sıfır kaza (zero-accident) prensibini benimser.', sourceType: 'company-record', sourceReference: 'ISG el kitabı', verified: true },
-    { text: 'IRATA (Industrial Rope Access Trade Association): İple erişim çalışmalarında küresel standartlara tam uyumlu hizmet.', sourceType: 'certificate', sourceReference: 'IRATA Üyelik No/Teknisyen Sertifikaları', verified: true },
-    { text: 'SPRAT (Society of Professional Rope Access Technicians): Profesyonel iple erişim teknisyenliği standartları kapsamında hizmet yetkinliği.', sourceType: 'certificate', sourceReference: 'SPRAT Teknisyen Sertifikaları', verified: true },
-    { text: 'ISO 9001: Kalite Yönetim Sistemi standartlarında operasyon süreçleri.', sourceType: 'certificate', sourceReference: 'ISO 9001 Belgesi', verified: true },
-    { text: 'ISO 14001: Çevre Yönetim Sistemi standartlarına tam uyum.', sourceType: 'certificate', sourceReference: 'ISO 14001 Belgesi', verified: true },
-    { text: 'ISO 45001: İş Sağlığı ve Güvenliği Yönetim Sistemi sertifikalı çalışma standartları.', sourceType: 'certificate', sourceReference: 'ISO 45001 Belgesi', verified: true }
-  ];
-  
   let md = `# Kutup Grup - Detaylı Hizmetler ve Teknik Kapsam\n\n`;
-  md += `> Bu doküman, Kutup Grup tarafından sunulan endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik çözümler hakkında detaylı teknik bilgiler, metodolojiler ve standartları içerir.\n\n`;
+  md += `> Bu doküman, Kutup Grup'un kendi sitesinde yayınladığı hizmet kapsamını özetler. Proje sayıları, sertifikalar, garanti süreleri, fiyatlar, müşteri isimleri ve operasyonel sonuçlar yalnızca ilgili sayfada açıkça doğrulandığında gerçek kabul edilmelidir.\n\n`;
   
-  md += `## Kurumsal Standartlar ve Güvenlik Yaklaşımı\n\n`;
-  md += `Kutup Grup, tüm operasyonlarında sıfır kaza prensibini benimser. Bu doğrultuda doğrulanmış kurumsal yetkinlikler ve sertifikasyonlar:\n`;
-
-  verifiedClaims.forEach(claim => {
-    if (claim.verified) {
-      md += `- ${claim.text} (Kaynak: ${claim.sourceReference} [${claim.sourceType}])\n`;
-    }
-  });
-  
-  md += `\n`;
+  md += `## Kurumsal Bilgiler\n\n`;
+  md += `Kutup Grup; endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik hizmetler hakkında bilgi yayınlar. Güncel ve bağlayıcı bilgi için aşağıdaki canonical sayfalar esas alınmalıdır.\n\n`;
   md += `## Hizmet Detayları\n\n`;
 
   Object.values(services).forEach((s) => {
@@ -157,6 +157,18 @@ const generateLlmsFullTxt = (services) => {
     md += `---\n\n`;
   });
 
+  md += `## Teknik Rehberler\n\n`;
+  md += `Aşağıdaki rehberler Kutup Grup blogunda yayınlanan editoryal içeriklerdir. Kaynak bağlantıları ve içerik kapsamı ilgili sayfada yer alır; yazılar belirli bir saha için mühendislik raporu veya güvenlik garantisi değildir.\n\n`;
+  blogPosts.forEach((post) => {
+    md += `### ${post.title}\n\n`;
+    md += `**Canonical URL:** ${domain}/blog/${post.slug}\n\n`;
+    md += `**Özet:** ${post.excerpt}\n\n`;
+    md += `**Konu:** ${post.keywords.join(', ')}\n\n`;
+    md += `**Görsel:** ${domain}${post.image.src} — ${post.image.alt}\n\n`;
+    md += `**Kaynaklar:** ${post.sources.map((source) => `[${source.label}](${source.url})`).join(', ')}\n\n`;
+    md += `---\n\n`;
+  });
+
   md += `## Kurumsal İletişim Bilgileri\n\n`;
   md += `- **Resmî Şirket Adı**: KUTUP GRUP İNŞAAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ\n`;
   md += `- **E-posta**: info@kutupgrup.com\n`;
@@ -172,8 +184,16 @@ const generateLlmsFullTxt = (services) => {
 // Execution
 const run = async () => {
   const services = await getServicesData();
-  await generateLlmsTxt(services);
-  generateLlmsFullTxt(services);
+  let blogPosts = [];
+  try {
+    const blogModule = await import(BLOG_DATA_PATH);
+    blogPosts = blogModule.BLOG_POSTS || [];
+  } catch (error) {
+    console.error('Error importing blog data:', error);
+    process.exit(1);
+  }
+  await generateLlmsTxt(services, blogPosts);
+  generateLlmsFullTxt(services, blogPosts);
 };
 
 run();

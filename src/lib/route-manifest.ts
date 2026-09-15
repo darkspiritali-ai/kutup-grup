@@ -15,7 +15,17 @@ export const ROUTE_MANIFEST: RouteManifestItem[] = [
   { path: '/hizmetler', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
   { path: '/iletisim', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
   { path: '/sss', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
-  { path: '/referanslar', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog/endustriyel-dagcilik-iple-erisim-rehberi', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog/yuksekte-calisma-guvenligi-yasam-hatti-rehberi', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog/kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog/sev-ortuleme-yamac-stabilizasyonu-rehberi', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog/yuksek-yapilarda-cephe-temizligi-iple-erisim', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog/ruzgar-turbini-bakiminda-iple-erisim', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog/kar-cig-kontrolu-risk-degerlendirme-rehberi', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog/stand-by-rescue-kurtarma-plani-rehberi', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  // Keep the placeholder page crawlable for users, but do not present it as a finished reference archive.
+  { path: '/referanslar', type: 'page', indexable: false, includeInSitemap: false, includeInLlms: false, prerender: true },
 
   // 2. Legal Pages (Noindex, excluded from sitemap and llms.txt per specifications)
   { path: '/gizlilik-politikasi', type: 'legal', indexable: false, includeInSitemap: false, includeInLlms: false, prerender: true },

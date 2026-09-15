@@ -65,6 +65,7 @@ const MEGA_CATEGORIES = [
 const NAV_LINKS = [
   { title: 'Anasayfa', href: '/' },
   { title: 'Hakkımızda', href: '/hakkimizda' },
+  { title: 'Blog', href: '/blog' },
   // { title: 'Referanslar', href: '/referanslar' },
   { title: 'İletişim', href: '/iletisim' },
 ];
@@ -188,6 +189,7 @@ export default function Header() {
               </div>
             </li>
             <li><Link href="/hakkimizda" className={isActive('/hakkimizda') ? 'active' : ''}>Hakkımızda</Link></li>
+            <li><Link href="/blog" className={isActive('/blog') ? 'active' : ''}>Blog</Link></li>
             {/* <li><Link href="/referanslar" className={isActive('/referanslar') ? 'active' : ''}>Referanslar</Link></li> */}
             <li><Link href="/iletisim" className={isActive('/iletisim') ? 'active' : ''}>İletişim</Link></li>
           </ul>

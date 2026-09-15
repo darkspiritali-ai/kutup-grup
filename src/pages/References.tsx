@@ -24,7 +24,7 @@ export default function ReferanslarPageClient() {
                         <p className="maintenance-eyebrow">Yapım Aşamasında</p>
                         <h1 className="maintenance-title">Referanslarımız Yakında Burada</h1>
                         <p className="maintenance-description">
-                            Kutup Grup olarak gerçekleştirdiğimiz 500+ endüstriyel dağcılık ve jeoteknik projelerimizin detaylı portföyü ve vaka analizleri çok yakında yayında olacaktır. Detaylı bilgi için bizimle iletişime geçebilirsiniz.
+                            Endüstriyel dağcılık ve jeoteknik saha çalışmalarımıza ait izinli proje portföyü ve vaka analizleri hazırlanıyor. Hizmet kapsamı ve proje ihtiyaçlarınız hakkında bilgi almak için bizimle iletişime geçebilirsiniz.
                         </p>
                         
                         <div className="maintenance-buttons">

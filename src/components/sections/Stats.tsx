@@ -51,27 +51,11 @@ const stats = [
   },
 ];
 
-function Counter({ end, duration = 2000, isVisible }: { end: number; duration?: number; isVisible: boolean }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    let start = 0;
-    const increment = end / (duration / 16);
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [end, duration, isVisible]);
-
-  return <>{count}</>;
+function Counter({ end }: { end: number }) {
+  // Keep the factual value in the server-rendered HTML. The surrounding card
+  // can still animate into view without exposing a misleading 0+ placeholder
+  // to crawlers, no-JS users, or assistive technology.
+  return <>{end}</>;
 }
 
 export default function Stats() {
@@ -119,7 +103,7 @@ export default function Stats() {
               >
                 <div className="stat-icon">{stat.icon}</div>
                 <div className="stat-number">
-                  <Counter end={stat.number} isVisible={isVisible} />
+                  <Counter end={stat.number} />
                   {stat.suffix}
                 </div>
                 <div className="stat-label">{stat.label}</div>

@@ -175,6 +175,11 @@ export default function Footer() {
                                     </Link>
                                 </li>
                                 <li>
+                                    <Link href="/blog" className="sliding-link">
+                                        <span className="bullet"></span>Teknik Blog
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href="/sss" className="sliding-link">
                                         <span className="bullet"></span>Sıkça Sorulan Sorular
                                     </Link>

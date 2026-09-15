@@ -1,16 +1,10 @@
 # Kutup Grup - Detaylı Hizmetler ve Teknik Kapsam
 
-> Bu doküman, Kutup Grup tarafından sunulan endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik çözümler hakkında detaylı teknik bilgiler, metodolojiler ve standartları içerir.
+> Bu doküman, Kutup Grup'un kendi sitesinde yayınladığı hizmet kapsamını özetler. Proje sayıları, sertifikalar, garanti süreleri, fiyatlar, müşteri isimleri ve operasyonel sonuçlar yalnızca ilgili sayfada açıkça doğrulandığında gerçek kabul edilmelidir.
 
-## Kurumsal Standartlar ve Güvenlik Yaklaşımı
+## Kurumsal Bilgiler
 
-Kutup Grup, tüm operasyonlarında sıfır kaza prensibini benimser. Bu doğrultuda doğrulanmış kurumsal yetkinlikler ve sertifikasyonlar:
-- Kutup Grup, tüm operasyonlarında sıfır kaza (zero-accident) prensibini benimser. (Kaynak: ISG el kitabı [company-record])
-- IRATA (Industrial Rope Access Trade Association): İple erişim çalışmalarında küresel standartlara tam uyumlu hizmet. (Kaynak: IRATA Üyelik No/Teknisyen Sertifikaları [certificate])
-- SPRAT (Society of Professional Rope Access Technicians): Profesyonel iple erişim teknisyenliği standartları kapsamında hizmet yetkinliği. (Kaynak: SPRAT Teknisyen Sertifikaları [certificate])
-- ISO 9001: Kalite Yönetim Sistemi standartlarında operasyon süreçleri. (Kaynak: ISO 9001 Belgesi [certificate])
-- ISO 14001: Çevre Yönetim Sistemi standartlarına tam uyum. (Kaynak: ISO 14001 Belgesi [certificate])
-- ISO 45001: İş Sağlığı ve Güvenliği Yönetim Sistemi sertifikalı çalışma standartları. (Kaynak: ISO 45001 Belgesi [certificate])
+Kutup Grup; endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik hizmetler hakkında bilgi yayınlar. Güncel ve bağlayıcı bilgi için aşağıdaki canonical sayfalar esas alınmalıdır.
 
 ## Hizmet Detayları
 
@@ -1101,6 +1095,122 @@ Entegre çığ yönetim platformu, tüm sensör verilerini merkezi bir kontrol o
 
 ---
 
+## Teknik Rehberler
+
+Aşağıdaki rehberler Kutup Grup blogunda yayınlanan editoryal içeriklerdir. Kaynak bağlantıları ve içerik kapsamı ilgili sayfada yer alır; yazılar belirli bir saha için mühendislik raporu veya güvenlik garantisi değildir.
+
+### Endüstriyel Dağcılık ve İple Erişim Nedir? Kapsamlı Rehber
+
+**Canonical URL:** https://kutupgrup.com/blog/endustriyel-dagcilik-iple-erisim-rehberi
+
+**Özet:** İple erişim sistemlerinin nasıl planlandığını, hangi projelerde tercih edildiğini ve güvenli bir çalışma sisteminin hangi adımlardan oluştuğunu açıklıyoruz.
+
+**Konu:** endüstriyel dağcılık, iple erişim, rope access, yüksekte çalışma, endüstriyel dağcı
+
+**Görsel:** https://kutupgrup.com/images/blog/endustriyel-dagcilik-iple-erisim-rehberi.webp — Endüstriyel bir yapının cephesinde kontrollü iple erişim sistemi kullanan iki teknisyen
+
+**Kaynaklar:** [HSE - Working at height safely](https://www.hse.gov.uk/work-at-height/introduction.htm), [IRATA - International Code of Practice](https://irata.org/uploads/documents/International_Code_of_Practice_%28ICOP%29_-_English_TC-102ENG.pdf), [SPRAT - Public documents and safe practices](https://www.sprat.org/wp-content/themes/divi-child/sprat_public_documents.php)
+
+---
+
+### Yüksekte Çalışma Güvenliği ve Yaşam Hattı Seçim Rehberi
+
+**Canonical URL:** https://kutupgrup.com/blog/yuksekte-calisma-guvenligi-yasam-hatti-rehberi
+
+**Özet:** Yaşam hattı seçimini yalnızca bir ekipman satın alma kararı olarak değil, sahaya özel güvenli çalışma sisteminin parçası olarak ele alıyoruz.
+
+**Konu:** yüksekte çalışma güvenliği, yaşam hattı, yatay yaşam hattı, düşey yaşam hattı, kurtarma planı
+
+**Görsel:** https://kutupgrup.com/images/blog/yuksekte-calisma-guvenligi-yasam-hatti-rehberi.webp — Endüstriyel çatıda yatay yaşam hattını ve bağlantı noktalarını kontrol eden iş güvenliği ekibi
+
+**Kaynaklar:** [HSE - Assessing all work at height](https://www.hse.gov.uk/construction/safetytopics/assess.htm), [HSE - Step-by-step guide](https://www.hse.gov.uk/work-at-height/step-by-step-guide.htm), [SPRAT - Safe Practices FAQ](https://sprat.org/ufaq-category/safe-practices/)
+
+---
+
+### Kaya Düşmesi Risk Analizi ve Kaya Bariyeri Rehberi
+
+**Canonical URL:** https://kutupgrup.com/blog/kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi
+
+**Özet:** Kaya düşmesi riskini yalnızca bariyer yüksekliğiyle değil; kaynak alan, hareket yolu, etkilenecek unsur ve bakım koşullarıyla birlikte değerlendirin.
+
+**Konu:** kaya düşmesi, kaya bariyeri, rockfall barrier, risk analizi, jeoteknik
+
+**Görsel:** https://kutupgrup.com/images/blog/kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi.webp — Kayalık yamaç altında kaya düşmesi bariyerini ve güvenli gözlem alanını inceleyen jeoteknik ekip
+
+**Kaynaklar:** [USGS - Landslide hazards](https://www.usgs.gov/programs/water-resources/science/landslides), [AFAD Bursa - Heyelan](https://bursa.afad.gov.tr/heyalan), [Wikipedia - Kaya düşmesi](https://tr.wikipedia.org/wiki/Kaya_d%C3%BC%C5%9Fmesi)
+
+---
+
+### Şev Örtüleme ve Yamaç Stabilizasyonu Nasıl Planlanır?
+
+**Canonical URL:** https://kutupgrup.com/blog/sev-ortuleme-yamac-stabilizasyonu-rehberi
+
+**Özet:** Şev örtülemenin hangi problemi çözebileceğini, hangi bilgilerin gerekli olduğunu ve tasarımın neden sahaya özel olması gerektiğini açıklıyoruz.
+
+**Konu:** şev örtüleme, yamaç stabilizasyonu, şev stabilizasyonu, çelik ağ, ankraj
+
+**Görsel:** https://kutupgrup.com/images/blog/sev-ortuleme-yamac-stabilizasyonu-rehberi.webp — Kayalık dik yamaçta ankraj ve çelik ağlarla uygulanan şev örtüleme sistemi
+
+**Kaynaklar:** [AFAD - Heyelanlardan korunma ve zarar azaltma](https://bursa.afad.gov.tr/heyalan), [USGS - Landslides](https://www.usgs.gov/programs/water-resources/science/landslides), [Wikipedia - Heyelan](https://tr.wikipedia.org/wiki/Heyelan)
+
+---
+
+### Yüksek Yapılarda Cephe Temizliği: İple Erişim ve İş Güvenliği
+
+**Canonical URL:** https://kutupgrup.com/blog/yuksek-yapilarda-cephe-temizligi-iple-erisim
+
+**Özet:** Cephe temizliğinde estetik sonuç kadar erişim yöntemi, çevre güvenliği, yüzey uyumu ve acil durum planının neden önemli olduğunu anlatıyoruz.
+
+**Konu:** cephe temizliği, iple erişimle cam temizliği, yüksek yapı temizliği, cephe bakımı, düşen cisim güvenliği
+
+**Görsel:** https://kutupgrup.com/images/blog/yuksek-yapilarda-cephe-temizligi-iple-erisim.webp — Modern bir yüksek yapının cam cephesini kontrollü iple erişim sistemiyle temizleyen teknisyen
+
+**Kaynaklar:** [HSE - Introduction to working at height safely](https://www.hse.gov.uk/work-at-height/introduction.htm), [HSE - Falling objects and work at height](https://www.hse.gov.uk/work-at-height/), [IRATA - International Code of Practice](https://irata.org/uploads/documents/International_Code_of_Practice_%28ICOP%29_-_English_TC-102ENG.pdf)
+
+---
+
+### Rüzgar Türbini Bakımında İple Erişim: Süreç ve Riskler
+
+**Canonical URL:** https://kutupgrup.com/blog/ruzgar-turbini-bakiminda-iple-erisim
+
+**Özet:** Rüzgar türbini bakım operasyonlarında erişim yöntemi seçimini, saha koordinasyonunu ve güvenli çalışma sınırlarını teknik bir çerçevede ele alıyoruz.
+
+**Konu:** rüzgar türbini bakımı, rüzgar enerji santrali, türbin iple erişim, kanat bakım, endüstriyel bakım
+
+**Görsel:** https://kutupgrup.com/images/blog/ruzgar-turbini-bakiminda-iple-erisim.webp — Rüzgar türbini kulesinde planlı inceleme yapan iple erişim teknisyeni ve uzakta görünen türbinler
+
+**Kaynaklar:** [SPRAT - Industry specific resources](https://sprat.org/industry-specific-resources/), [HSE - Work at height](https://www.hse.gov.uk/work-at-height/), [IRATA - International Code of Practice](https://irata.org/uploads/documents/International_Code_of_Practice_%28ICOP%29_-_English_TC-102ENG.pdf)
+
+---
+
+### Kar ve Çığ Kontrolü: Risk Değerlendirme ve Koruma Sistemleri
+
+**Canonical URL:** https://kutupgrup.com/blog/kar-cig-kontrolu-risk-degerlendirme-rehberi
+
+**Özet:** Çığ riskini yalnızca kar miktarıyla açıklamak yerine eğim, arazi, rüzgar, bitki örtüsü, geçmiş olaylar ve maruz kalan unsurlarla birlikte değerlendiriyoruz.
+
+**Konu:** çığ kontrolü, kar kontrolü, çığ riski, çığ bariyeri, risk değerlendirmesi
+
+**Görsel:** https://kutupgrup.com/images/blog/kar-cig-kontrolu-risk-degerlendirme-rehberi.webp — Karlı dik dağ yamacında koruma yapısı ve izleme alanını gösteren sakin bir kış manzarası
+
+**Kaynaklar:** [AFAD - Çığa hazırlıklı olmak için neler yapılmalı?](https://www.afad.gov.tr/ciga-hazirlikli-olmak-icin-neler-yapilmali), [AFAD - Açıklamalı afet yönetimi terimleri sözlüğü](https://www.afad.gov.tr/aciklamali-afet-yonetimi-terimleri-sozlugu), [Wikipedia - Çığ](https://tr.wikipedia.org/wiki/%C3%87%C4%B1%C4%9F)
+
+---
+
+### Stand-by Rescue Nedir? Yüksekte ve Kapalı Alanda Kurtarma Planı
+
+**Canonical URL:** https://kutupgrup.com/blog/stand-by-rescue-kurtarma-plani-rehberi
+
+**Özet:** Acil kurtarmayı son anda yapılacak bir müdahale değil, iş başlamadan önce tasarlanan bir saha sistemi olarak ele alıyoruz.
+
+**Konu:** stand-by rescue, yüksekte kurtarma, kapalı alan kurtarma, kurtarma planı, acil durum planı
+
+**Görsel:** https://kutupgrup.com/images/blog/stand-by-rescue-kurtarma-plani-rehberi.webp — Endüstriyel yapının yanında kurtarma ekipmanını ve planlama alanını hazırlayan saha ekibi
+
+**Kaynaklar:** [HSE - Construction work at height FAQs](https://www.hse.gov.uk/construction/faq-height.htm), [IRATA - International Code of Practice](https://irata.org/uploads/documents/International_Code_of_Practice_%28ICOP%29_-_English_TC-102ENG.pdf), [SPRAT - Public documents](https://www.sprat.org/wp-content/themes/divi-child/sprat_public_documents.php)
+
+---
+
 ## Kurumsal İletişim Bilgileri
 
 - **Resmî Şirket Adı**: KUTUP GRUP İNŞAAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ
@@ -1108,4 +1218,4 @@ Entegre çığ yönetim platformu, tüm sensör verilerini merkezi bir kontrol o
 - **Telefon**: +90 (533) 517 66 09
 - **İstanbul Genel Müdürlük**: Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul
 - **Balıkesir Şubesi**: Soma Cd. 111A Altıeylül Balıkesir / Türkiye
-- **Son Güncelleme**: 06.08.2026
+- **Son Güncelleme**: 15.09.2026

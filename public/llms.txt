@@ -1,6 +1,6 @@
 # Kutup Grup
 
-> Kutup Grup, endüstriyel dağcılık, yüksekte çalışma güvenliği ve jeoteknik çözümler alanında IRATA ve SPRAT sertifikalı profesyonel hizmet sağlayıcısıdır.
+> Kutup Grup; endüstriyel dağcılık, iple erişim, yüksekte çalışma güvenliği ve jeoteknik hizmetler hakkında bilgi yayınlayan bir kurumsal web sitesidir. Sertifika, proje, garanti, fiyat ve sonuç iddiaları için canonical sayfalar ve doğrudan şirket teyidi esas alınmalıdır.
 
 ## Kurumsal Bilgiler
 
@@ -9,7 +9,6 @@
 - [Hizmetlerimiz](https://kutupgrup.com/hizmetler): Tüm endüstriyel dağcılık ve jeoteknik çözümlerimizin listesi.
 - [İletişim](https://kutupgrup.com/iletisim): Adres, telefon, e-posta (info@kutupgrup.com) ve çalışma saatleri.
 - [Sıkça Sorulan Sorular (SSS)](https://kutupgrup.com/sss): Hizmetler, güvenlik standartları ve operasyon süreçleri hakkında merak edilenler.
-- [Referanslar](https://kutupgrup.com/referanslar): Tamamlanan saha projeleri ve iş ortakları.
 
 ## Endüstriyel Dağcılık ve İple Erişim
 
@@ -45,4 +44,18 @@ IRATA/SPRAT eğitimleri, stand-by rescue (kurtarma) ve sahne rigging hizmetleri.
 - [Sahne İşleri (Rigging) Hizmetleri](https://kutupgrup.com/hizmetler/sahne-isleri-rigging): Konser, etkinlik ve sahne kurulumları için profesyonel rigging hizmetleri. Ses, ışık, dekor asma sistemleri, güvenli ve hızlı kurulum.
 - [SPRAT Eğitimi ve Sertifikasyonu](https://kutupgrup.com/hizmetler/sprat-egitimi): Uluslararası geçerliliği olan SPRAT (Society of Professional Rope Access Technicians) eğitimi ve sertifikasyon programları. Level 1, 2, 3 eğitimleri.
 - [IRATA Eğitimi ve Sertifikasyonu](https://kutupgrup.com/hizmetler/irata-egitimi): Uluslararası IRATA (Industrial Rope Access Trade Association) eğitimi ve sertifikasyonu. Level 1, 2, 3 iple erişim teknisyen eğitimleri.
+
+## Teknik Rehberler
+
+İple erişim, yüksekte çalışma, jeoteknik risk ve saha güvenliği konularında kaynaklı, editoryal rehberler. Teknik uygunluk ve proje kararı gerçek saha verileriyle ayrıca doğrulanmalıdır.
+
+- [Tüm teknik rehberler](https://kutupgrup.com/blog): Konu kümelerinin tamamı.
+- [Endüstriyel Dağcılık ve İple Erişim Nedir? Kapsamlı Rehber](https://kutupgrup.com/blog/endustriyel-dagcilik-iple-erisim-rehberi): Endüstriyel dağcılık ve iple erişimin ne olduğunu, hangi işlerde kullanıldığını, risk değerlendirmesini ve güvenli çalışma sürecini öğrenin.
+- [Yüksekte Çalışma Güvenliği ve Yaşam Hattı Seçim Rehberi](https://kutupgrup.com/blog/yuksekte-calisma-guvenligi-yasam-hatti-rehberi): Yüksekte çalışma güvenliğinde risk değerlendirmesi, toplu korunma, yaşam hattı seçimi, ekipman kontrolü ve kurtarma planını öğrenin.
+- [Kaya Düşmesi Risk Analizi ve Kaya Bariyeri Rehberi](https://kutupgrup.com/blog/kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi): Kaya düşmesi risk analizi nasıl yapılır? Kaya bariyeri seçiminde jeoloji, enerji, güzergâh, bakım ve saha koşullarını anlatan teknik rehber.
+- [Şev Örtüleme ve Yamaç Stabilizasyonu Nasıl Planlanır?](https://kutupgrup.com/blog/sev-ortuleme-yamac-stabilizasyonu-rehberi): Şev örtüleme ve yamaç stabilizasyonu planlamasında saha incelemesi, drenaj, ağ sistemleri, ankraj ve bakım başlıklarını öğrenin.
+- [Yüksek Yapılarda Cephe Temizliği: İple Erişim ve İş Güvenliği](https://kutupgrup.com/blog/yuksek-yapilarda-cephe-temizligi-iple-erisim): Yüksek yapılarda cephe temizliği planlanırken iple erişim, yüzey analizi, düşen cisim kontrolü, ekipman ve iş güvenliği adımlarını öğrenin.
+- [Rüzgar Türbini Bakımında İple Erişim: Süreç ve Riskler](https://kutupgrup.com/blog/ruzgar-turbini-bakiminda-iple-erisim): Rüzgar türbini bakımında iple erişim seçeneğini; planlama, muayene, hava koşulları, ekipman, kurtarma ve raporlama başlıklarıyla inceleyin.
+- [Kar ve Çığ Kontrolü: Risk Değerlendirme ve Koruma Sistemleri](https://kutupgrup.com/blog/kar-cig-kontrolu-risk-degerlendirme-rehberi): Kar ve çığ riskinin değerlendirilmesi, tehlike haritaları, koruma sistemleri, izleme ve operasyon planlaması hakkında kaynaklı rehber.
+- [Stand-by Rescue Nedir? Yüksekte ve Kapalı Alanda Kurtarma Planı](https://kutupgrup.com/blog/stand-by-rescue-kurtarma-plani-rehberi): Stand-by rescue hizmetinin kapsamını, kurtarma planı hazırlığını, ekip iletişimini, ekipman kontrolünü ve saha sınırlarını öğrenin.
 

@@ -9,8 +9,9 @@ import References from './pages/References';
 import FAQ from './pages/FAQ';
 import Privacy from './pages/Privacy';
 import Cookies from './pages/Cookies';
+import BlogIndex from './pages/BlogIndex';
+import BlogPost from './pages/BlogPost';
 import NotFound from './pages/NotFound';
-import Preloader from './components/animations/Preloader';
 import MetaHelper from './components/seo/MetaHelper';
 
 // Scroll to top on route change helper
@@ -35,12 +36,19 @@ export function AppRoutes() {
         <Route path="/iletisim" element={<Contact />} />
         <Route path="/referanslar" element={<References />} />
         <Route path="/sss" element={<FAQ />} />
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/:slug" element={<BlogPostRoute />} />
         <Route path="/gizlilik-politikasi" element={<Privacy />} />
         <Route path="/cerez-politikasi" element={<Cookies />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
+}
+
+function BlogPostRoute() {
+  const { pathname } = useLocation();
+  return <BlogPost slug={pathname.replace('/blog/', '')} />;
 }
 
 export default function App() {

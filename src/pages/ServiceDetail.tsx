@@ -28,7 +28,7 @@ export default function ServiceDetail() {
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Anasayfa', url: 'https://kutupgrup.com' },
-    { name: 'Hizmetler', url: 'https://kutupgrup.com/#hizmetler' },
+    { name: 'Hizmetler', url: 'https://kutupgrup.com/hizmetler' },
     { name: service.title, url: `https://kutupgrup.com/hizmetler/${service.slug}` },
   ]);
 

@@ -11,6 +11,14 @@ const ROUTE_MANIFEST_PATH = path.resolve(__dirname, '../src/lib/route-manifest.t
 const DIST_DIR = path.resolve(__dirname, '../dist');
 const PORT = 4006;
 
+const decodeHtmlEntities = (value) => value
+  .replace(/&amp;/g, '&')
+  .replace(/&lt;/g, '<')
+  .replace(/&gt;/g, '>')
+  .replace(/&quot;/g, '"')
+  .replace(/&#x27;/g, "'")
+  .replace(/&#39;/g, "'");
+
 const runHydrationAudit = async () => {
   console.log('[SEO Parity Audit] Starting Playwright-based pre/post hydration parity checks...\n');
 
@@ -71,7 +79,7 @@ const runHydrationAudit = async () => {
 
     // Pre-hydration extracted values from static file
     const preTitleMatch = preHtml.match(/<title>([\s\S]*?)<\/title>/i);
-    const preTitle = preTitleMatch ? preTitleMatch[1].trim() : '';
+    const preTitle = preTitleMatch ? decodeHtmlEntities(preTitleMatch[1].trim()) : '';
 
     const preDescMatch = preHtml.match(/<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']/i) ||
                          preHtml.match(/<meta\s+content=["']([\s\S]*?)["']\s+name=["']description["']/i);
@@ -84,13 +92,7 @@ const runHydrationAudit = async () => {
     const preH1Match = preHtml.match(/<h1[^>]*>([\s\S]*?)<\/h1>/gi);
     const preH1Count = preH1Match ? preH1Match.length : 0;
     const rawPreH1Text = preH1Match ? preH1Match[0].replace(/<[^>]+>/g, '').trim() : '';
-    const preH1Text = rawPreH1Text
-      .replace(/&amp;/g, '&')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#x27;/g, "'")
-      .replace(/&#39;/g, "'");
+    const preH1Text = decodeHtmlEntities(rawPreH1Text);
 
     // Navigate to live page with Playwright to inspect post-hydration DOM
     await page.goto(`http://localhost:${PORT}${route.path}`, { waitUntil: 'networkidle' });

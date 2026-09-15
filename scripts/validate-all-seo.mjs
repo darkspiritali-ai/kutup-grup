@@ -36,6 +36,9 @@ const runAllSeoValidation = () => {
   // 7. Audit AI Discoverability Files (llms.txt / llms-full.txt / robots.txt)
   runScript('node scripts/validate-llms.mjs', 'AI Discoverability Validation');
 
+  // 8. Audit long-form blog content, internal links and WebP assets
+  runScript('node scripts/validate-blog.mjs', 'Blog Content Validation');
+
   console.log('\n==============================================================================');
   console.log('[SEO Pipeline] SUCCESS: All SEO audits completed successfully!');
   console.log('==============================================================================\n');
