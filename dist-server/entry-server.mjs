@@ -697,6 +697,10 @@ var hasAnalyticsConsent = () => {
 	if (typeof window === "undefined") return false;
 	return window.localStorage.getItem("cookie-consent") === "accepted";
 };
+var hasAnalyticsDebugFlag = () => {
+	if (typeof window === "undefined") return false;
+	return new URLSearchParams(window.location.search).get("ga_debug") === "1";
+};
 var ensureDataLayer = () => {
 	const analyticsWindow = getAnalyticsWindow();
 	analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
@@ -745,8 +749,12 @@ var trackEvent = (name, params = {}) => {
 	if (typeof window === "undefined" || !hasAnalyticsConsent() || !isAnalyticsConfigured()) return;
 	initializeAnalytics();
 	({ ...params });
+	const eventParams = hasAnalyticsDebugFlag() ? {
+		...params,
+		debug_mode: true
+	} : params;
 	const analyticsWindow = getAnalyticsWindow();
-	if (analyticsWindow.gtag) analyticsWindow.gtag("event", name, params);
+	if (analyticsWindow.gtag) analyticsWindow.gtag("event", name, eventParams);
 };
 var CONSENT_CHANGE_EVENT = CONSENT_EVENT;
 //#endregion
