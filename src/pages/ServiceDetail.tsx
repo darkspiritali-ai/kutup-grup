@@ -22,6 +22,10 @@ export default function ServiceDetail() {
     name: service.title,
     description: service.metaDescription,
     url: `https://kutupgrup.com/hizmetler/${service.slug}`,
+    serviceType: service.title,
+    category: service.category,
+    image: service.heroImage ? `https://kutupgrup.com${service.heroImage}` : undefined,
+    updatedAt: service.updatedAt,
   });
 
   const faqSchema = service.faqs.length > 0 ? generateFAQSchema(service.faqs) : null;

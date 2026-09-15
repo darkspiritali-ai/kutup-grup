@@ -3,6 +3,7 @@
 import Link from '@/components/ui/Link';
 import Image from '@/components/ui/Image';
 import { ServiceContent, SERVICES_DATA } from '@/lib/services-data';
+import { getBlogPost } from '@/lib/blog-data';
 
 /* ===== SVG Icon Map for Service Icons ===== */
 const SERVICE_ICON_MAP: Record<string, React.ReactNode> = {
@@ -89,6 +90,21 @@ function getRelatedServiceTitle(slug: string): string {
   return service ? service.title : slug;
 }
 
+function getRelatedPostTitle(slug: string): string {
+  const post = getBlogPost(slug);
+  return post ? post.title : slug;
+}
+
+function renderRichText(content: string, className?: string) {
+  return content
+    .split(/\n\s*\n/u)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
+    .map((paragraph, index) => (
+      <p key={index} className={className}>{paragraph}</p>
+    ));
+}
+
 interface ServiceContentClientProps {
   service: ServiceContent;
 }
@@ -96,7 +112,7 @@ interface ServiceContentClientProps {
 export default function ServiceContentClient({ service }: ServiceContentClientProps) {
   return (
     <>
-      <main className="service-page">
+      <main className="service-page" aria-labelledby="service-page-title">
         {/* Hero Section */}
         <section className="service-hero">
           <div className="container">
@@ -110,7 +126,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
 
             <div className="service-hero-layout">
               <div className="service-hero-text">
-                <h1>{service.title}</h1>
+                <h1 id="service-page-title">{service.title}</h1>
                 <p className="service-intro">{service.intro}</p>
                 <Link href="/iletisim" className="btn btn-cta">
                   Teklif talebi oluşturun
@@ -120,7 +136,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                 <div className="service-hero-image">
                   <Image
                     src={service.heroImage}
-                    alt={service.title}
+                    alt={`${service.title} uygulaması`}
                     width={560}
                     height={400}
                     priority
@@ -138,16 +154,16 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
             <div className="service-content">
               <article className="service-article">
                 {service.sections.map((section, index) => (
-                  <div key={index} className="content-section">
-                    <h2>{section.heading}</h2>
-                    <p>{section.content}</p>
-                  </div>
+                  <section key={index} className="content-section" aria-labelledby={`service-section-${index}`}>
+                    <h2 id={`service-section-${index}`}>{section.heading}</h2>
+                    {renderRichText(section.content)}
+                  </section>
                 ))}
 
                 {/* Geoteknik Alt Hizmetleri Listesi */}
                 {service.slug === 'jeoteknik-uygulamalar' && (
-                  <div className="content-section sub-services-section">
-                    <h2>Jeoteknik Çözümlerimiz & Hizmetlerimiz</h2>
+                  <section className="content-section sub-services-section" aria-labelledby="service-sub-services-title">
+                    <h2 id="service-sub-services-title">Jeoteknik Çözümlerimiz & Hizmetlerimiz</h2>
                     <p className="sub-services-intro">
                       Zorlu arazi koşullarında kaya düşmesi, şev stabilizasyonu ve yamaç güvenliği başlıkları; saha verileri ve proje gereklilikleri birlikte değerlendirilerek ele alınır. İlgili hizmet başlıklarını aşağıda inceleyebilirsiniz:
                     </p>
@@ -185,13 +201,13 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                           </div>
                         ))}
                     </div>
-                  </div>
+                  </section>
                 )}
 
                 {/* Advantages */}
                 {service.advantages.length > 0 && (
-                  <div className="content-section">
-                    <h2>Avantajlarımız</h2>
+                  <section className="content-section" aria-labelledby="service-advantages-title">
+                    <h2 id="service-advantages-title">Avantajlarımız</h2>
                     <ul className="advantages-list">
                       {service.advantages.map((advantage, index) => (
                         <li key={index}>
@@ -200,13 +216,13 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </section>
                 )}
 
                 {/* Applications */}
                 {service.applications.length > 0 && (
-                  <div className="content-section">
-                    <h2>Uygulama Alanları</h2>
+                  <section className="content-section" aria-labelledby="service-applications-title">
+                    <h2 id="service-applications-title">Uygulama Alanları</h2>
                     <div className="applications-grid">
                       {service.applications.map((app, index) => (
                         <div key={index} className="application-card">
@@ -215,25 +231,25 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </section>
                 )}
 
                 {/* Technical Details */}
                 {service.technicalDetails.length > 0 && (
-                  <div className="content-section">
-                    <h2>Teknik Detaylar</h2>
+                  <section className="content-section" aria-labelledby="service-technical-title">
+                    <h2 id="service-technical-title">Teknik Detaylar</h2>
                     <ul className="tech-list">
                       {service.technicalDetails.map((detail, index) => (
                         <li key={index}>{detail}</li>
                       ))}
                     </ul>
-                  </div>
+                  </section>
                 )}
 
                 {/* FAQs */}
                 {service.faqs.length > 0 && (
-                  <div className="content-section">
-                    <h2>Sıkça Sorulan Sorular</h2>
+                  <section className="content-section" aria-labelledby="service-faq-title">
+                    <h2 id="service-faq-title">Sıkça Sorulan Sorular</h2>
                     <div className="faq-list">
                       {service.faqs.map((faq, index) => (
                         <div key={index} className="faq-item">
@@ -242,7 +258,25 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </section>
+                )}
+
+                {service.relatedPosts.length > 0 && (
+                  <section className="content-section related-reading-section" aria-labelledby="service-related-reading-title">
+                    <h2 id="service-related-reading-title">İlgili teknik yazılar</h2>
+                    <p>
+                      Hizmet kapsamını değerlendirirken aşağıdaki teknik yazılar, saha planlaması ve risk başlıkları için ek bağlam sunar.
+                    </p>
+                    <ul className="related-reading-list">
+                      {service.relatedPosts.map((postSlug) => (
+                        <li key={postSlug}>
+                          <Link href={`/blog/${postSlug}`}>
+                            {getRelatedPostTitle(postSlug)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
                 )}
               </article>
 
@@ -257,7 +291,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                 </div>
 
                 {service.relatedServices.length > 0 && (
-                  <div className="sidebar-card">
+                  <nav className="sidebar-card" aria-label="İlgili hizmetler">
                     <h3>İlgili Hizmetler</h3>
                     <ul className="related-services">
                       {service.relatedServices.map((relatedSlug, index) => (
@@ -268,7 +302,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </nav>
                 )}
 
                 {service.whyChooseUs.length > 0 && (
@@ -501,6 +535,21 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           line-height: var(--line-height-relaxed);
           color: var(--text-secondary);
           margin-bottom: var(--spacing-4);
+        }
+
+        .related-reading-list {
+          margin: 0;
+          padding-left: var(--spacing-6);
+        }
+
+        .related-reading-list li {
+          margin-bottom: var(--spacing-3);
+          color: var(--text-secondary);
+        }
+
+        .related-reading-list a {
+          color: var(--color-arctic-blue);
+          font-weight: 600;
         }
         
         .advantages-list, .tech-list, .why-list {

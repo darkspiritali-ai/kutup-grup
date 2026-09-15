@@ -14,6 +14,7 @@ export interface ServiceContent {
     whyChooseUs: string[];
     faqs: FAQ[];
     relatedServices: string[];
+    relatedPosts: string[];
     updatedAt?: string;
 }
 
@@ -31,11 +32,11 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
     'dis-cephe-dekoratif-aydinlatma': {
         slug: 'dis-cephe-dekoratif-aydinlatma',
         title: 'Dış Cephe Dekoratif Aydınlatma',
-        metaDescription: 'Yüksek yapılar için profesyonel dış cephe dekoratif aydınlatma hizmetleri. İple erişim teknikleri ile güvenli ve estetik aydınlatma çözümleri.',
+        metaDescription: 'Yüksek yapılarda dış cephe dekoratif aydınlatma için saha keşfi, erişim planlaması, montaj ve bakım kapsamını Kutup Grup ile netleştirin.',
         keywords: ['dış cephe aydınlatma', 'dekoratif aydınlatma', 'yüksek yapı aydınlatma', 'iple erişim aydınlatma', 'bina cephesi aydınlatma'],
         category: 'endustriyel',
         icon: '💡',
-        heroImage: '/services/dis-cephe-aydinlatma.png',
+        heroImage: '/services/dis-cephe-aydinlatma.webp',
         intro: 'Yüksek yapılarınıza modern ve estetik aydınlatma çözümleri sunuyoruz. İple erişim teknikleri kullanarak güvenli bir şekilde en zor noktalara ulaşıyor, binanızın mimarisini öne çıkaran aydınlatma sistemleri kuruyoruz.',
         sections: [
             {
@@ -130,17 +131,19 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             'yatay-ve-dusey-yasam-hatti',
             'guvenlik-agi-kurulumu',
         ],
+        relatedPosts: ['yuksek-yapilarda-cephe-temizligi-iple-erisim'],
+        updatedAt: '2026-09-15',
     },
 
 
     'tersane-ve-offshore-hizmetleri': {
         slug: 'tersane-ve-offshore-hizmetleri',
         title: 'Tersane ve Offshore Hizmetleri',
-        metaDescription: 'Tersaneler ve offshore platformlar için profesyonel iple erişim hizmetleri. Gemi inşa, bakım, onarım, boya, kaynak ve muayene işlemlerinde uzman ekip.',
+        metaDescription: 'Tersane ve offshore sahalarında iple erişim, bakım, muayene, temizlik ve yüzey çalışmaları için iş kapsamı ve saha gerekliliklerini değerlendirin.',
         keywords: ['tersane hizmetleri', 'offshore hizmetleri', 'gemi bakım', 'iple erişim tersane', 'deniz platformu bakım'],
         category: 'endustriyel',
         icon: '⚓',
-        heroImage: '/services/tersane-offshore.png',
+        heroImage: '/services/tersane-offshore.webp',
         intro: 'Tersaneler ve offshore platformlarda iple erişim teknikleri kullanarak kapsamlı hizmetler sunuyoruz. Gemi inşa, bakım, onarım, boya, kaynak, muayene ve temizlik işlemlerinde deneyimli ekibimiz ile güvenli çözüm ortağınızız.',
         sections: [
             {
@@ -157,17 +160,19 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
         technicalDetails: ['IRATA Level 3', 'NDT sertifikaları'],
         whyChooseUs: ['10+ yıl deneyim', 'Sertifikalı ekip'],
         faqs: [],
-        relatedServices: ['guvenlik-agi-kurulumu'],
+        relatedServices: ['guvenlik-agi-kurulumu', 'ic-ve-dis-cephe-temizlik-hizmetleri'],
+        relatedPosts: ['endustriyel-dagcilik-iple-erisim-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
         'ic-ve-dis-cephe-temizlik-hizmetleri': {
         slug: 'ic-ve-dis-cephe-temizlik-hizmetleri',
         title: 'İç ve Dış Cephe Temizlik Hizmetleri',
-        metaDescription: 'Yüksek yapılarda profesyonel iç ve dış cephe temizlik hizmetleri. Cam temizliği, gökdelen yıkama, saf su teknolojisi ve atrium temizliği.',
+        metaDescription: 'Yüksek yapıların iç ve dış cephelerinde cam, panel, atrium ve erişimi zor yüzeyler için temizlik yöntemi ve çalışma kapsamını planlayın.',
         keywords: ['cephe temizliği', 'yüksek yapı temizliği', 'cam temizliği', 'gökdelen cam temizleme', 'saf su cam yıkama'],
         category: 'endustriyel',
         icon: '✨',
-        heroImage: '/services/cephe-temizlik.png',
+        heroImage: '/services/cephe-temizlik.webp',
         intro: 'Yüksek yapılarda, gökdelenlerde ve plazalarda profesyonel iç ve dış cephe temizlik hizmetleri sunuyoruz. Klasik vinç ve iskele yöntemlerinin ulaşamadığı sarp cephelerde, IRATA ve SPRAT sertifikalı endüstriyel dağcı ekibimizle, iş güvenliğinden taviz vermeden lekesiz, ekolojik ve kalıcı çözümler üretiyoruz.',
         sections: [
             {
@@ -232,16 +237,18 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['dis-cephe-dekoratif-aydinlatma', 'yatay-ve-dusey-yasam-hatti', 'guvenlik-agi-kurulumu'],
+        relatedPosts: ['yuksek-yapilarda-cephe-temizligi-iple-erisim'],
+        updatedAt: '2026-09-15',
     },
 
 'guvenlik-agi-kurulumu': {
         slug: 'guvenlik-agi-kurulumu',
         title: 'Güvenlik Ağı Kurulumu',
-        metaDescription: 'İş güvenliği için profesyonel güvenlik ağı kurulum hizmetleri. Kalıcı ve geçici güvenlik ağı sistemleri, yüksekten düşme koruması ve iş kazası önleme çözümleri.',
+        metaDescription: 'Şantiye, tesis ve yüksek yapılarda güvenlik ağı kurulumu için sistem seçimi, montaj, kontrol ve saha gerekliliklerini birlikte değerlendirin.',
         keywords: ['güvenlik ağı', 'yüksekten düşme koruması', 'iş güvenliği ağı', 'emniyet ağı', 'yapı güvenlik ağı'],
         category: 'endustriyel',
         icon: '🛡️',
-        heroImage: '/services/yasam-hatti.png',
+        heroImage: '/services/yasam-hatti.webp',
         intro: 'Yüksekte çalışmalarda can güvenliği için profesyonel güvenlik ağı kurulumu yapıyoruz. Kalıcı ve geçici sistemler ile iş kazalarını önlüyor, çalışan güvenliğini maksimize ediyoruz.',
         sections: [
             {
@@ -308,15 +315,17 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['yatay-ve-dusey-yasam-hatti', 'tersane-ve-offshore-hizmetleri', 'dis-cephe-dekoratif-aydinlatma'],
+        relatedPosts: ['yuksekte-calisma-guvenligi-yasam-hatti-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'yatay-ve-dusey-yasam-hatti': {
         slug: 'yatay-ve-dusey-yasam-hatti',
         title: 'Yatay ve Düşey Yaşam Hattı Sistemleri',
-        metaDescription: 'Yüksekte çalışan personel için yaşam hattı sistemleri kurulumu. Yatay yaşam hattı, düşey yaşam hattı, sabit hat ve mobil hat çözümleri ile can güvenliği.',
+        metaDescription: 'Yatay ve düşey yaşam hattı sistemleri için ankraj, çatı veya cephe altyapısı, kurulum ve periyodik kontrol kapsamını planlayın.',
         keywords: ['yaşam hattı', 'yatay yaşam hattı', 'düşey yaşam hattı', 'lifeline', 'fall protection', 'düşme koruması'],
         category: 'endustriyel',
-        heroImage: '/services/guvenlik-agi.png',
+        heroImage: '/services/guvenlik-agi.webp',
         icon: '🔗',
         intro: 'Yüksekte çalışan personelin can güvenliği için profesyonel yaşam hattı sistemleri kuruyoruz. Yatay, düşey, sabit ve mobil yaşam hatları ile tam koruma sağlıyoruz.',
         sections: [
@@ -384,15 +393,17 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['guvenlik-agi-kurulumu', 'ic-ve-dis-cephe-temizlik-hizmetleri', 'ruzgar-enerji-santralleri'],
+        relatedPosts: ['yuksekte-calisma-guvenligi-yasam-hatti-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'jeoteknik-uygulamalar': {
         slug: 'jeoteknik-uygulamalar',
         title: 'Jeoteknik Uygulamalar',
-        metaDescription: 'Zorlu arazi ve yamaçlarda kaya bariyeri, şev örtüleme, kaya temizleme ve çığ kontrolü gibi profesyonel jeoteknik mühendislik uygulamaları.',
+        metaDescription: 'Kaya düşmesi, şev ve yamaç riskleri için jeoteknik keşif, saha değerlendirmesi, koruma uygulaması ve bakım başlıklarını inceleyin.',
         keywords: ['jeoteknik', 'şev stabilizasyonu', 'kaya bariyeri', 'heyelan önleme', 'kaya temizleme', 'yamaç güvenliği'],
         category: 'jeoteknik',
-        heroImage: '/services/yamac-temizleme.png',
+        heroImage: '/services/yamac-temizleme.webp',
         icon: '🏔️',
         intro: 'Zorlu arazi şartlarında, yüksek riskli yamaçlarda ve şevlerde kaya düşmesi, heyelan ve çığ risklerine karşı profesyonel jeoteknik çözümler sunuyoruz. İple erişim yöntemlerimizle en sarp yamaçlara dahi ulaşıyor, kalıcı ve geçici güvenlik önlemlerini başarıyla hayata geçiriyoruz.',
         sections: [
@@ -456,16 +467,18 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['yamac-yuzeyi-temizleme', 'sev-ortuleme', 'kaya-bariyeri', 'moloz-bariyer'],
+        relatedPosts: ['kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'yamac-yuzeyi-temizleme': {
         slug: 'yamac-yuzeyi-temizleme',
         title: 'Yamaç Yüzeyi Temizleme',
-        metaDescription: 'Heyelan riski taşıyan yamaçlarda profesyonel yüzey temizleme hizmetleri. Gevşek kaya temizliği, kök sökümü, tehlikeli blok kaldırma ile güvenli yamaçlar.',
+        metaDescription: 'Yamaç yüzeyi temizleme çalışmalarında riskli blokların değerlendirilmesi, erişim planı ve saha güvenliği kapsamını Kutup Grup ile netleştirin.',
         keywords: ['yamaç temizleme', 'gevşek kaya temizliği', 'heyelan önleme', 'şev stabilizasyonu', 'jeoteknik temizlik'],
         category: 'jeoteknik',
         icon: '🏔️',
-        heroImage: '/services/yamac-temizleme.png',
+        heroImage: '/services/yamac-temizleme.webp',
         intro: 'Heyelan ve kaya düşmesi riski taşıyan yamaçların güvenli hale getirilmesi için profesyonel yüzey temizleme hizmetleri sunuyoruz. Jeoteknik mühendislik desteği ile kalıcı çözümler üretiyoruz.',
         sections: [
             {
@@ -527,14 +540,16 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['sev-ortuleme', 'kaya-bariyeri', 'deflektor-tip-ortuleme'],
+        relatedPosts: ['sev-ortuleme-yamac-stabilizasyonu-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'sev-ortuleme': {
         slug: 'sev-ortuleme',
         title: 'Şev Örtüleme Sistemleri',
-        metaDescription: 'Yamaç stabilizasyonu için profesyonel şev örtüleme uygulamaları. Tel örgü, hasır çelik, beton püskürtme ile uzun ömürlü yamaç koruma çözümleri.',
+        metaDescription: 'Şev örtüleme sistemleri için yüzey koşulları, mesh ve ankraj seçimi, drenaj, montaj ve kontrol adımlarını birlikte değerlendirin.',
         keywords: ['şev örtüleme', 'yamaç koruma', 'tel örgü örtüleme', 'hasır çelik', 'yamaç stabilizasyonu', 'shotcrete'],
-        heroImage: '/services/sev-ortuleme.png',
+        heroImage: '/services/sev-ortuleme.webp',
         category: 'jeoteknik',
         icon: '🧱',
         intro: 'Yamaç ve şevlerin stabilizasyonu için profesyonel örtüleme sistemleri uyguluyoruz. Tel örgü, hasır çelik ve beton püskürtme ile yamaçlarınızı uzun yıllar koruyoruz.',
@@ -598,14 +613,16 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['yamac-yuzeyi-temizleme', 'deflektor-tip-ortuleme', 'kaya-bariyeri'],
+        relatedPosts: ['sev-ortuleme-yamac-stabilizasyonu-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'hassas-endustriyel-alan-korumasi': {
         slug: 'hassas-endustriyel-alan-korumasi',
         title: 'Hassas Endüstriyel Alan Koruması',
-        metaDescription: 'Petrokimya, enerji ve kritik endüstriyel tesislerde profesyonel yüksekte çalışma ve koruma hizmetleri. Patlayıcı ortamlarda özel ekipman ve eğitimli personel.',
+        metaDescription: 'Hassas endüstriyel alanlarda erişim, bakım ve koruma çalışmaları için saha izinleri, izolasyon ve operasyon gerekliliklerini planlayın.',
         keywords: ['hassas endüstriyel koruma', 'petrokimya bakımı', 'atex ortam', 'patlayıcı ortam çalışması', 'kritik tesis bakımı'],
-        heroImage: '/services/hassas-endustriyel.png',
+        heroImage: '/services/hassas-endustriyel.webp',
         category: 'endustriyel',
         icon: '⚗️',
         intro: 'Petrokimya, enerji santralleri ve kritik endüstriyel tesislerde hassas koruma ve bakım hizmetleri sunuyoruz. ATEX sertifikalı ekipman ve özel eğitimli personel ile güvenli çalışmalar gerçekleştiriyoruz.',
@@ -669,13 +686,15 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['ruzgar-enerji-santralleri', 'tersane-ve-offshore-hizmetleri', 'yatay-ve-dusey-yasam-hatti'],
+        relatedPosts: ['endustriyel-dagcilik-iple-erisim-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'kaya-bariyeri': {
         slug: 'kaya-bariyeri',
         title: 'Kaya Bariyeri Kurulumu',
-        heroImage: '/services/kaya-bariyeri.png',
-        metaDescription: 'Kaya düşmesine karşı profesyonel kaya bariyeri kurulumu. Dinamik kaya bariyerleri ile yollar, yerleşim alanları ve kritik tesisleri koruyoruz.',
+        heroImage: '/services/kaya-bariyeri.webp',
+        metaDescription: 'Kaya bariyeri kurulumu için kaya düşmesi riski, saha verileri, bariyer seçimi, montaj ve bakım kapsamını birlikte değerlendirin.',
         keywords: ['kaya bariyeri', 'taş bariyeri', 'rockfall barrier', 'kaya düşme koruması', 'dinamik bariyer'],
         category: 'jeoteknik',
         icon: '🛑',
@@ -742,16 +761,18 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['moloz-bariyer', 'deflektor-tip-ortuleme', 'yamac-yuzeyi-temizleme'],
+        relatedPosts: ['kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'deflektor-tip-ortuleme': {
         slug: 'deflektor-tip-ortuleme',
         title: 'Deflektör Tip Şev Örtüleme',
-        metaDescription: 'Yüksek enerjili kaya düşmelerine karşı deflektör tip örtüleme sistemleri. Çelik halat ağ ile taş düşmesini yönlendirerek güvenli alan yaratıyoruz.',
+        metaDescription: 'Deflektör tip şev örtüleme uygulamalarında saha geometrisi, yüzey koşulları, ankraj ve yönlendirme çözümünü proje verileriyle belirleyin.',
         keywords: ['deflektör örtüleme', 'çelik halat ağ', 'yönlendirici örtü', 'aktif yamaç koruma', 'high-tensile mesh'],
         category: 'jeoteknik',
         icon: '🔀',
-        heroImage: '/services/deflektor-tip.png',
+        heroImage: '/services/deflektor-tip.webp',
         intro: 'Yüksek enerjili kaya düşmelerine karşı deflektör tip örtüleme sistemleri uyguluyoruz. Çelik halat ağ ve ankrajlarla yamaç yüzeyini kaplayarak taşları kontrollü yönlendiriyor, düşme hızını azaltıyoruz.',
         sections: [
             {
@@ -814,13 +835,15 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['sev-ortuleme', 'kaya-bariyeri', 'yamac-yuzeyi-temizleme'],
+        relatedPosts: ['sev-ortuleme-yamac-stabilizasyonu-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'moloz-bariyer': {
         slug: 'moloz-bariyer',
         title: 'Moloz Bariyer Sistemleri',
-        metaDescription: 'Moloz ve enkaz düşmesine karşı profesyonel bariyer kurulumu. İnşaat şantiyeleri, yıkım sahaları ve yamaç altı koruması için esnek çözümler.',
-        heroImage: '/services/moloz-bariyer.png',
+        metaDescription: 'Moloz bariyer sistemleri için yamaç, akış ve düşme risklerinin değerlendirilmesi; sistem seçimi, montaj ve bakım adımlarını planlayın.',
+        heroImage: '/services/moloz-bariyer.webp',
         keywords: ['moloz bariyeri', 'debris barrier', 'inşaat güvenlik bariyeri', 'yıkım moloz koruması', 'enkaz bariyeri'],
         category: 'jeoteknik',
         icon: '🚧',
@@ -886,16 +909,18 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['kaya-bariyeri', 'guvenlik-agi-kurulumu', 'yamac-yuzeyi-temizleme'],
+        relatedPosts: ['kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'ormanda-iple-erisim-hizmetleri': {
         slug: 'ormanda-iple-erisim-hizmetleri',
         title: 'Ormanda İple Erişim Hizmetleri',
-        metaDescription: 'Ormancılık ve ağaç bakımı için profesyonel iple erişim hizmetleri. Budama, kesim, hastalık kontrolü ve orman amenajmanı çalışmalarında uzman ekip.',
+        metaDescription: 'Ormanda iple erişim çalışmalarında ağaç ve arazi koşulları, erişim planı, çevresel hassasiyet ve iş güvenliği kapsamını değerlendirin.',
         keywords: ['ağaç budama', 'ormancılık iple erişim', 'arborist', 'ağaç bakımı', 'orman amenajmanı'],
         category: 'endustriyel',
         icon: '🌲',
-        heroImage: '/services/ormanda-iple-erisim.png',
+        heroImage: '/services/ormanda-iple-erisim.webp',
         intro: 'Ormancılık ve ağaç bakımı çalışmalarında profesyonel iple erişim hizmetleri sunuyoruz. ISA sertifikalı arboristler ile güvenli budama, kesim ve bakım hizmetleri.',
         sections: [
             {
@@ -954,13 +979,15 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['yatay-ve-dusey-yasam-hatti', 'dis-cephe-dekoratif-aydinlatma'],
+        relatedPosts: ['stand-by-rescue-kurtarma-plani-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'stand-by-rescue-hizmeti': {
         slug: 'stand-by-rescue-hizmeti',
         title: 'Stand-by & Rescue Hizmeti',
-        metaDescription: 'Yüksekte çalışmalarda acil kurtarma ve stand-by rescue hizmetleri. IRATA sertifikalı kurtarma ekipleri ile 7/24 güvenli çalışma ortamı.',
-        heroImage: '/services/standby-rescue.png',
+        metaDescription: 'Stand-by ve rescue hizmeti için saha acil durum planı, ekip görevleri, ekipman, iletişim ve tatbikat kapsamını birlikte netleştirin.',
+        heroImage: '/services/standby-rescue.webp',
         keywords: ['acil kurtarma', 'stand-by rescue', 'yüksekte kurtarma', 'rope rescue', 'confined space rescue'],
         category: 'endustriyel',
         icon: '🚑',
@@ -1023,13 +1050,15 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['hassas-endustriyel-alan-korumasi', 'tersane-ve-offshore-hizmetleri', 'ruzgar-enerji-santralleri'],
+        relatedPosts: ['ruzgar-turbini-bakiminda-iple-erisim'],
+        updatedAt: '2026-09-15',
     },
 
     'ruzgar-enerji-santralleri': {
         slug: 'ruzgar-enerji-santralleri',
         title: 'Rüzgar Enerji Santralleri Bakım Hizmetleri',
-        heroImage: '/services/ruzgar-turbini.png',
-        metaDescription: 'Rüzgar türbinleri için profesyonel bakım, muayene ve onarım hizmetleri. GWO sertifikalı ekip ile güvenli ve hızlı servis.',
+        heroImage: '/services/ruzgar-turbini.webp',
+        metaDescription: 'Rüzgar enerji santrallerinde türbin, kanat ve nacelle bakım veya muayene çalışmaları için erişim, saha güvenliği ve raporlama kapsamını planlayın.',
         keywords: ['rüzgar türbini bakımı', 'GWO', 'wind turbine', 'blade repair', 'türbin muayenesi'],
         category: 'endustriyel',
         icon: '💨',
@@ -1091,16 +1120,18 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['hassas-endustriyel-alan-korumasi', 'stand-by-rescue-hizmeti', 'yatay-ve-dusey-yasam-hatti'],
+        relatedPosts: ['endustriyel-dagcilik-iple-erisim-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'gabion-duvar': {
         slug: 'gabion-duvar',
         title: 'Gabion Duvar Uygulamaları',
-        metaDescription: 'Gabion duvar ve istinat yapıları için profesyonel proje ve uygulama hizmetleri. Doğal taş dolgulu gabion sistemleri ile uzun ömürlü ve estetik çözümler.',
+        metaDescription: 'Gabion duvar uygulamalarında zemin, temel, drenaj, sepet ve dolgu taşı seçiminden montaj ve bakım kapsamına kadar süreci planlayın.',
         keywords: ['gabion duvar', 'istinat duvarı', 'gabion sepet', 'peyzaj gabion', 'taş duvar'],
         category: 'jeoteknik',
         icon: '🪨',
-        heroImage: '/services/gabion-duvar.png',
+        heroImage: '/services/gabion-duvar.webp',
         intro: 'Gabion duvar ve istinat yapıları için profesyonel proje ve uygulama hizmetleri sunuyoruz. Galvaniz veya PVC kaplı çelik sepetler ve doğal taş dolgular ile uzun ömürlü, estetik ve ekonomik çözümler.',
         sections: [
             {
@@ -1161,16 +1192,18 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['sev-ortuleme', 'yamac-yuzeyi-temizleme', 'kaya-bariyeri'],
+        relatedPosts: ['endustriyel-dagcilik-iple-erisim-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'sahne-isleri-rigging': {
         slug: 'sahne-isleri-rigging',
         title: 'Sahne İşleri (Rigging) Hizmetleri',
-        metaDescription: 'Konser, etkinlik ve sahne kurulumları için profesyonel rigging hizmetleri. Ses, ışık, dekor asma sistemleri, güvenli ve hızlı kurulum.',
+        metaDescription: 'Sahne işleri ve rigging operasyonlarında yük, ekipman, montaj, söküm ve etkinlik güvenliği gerekliliklerini proje kapsamına göre değerlendirin.',
         keywords: ['sahne rigging', 'konser kurulumu', 'ses ışık asma', 'etkinlik rigging', 'sahne güvenliği'],
         category: 'diger',
         icon: '🎭',
-        heroImage: '/services/sahne-rigging.png',
+        heroImage: '/services/sahne-rigging.webp',
         intro: 'Konser, festival, etkinlik ve canlı performanslar için profesyonel sahne rigging (asma işleri) hizmetleri sunuyoruz. Ses, ışık, video, dekor sistemlerinin güvenli kurulumu.',
         sections: [
             {
@@ -1229,16 +1262,18 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['dis-cephe-dekoratif-aydinlatma', 'yatay-ve-dusey-yasam-hatti'],
+        relatedPosts: ['endustriyel-dagcilik-iple-erisim-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'sprat-egitimi': {
         slug: 'sprat-egitimi',
         title: 'SPRAT Eğitimi ve Sertifikasyonu',
-        metaDescription: 'Uluslararası geçerliliği olan SPRAT (Society of Professional Rope Access Technicians) eğitimi ve sertifikasyon programları. Level 1, 2, 3 eğitimleri.',
+        metaDescription: 'SPRAT eğitimi için program kapsamı, seviye yapısı, katılım koşulları, değerlendirme süreci ve güncel eğitim bilgilerini inceleyin.',
         keywords: ['SPRAT eğitimi', 'rope access sertifikası', 'SPRAT Level 1', 'SPRAT Level 2', 'iple erişim eğitimi'],
         category: 'diger',
         icon: '🎓',
-        heroImage: '/services/rope-access-egitim.png',
+        heroImage: '/services/rope-access-egitim.webp',
         intro: 'SPRAT (Society of Professional Rope Access Technicians) standartlarına uygun iple erişim eğitimi ve sertifikasyonu sunuyoruz. Uluslararası geçerliliği olan Level 1, 2, 3 sertifikaları.',
         sections: [
             {
@@ -1297,16 +1332,18 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['irata-egitimi', 'stand-by-rescue-hizmeti'],
+        relatedPosts: ['endustriyel-dagcilik-iple-erisim-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'irata-egitimi': {
         slug: 'irata-egitimi',
         title: 'IRATA Eğitimi ve Sertifikasyonu',
-        metaDescription: 'Uluslararası IRATA (Industrial Rope Access Trade Association) eğitimi ve sertifikasyonu. Level 1, 2, 3 iple erişim teknisyen eğitimleri.',
+        metaDescription: 'IRATA eğitimi için program kapsamı, seviye yapısı, katılım koşulları, değerlendirme süreci ve güncel eğitim bilgilerini inceleyin.',
         keywords: ['IRATA eğitimi', 'rope access eğitim', 'IRATA Level 1', 'IRATA Level 2', 'iple erişim sertifikası'],
         category: 'diger',
         icon: '📜',
-        heroImage: '/services/rope-access-egitim.png',
+        heroImage: '/services/rope-access-egitim.webp',
         intro: 'IRATA (Industrial Rope Access Trade Association) standartlarına uygun profesyonel iple erişim eğitimi ve sertifikasyonu. Dünya çapında geçerli Level 1, 2, 3 programları.',
         sections: [
             {
@@ -1366,16 +1403,18 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['sprat-egitimi', 'stand-by-rescue-hizmeti', 'tersane-ve-offshore-hizmetleri'],
+        relatedPosts: ['endustriyel-dagcilik-iple-erisim-rehberi'],
+        updatedAt: '2026-09-15',
     },
 
     'kar-ve-cig-kontrolu': {
         slug: 'kar-ve-cig-kontrolu',
         title: 'Kar ve Çığ Kontrolü Uygulamaları',
-        metaDescription: 'Profesyonel kar ve çığ kontrolü uygulamaları. Çığ bariyeri kurulumu, kar tutucu sistemler, çığ tetikleme ve risk analizi hizmetleri ile can ve mal güvenliğinizi koruyoruz.',
+        metaDescription: 'Kar ve çığ kontrolü için risk değerlendirmesi, kar tutucu sistemler, bariyerler, saha planlaması ve bakım başlıklarını Kutup Grup ile görüşün.',
         keywords: ['çığ kontrolü', 'kar kontrolü', 'çığ bariyeri', 'kar tutucu sistem', 'çığ tetikleme', 'çığ risk analizi', 'avalanche control', 'çığ koruma', 'dağ güvenliği', 'kar yönetimi'],
         category: 'jeoteknik',
         icon: '❄️',
-        heroImage: '/services/kar-cig.png',
+        heroImage: '/services/kar-cig.webp',
         intro: 'Dağlık bölgelerde can ve mal güvenliğini tehdit eden kar ve çığ tehlikelerine karşı profesyonel mühendislik çözümleri sunuyoruz. Çığ bariyeri kurulumu, kar tutucu sistemler, çığ tetikleme operasyonları ve kapsamlı risk analizleri ile yaşam alanlarını, altyapıyı ve ulaşım hatlarını güvenli kılıyoruz.',
         sections: [
             {
@@ -1459,6 +1498,8 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['kaya-bariyeri', 'moloz-bariyer', 'yamac-yuzeyi-temizleme'],
+        relatedPosts: ['kar-cig-kontrolu-risk-degerlendirme-rehberi'],
+        updatedAt: '2026-09-15',
     },
 };
 
@@ -1468,7 +1509,7 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
  * campaign copy and technical placeholders, so only the sanitized catalogue
  * is exported to pages, SSR, sitemaps and llms.txt.
  */
-const UNSUPPORTED_PUBLIC_CLAIM = /(?:\b(?:15|19|20|30|40|50|60|80|100|200|300|500|1000|5000)\s*\+?|%\s*\d+|\b\d+\s*(?:-\s*\d+)?\s*(?:gün|hafta|ay|yıl|saat|kat|metre|m|m²|m³|kJ|TL)|7\s*\/\s*24|IRATA|SPRAT|GWO|ISA|sertifik|ISO\s*\d+|\bCE\b|\bTSE\b|\bEN\s*\d+|ATEX|NDT|Level\s*\d|garanti|sigorta|sıfır\s+kaza|%100|tam\s+erişim|Türkiye['’]nin\s+(?:dört\s+bir\s+yanında|tüm)|(?:en|lider|öncü)\s+(?:etkili|yüksek|güvenilir|iyi|hızlı)|(?:uzman|eğitimli|profesyonel)\s+(?:ekip|personel|kadrosu?)|yetkili\s+(?:satıcı|ekip)|maliyet\s+(?:%|tasarruf)|(?:güvenli\s+kılıyoruz|koruyoruz|lekesiz|kalıcı|sıfır\s+zarar|güvenli\s+(?:alan|yamaç)|güvenli\s+ve\s+hızlı|uzun\s+ömürlü|can\s+güvenliği))/iu;
+const UNSUPPORTED_PUBLIC_CLAIM = /(?:\b(?:15|19|20|30|40|50|60|80|100|200|300|500|1000|5000)\s*\+?|\b\d[\d.,]*\s*\+|%\s*\d+|\b\d[\d.,]*\s*(?:-\s*\d[\d.,]*)?\s*(?:gün|hafta|ay|yıl|saat|kişi|kat|metre|m|m²|m³|kJ|TL|km|knot)|\b(?:max|min)\.?\s*\d+|[<>]\s*\d+\s*(?:saniye|dakika|gün|hafta|ay|yıl)|7\s*\/\s*24|sertifik|ISO\s*\d+|\bCE\b|\bTSE\b|\bEN\s*\d+|ATEX|NDT|Level\s*\d|garanti|sigorta|ücretsiz|\b(?:lider|öncü)\b|sıfır\s+kaza|%100|tam\s+erişim|Türkiye['’]nin\s+(?:dört\s+bir\s+yanında|tüm)|(?:en)\s+(?:etkili|yüksek|güvenilir|iyi|hızlı)|(?:uzman|eğitimli|profesyonel)\s+(?:ekip|personel|kadrosu?|eğitmen)|(?:yüksek\s+)?başarı\s+oranı|iş\s+yerleştirme|global\s+iş\s+imkanları?|uluslararası\s+network|tam\s+ekipman|dünya\s+çapında|Swiss|Avusturya|Gazex|Wyssen|yetkili\s+(?:satıcı|ekip)|maliyet\s+(?:%|tasarruf)|(?:güvenli\s+kılıyoruz|koruyoruz|lekesiz|kalıcı|sıfır\s+zarar|güvenli\s+(?:alan|yamaç)|güvenli\s+ve\s+hızlı|uzun\s+ömürlü|can\s+güvenliği))/iu;
 
 const sanitizeRichText = (value: string, fallback: string) => {
     const paragraphs = value

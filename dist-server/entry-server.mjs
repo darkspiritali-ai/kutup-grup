@@ -33,6 +33,8 @@ function Image({ src, alt, fill, priority, quality: _quality, className, style, 
 			...style
 		} : { ...style },
 		loading: priority ? "eager" : "lazy",
+		decoding: priority ? "sync" : "async",
+		fetchPriority: priority ? "high" : "auto",
 		...props
 	});
 }
@@ -1115,7 +1117,7 @@ function Footer() {
 				children: `
         .footer {
           background: #030712;
-          background-image:
+          background-image: 
             radial-gradient(circle at 100% 0%, rgba(62, 146, 204, 0.15) 0%, transparent 40%),
             radial-gradient(circle at 0% 100%, rgba(165, 216, 221, 0.1) 0%, transparent 40%),
             linear-gradient(rgba(3, 7, 18, 0.6) 0%, #030712 100%),
@@ -1139,7 +1141,7 @@ function Footer() {
           background: linear-gradient(90deg, transparent, rgba(62, 146, 204, 0.5), transparent);
           z-index: 10;
         }
-
+        
         .newsletter-wrapper {
           position: relative;
           margin-top: 0;
@@ -1168,7 +1170,7 @@ function Footer() {
             gap: 6px 0;
           }
         }
-
+        
         .footer-col h4 {
           color: var(--color-polar-white);
           font-size: var(--font-size-base);
@@ -1190,7 +1192,7 @@ function Footer() {
           background: linear-gradient(90deg, var(--color-arctic-blue), var(--color-ice-blue));
           border-radius: 2px;
         }
-
+        
         .logo-container {
           margin-bottom: var(--spacing-4);
           opacity: 0.95;
@@ -1200,7 +1202,7 @@ function Footer() {
           object-fit: contain;
           filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
         }
-
+        
         .footer-desc {
           color: rgba(255, 255, 255, 0.7);
           line-height: var(--line-height-relaxed);
@@ -1233,17 +1235,17 @@ function Footer() {
           transform: translateY(-4px);
           box-shadow: 0 8px 16px rgba(62, 146, 204, 0.3);
         }
-
+        
         .footer-col ul {
           list-style: none;
           padding: 0;
           margin: 0;
         }
-
+        
         .footer-col li {
           margin-bottom: var(--spacing-4);
         }
-
+        
         :global(.sliding-link) {
           color: rgba(255, 255, 255, 0.7) !important;
           display: inline-flex;
@@ -1272,7 +1274,7 @@ function Footer() {
           margin-right: 8px;
           opacity: 1;
         }
-
+        
         .contact-info li {
           margin-bottom: var(--spacing-4);
         }
@@ -1314,7 +1316,7 @@ function Footer() {
           transform: scale(1.05);
           box-shadow: 0 0 10px rgba(62, 146, 204, 0.15);
         }
-
+        
         .footer-bottom {
           padding-top: var(--spacing-8);
           border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1328,7 +1330,7 @@ function Footer() {
           align-items: center;
           gap: var(--spacing-4);
         }
-
+        
         .footer-bottom p.copyright {
           color: rgba(255, 255, 255, 0.45);
           margin: 0;
@@ -1356,7 +1358,7 @@ function Footer() {
           color: rgba(255, 255, 255, 0.2);
           font-size: 0.8rem;
         }
-
+        
         @media (max-width: 1024px) {
           .footer-grid {
             grid-template-columns: 1fr 1fr;
@@ -1578,7 +1580,7 @@ function Hero() {
           padding-top: 80px;
           background: #030712;
         }
-
+        
         /* Full width background image container */
         .hero-bg {
           position: absolute;
@@ -1592,7 +1594,7 @@ function Hero() {
           0% { transform: scale(1.02); }
           100% { transform: scale(1.08); }
         }
-
+        
         /* Brightened premium overlay for readability without dimming the image */
         .hero-overlay {
           position: absolute;
@@ -1600,20 +1602,20 @@ function Hero() {
           background: linear-gradient(180deg, rgba(3, 7, 18, 0.3) 0%, rgba(3, 7, 18, 0.65) 100%);
           z-index: 1;
         }
-
+        
         .hero-content {
           position: relative;
           z-index: 2;
           width: 100%;
           padding: var(--spacing-20) 0;
         }
-
+        
         .hero-text {
           max-width: 840px;
           text-align: center;
           margin: 0 auto;
         }
-
+        
         /* Badge */
         .hero-badge {
           display: inline-flex;
@@ -1632,16 +1634,16 @@ function Hero() {
           margin-bottom: var(--spacing-8);
           animation: fadeInDown 0.8s ease-out;
         }
-
+        
         .hero-badge svg {
           color: var(--color-arctic-blue);
         }
-
+        
         @keyframes fadeInDown {
           from { opacity: 0; transform: translateY(-10px); }
           to { opacity: 1; transform: translateY(0); }
         }
-
+        
         .hero-title {
           font-size: clamp(2.6rem, 5.5vw, 4.4rem);
           font-weight: 800;
@@ -1652,7 +1654,7 @@ function Hero() {
           text-shadow: 0 4px 16px rgba(3, 7, 18, 0.85);
           animation: fadeIn 0.8s ease-out 0.1s both;
         }
-
+        
         .hero-gradient-text {
           background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #00f2fe 100%);
           background-size: 200% auto;
@@ -1662,17 +1664,17 @@ function Hero() {
           animation: gradientText 6s ease infinite;
           font-weight: 900;
         }
-
+        
         @keyframes gradientText {
           0%, 100% { background-position: 0% center; }
           50% { background-position: 100% center; }
         }
-
+        
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
-
+        
         .hero-subtitle {
           font-size: var(--font-size-lg);
           color: rgba(255, 255, 255, 0.95);
@@ -1684,7 +1686,7 @@ function Hero() {
           text-shadow: 0 2px 10px rgba(3, 7, 18, 0.9);
           animation: fadeIn 0.8s ease-out 0.2s both;
         }
-
+        
         .hero-cta {
           display: flex;
           gap: var(--spacing-4);
@@ -1734,7 +1736,7 @@ function Hero() {
           transform: translateY(-2px);
           border-color: #ffffff !important;
         }
-
+        
         /* Trust bar */
         .hero-trust {
           display: flex;
@@ -1744,7 +1746,7 @@ function Hero() {
           margin-top: var(--spacing-12);
           animation: fadeIn 0.8s ease-out 0.5s both;
         }
-
+        
         .trust-item {
           display: flex;
           align-items: center;
@@ -1754,18 +1756,18 @@ function Hero() {
           font-weight: 500;
           text-shadow: 0 2px 8px rgba(3, 7, 18, 0.8);
         }
-
+        
         .trust-item svg {
           color: var(--color-success-green);
           flex-shrink: 0;
         }
-
+        
         .trust-divider {
           width: 1px;
           height: 20px;
           background: rgba(255, 255, 255, 0.25);
         }
-
+        
         /* Scroll indicator */
         .scroll-indicator {
           position: absolute;
@@ -1774,7 +1776,7 @@ function Hero() {
           transform: translateX(-50%);
           z-index: 2;
         }
-
+        
         .scroll-line {
           width: 2px;
           height: 40px;
@@ -1783,7 +1785,7 @@ function Hero() {
           position: relative;
           overflow: hidden;
         }
-
+        
         .scroll-line::after {
           content: '';
           position: absolute;
@@ -1795,33 +1797,33 @@ function Hero() {
           border-radius: 2px;
           animation: scrollDown 1.8s ease-in-out infinite;
         }
-
+        
         @keyframes scrollDown {
           0% { top: -50%; }
           100% { top: 150%; }
         }
-
+        
         @media (max-width: 768px) {
           .hero {
             min-height: 85vh;
             padding: var(--spacing-12) 0;
           }
-
+          
           .hero-cta {
             flex-direction: column;
             align-items: center;
           }
-
+          
           .hero-cta .btn {
             width: 100%;
             max-width: 300px;
           }
-
+          
           .hero-trust {
             flex-direction: column;
             gap: var(--spacing-3);
           }
-
+          
           .trust-divider {
             display: none;
           }
@@ -2070,7 +2072,7 @@ function ServicesShowcase() {
         .section-header {
           margin-bottom: var(--spacing-16);
         }
-
+        
         .section-title {
           font-size: var(--font-size-h2);
           color: var(--color-deep-navy);
@@ -2078,7 +2080,7 @@ function ServicesShowcase() {
           font-weight: 800;
           letter-spacing: -0.02em;
         }
-
+        
         .section-subtitle {
           font-size: var(--font-size-lg);
           color: var(--text-secondary);
@@ -2086,7 +2088,7 @@ function ServicesShowcase() {
           margin: 0 auto;
           line-height: var(--line-height-relaxed);
         }
-
+        
         .services-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -2096,7 +2098,7 @@ function ServicesShowcase() {
         :global(.service-card-wrapper) {
           height: 100%;
         }
-
+        
         .service-card {
           background: white;
           border: 1px solid var(--border-default);
@@ -2110,7 +2112,7 @@ function ServicesShowcase() {
           box-shadow: var(--shadow-sm);
           height: 100%;
         }
-
+        
         .service-card::before {
           content: '';
           position: absolute;
@@ -2124,17 +2126,17 @@ function ServicesShowcase() {
           transition: transform 0.4s ease;
           z-index: 3;
         }
-
+        
         .service-card:hover::before {
           transform: scaleX(1);
         }
-
+        
         .service-card:hover {
           transform: translateY(-8px);
           border-color: var(--color-arctic-blue);
           box-shadow: 0 20px 40px rgba(10, 36, 99, 0.12);
         }
-
+        
         .service-card-image {
           position: relative;
           height: 200px;
@@ -2142,15 +2144,15 @@ function ServicesShowcase() {
           overflow: hidden;
           background: #f1f5f9;
         }
-
+        
         .service-card-image :global(img) {
           transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
-
+        
         .service-card:hover .service-card-image :global(img) {
           transform: scale(1.06);
         }
-
+        
         .service-icon-wrapper {
           position: absolute;
           bottom: 16px;
@@ -2167,20 +2169,20 @@ function ServicesShowcase() {
           transition: all 0.3s ease;
           z-index: 2;
         }
-
+        
         .service-card:hover .service-icon-wrapper {
           background: var(--icon-color);
           color: white;
           transform: scale(1.05);
         }
-
+        
         .service-card-content {
           padding: var(--spacing-6);
           display: flex;
           flex-direction: column;
           flex-grow: 1;
         }
-
+        
         .service-title {
           font-size: 1.25rem;
           font-weight: 700;
@@ -2188,11 +2190,11 @@ function ServicesShowcase() {
           margin-bottom: var(--spacing-2);
           transition: color 0.3s ease;
         }
-
+        
         .service-card:hover .service-title {
           color: var(--color-arctic-blue);
         }
-
+        
         .service-desc {
           color: var(--text-secondary);
           margin-bottom: var(--spacing-4);
@@ -2200,7 +2202,7 @@ function ServicesShowcase() {
           font-size: 0.95rem;
           flex-grow: 1;
         }
-
+        
         .service-link {
           display: inline-flex;
           align-items: center;
@@ -2212,12 +2214,12 @@ function ServicesShowcase() {
           transition: all 0.2s ease;
           margin-top: auto;
         }
-
+        
         .service-card:hover .service-link {
           gap: 10px;
           color: var(--color-deep-navy);
         }
-
+        
         @media (max-width: 768px) {
           .services-grid {
             grid-template-columns: 1fr;
@@ -2431,7 +2433,7 @@ function Stats() {
                         position: relative;
                         z-index: 1;
                     }
-
+                    
                     .stat-card {
                         text-align: center;
                         padding: var(--spacing-8) var(--spacing-4);
@@ -2459,7 +2461,7 @@ function Stats() {
                         color: var(--color-ice-blue);
                         margin: 0 auto var(--spacing-4);
                     }
-
+                    
                     .stat-number {
                         font-size: clamp(2.5rem, 5vw, 3.5rem);
                         font-weight: 800;
@@ -2471,7 +2473,7 @@ function Stats() {
                         margin-bottom: var(--spacing-2);
                         letter-spacing: -0.02em;
                     }
-
+                    
                     .stat-label {
                         font-size: var(--font-size-base);
                         color: rgba(255, 255, 255, 0.65);
@@ -2480,7 +2482,7 @@ function Stats() {
                         text-transform: uppercase;
                         letter-spacing: 0.05em;
                     }
-
+                    
                     @media (max-width: 768px) {
                         .stats-grid {
                             grid-template-columns: repeat(2, 1fr);
@@ -2620,6 +2622,7 @@ function generateOrganizationSchema() {
 	return {
 		"@context": "https://schema.org",
 		"@type": "Organization",
+		"@id": `${SITE_URL$3}/#organization`,
 		name: SITE_NAME,
 		url: SITE_URL$3,
 		logo: `${SITE_URL$3}/logo/logo.png`,
@@ -2642,8 +2645,14 @@ function generateServiceSchema(service) {
 		name: service.name,
 		description: service.description,
 		url: service.url,
+		serviceType: service.serviceType || service.name,
+		category: service.category,
+		image: service.image,
+		inLanguage: "tr-TR",
+		...service.updatedAt ? { dateModified: service.updatedAt } : {},
 		provider: {
 			"@type": "Organization",
+			"@id": `${SITE_URL$3}/#organization`,
 			name: SITE_NAME,
 			url: SITE_URL$3
 		},
@@ -2970,33 +2979,33 @@ function Home() {
           margin-bottom: var(--spacing-2);
           font-family: var(--font-heading);
         }
-
+        
         .section-title {
           font-size: var(--font-size-h2);
           color: var(--color-deep-navy);
           margin-bottom: var(--spacing-4);
           letter-spacing: -0.02em;
         }
-
+        
         .section-subtitle {
           font-size: var(--font-size-lg);
           color: var(--text-secondary);
           max-width: 600px;
           margin: 0 auto;
         }
-
+        
         /* Features Grid */
         .features-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: var(--spacing-6);
         }
-
+        
         .feature-card {
           text-align: center;
           padding: var(--spacing-8) var(--spacing-6);
         }
-
+        
         .feature-icon {
           width: 60px;
           height: 60px;
@@ -3007,17 +3016,17 @@ function Home() {
           margin: 0 auto var(--spacing-5);
           transition: transform 0.3s ease;
         }
-
+        
         .feature-card:hover .feature-icon {
           transform: scale(1.12) rotate(3deg);
         }
-
+        
         .feature-card h3 {
           font-size: var(--font-size-h5);
           color: var(--color-deep-navy);
           margin-bottom: var(--spacing-3);
         }
-
+        
         .feature-card p {
           color: var(--text-secondary);
           line-height: var(--line-height-relaxed);
@@ -3168,7 +3177,7 @@ function Home() {
           bottom: -60px;
           left: -40px;
         }
-
+        
         .cta-content {
           position: relative;
           z-index: 1;
@@ -3180,7 +3189,7 @@ function Home() {
           margin-bottom: var(--spacing-4);
           letter-spacing: -0.02em;
         }
-
+        
         .cta-content p {
           font-size: var(--font-size-lg);
           color: rgba(255, 255, 255, 0.85);
@@ -3189,7 +3198,7 @@ function Home() {
           margin-left: auto;
           margin-right: auto;
         }
-
+        
         :global(.btn-cta-white) {
           display: inline-flex;
           align-items: center;
@@ -3212,7 +3221,7 @@ function Home() {
           color: var(--color-deep-navy) !important;
           background: #f8fafc !important;
         }
-
+        
         @media (max-width: 768px) {
           .features-grid {
             grid-template-columns: 1fr;
@@ -3934,7 +3943,7 @@ var RAW_SERVICES_DATA = {
 	"dis-cephe-dekoratif-aydinlatma": {
 		slug: "dis-cephe-dekoratif-aydinlatma",
 		title: "Dış Cephe Dekoratif Aydınlatma",
-		metaDescription: "Yüksek yapılar için profesyonel dış cephe dekoratif aydınlatma hizmetleri. İple erişim teknikleri ile güvenli ve estetik aydınlatma çözümleri.",
+		metaDescription: "Yüksek yapılarda dış cephe dekoratif aydınlatma için saha keşfi, erişim planlaması, montaj ve bakım kapsamını Kutup Grup ile netleştirin.",
 		keywords: [
 			"dış cephe aydınlatma",
 			"dekoratif aydınlatma",
@@ -3944,7 +3953,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "endustriyel",
 		icon: "💡",
-		heroImage: "/services/dis-cephe-aydinlatma.png",
+		heroImage: "/services/dis-cephe-aydinlatma.webp",
 		intro: "Yüksek yapılarınıza modern ve estetik aydınlatma çözümleri sunuyoruz. İple erişim teknikleri kullanarak güvenli bir şekilde en zor noktalara ulaşıyor, binanızın mimarisini öne çıkaran aydınlatma sistemleri kuruyoruz.",
 		sections: [
 			{
@@ -4038,12 +4047,14 @@ var RAW_SERVICES_DATA = {
 			"ic-ve-dis-cephe-temizlik-hizmetleri",
 			"yatay-ve-dusey-yasam-hatti",
 			"guvenlik-agi-kurulumu"
-		]
+		],
+		relatedPosts: ["yuksek-yapilarda-cephe-temizligi-iple-erisim"],
+		updatedAt: "2026-09-15"
 	},
 	"tersane-ve-offshore-hizmetleri": {
 		slug: "tersane-ve-offshore-hizmetleri",
 		title: "Tersane ve Offshore Hizmetleri",
-		metaDescription: "Tersaneler ve offshore platformlar için profesyonel iple erişim hizmetleri. Gemi inşa, bakım, onarım, boya, kaynak ve muayene işlemlerinde uzman ekip.",
+		metaDescription: "Tersane ve offshore sahalarında iple erişim, bakım, muayene, temizlik ve yüzey çalışmaları için iş kapsamı ve saha gerekliliklerini değerlendirin.",
 		keywords: [
 			"tersane hizmetleri",
 			"offshore hizmetleri",
@@ -4053,7 +4064,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "endustriyel",
 		icon: "⚓",
-		heroImage: "/services/tersane-offshore.png",
+		heroImage: "/services/tersane-offshore.webp",
 		intro: "Tersaneler ve offshore platformlarda iple erişim teknikleri kullanarak kapsamlı hizmetler sunuyoruz. Gemi inşa, bakım, onarım, boya, kaynak, muayene ve temizlik işlemlerinde deneyimli ekibimiz ile güvenli çözüm ortağınızız.",
 		sections: [{
 			heading: "Tersane ve Offshore Hizmetleri",
@@ -4068,12 +4079,14 @@ var RAW_SERVICES_DATA = {
 		technicalDetails: ["IRATA Level 3", "NDT sertifikaları"],
 		whyChooseUs: ["10+ yıl deneyim", "Sertifikalı ekip"],
 		faqs: [],
-		relatedServices: ["guvenlik-agi-kurulumu"]
+		relatedServices: ["guvenlik-agi-kurulumu", "ic-ve-dis-cephe-temizlik-hizmetleri"],
+		relatedPosts: ["endustriyel-dagcilik-iple-erisim-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"ic-ve-dis-cephe-temizlik-hizmetleri": {
 		slug: "ic-ve-dis-cephe-temizlik-hizmetleri",
 		title: "İç ve Dış Cephe Temizlik Hizmetleri",
-		metaDescription: "Yüksek yapılarda profesyonel iç ve dış cephe temizlik hizmetleri. Cam temizliği, gökdelen yıkama, saf su teknolojisi ve atrium temizliği.",
+		metaDescription: "Yüksek yapıların iç ve dış cephelerinde cam, panel, atrium ve erişimi zor yüzeyler için temizlik yöntemi ve çalışma kapsamını planlayın.",
 		keywords: [
 			"cephe temizliği",
 			"yüksek yapı temizliği",
@@ -4083,7 +4096,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "endustriyel",
 		icon: "✨",
-		heroImage: "/services/cephe-temizlik.png",
+		heroImage: "/services/cephe-temizlik.webp",
 		intro: "Yüksek yapılarda, gökdelenlerde ve plazalarda profesyonel iç ve dış cephe temizlik hizmetleri sunuyoruz. Klasik vinç ve iskele yöntemlerinin ulaşamadığı sarp cephelerde, IRATA ve SPRAT sertifikalı endüstriyel dağcı ekibimizle, iş güvenliğinden taviz vermeden lekesiz, ekolojik ve kalıcı çözümler üretiyoruz.",
 		sections: [
 			{
@@ -4151,12 +4164,14 @@ var RAW_SERVICES_DATA = {
 			"dis-cephe-dekoratif-aydinlatma",
 			"yatay-ve-dusey-yasam-hatti",
 			"guvenlik-agi-kurulumu"
-		]
+		],
+		relatedPosts: ["yuksek-yapilarda-cephe-temizligi-iple-erisim"],
+		updatedAt: "2026-09-15"
 	},
 	"guvenlik-agi-kurulumu": {
 		slug: "guvenlik-agi-kurulumu",
 		title: "Güvenlik Ağı Kurulumu",
-		metaDescription: "İş güvenliği için profesyonel güvenlik ağı kurulum hizmetleri. Kalıcı ve geçici güvenlik ağı sistemleri, yüksekten düşme koruması ve iş kazası önleme çözümleri.",
+		metaDescription: "Şantiye, tesis ve yüksek yapılarda güvenlik ağı kurulumu için sistem seçimi, montaj, kontrol ve saha gerekliliklerini birlikte değerlendirin.",
 		keywords: [
 			"güvenlik ağı",
 			"yüksekten düşme koruması",
@@ -4166,7 +4181,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "endustriyel",
 		icon: "🛡️",
-		heroImage: "/services/yasam-hatti.png",
+		heroImage: "/services/yasam-hatti.webp",
 		intro: "Yüksekte çalışmalarda can güvenliği için profesyonel güvenlik ağı kurulumu yapıyoruz. Kalıcı ve geçici sistemler ile iş kazalarını önlüyor, çalışan güvenliğini maksimize ediyoruz.",
 		sections: [{
 			heading: "Güvenlik Ağı Nedir ve Neden Gereklidir?",
@@ -4233,12 +4248,14 @@ var RAW_SERVICES_DATA = {
 			"yatay-ve-dusey-yasam-hatti",
 			"tersane-ve-offshore-hizmetleri",
 			"dis-cephe-dekoratif-aydinlatma"
-		]
+		],
+		relatedPosts: ["yuksekte-calisma-guvenligi-yasam-hatti-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"yatay-ve-dusey-yasam-hatti": {
 		slug: "yatay-ve-dusey-yasam-hatti",
 		title: "Yatay ve Düşey Yaşam Hattı Sistemleri",
-		metaDescription: "Yüksekte çalışan personel için yaşam hattı sistemleri kurulumu. Yatay yaşam hattı, düşey yaşam hattı, sabit hat ve mobil hat çözümleri ile can güvenliği.",
+		metaDescription: "Yatay ve düşey yaşam hattı sistemleri için ankraj, çatı veya cephe altyapısı, kurulum ve periyodik kontrol kapsamını planlayın.",
 		keywords: [
 			"yaşam hattı",
 			"yatay yaşam hattı",
@@ -4248,7 +4265,7 @@ var RAW_SERVICES_DATA = {
 			"düşme koruması"
 		],
 		category: "endustriyel",
-		heroImage: "/services/guvenlik-agi.png",
+		heroImage: "/services/guvenlik-agi.webp",
 		icon: "🔗",
 		intro: "Yüksekte çalışan personelin can güvenliği için profesyonel yaşam hattı sistemleri kuruyoruz. Yatay, düşey, sabit ve mobil yaşam hatları ile tam koruma sağlıyoruz.",
 		sections: [{
@@ -4316,12 +4333,14 @@ var RAW_SERVICES_DATA = {
 			"guvenlik-agi-kurulumu",
 			"ic-ve-dis-cephe-temizlik-hizmetleri",
 			"ruzgar-enerji-santralleri"
-		]
+		],
+		relatedPosts: ["yuksekte-calisma-guvenligi-yasam-hatti-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"jeoteknik-uygulamalar": {
 		slug: "jeoteknik-uygulamalar",
 		title: "Jeoteknik Uygulamalar",
-		metaDescription: "Zorlu arazi ve yamaçlarda kaya bariyeri, şev örtüleme, kaya temizleme ve çığ kontrolü gibi profesyonel jeoteknik mühendislik uygulamaları.",
+		metaDescription: "Kaya düşmesi, şev ve yamaç riskleri için jeoteknik keşif, saha değerlendirmesi, koruma uygulaması ve bakım başlıklarını inceleyin.",
 		keywords: [
 			"jeoteknik",
 			"şev stabilizasyonu",
@@ -4331,7 +4350,7 @@ var RAW_SERVICES_DATA = {
 			"yamaç güvenliği"
 		],
 		category: "jeoteknik",
-		heroImage: "/services/yamac-temizleme.png",
+		heroImage: "/services/yamac-temizleme.webp",
 		icon: "🏔️",
 		intro: "Zorlu arazi şartlarında, yüksek riskli yamaçlarda ve şevlerde kaya düşmesi, heyelan ve çığ risklerine karşı profesyonel jeoteknik çözümler sunuyoruz. İple erişim yöntemlerimizle en sarp yamaçlara dahi ulaşıyor, kalıcı ve geçici güvenlik önlemlerini başarıyla hayata geçiriyoruz.",
 		sections: [{
@@ -4396,12 +4415,14 @@ var RAW_SERVICES_DATA = {
 			"sev-ortuleme",
 			"kaya-bariyeri",
 			"moloz-bariyer"
-		]
+		],
+		relatedPosts: ["kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"yamac-yuzeyi-temizleme": {
 		slug: "yamac-yuzeyi-temizleme",
 		title: "Yamaç Yüzeyi Temizleme",
-		metaDescription: "Heyelan riski taşıyan yamaçlarda profesyonel yüzey temizleme hizmetleri. Gevşek kaya temizliği, kök sökümü, tehlikeli blok kaldırma ile güvenli yamaçlar.",
+		metaDescription: "Yamaç yüzeyi temizleme çalışmalarında riskli blokların değerlendirilmesi, erişim planı ve saha güvenliği kapsamını Kutup Grup ile netleştirin.",
 		keywords: [
 			"yamaç temizleme",
 			"gevşek kaya temizliği",
@@ -4411,7 +4432,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "jeoteknik",
 		icon: "🏔️",
-		heroImage: "/services/yamac-temizleme.png",
+		heroImage: "/services/yamac-temizleme.webp",
 		intro: "Heyelan ve kaya düşmesi riski taşıyan yamaçların güvenli hale getirilmesi için profesyonel yüzey temizleme hizmetleri sunuyoruz. Jeoteknik mühendislik desteği ile kalıcı çözümler üretiyoruz.",
 		sections: [{
 			heading: "Yamaç Yüzeyi Temizleme Nedir?",
@@ -4470,12 +4491,14 @@ var RAW_SERVICES_DATA = {
 			"sev-ortuleme",
 			"kaya-bariyeri",
 			"deflektor-tip-ortuleme"
-		]
+		],
+		relatedPosts: ["sev-ortuleme-yamac-stabilizasyonu-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"sev-ortuleme": {
 		slug: "sev-ortuleme",
 		title: "Şev Örtüleme Sistemleri",
-		metaDescription: "Yamaç stabilizasyonu için profesyonel şev örtüleme uygulamaları. Tel örgü, hasır çelik, beton püskürtme ile uzun ömürlü yamaç koruma çözümleri.",
+		metaDescription: "Şev örtüleme sistemleri için yüzey koşulları, mesh ve ankraj seçimi, drenaj, montaj ve kontrol adımlarını birlikte değerlendirin.",
 		keywords: [
 			"şev örtüleme",
 			"yamaç koruma",
@@ -4484,7 +4507,7 @@ var RAW_SERVICES_DATA = {
 			"yamaç stabilizasyonu",
 			"shotcrete"
 		],
-		heroImage: "/services/sev-ortuleme.png",
+		heroImage: "/services/sev-ortuleme.webp",
 		category: "jeoteknik",
 		icon: "🧱",
 		intro: "Yamaç ve şevlerin stabilizasyonu için profesyonel örtüleme sistemleri uyguluyoruz. Tel örgü, hasır çelik ve beton püskürtme ile yamaçlarınızı uzun yıllar koruyoruz.",
@@ -4545,12 +4568,14 @@ var RAW_SERVICES_DATA = {
 			"yamac-yuzeyi-temizleme",
 			"deflektor-tip-ortuleme",
 			"kaya-bariyeri"
-		]
+		],
+		relatedPosts: ["sev-ortuleme-yamac-stabilizasyonu-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"hassas-endustriyel-alan-korumasi": {
 		slug: "hassas-endustriyel-alan-korumasi",
 		title: "Hassas Endüstriyel Alan Koruması",
-		metaDescription: "Petrokimya, enerji ve kritik endüstriyel tesislerde profesyonel yüksekte çalışma ve koruma hizmetleri. Patlayıcı ortamlarda özel ekipman ve eğitimli personel.",
+		metaDescription: "Hassas endüstriyel alanlarda erişim, bakım ve koruma çalışmaları için saha izinleri, izolasyon ve operasyon gerekliliklerini planlayın.",
 		keywords: [
 			"hassas endüstriyel koruma",
 			"petrokimya bakımı",
@@ -4558,7 +4583,7 @@ var RAW_SERVICES_DATA = {
 			"patlayıcı ortam çalışması",
 			"kritik tesis bakımı"
 		],
-		heroImage: "/services/hassas-endustriyel.png",
+		heroImage: "/services/hassas-endustriyel.webp",
 		category: "endustriyel",
 		icon: "⚗️",
 		intro: "Petrokimya, enerji santralleri ve kritik endüstriyel tesislerde hassas koruma ve bakım hizmetleri sunuyoruz. ATEX sertifikalı ekipman ve özel eğitimli personel ile güvenli çalışmalar gerçekleştiriyoruz.",
@@ -4619,13 +4644,15 @@ var RAW_SERVICES_DATA = {
 			"ruzgar-enerji-santralleri",
 			"tersane-ve-offshore-hizmetleri",
 			"yatay-ve-dusey-yasam-hatti"
-		]
+		],
+		relatedPosts: ["endustriyel-dagcilik-iple-erisim-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"kaya-bariyeri": {
 		slug: "kaya-bariyeri",
 		title: "Kaya Bariyeri Kurulumu",
-		heroImage: "/services/kaya-bariyeri.png",
-		metaDescription: "Kaya düşmesine karşı profesyonel kaya bariyeri kurulumu. Dinamik kaya bariyerleri ile yollar, yerleşim alanları ve kritik tesisleri koruyoruz.",
+		heroImage: "/services/kaya-bariyeri.webp",
+		metaDescription: "Kaya bariyeri kurulumu için kaya düşmesi riski, saha verileri, bariyer seçimi, montaj ve bakım kapsamını birlikte değerlendirin.",
 		keywords: [
 			"kaya bariyeri",
 			"taş bariyeri",
@@ -4695,12 +4722,14 @@ var RAW_SERVICES_DATA = {
 			"moloz-bariyer",
 			"deflektor-tip-ortuleme",
 			"yamac-yuzeyi-temizleme"
-		]
+		],
+		relatedPosts: ["kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"deflektor-tip-ortuleme": {
 		slug: "deflektor-tip-ortuleme",
 		title: "Deflektör Tip Şev Örtüleme",
-		metaDescription: "Yüksek enerjili kaya düşmelerine karşı deflektör tip örtüleme sistemleri. Çelik halat ağ ile taş düşmesini yönlendirerek güvenli alan yaratıyoruz.",
+		metaDescription: "Deflektör tip şev örtüleme uygulamalarında saha geometrisi, yüzey koşulları, ankraj ve yönlendirme çözümünü proje verileriyle belirleyin.",
 		keywords: [
 			"deflektör örtüleme",
 			"çelik halat ağ",
@@ -4710,7 +4739,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "jeoteknik",
 		icon: "🔀",
-		heroImage: "/services/deflektor-tip.png",
+		heroImage: "/services/deflektor-tip.webp",
 		intro: "Yüksek enerjili kaya düşmelerine karşı deflektör tip örtüleme sistemleri uyguluyoruz. Çelik halat ağ ve ankrajlarla yamaç yüzeyini kaplayarak taşları kontrollü yönlendiriyor, düşme hızını azaltıyoruz.",
 		sections: [{
 			heading: "Deflektör Örtüleme Nedir?",
@@ -4770,13 +4799,15 @@ var RAW_SERVICES_DATA = {
 			"sev-ortuleme",
 			"kaya-bariyeri",
 			"yamac-yuzeyi-temizleme"
-		]
+		],
+		relatedPosts: ["sev-ortuleme-yamac-stabilizasyonu-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"moloz-bariyer": {
 		slug: "moloz-bariyer",
 		title: "Moloz Bariyer Sistemleri",
-		metaDescription: "Moloz ve enkaz düşmesine karşı profesyonel bariyer kurulumu. İnşaat şantiyeleri, yıkım sahaları ve yamaç altı koruması için esnek çözümler.",
-		heroImage: "/services/moloz-bariyer.png",
+		metaDescription: "Moloz bariyer sistemleri için yamaç, akış ve düşme risklerinin değerlendirilmesi; sistem seçimi, montaj ve bakım adımlarını planlayın.",
+		heroImage: "/services/moloz-bariyer.webp",
 		keywords: [
 			"moloz bariyeri",
 			"debris barrier",
@@ -4845,12 +4876,14 @@ var RAW_SERVICES_DATA = {
 			"kaya-bariyeri",
 			"guvenlik-agi-kurulumu",
 			"yamac-yuzeyi-temizleme"
-		]
+		],
+		relatedPosts: ["kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"ormanda-iple-erisim-hizmetleri": {
 		slug: "ormanda-iple-erisim-hizmetleri",
 		title: "Ormanda İple Erişim Hizmetleri",
-		metaDescription: "Ormancılık ve ağaç bakımı için profesyonel iple erişim hizmetleri. Budama, kesim, hastalık kontrolü ve orman amenajmanı çalışmalarında uzman ekip.",
+		metaDescription: "Ormanda iple erişim çalışmalarında ağaç ve arazi koşulları, erişim planı, çevresel hassasiyet ve iş güvenliği kapsamını değerlendirin.",
 		keywords: [
 			"ağaç budama",
 			"ormancılık iple erişim",
@@ -4860,7 +4893,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "endustriyel",
 		icon: "🌲",
-		heroImage: "/services/ormanda-iple-erisim.png",
+		heroImage: "/services/ormanda-iple-erisim.webp",
 		intro: "Ormancılık ve ağaç bakımı çalışmalarında profesyonel iple erişim hizmetleri sunuyoruz. ISA sertifikalı arboristler ile güvenli budama, kesim ve bakım hizmetleri.",
 		sections: [{
 			heading: "Ormanda İple Erişim Nedir?",
@@ -4912,13 +4945,15 @@ var RAW_SERVICES_DATA = {
 			question: "Budama ağaca zarar verir mi?",
 			answer: "Profesyonelce yapılan budama ağaca zarar vermez, aksine sağlığını artırır. Yanlış budama ise ağacı strese sokar ve hastalığa açık hale getirir. ISA standartlarına uygun budama yapılmalıdır."
 		}],
-		relatedServices: ["yatay-ve-dusey-yasam-hatti", "dis-cephe-dekoratif-aydinlatma"]
+		relatedServices: ["yatay-ve-dusey-yasam-hatti", "dis-cephe-dekoratif-aydinlatma"],
+		relatedPosts: ["stand-by-rescue-kurtarma-plani-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"stand-by-rescue-hizmeti": {
 		slug: "stand-by-rescue-hizmeti",
 		title: "Stand-by & Rescue Hizmeti",
-		metaDescription: "Yüksekte çalışmalarda acil kurtarma ve stand-by rescue hizmetleri. IRATA sertifikalı kurtarma ekipleri ile 7/24 güvenli çalışma ortamı.",
-		heroImage: "/services/standby-rescue.png",
+		metaDescription: "Stand-by ve rescue hizmeti için saha acil durum planı, ekip görevleri, ekipman, iletişim ve tatbikat kapsamını birlikte netleştirin.",
+		heroImage: "/services/standby-rescue.webp",
 		keywords: [
 			"acil kurtarma",
 			"stand-by rescue",
@@ -4984,13 +5019,15 @@ var RAW_SERVICES_DATA = {
 			"hassas-endustriyel-alan-korumasi",
 			"tersane-ve-offshore-hizmetleri",
 			"ruzgar-enerji-santralleri"
-		]
+		],
+		relatedPosts: ["ruzgar-turbini-bakiminda-iple-erisim"],
+		updatedAt: "2026-09-15"
 	},
 	"ruzgar-enerji-santralleri": {
 		slug: "ruzgar-enerji-santralleri",
 		title: "Rüzgar Enerji Santralleri Bakım Hizmetleri",
-		heroImage: "/services/ruzgar-turbini.png",
-		metaDescription: "Rüzgar türbinleri için profesyonel bakım, muayene ve onarım hizmetleri. GWO sertifikalı ekip ile güvenli ve hızlı servis.",
+		heroImage: "/services/ruzgar-turbini.webp",
+		metaDescription: "Rüzgar enerji santrallerinde türbin, kanat ve nacelle bakım veya muayene çalışmaları için erişim, saha güvenliği ve raporlama kapsamını planlayın.",
 		keywords: [
 			"rüzgar türbini bakımı",
 			"GWO",
@@ -5055,12 +5092,14 @@ var RAW_SERVICES_DATA = {
 			"hassas-endustriyel-alan-korumasi",
 			"stand-by-rescue-hizmeti",
 			"yatay-ve-dusey-yasam-hatti"
-		]
+		],
+		relatedPosts: ["endustriyel-dagcilik-iple-erisim-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"gabion-duvar": {
 		slug: "gabion-duvar",
 		title: "Gabion Duvar Uygulamaları",
-		metaDescription: "Gabion duvar ve istinat yapıları için profesyonel proje ve uygulama hizmetleri. Doğal taş dolgulu gabion sistemleri ile uzun ömürlü ve estetik çözümler.",
+		metaDescription: "Gabion duvar uygulamalarında zemin, temel, drenaj, sepet ve dolgu taşı seçiminden montaj ve bakım kapsamına kadar süreci planlayın.",
 		keywords: [
 			"gabion duvar",
 			"istinat duvarı",
@@ -5070,7 +5109,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "jeoteknik",
 		icon: "🪨",
-		heroImage: "/services/gabion-duvar.png",
+		heroImage: "/services/gabion-duvar.webp",
 		intro: "Gabion duvar ve istinat yapıları için profesyonel proje ve uygulama hizmetleri sunuyoruz. Galvaniz veya PVC kaplı çelik sepetler ve doğal taş dolgular ile uzun ömürlü, estetik ve ekonomik çözümler.",
 		sections: [{
 			heading: "Gabion Duvar Nedir?",
@@ -5128,12 +5167,14 @@ var RAW_SERVICES_DATA = {
 			"sev-ortuleme",
 			"yamac-yuzeyi-temizleme",
 			"kaya-bariyeri"
-		]
+		],
+		relatedPosts: ["endustriyel-dagcilik-iple-erisim-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"sahne-isleri-rigging": {
 		slug: "sahne-isleri-rigging",
 		title: "Sahne İşleri (Rigging) Hizmetleri",
-		metaDescription: "Konser, etkinlik ve sahne kurulumları için profesyonel rigging hizmetleri. Ses, ışık, dekor asma sistemleri, güvenli ve hızlı kurulum.",
+		metaDescription: "Sahne işleri ve rigging operasyonlarında yük, ekipman, montaj, söküm ve etkinlik güvenliği gerekliliklerini proje kapsamına göre değerlendirin.",
 		keywords: [
 			"sahne rigging",
 			"konser kurulumu",
@@ -5143,7 +5184,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "diger",
 		icon: "🎭",
-		heroImage: "/services/sahne-rigging.png",
+		heroImage: "/services/sahne-rigging.webp",
 		intro: "Konser, festival, etkinlik ve canlı performanslar için profesyonel sahne rigging (asma işleri) hizmetleri sunuyoruz. Ses, ışık, video, dekor sistemlerinin güvenli kurulumu.",
 		sections: [{
 			heading: "Sahne Rigging Nedir?",
@@ -5195,12 +5236,14 @@ var RAW_SERVICES_DATA = {
 			question: "Rigging güvenlik sertifikası gerekli midir?",
 			answer: "Evet, Türkiye'de etkinlik izni için rigging planı ve yapısal mühendis raporu gereklidir. Tüm ekipman CE/TÜV sertifikalı olmalı, periyodik testlerden geçmiş olmalıdır."
 		}],
-		relatedServices: ["dis-cephe-dekoratif-aydinlatma", "yatay-ve-dusey-yasam-hatti"]
+		relatedServices: ["dis-cephe-dekoratif-aydinlatma", "yatay-ve-dusey-yasam-hatti"],
+		relatedPosts: ["endustriyel-dagcilik-iple-erisim-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"sprat-egitimi": {
 		slug: "sprat-egitimi",
 		title: "SPRAT Eğitimi ve Sertifikasyonu",
-		metaDescription: "Uluslararası geçerliliği olan SPRAT (Society of Professional Rope Access Technicians) eğitimi ve sertifikasyon programları. Level 1, 2, 3 eğitimleri.",
+		metaDescription: "SPRAT eğitimi için program kapsamı, seviye yapısı, katılım koşulları, değerlendirme süreci ve güncel eğitim bilgilerini inceleyin.",
 		keywords: [
 			"SPRAT eğitimi",
 			"rope access sertifikası",
@@ -5210,7 +5253,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "diger",
 		icon: "🎓",
-		heroImage: "/services/rope-access-egitim.png",
+		heroImage: "/services/rope-access-egitim.webp",
 		intro: "SPRAT (Society of Professional Rope Access Technicians) standartlarına uygun iple erişim eğitimi ve sertifikasyonu sunuyoruz. Uluslararası geçerliliği olan Level 1, 2, 3 sertifikaları.",
 		sections: [{
 			heading: "SPRAT Nedir?",
@@ -5262,12 +5305,14 @@ var RAW_SERVICES_DATA = {
 			question: "SPRAT eğitimi için ön koşul var mı?",
 			answer: "Level 1 için ön koşul yoktur. Level 2 için Level 1 sertifikası ve 500 saat tecrübe gereklidir. Level 3 için Level 2 ve 1000 saat tecrübe gerekir. Tıbbi uygunluk raporu zorunludur."
 		}],
-		relatedServices: ["irata-egitimi", "stand-by-rescue-hizmeti"]
+		relatedServices: ["irata-egitimi", "stand-by-rescue-hizmeti"],
+		relatedPosts: ["endustriyel-dagcilik-iple-erisim-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"irata-egitimi": {
 		slug: "irata-egitimi",
 		title: "IRATA Eğitimi ve Sertifikasyonu",
-		metaDescription: "Uluslararası IRATA (Industrial Rope Access Trade Association) eğitimi ve sertifikasyonu. Level 1, 2, 3 iple erişim teknisyen eğitimleri.",
+		metaDescription: "IRATA eğitimi için program kapsamı, seviye yapısı, katılım koşulları, değerlendirme süreci ve güncel eğitim bilgilerini inceleyin.",
 		keywords: [
 			"IRATA eğitimi",
 			"rope access eğitim",
@@ -5277,7 +5322,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "diger",
 		icon: "📜",
-		heroImage: "/services/rope-access-egitim.png",
+		heroImage: "/services/rope-access-egitim.webp",
 		intro: "IRATA (Industrial Rope Access Trade Association) standartlarına uygun profesyonel iple erişim eğitimi ve sertifikasyonu. Dünya çapında geçerli Level 1, 2, 3 programları.",
 		sections: [{
 			heading: "IRATA Nedir?",
@@ -5334,12 +5379,14 @@ var RAW_SERVICES_DATA = {
 			"sprat-egitimi",
 			"stand-by-rescue-hizmeti",
 			"tersane-ve-offshore-hizmetleri"
-		]
+		],
+		relatedPosts: ["endustriyel-dagcilik-iple-erisim-rehberi"],
+		updatedAt: "2026-09-15"
 	},
 	"kar-ve-cig-kontrolu": {
 		slug: "kar-ve-cig-kontrolu",
 		title: "Kar ve Çığ Kontrolü Uygulamaları",
-		metaDescription: "Profesyonel kar ve çığ kontrolü uygulamaları. Çığ bariyeri kurulumu, kar tutucu sistemler, çığ tetikleme ve risk analizi hizmetleri ile can ve mal güvenliğinizi koruyoruz.",
+		metaDescription: "Kar ve çığ kontrolü için risk değerlendirmesi, kar tutucu sistemler, bariyerler, saha planlaması ve bakım başlıklarını Kutup Grup ile görüşün.",
 		keywords: [
 			"çığ kontrolü",
 			"kar kontrolü",
@@ -5354,7 +5401,7 @@ var RAW_SERVICES_DATA = {
 		],
 		category: "jeoteknik",
 		icon: "❄️",
-		heroImage: "/services/kar-cig.png",
+		heroImage: "/services/kar-cig.webp",
 		intro: "Dağlık bölgelerde can ve mal güvenliğini tehdit eden kar ve çığ tehlikelerine karşı profesyonel mühendislik çözümleri sunuyoruz. Çığ bariyeri kurulumu, kar tutucu sistemler, çığ tetikleme operasyonları ve kapsamlı risk analizleri ile yaşam alanlarını, altyapıyı ve ulaşım hatlarını güvenli kılıyoruz.",
 		sections: [
 			{
@@ -5441,7 +5488,9 @@ var RAW_SERVICES_DATA = {
 			"kaya-bariyeri",
 			"moloz-bariyer",
 			"yamac-yuzeyi-temizleme"
-		]
+		],
+		relatedPosts: ["kar-cig-kontrolu-risk-degerlendirme-rehberi"],
+		updatedAt: "2026-09-15"
 	}
 };
 /**
@@ -5450,7 +5499,7 @@ var RAW_SERVICES_DATA = {
 * campaign copy and technical placeholders, so only the sanitized catalogue
 * is exported to pages, SSR, sitemaps and llms.txt.
 */
-var UNSUPPORTED_PUBLIC_CLAIM = /(?:\b(?:15|19|20|30|40|50|60|80|100|200|300|500|1000|5000)\s*\+?|%\s*\d+|\b\d+\s*(?:-\s*\d+)?\s*(?:gün|hafta|ay|yıl|saat|kat|metre|m|m²|m³|kJ|TL)|7\s*\/\s*24|IRATA|SPRAT|GWO|ISA|sertifik|ISO\s*\d+|\bCE\b|\bTSE\b|\bEN\s*\d+|ATEX|NDT|Level\s*\d|garanti|sigorta|sıfır\s+kaza|%100|tam\s+erişim|Türkiye['’]nin\s+(?:dört\s+bir\s+yanında|tüm)|(?:en|lider|öncü)\s+(?:etkili|yüksek|güvenilir|iyi|hızlı)|(?:uzman|eğitimli|profesyonel)\s+(?:ekip|personel|kadrosu?)|yetkili\s+(?:satıcı|ekip)|maliyet\s+(?:%|tasarruf)|(?:güvenli\s+kılıyoruz|koruyoruz|lekesiz|kalıcı|sıfır\s+zarar|güvenli\s+(?:alan|yamaç)|güvenli\s+ve\s+hızlı|uzun\s+ömürlü|can\s+güvenliği))/iu;
+var UNSUPPORTED_PUBLIC_CLAIM = /(?:\b(?:15|19|20|30|40|50|60|80|100|200|300|500|1000|5000)\s*\+?|\b\d[\d.,]*\s*\+|%\s*\d+|\b\d[\d.,]*\s*(?:-\s*\d[\d.,]*)?\s*(?:gün|hafta|ay|yıl|saat|kişi|kat|metre|m|m²|m³|kJ|TL|km|knot)|\b(?:max|min)\.?\s*\d+|[<>]\s*\d+\s*(?:saniye|dakika|gün|hafta|ay|yıl)|7\s*\/\s*24|sertifik|ISO\s*\d+|\bCE\b|\bTSE\b|\bEN\s*\d+|ATEX|NDT|Level\s*\d|garanti|sigorta|ücretsiz|\b(?:lider|öncü)\b|sıfır\s+kaza|%100|tam\s+erişim|Türkiye['’]nin\s+(?:dört\s+bir\s+yanında|tüm)|(?:en)\s+(?:etkili|yüksek|güvenilir|iyi|hızlı)|(?:uzman|eğitimli|profesyonel)\s+(?:ekip|personel|kadrosu?|eğitmen)|(?:yüksek\s+)?başarı\s+oranı|iş\s+yerleştirme|global\s+iş\s+imkanları?|uluslararası\s+network|tam\s+ekipman|dünya\s+çapında|Swiss|Avusturya|Gazex|Wyssen|yetkili\s+(?:satıcı|ekip)|maliyet\s+(?:%|tasarruf)|(?:güvenli\s+kılıyoruz|koruyoruz|lekesiz|kalıcı|sıfır\s+zarar|güvenli\s+(?:alan|yamaç)|güvenli\s+ve\s+hızlı|uzun\s+ömürlü|can\s+güvenliği))/iu;
 var sanitizeRichText = (value, fallback) => {
 	const paragraphs = value.split(/\n\s*\n/).map((paragraph) => paragraph.split(/(?<=[.!?])\s+/u).filter((sentence) => !UNSUPPORTED_PUBLIC_CLAIM.test(sentence)).join(" ").trim()).filter(Boolean);
 	return paragraphs.length > 0 ? paragraphs.join("\n\n") : fallback;
@@ -5620,7 +5669,7 @@ function HizmetlerPageClient() {
 												className: "service-card-image",
 												children: /* @__PURE__ */ jsx(Image, {
 													src: service.heroImage,
-													alt: service.title,
+													alt: `${service.title} hizmeti`,
 													width: 400,
 													height: 220,
 													style: {
@@ -6048,2598 +6097,6 @@ function HizmetlerPageClient() {
             `
 		})
 	] });
-}
-//#endregion
-//#region src/components/services/ServiceContentClient.tsx
-var SERVICE_ICON_MAP = {
-	"💡": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("path", { d: "M9 18h6" }),
-			/* @__PURE__ */ jsx("path", { d: "M10 22h4" }),
-			/* @__PURE__ */ jsx("path", { d: "M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14" })
-		]
-	}),
-	"⚓": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("circle", {
-				cx: "12",
-				cy: "5",
-				r: "3"
-			}),
-			/* @__PURE__ */ jsx("line", {
-				x1: "12",
-				y1: "22",
-				x2: "12",
-				y2: "8"
-			}),
-			/* @__PURE__ */ jsx("path", { d: "M5 12H2a10 10 0 0020 0h-3" })
-		]
-	}),
-	"✨": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("path", { d: "m12 3-1.912 5.813a2 2 0 01-1.275 1.275L3 12l5.813 1.912a2 2 0 011.275 1.275L12 21l1.912-5.813a2 2 0 011.275-1.275L21 12l-5.813-1.912a2 2 0 01-1.275-1.275L12 3z" }),
-			/* @__PURE__ */ jsx("path", { d: "M5 3v4" }),
-			/* @__PURE__ */ jsx("path", { d: "M19 17v4" }),
-			/* @__PURE__ */ jsx("path", { d: "M3 5h4" }),
-			/* @__PURE__ */ jsx("path", { d: "M17 19h4" })
-		]
-	}),
-	"🛡️": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [/* @__PURE__ */ jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }), /* @__PURE__ */ jsx("path", { d: "m9 12 2 2 4-4" })]
-	}),
-	"🔗": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [/* @__PURE__ */ jsx("path", { d: "M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" }), /* @__PURE__ */ jsx("path", { d: "M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" })]
-	}),
-	"🏔️": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [/* @__PURE__ */ jsx("path", { d: "m8 3 4 8 5-5 5 15H2L8 3z" }), /* @__PURE__ */ jsx("path", { d: "m4.14 15.08 2.86-2.7 3 2.7" })]
-	}),
-	"🧱": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("rect", {
-				x: "1",
-				y: "6",
-				width: "22",
-				height: "4",
-				rx: "1"
-			}),
-			/* @__PURE__ */ jsx("rect", {
-				x: "1",
-				y: "14",
-				width: "22",
-				height: "4",
-				rx: "1"
-			}),
-			/* @__PURE__ */ jsx("line", {
-				x1: "12",
-				y1: "6",
-				x2: "12",
-				y2: "10"
-			}),
-			/* @__PURE__ */ jsx("line", {
-				x1: "6",
-				y1: "14",
-				x2: "6",
-				y2: "18"
-			}),
-			/* @__PURE__ */ jsx("line", {
-				x1: "18",
-				y1: "14",
-				x2: "18",
-				y2: "18"
-			})
-		]
-	}),
-	"⚗️": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("path", { d: "M10 2v6l-6 10a1 1 0 00.87 1.5h14.26a1 1 0 00.87-1.5L14 8V2" }),
-			/* @__PURE__ */ jsx("line", {
-				x1: "8.5",
-				y1: "2",
-				x2: "15.5",
-				y2: "2"
-			}),
-			/* @__PURE__ */ jsx("path", { d: "M7 16h10" })
-		]
-	}),
-	"🛑": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [/* @__PURE__ */ jsx("path", { d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" }), /* @__PURE__ */ jsx("line", {
-			x1: "4.93",
-			y1: "4.93",
-			x2: "19.07",
-			y2: "19.07"
-		})]
-	}),
-	"🔀": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("polyline", { points: "16 3 21 3 21 8" }),
-			/* @__PURE__ */ jsx("line", {
-				x1: "4",
-				y1: "20",
-				x2: "21",
-				y2: "3"
-			}),
-			/* @__PURE__ */ jsx("polyline", { points: "21 16 21 21 16 21" }),
-			/* @__PURE__ */ jsx("line", {
-				x1: "15",
-				y1: "15",
-				x2: "21",
-				y2: "21"
-			}),
-			/* @__PURE__ */ jsx("line", {
-				x1: "4",
-				y1: "4",
-				x2: "9",
-				y2: "9"
-			})
-		]
-	}),
-	"🚧": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("rect", {
-				x: "2",
-				y: "6",
-				width: "20",
-				height: "12",
-				rx: "2"
-			}),
-			/* @__PURE__ */ jsx("path", { d: "M12 6v12" }),
-			/* @__PURE__ */ jsx("path", { d: "M2 12h20" })
-		]
-	}),
-	"🌲": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("path", { d: "M17 22v-2" }),
-			/* @__PURE__ */ jsx("path", { d: "M7 22v-2" }),
-			/* @__PURE__ */ jsx("path", { d: "M17 13H7l5-10 5 10z" }),
-			/* @__PURE__ */ jsx("path", { d: "M19 18H5l2-5h10l2 5z" })
-		]
-	}),
-	"🚑": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("path", { d: "M10 10H6" }),
-			/* @__PURE__ */ jsx("path", { d: "M8 8v4" }),
-			/* @__PURE__ */ jsx("path", { d: "M22 18v-7a2 2 0 00-.67-1.49L17 6H3a1 1 0 00-1 1v11" }),
-			/* @__PURE__ */ jsx("circle", {
-				cx: "7",
-				cy: "18",
-				r: "2"
-			}),
-			/* @__PURE__ */ jsx("path", { d: "M9 18h6" }),
-			/* @__PURE__ */ jsx("circle", {
-				cx: "17",
-				cy: "18",
-				r: "2"
-			})
-		]
-	}),
-	"💨": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("path", { d: "M17.7 7.7a2.5 2.5 0 111.8 4.3H2" }),
-			/* @__PURE__ */ jsx("path", { d: "M9.6 4.6A2 2 0 1111 8H2" }),
-			/* @__PURE__ */ jsx("path", { d: "M12.6 19.4A2 2 0 1014 16H2" })
-		]
-	}),
-	"🪨": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("path", { d: "M11 18l1.5-6.5L18 9l-2-5-6 1L4 10l3 4 4 4z" }),
-			/* @__PURE__ */ jsx("path", { d: "M20 21l-3-3" }),
-			/* @__PURE__ */ jsx("path", { d: "M8 21l-2-6" })
-		]
-	}),
-	"❄️": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("line", {
-				x1: "12",
-				y1: "2",
-				x2: "12",
-				y2: "22"
-			}),
-			/* @__PURE__ */ jsx("line", {
-				x1: "2",
-				y1: "12",
-				x2: "22",
-				y2: "12"
-			}),
-			/* @__PURE__ */ jsx("path", { d: "M20 16l-4-4 4-4" }),
-			/* @__PURE__ */ jsx("path", { d: "M4 8l4 4-4 4" }),
-			/* @__PURE__ */ jsx("path", { d: "M16 4l-4 4-4-4" }),
-			/* @__PURE__ */ jsx("path", { d: "M8 20l4-4 4 4" })
-		]
-	}),
-	"🎭": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("path", { d: "M2 12a5 5 0 005 5 8 8 0 001.5-.2 5 5 0 007 0A8 8 0 0017 17a5 5 0 005-5V7h-5a8 8 0 00-10 0H2v5z" }),
-			/* @__PURE__ */ jsx("path", { d: "M6 11a.5.5 0 001 0 .5.5 0 00-1 0z" }),
-			/* @__PURE__ */ jsx("path", { d: "M17 11a.5.5 0 001 0 .5.5 0 00-1 0z" })
-		]
-	}),
-	"🎓": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [/* @__PURE__ */ jsx("path", { d: "M22 10v6M2 10l10-5 10 5-10 5z" }), /* @__PURE__ */ jsx("path", { d: "M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5" })]
-	}),
-	"📜": /* @__PURE__ */ jsxs("svg", {
-		width: "48",
-		height: "48",
-		viewBox: "0 0 24 24",
-		fill: "none",
-		stroke: "currentColor",
-		strokeWidth: "1.5",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-		children: [
-			/* @__PURE__ */ jsx("path", { d: "M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" }),
-			/* @__PURE__ */ jsx("polyline", { points: "14 2 14 8 20 8" }),
-			/* @__PURE__ */ jsx("line", {
-				x1: "16",
-				y1: "13",
-				x2: "8",
-				y2: "13"
-			}),
-			/* @__PURE__ */ jsx("line", {
-				x1: "16",
-				y1: "17",
-				x2: "8",
-				y2: "17"
-			}),
-			/* @__PURE__ */ jsx("polyline", { points: "10 9 9 9 8 9" })
-		]
-	})
-};
-var FallbackIcon = () => /* @__PURE__ */ jsxs("svg", {
-	width: "48",
-	height: "48",
-	viewBox: "0 0 24 24",
-	fill: "none",
-	stroke: "currentColor",
-	strokeWidth: "1.5",
-	strokeLinecap: "round",
-	strokeLinejoin: "round",
-	children: [
-		/* @__PURE__ */ jsx("circle", {
-			cx: "12",
-			cy: "12",
-			r: "10"
-		}),
-		/* @__PURE__ */ jsx("line", {
-			x1: "12",
-			y1: "16",
-			x2: "12",
-			y2: "12"
-		}),
-		/* @__PURE__ */ jsx("line", {
-			x1: "12",
-			y1: "8",
-			x2: "12.01",
-			y2: "8"
-		})
-	]
-});
-var BuildingIcon = () => /* @__PURE__ */ jsxs("svg", {
-	width: "28",
-	height: "28",
-	viewBox: "0 0 24 24",
-	fill: "none",
-	stroke: "currentColor",
-	strokeWidth: "1.5",
-	strokeLinecap: "round",
-	strokeLinejoin: "round",
-	children: [
-		/* @__PURE__ */ jsx("rect", {
-			x: "4",
-			y: "2",
-			width: "16",
-			height: "20",
-			rx: "2",
-			ry: "2"
-		}),
-		/* @__PURE__ */ jsx("path", { d: "M9 22v-4h6v4" }),
-		/* @__PURE__ */ jsx("line", {
-			x1: "8",
-			y1: "6",
-			x2: "10",
-			y2: "6"
-		}),
-		/* @__PURE__ */ jsx("line", {
-			x1: "14",
-			y1: "6",
-			x2: "16",
-			y2: "6"
-		}),
-		/* @__PURE__ */ jsx("line", {
-			x1: "8",
-			y1: "10",
-			x2: "10",
-			y2: "10"
-		}),
-		/* @__PURE__ */ jsx("line", {
-			x1: "14",
-			y1: "10",
-			x2: "16",
-			y2: "10"
-		}),
-		/* @__PURE__ */ jsx("line", {
-			x1: "8",
-			y1: "14",
-			x2: "10",
-			y2: "14"
-		}),
-		/* @__PURE__ */ jsx("line", {
-			x1: "14",
-			y1: "14",
-			x2: "16",
-			y2: "14"
-		})
-	]
-});
-var CheckIcon = () => /* @__PURE__ */ jsx("svg", {
-	width: "18",
-	height: "18",
-	viewBox: "0 0 24 24",
-	fill: "none",
-	stroke: "var(--color-arctic-blue, #3E92CC)",
-	strokeWidth: "2.5",
-	strokeLinecap: "round",
-	strokeLinejoin: "round",
-	children: /* @__PURE__ */ jsx("polyline", { points: "20 6 9 17 4 12" })
-});
-function getServiceIcon(icon) {
-	return SERVICE_ICON_MAP[icon] || /* @__PURE__ */ jsx(FallbackIcon, {});
-}
-function getRelatedServiceTitle(slug) {
-	const service = SERVICES_DATA[slug];
-	return service ? service.title : slug;
-}
-function ServiceContentClient({ service }) {
-	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsxs("main", {
-		className: "service-page",
-		children: [/* @__PURE__ */ jsx("section", {
-			className: "service-hero",
-			children: /* @__PURE__ */ jsxs("div", {
-				className: "container",
-				children: [/* @__PURE__ */ jsxs("div", {
-					className: "breadcrumb",
-					children: [
-						/* @__PURE__ */ jsx(Link$1, {
-							href: "/",
-							children: "Anasayfa"
-						}),
-						/* @__PURE__ */ jsx("span", { children: " / " }),
-						/* @__PURE__ */ jsx(Link$1, {
-							href: "/hizmetler",
-							children: "Hizmetler"
-						}),
-						/* @__PURE__ */ jsx("span", { children: " / " }),
-						/* @__PURE__ */ jsx("span", { children: service.title })
-					]
-				}), /* @__PURE__ */ jsxs("div", {
-					className: "service-hero-layout",
-					children: [/* @__PURE__ */ jsxs("div", {
-						className: "service-hero-text",
-						children: [
-							/* @__PURE__ */ jsx("h1", { children: service.title }),
-							/* @__PURE__ */ jsx("p", {
-								className: "service-intro",
-								children: service.intro
-							}),
-							/* @__PURE__ */ jsx(Link$1, {
-								href: "/iletisim",
-								className: "btn btn-cta",
-								children: "Teklif talebi oluşturun"
-							})
-						]
-					}), service.heroImage && /* @__PURE__ */ jsx("div", {
-						className: "service-hero-image",
-						children: /* @__PURE__ */ jsx(Image, {
-							src: service.heroImage,
-							alt: service.title,
-							width: 560,
-							height: 400,
-							priority: true,
-							style: {
-								objectFit: "cover",
-								borderRadius: "16px",
-								width: "100%",
-								height: "auto"
-							}
-						})
-					})]
-				})]
-			})
-		}), /* @__PURE__ */ jsx("section", {
-			className: "section",
-			children: /* @__PURE__ */ jsx("div", {
-				className: "container",
-				children: /* @__PURE__ */ jsxs("div", {
-					className: "service-content",
-					children: [/* @__PURE__ */ jsxs("article", {
-						className: "service-article",
-						children: [
-							service.sections.map((section, index) => /* @__PURE__ */ jsxs("div", {
-								className: "content-section",
-								children: [/* @__PURE__ */ jsx("h2", { children: section.heading }), /* @__PURE__ */ jsx("p", { children: section.content })]
-							}, index)),
-							service.slug === "jeoteknik-uygulamalar" && /* @__PURE__ */ jsxs("div", {
-								className: "content-section sub-services-section",
-								children: [
-									/* @__PURE__ */ jsx("h2", { children: "Jeoteknik Çözümlerimiz & Hizmetlerimiz" }),
-									/* @__PURE__ */ jsx("p", {
-										className: "sub-services-intro",
-										children: "Zorlu arazi koşullarında kaya düşmesi, şev stabilizasyonu ve yamaç güvenliği başlıkları; saha verileri ve proje gereklilikleri birlikte değerlendirilerek ele alınır. İlgili hizmet başlıklarını aşağıda inceleyebilirsiniz:"
-									}),
-									/* @__PURE__ */ jsx("div", {
-										className: "sub-services-grid",
-										children: Object.values(SERVICES_DATA).filter((s) => s.category === "jeoteknik" && s.slug !== "jeoteknik-uygulamalar").map((s) => /* @__PURE__ */ jsxs("div", {
-											className: "sub-service-card",
-											children: [s.heroImage && /* @__PURE__ */ jsx("div", {
-												className: "sub-service-image-wrapper",
-												children: /* @__PURE__ */ jsx(Image, {
-													src: s.heroImage,
-													alt: s.title,
-													width: 360,
-													height: 200,
-													className: "sub-service-img"
-												})
-											}), /* @__PURE__ */ jsxs("div", {
-												className: "sub-service-content-wrap",
-												children: [
-													/* @__PURE__ */ jsxs("div", {
-														className: "sub-service-header",
-														children: [/* @__PURE__ */ jsx("span", {
-															className: "sub-service-icon",
-															children: getServiceIcon(s.icon)
-														}), /* @__PURE__ */ jsx("h3", { children: s.title })]
-													}),
-													/* @__PURE__ */ jsx("p", { children: s.intro }),
-													/* @__PURE__ */ jsxs(Link$1, {
-														href: `/hizmetler/${s.slug}`,
-														className: "sub-service-link",
-														children: ["Detaylı Bilgi", /* @__PURE__ */ jsxs("svg", {
-															width: "16",
-															height: "16",
-															viewBox: "0 0 24 24",
-															fill: "none",
-															stroke: "currentColor",
-															strokeWidth: "2.5",
-															strokeLinecap: "round",
-															strokeLinejoin: "round",
-															children: [/* @__PURE__ */ jsx("path", { d: "M5 12h14" }), /* @__PURE__ */ jsx("path", { d: "m12 5 7 7-7 7" })]
-														})]
-													})
-												]
-											})]
-										}, s.slug))
-									})
-								]
-							}),
-							service.advantages.length > 0 && /* @__PURE__ */ jsxs("div", {
-								className: "content-section",
-								children: [/* @__PURE__ */ jsx("h2", { children: "Avantajlarımız" }), /* @__PURE__ */ jsx("ul", {
-									className: "advantages-list",
-									children: service.advantages.map((advantage, index) => /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", {
-										className: "check-icon",
-										children: /* @__PURE__ */ jsx(CheckIcon, {})
-									}), advantage] }, index))
-								})]
-							}),
-							service.applications.length > 0 && /* @__PURE__ */ jsxs("div", {
-								className: "content-section",
-								children: [/* @__PURE__ */ jsx("h2", { children: "Uygulama Alanları" }), /* @__PURE__ */ jsx("div", {
-									className: "applications-grid",
-									children: service.applications.map((app, index) => /* @__PURE__ */ jsxs("div", {
-										className: "application-card",
-										children: [/* @__PURE__ */ jsx("span", {
-											className: "app-icon",
-											children: /* @__PURE__ */ jsx(BuildingIcon, {})
-										}), /* @__PURE__ */ jsx("p", { children: app })]
-									}, index))
-								})]
-							}),
-							service.technicalDetails.length > 0 && /* @__PURE__ */ jsxs("div", {
-								className: "content-section",
-								children: [/* @__PURE__ */ jsx("h2", { children: "Teknik Detaylar" }), /* @__PURE__ */ jsx("ul", {
-									className: "tech-list",
-									children: service.technicalDetails.map((detail, index) => /* @__PURE__ */ jsx("li", { children: detail }, index))
-								})]
-							}),
-							service.faqs.length > 0 && /* @__PURE__ */ jsxs("div", {
-								className: "content-section",
-								children: [/* @__PURE__ */ jsx("h2", { children: "Sıkça Sorulan Sorular" }), /* @__PURE__ */ jsx("div", {
-									className: "faq-list",
-									children: service.faqs.map((faq, index) => /* @__PURE__ */ jsxs("div", {
-										className: "faq-item",
-										children: [/* @__PURE__ */ jsx("h3", { children: faq.question }), /* @__PURE__ */ jsx("p", { children: faq.answer })]
-									}, index))
-								})]
-							})
-						]
-					}), /* @__PURE__ */ jsxs("aside", {
-						className: "service-sidebar",
-						children: [
-							/* @__PURE__ */ jsxs("div", {
-								className: "sidebar-card card-premium",
-								children: [
-									/* @__PURE__ */ jsx("h3", { children: "İletişime Geçin" }),
-									/* @__PURE__ */ jsx("p", { children: "Projenizin kapsamını ve ilk değerlendirme adımlarını birlikte netleştirelim." }),
-									/* @__PURE__ */ jsx(Link$1, {
-										href: "/iletisim",
-										className: "btn btn-primary",
-										style: { width: "100%" },
-										children: "Teklif İsteyin"
-									})
-								]
-							}),
-							service.relatedServices.length > 0 && /* @__PURE__ */ jsxs("div", {
-								className: "sidebar-card",
-								children: [/* @__PURE__ */ jsx("h3", { children: "İlgili Hizmetler" }), /* @__PURE__ */ jsx("ul", {
-									className: "related-services",
-									children: service.relatedServices.map((relatedSlug, index) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link$1, {
-										href: `/hizmetler/${relatedSlug}`,
-										children: getRelatedServiceTitle(relatedSlug)
-									}) }, index))
-								})]
-							}),
-							service.whyChooseUs.length > 0 && /* @__PURE__ */ jsxs("div", {
-								className: "sidebar-card",
-								children: [/* @__PURE__ */ jsx("h3", { children: "Neden Kutup Grup?" }), /* @__PURE__ */ jsx("ul", {
-									className: "why-list",
-									children: service.whyChooseUs.map((reason, index) => /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", {
-										className: "check-icon",
-										children: /* @__PURE__ */ jsx(CheckIcon, {})
-									}), reason] }, index))
-								})]
-							})
-						]
-					})]
-				})
-			})
-		})]
-	}), /* @__PURE__ */ jsx("style", {
-		jsx: true,
-		children: `
-        /* Sub Services Grid (for Category Page) */
-        .sub-services-section {
-          margin-top: var(--spacing-8);
-        }
-        .sub-services-intro {
-          margin-bottom: var(--spacing-8) !important;
-          font-size: 1.05rem !important;
-        }
-        .sub-services-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: var(--spacing-6);
-        }
-        @media (min-width: 640px) {
-          .sub-services-grid {
-            grid-template-columns: 1fr 1fr;
-          }
-        }
-        .sub-service-card {
-          background: white;
-          border: 1px solid var(--border-default);
-          border-radius: 16px;
-          overflow: hidden;
-          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-          display: flex;
-          flex-direction: column;
-          box-shadow: 0 4px 12px rgba(10, 36, 99, 0.02);
-        }
-        .sub-service-card:hover {
-          transform: translateY(-4px);
-          border-color: rgba(16, 185, 129, 0.3);
-          box-shadow: 0 12px 24px rgba(10, 36, 99, 0.06);
-        }
-        .sub-service-image-wrapper {
-          width: 100%;
-          height: 180px;
-          position: relative;
-          overflow: hidden;
-          background: var(--bg-secondary);
-        }
-        .sub-service-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-        .sub-service-card:hover .sub-service-img {
-          transform: scale(1.06);
-        }
-        .sub-service-content-wrap {
-          padding: var(--spacing-5) var(--spacing-6) var(--spacing-6);
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-        }
-        .sub-service-header {
-          display: flex;
-          align-items: center;
-          gap: var(--spacing-4);
-          margin-bottom: var(--spacing-4);
-        }
-        .sub-service-icon {
-          width: 44px;
-          height: 44px;
-          border-radius: 10px;
-          background: rgba(16, 185, 129, 0.1);
-          color: #10B981;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          transition: all 0.3s ease;
-        }
-        .sub-service-card:hover .sub-service-icon {
-          transform: scale(1.08) rotate(2deg);
-        }
-        .sub-service-icon :global(svg) {
-          width: 22px;
-          height: 22px;
-        }
-        .sub-service-header h3 {
-          margin: 0;
-          font-size: 1.15rem;
-          color: var(--color-deep-navy);
-          font-family: var(--font-heading);
-          font-weight: 700;
-        }
-        .sub-service-card p {
-          color: var(--text-secondary);
-          font-size: 0.9rem;
-          line-height: 1.6;
-          margin-bottom: var(--spacing-5);
-          flex: 1;
-        }
-        .sub-service-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          color: #10B981;
-          font-weight: 700;
-          font-size: 0.9rem;
-          text-decoration: none;
-          transition: all 0.2s ease;
-          width: fit-content;
-        }
-        .sub-service-link svg {
-          transition: transform 0.2s ease;
-        }
-        .sub-service-link:hover {
-          color: var(--color-deep-navy);
-        }
-        .sub-service-link:hover svg {
-          transform: translateX(4px);
-        }
-
-        .service-page {
-          margin-top: 80px;
-        }
-
-        .service-hero {
-          background: var(--gradient-subtle);
-          padding: var(--spacing-12) 0 var(--spacing-16);
-          border-bottom: 1px solid var(--border-default);
-          position: relative;
-        }
-
-        .service-hero-layout {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: var(--spacing-10);
-          align-items: center;
-        }
-
-        .service-hero-image {
-          border-radius: 16px;
-          overflow: hidden;
-          box-shadow: 0 20px 40px rgba(10, 36, 99, 0.15);
-          border: 3px solid rgba(62,146,204,0.15);
-        }
-
-        .breadcrumb {
-          margin-bottom: var(--spacing-6);
-          color: var(--text-secondary);
-          font-size: var(--font-size-sm);
-        }
-
-        .breadcrumb a {
-          color: var(--color-arctic-blue);
-        }
-
-        .breadcrumb span {
-          margin: 0 var(--spacing-2);
-        }
-
-        .service-hero-text {
-          text-align: left;
-        }
-
-        .service-icon-wrap {
-          width: 80px;
-          height: 80px;
-          border-radius: 20px;
-          background: linear-gradient(135deg, rgba(62, 146, 204, 0.12), rgba(10, 36, 99, 0.08));
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto var(--spacing-6);
-          color: var(--color-arctic-blue);
-        }
-
-        .service-hero-content h1 {
-          font-size: var(--font-size-h1);
-          color: var(--color-deep-navy);
-          margin-bottom: var(--spacing-6);
-        }
-
-        .service-intro {
-          font-size: var(--font-size-lg);
-          color: var(--text-secondary);
-          line-height: var(--line-height-relaxed);
-          margin-bottom: var(--spacing-8);
-        }
-
-        .service-content {
-          display: grid;
-          grid-template-columns: 1fr 350px;
-          gap: var(--spacing-12);
-        }
-
-        .service-article {
-          max-width: 100%;
-        }
-
-        .content-section {
-          margin-bottom: var(--spacing-12);
-        }
-
-        .content-section h2 {
-          font-size: var(--font-size-h3);
-          color: var(--color-deep-navy);
-          margin-bottom: var(--spacing-6);
-          padding-bottom: var(--spacing-3);
-          border-bottom: 3px solid var(--color-ice-blue);
-        }
-
-        .content-section p {
-          font-size: var(--font-size-base);
-          line-height: var(--line-height-relaxed);
-          color: var(--text-secondary);
-          margin-bottom: var(--spacing-4);
-        }
-
-        .advantages-list, .tech-list, .why-list {
-          list-style: none;
-          padding: 0;
-        }
-
-        .advantages-list li, .why-list li {
-          padding: var(--spacing-3) 0;
-          color: var(--text-secondary);
-          border-bottom: 1px solid var(--border-default);
-          display: flex;
-          align-items: center;
-          gap: var(--spacing-3);
-        }
-
-        .tech-list li {
-          padding: var(--spacing-3) 0;
-          color: var(--text-secondary);
-          border-bottom: 1px solid var(--border-default);
-          padding-left: var(--spacing-4);
-          position: relative;
-        }
-
-        .tech-list li::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: var(--color-arctic-blue);
-        }
-
-        .check-icon {
-          flex-shrink: 0;
-          display: flex;
-          align-items: center;
-        }
-
-        .applications-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-          gap: var(--spacing-4);
-        }
-
-        .application-card {
-          background: var(--bg-secondary);
-          padding: var(--spacing-5);
-          border-radius: var(--radius-base);
-          text-align: center;
-          border: 1px solid var(--border-default);
-          transition: all 0.3s ease;
-        }
-
-        .application-card:hover {
-          border-color: var(--color-arctic-blue);
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(62,146,204,0.1);
-        }
-
-        .app-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: var(--spacing-3);
-          color: var(--color-arctic-blue);
-        }
-
-        .application-card p {
-          font-size: var(--font-size-sm);
-          color: var(--text-primary);
-          margin: 0;
-        }
-
-        .faq-list {
-          display: flex;
-          flex-direction: column;
-          gap: var(--spacing-6);
-        }
-
-        .faq-item {
-          background: var(--bg-secondary);
-          padding: var(--spacing-6);
-          border-radius: var(--radius-base);
-          border-left: 4px solid var(--color-arctic-blue);
-        }
-
-        .faq-item h3 {
-          font-size: var(--font-size-lg);
-          color: var(--color-deep-navy);
-          margin-bottom: var(--spacing-3);
-        }
-
-        .faq-item p {
-          margin: 0;
-        }
-
-        .service-sidebar {
-          position: sticky;
-          top: 100px;
-          align-self: start;
-        }
-
-        .sidebar-card {
-          background: white;
-          border: 2px solid var(--border-default);
-          border-radius: var(--radius-lg);
-          padding: var(--spacing-6);
-          margin-bottom: var(--spacing-6);
-        }
-
-        .sidebar-card h3 {
-          font-size: var(--font-size-h5);
-          color: var(--color-deep-navy);
-          margin-bottom: var(--spacing-4);
-        }
-
-        .sidebar-card p {
-          color: var(--text-secondary);
-          margin-bottom: var(--spacing-4);
-        }
-
-        .related-services {
-          list-style: none;
-          padding: 0;
-        }
-
-        .related-services li {
-          margin-bottom: var(--spacing-3);
-        }
-
-        .related-services a {
-          color: var(--text-primary);
-          display: block;
-          padding: var(--spacing-3);
-          border-radius: var(--radius-sm);
-          transition: background 0.2s ease;
-          font-size: var(--font-size-sm);
-        }
-
-        .related-services a:hover {
-          background: var(--bg-secondary);
-          color: var(--color-arctic-blue);
-        }
-
-        @media (max-width: 1024px) {
-          .service-content {
-            grid-template-columns: 1fr;
-          }
-
-          .service-sidebar {
-            position: static;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .service-hero-layout {
-            grid-template-columns: 1fr;
-            gap: var(--spacing-6);
-          }
-
-          .service-hero-image {
-            order: -1;
-          }
-
-          .service-hero-text {
-            text-align: center;
-          }
-
-          .service-hero-text h1 {
-            font-size: 1.65rem;
-            line-height: 1.25;
-          }
-
-          .service-intro {
-            font-size: 0.95rem;
-          }
-
-          .service-icon-wrap {
-            margin: 0 auto var(--spacing-5);
-          }
-
-          .btn-cta {
-            display: inline-flex;
-            margin: 0 auto;
-          }
-
-          .service-hero {
-            padding: var(--spacing-8) 0 var(--spacing-10);
-          }
-
-          .applications-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .section-content h2 {
-            font-size: 1.35rem;
-          }
-
-          .section-content p {
-            font-size: 0.92rem;
-            line-height: 1.7;
-          }
-
-          .sidebar-card {
-            padding: var(--spacing-5);
-          }
-
-          .breadcrumb {
-            font-size: 0.8rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .service-page {
-            margin-top: 70px;
-          }
-
-          .service-hero {
-            padding: var(--spacing-6) 0 var(--spacing-8);
-          }
-
-          .service-hero-text h1 {
-            font-size: 1.4rem;
-          }
-
-          .service-intro {
-            font-size: 0.9rem;
-          }
-
-          .service-icon-wrap {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-          }
-
-          .section-content {
-            padding: var(--spacing-8) 0;
-          }
-
-          .section-content h2 {
-            font-size: 1.2rem;
-          }
-
-          .application-card {
-            padding: var(--spacing-4);
-          }
-
-          .why-list li {
-            font-size: 0.88rem;
-          }
-        }
-      `
-	})] });
-}
-//#endregion
-//#region src/pages/ServiceDetail.tsx
-function ServiceDetail() {
-	const { slug } = useParams();
-	const decodedSlug = decodeURIComponent(slug || "");
-	if (decodedSlug === "deflektör-tip-ortuleme" || slug === "deflekt%C3%B6r-tip-ortuleme") return /* @__PURE__ */ jsx(Navigate, {
-		to: "/hizmetler/deflektor-tip-ortuleme",
-		replace: true
-	});
-	const service = SERVICES_DATA[decodedSlug];
-	if (!service) return /* @__PURE__ */ jsx(Navigate, {
-		to: "/404",
-		replace: true
-	});
-	const serviceSchema = generateServiceSchema({
-		name: service.title,
-		description: service.metaDescription,
-		url: `https://kutupgrup.com/hizmetler/${service.slug}`
-	});
-	const faqSchema = service.faqs.length > 0 ? generateFAQSchema(service.faqs) : null;
-	const breadcrumbSchema = generateBreadcrumbSchema([
-		{
-			name: "Anasayfa",
-			url: "https://kutupgrup.com"
-		},
-		{
-			name: "Hizmetler",
-			url: "https://kutupgrup.com/hizmetler"
-		},
-		{
-			name: service.title,
-			url: `https://kutupgrup.com/hizmetler/${service.slug}`
-		}
-	]);
-	return /* @__PURE__ */ jsxs(Fragment, { children: [
-		/* @__PURE__ */ jsx(Header, {}),
-		/* @__PURE__ */ jsx("script", {
-			type: "application/ld+json",
-			dangerouslySetInnerHTML: { __html: JSON.stringify(serviceSchema) }
-		}),
-		faqSchema && /* @__PURE__ */ jsx("script", {
-			type: "application/ld+json",
-			dangerouslySetInnerHTML: { __html: JSON.stringify(faqSchema) }
-		}),
-		/* @__PURE__ */ jsx("script", {
-			type: "application/ld+json",
-			dangerouslySetInnerHTML: { __html: JSON.stringify(breadcrumbSchema) }
-		}),
-		/* @__PURE__ */ jsx(ServiceContentClient, { service }),
-		/* @__PURE__ */ jsx(Footer, {})
-	] });
-}
-var contact_module_default = {
-	contactPage: "_contactPage_zjsfs_1",
-	hero: "_hero_zjsfs_7",
-	heroContent: "_heroContent_zjsfs_15",
-	heroTitle: "_heroTitle_zjsfs_21",
-	fadeInUp: "_fadeInUp_zjsfs_1",
-	heroSubtitle: "_heroSubtitle_zjsfs_29",
-	container: "_container_zjsfs_36",
-	contactInfo: "_contactInfo_zjsfs_43",
-	infoCard: "_infoCard_zjsfs_50",
-	infoIcon: "_infoIcon_zjsfs_66",
-	infoTitle: "_infoTitle_zjsfs_71",
-	infoText: "_infoText_zjsfs_78",
-	contentGrid: "_contentGrid_zjsfs_94",
-	sectionTitle: "_sectionTitle_zjsfs_107",
-	formSection: "_formSection_zjsfs_115",
-	contactForm: "_contactForm_zjsfs_122",
-	formGroup: "_formGroup_zjsfs_128",
-	formRow: "_formRow_zjsfs_134",
-	label: "_label_zjsfs_146",
-	required: "_required_zjsfs_152",
-	input: "_input_zjsfs_156",
-	select: "_select_zjsfs_157",
-	textarea: "_textarea_zjsfs_158",
-	inputError: "_inputError_zjsfs_183",
-	errorText: "_errorText_zjsfs_191",
-	checkboxLabel: "_checkboxLabel_zjsfs_202",
-	checkbox: "_checkbox_zjsfs_202",
-	submitButton: "_submitButton_zjsfs_225",
-	successMessage: "_successMessage_zjsfs_247",
-	errorMessage: "_errorMessage_zjsfs_256",
-	mapSection: "_mapSection_zjsfs_266",
-	mapContainer: "_mapContainer_zjsfs_273",
-	workingHours: "_workingHours_zjsfs_279",
-	hoursTitle: "_hoursTitle_zjsfs_286",
-	hoursList: "_hoursList_zjsfs_293",
-	whatsappSection: "_whatsappSection_zjsfs_316",
-	whatsappCard: "_whatsappCard_zjsfs_320",
-	whatsappIcon: "_whatsappIcon_zjsfs_337",
-	whatsappContent: "_whatsappContent_zjsfs_341",
-	whatsappButton: "_whatsappButton_zjsfs_356"
-};
-//#endregion
-//#region src/pages/Contact.tsx
-function ContactPageClient() {
-	const [formData, setFormData] = useState({
-		ad_soyad: "",
-		email: "",
-		telefon: "",
-		konu: "",
-		mesaj: "",
-		kvkk_onay: false
-	});
-	const [errors, setErrors] = useState({});
-	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [submitStatus, setSubmitStatus] = useState("idle");
-	const validateForm = () => {
-		const newErrors = {};
-		if (!formData.ad_soyad.trim()) newErrors.ad_soyad = "Ad Soyad gereklidir";
-		if (!formData.email.trim()) newErrors.email = "E-posta gereklidir";
-		else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Geçerli bir e-posta adresi girin";
-		if (!formData.telefon.trim()) newErrors.telefon = "Telefon gereklidir";
-		else if (!/^[0-9\s\-\+\(\)]{10,}$/.test(formData.telefon)) newErrors.telefon = "Geçerli bir telefon numarası girin";
-		if (!formData.mesaj.trim()) newErrors.mesaj = "Mesaj gereklidir";
-		else if (formData.mesaj.trim().length < 10) newErrors.mesaj = "Mesaj en az 10 karakter olmalıdır";
-		if (!formData.kvkk_onay) newErrors.kvkk_onay = "KVKK metnini onaylamanız gerekmektedir";
-		setErrors(newErrors);
-		return Object.keys(newErrors).length === 0;
-	};
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		if (!validateForm()) return;
-		setIsSubmitting(true);
-		setSubmitStatus("idle");
-		try {
-			const response = await fetch("/api/contact", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(formData)
-			});
-			const data = await response.json();
-			if (response.ok && data.success) {
-				setSubmitStatus("success");
-				setFormData({
-					ad_soyad: "",
-					email: "",
-					telefon: "",
-					konu: "",
-					mesaj: "",
-					kvkk_onay: false
-				});
-				setErrors({});
-			} else {
-				console.error("Form submission failed:", data.message);
-				setSubmitStatus("error");
-			}
-		} catch (error) {
-			console.error("Form submission error:", error);
-			setSubmitStatus("error");
-		} finally {
-			setIsSubmitting(false);
-		}
-	};
-	const handleChange = (e) => {
-		const { name, value, type } = e.target;
-		if (type === "checkbox") {
-			const checked = e.target.checked;
-			setFormData((prev) => ({
-				...prev,
-				[name]: checked
-			}));
-		} else setFormData((prev) => ({
-			...prev,
-			[name]: value
-		}));
-		if (errors[name]) setErrors((prev) => {
-			const newErrors = { ...prev };
-			delete newErrors[name];
-			return newErrors;
-		});
-	};
-	return /* @__PURE__ */ jsxs("div", { children: [
-		/* @__PURE__ */ jsx(Header, {}),
-		/* @__PURE__ */ jsxs("div", {
-			className: contact_module_default.contactPage,
-			children: [/* @__PURE__ */ jsx("section", {
-				className: contact_module_default.hero,
-				children: /* @__PURE__ */ jsxs("div", {
-					className: contact_module_default.heroContent,
-					children: [/* @__PURE__ */ jsx("h1", {
-						className: contact_module_default.heroTitle,
-						children: "İletişime Geçin"
-					}), /* @__PURE__ */ jsx("p", {
-						className: contact_module_default.heroSubtitle,
-						children: "Projenizin kapsamını ve gerekli değerlendirme adımlarını birlikte netleştirelim"
-					})]
-				})
-			}), /* @__PURE__ */ jsxs("div", {
-				className: contact_module_default.container,
-				children: [
-					/* @__PURE__ */ jsxs("section", {
-						className: contact_module_default.contactInfo,
-						children: [
-							/* @__PURE__ */ jsxs("div", {
-								className: contact_module_default.infoCard,
-								children: [
-									/* @__PURE__ */ jsx("div", {
-										className: contact_module_default.infoIcon,
-										children: /* @__PURE__ */ jsxs("svg", {
-											width: "24",
-											height: "24",
-											viewBox: "0 0 24 24",
-											fill: "none",
-											stroke: "currentColor",
-											strokeWidth: "1.5",
-											strokeLinecap: "round",
-											strokeLinejoin: "round",
-											children: [/* @__PURE__ */ jsx("path", { d: "M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z" }), /* @__PURE__ */ jsx("circle", {
-												cx: "12",
-												cy: "10",
-												r: "3"
-											})]
-										})
-									}),
-									/* @__PURE__ */ jsx("h3", {
-										className: contact_module_default.infoTitle,
-										children: "Şirket Bilgileri"
-									}),
-									/* @__PURE__ */ jsxs("div", {
-										className: contact_module_default.infoText,
-										style: {
-											textAlign: "left",
-											width: "100%"
-										},
-										children: [
-											/* @__PURE__ */ jsx("strong", {
-												style: {
-													display: "block",
-													marginBottom: "12px"
-												},
-												children: "KUTUP GRUP İNŞAAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ"
-											}),
-											/* @__PURE__ */ jsxs("div", {
-												style: { marginBottom: "12px" },
-												children: [
-													/* @__PURE__ */ jsx("strong", {
-														style: { color: "var(--color-arctic-blue)" },
-														children: "İstanbul Merkez (Genel Müdürlük):"
-													}),
-													/* @__PURE__ */ jsx("br", {}),
-													"Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul"
-												]
-											}),
-											/* @__PURE__ */ jsxs("div", { children: [
-												/* @__PURE__ */ jsx("strong", {
-													style: { color: "var(--color-arctic-blue)" },
-													children: "Balıkesir Şubesi:"
-												}),
-												/* @__PURE__ */ jsx("br", {}),
-												"Soma Cd. 111A Altıeylül Balıkesir / Türkiye"
-											] })
-										]
-									})
-								]
-							}),
-							/* @__PURE__ */ jsxs("div", {
-								className: contact_module_default.infoCard,
-								children: [
-									/* @__PURE__ */ jsx("div", {
-										className: contact_module_default.infoIcon,
-										children: /* @__PURE__ */ jsx("svg", {
-											width: "24",
-											height: "24",
-											viewBox: "0 0 24 24",
-											fill: "none",
-											stroke: "currentColor",
-											strokeWidth: "1.5",
-											strokeLinecap: "round",
-											strokeLinejoin: "round",
-											children: /* @__PURE__ */ jsx("path", { d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" })
-										})
-									}),
-									/* @__PURE__ */ jsx("h3", {
-										className: contact_module_default.infoTitle,
-										children: "Telefon"
-									}),
-									/* @__PURE__ */ jsx("p", {
-										className: contact_module_default.infoText,
-										children: /* @__PURE__ */ jsx("a", {
-											href: "tel:+905335176609",
-											children: "+90 (533) 517 66 09"
-										})
-									})
-								]
-							}),
-							/* @__PURE__ */ jsxs("div", {
-								className: contact_module_default.infoCard,
-								children: [
-									/* @__PURE__ */ jsx("div", {
-										className: contact_module_default.infoIcon,
-										children: /* @__PURE__ */ jsxs("svg", {
-											width: "24",
-											height: "24",
-											viewBox: "0 0 24 24",
-											fill: "none",
-											stroke: "currentColor",
-											strokeWidth: "1.5",
-											strokeLinecap: "round",
-											strokeLinejoin: "round",
-											children: [/* @__PURE__ */ jsx("path", { d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" }), /* @__PURE__ */ jsx("polyline", { points: "22,6 12,13 2,6" })]
-										})
-									}),
-									/* @__PURE__ */ jsx("h3", {
-										className: contact_module_default.infoTitle,
-										children: "E-posta"
-									}),
-									/* @__PURE__ */ jsx("p", {
-										className: contact_module_default.infoText,
-										children: /* @__PURE__ */ jsx("a", {
-											href: "mailto:info@kutupgrup.com",
-											children: "info@kutupgrup.com"
-										})
-									})
-								]
-							})
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: contact_module_default.contentGrid,
-						children: [/* @__PURE__ */ jsxs("div", {
-							className: contact_module_default.formSection,
-							children: [
-								/* @__PURE__ */ jsx("h2", {
-									className: contact_module_default.sectionTitle,
-									children: "Bize Mesaj Gönderin"
-								}),
-								submitStatus === "success" && /* @__PURE__ */ jsx("div", {
-									className: contact_module_default.successMessage,
-									children: "✓ Mesajınız alınmıştır. Gerekli görülürse iletişim bilgileriniz üzerinden dönüş yapılacaktır."
-								}),
-								submitStatus === "error" && /* @__PURE__ */ jsx("div", {
-									className: contact_module_default.errorMessage,
-									children: "✗ Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya telefon ile iletişime geçin."
-								}),
-								/* @__PURE__ */ jsxs("form", {
-									onSubmit: handleSubmit,
-									className: contact_module_default.contactForm,
-									children: [
-										/* @__PURE__ */ jsxs("div", {
-											className: contact_module_default.formGroup,
-											children: [
-												/* @__PURE__ */ jsxs("label", {
-													htmlFor: "ad_soyad",
-													className: contact_module_default.label,
-													children: ["Ad Soyad ", /* @__PURE__ */ jsx("span", {
-														className: contact_module_default.required,
-														children: "*"
-													})]
-												}),
-												/* @__PURE__ */ jsx("input", {
-													type: "text",
-													id: "ad_soyad",
-													name: "ad_soyad",
-													value: formData.ad_soyad,
-													onChange: handleChange,
-													className: `${contact_module_default.input} ${errors.ad_soyad ? contact_module_default.inputError : ""}`,
-													placeholder: "Adınız ve Soyadınız"
-												}),
-												errors.ad_soyad && /* @__PURE__ */ jsx("span", {
-													className: contact_module_default.errorText,
-													children: errors.ad_soyad
-												})
-											]
-										}),
-										/* @__PURE__ */ jsxs("div", {
-											className: contact_module_default.formRow,
-											children: [/* @__PURE__ */ jsxs("div", {
-												className: contact_module_default.formGroup,
-												children: [
-													/* @__PURE__ */ jsxs("label", {
-														htmlFor: "email",
-														className: contact_module_default.label,
-														children: ["E-posta ", /* @__PURE__ */ jsx("span", {
-															className: contact_module_default.required,
-															children: "*"
-														})]
-													}),
-													/* @__PURE__ */ jsx("input", {
-														type: "email",
-														id: "email",
-														name: "email",
-														value: formData.email,
-														onChange: handleChange,
-														className: `${contact_module_default.input} ${errors.email ? contact_module_default.inputError : ""}`,
-														placeholder: "ornek@email.com"
-													}),
-													errors.email && /* @__PURE__ */ jsx("span", {
-														className: contact_module_default.errorText,
-														children: errors.email
-													})
-												]
-											}), /* @__PURE__ */ jsxs("div", {
-												className: contact_module_default.formGroup,
-												children: [
-													/* @__PURE__ */ jsxs("label", {
-														htmlFor: "telefon",
-														className: contact_module_default.label,
-														children: ["Telefon ", /* @__PURE__ */ jsx("span", {
-															className: contact_module_default.required,
-															children: "*"
-														})]
-													}),
-													/* @__PURE__ */ jsx("input", {
-														type: "tel",
-														id: "telefon",
-														name: "telefon",
-														value: formData.telefon,
-														onChange: handleChange,
-														className: `${contact_module_default.input} ${errors.telefon ? contact_module_default.inputError : ""}`,
-														placeholder: "+90 5XX XXX XX XX"
-													}),
-													errors.telefon && /* @__PURE__ */ jsx("span", {
-														className: contact_module_default.errorText,
-														children: errors.telefon
-													})
-												]
-											})]
-										}),
-										/* @__PURE__ */ jsxs("div", {
-											className: contact_module_default.formGroup,
-											children: [/* @__PURE__ */ jsx("label", {
-												htmlFor: "konu",
-												className: contact_module_default.label,
-												children: "Konu"
-											}), /* @__PURE__ */ jsxs("select", {
-												id: "konu",
-												name: "konu",
-												value: formData.konu,
-												onChange: handleChange,
-												className: contact_module_default.select,
-												children: [
-													/* @__PURE__ */ jsx("option", {
-														value: "",
-														children: "Konu Seçiniz"
-													}),
-													/* @__PURE__ */ jsx("option", {
-														value: "teklif",
-														children: "Teklif Talebi"
-													}),
-													/* @__PURE__ */ jsx("option", {
-														value: "genel",
-														children: "Genel Bilgi"
-													}),
-													/* @__PURE__ */ jsx("option", {
-														value: "proje",
-														children: "Proje Danışmanlığı"
-													}),
-													/* @__PURE__ */ jsx("option", {
-														value: "diger",
-														children: "Diğer"
-													})
-												]
-											})]
-										}),
-										/* @__PURE__ */ jsxs("div", {
-											className: contact_module_default.formGroup,
-											children: [
-												/* @__PURE__ */ jsxs("label", {
-													htmlFor: "mesaj",
-													className: contact_module_default.label,
-													children: ["Mesajınız ", /* @__PURE__ */ jsx("span", {
-														className: contact_module_default.required,
-														children: "*"
-													})]
-												}),
-												/* @__PURE__ */ jsx("textarea", {
-													id: "mesaj",
-													name: "mesaj",
-													value: formData.mesaj,
-													onChange: handleChange,
-													rows: 6,
-													className: `${contact_module_default.textarea} ${errors.mesaj ? contact_module_default.inputError : ""}`,
-													placeholder: "Projeniz hakkında detaylı bilgi veriniz..."
-												}),
-												errors.mesaj && /* @__PURE__ */ jsx("span", {
-													className: contact_module_default.errorText,
-													children: errors.mesaj
-												})
-											]
-										}),
-										/* @__PURE__ */ jsxs("div", {
-											className: contact_module_default.formGroup,
-											children: [/* @__PURE__ */ jsxs("label", {
-												className: contact_module_default.checkboxLabel,
-												children: [/* @__PURE__ */ jsx("input", {
-													type: "checkbox",
-													name: "kvkk_onay",
-													checked: formData.kvkk_onay,
-													onChange: handleChange,
-													className: contact_module_default.checkbox
-												}), /* @__PURE__ */ jsxs("span", { children: [
-													/* @__PURE__ */ jsx("a", {
-														href: "/gizlilik-politikasi",
-														target: "_blank",
-														rel: "noopener noreferrer",
-														children: "KVKK Aydınlatma Metni"
-													}),
-													"'ni okudum, kabul ediyorum. ",
-													/* @__PURE__ */ jsx("span", {
-														className: contact_module_default.required,
-														children: "*"
-													})
-												] })]
-											}), errors.kvkk_onay && /* @__PURE__ */ jsx("span", {
-												className: contact_module_default.errorText,
-												children: errors.kvkk_onay
-											})]
-										}),
-										/* @__PURE__ */ jsx("button", {
-											type: "submit",
-											disabled: isSubmitting,
-											className: contact_module_default.submitButton,
-											children: isSubmitting ? "Gönderiliyor..." : "Mesaj Gönder"
-										})
-									]
-								})
-							]
-						}), /* @__PURE__ */ jsxs("div", {
-							className: contact_module_default.mapSection,
-							children: [
-								/* @__PURE__ */ jsx("h2", {
-									className: contact_module_default.sectionTitle,
-									children: "Konum"
-								}),
-								/* @__PURE__ */ jsx("div", {
-									className: contact_module_default.mapContainer,
-									children: /* @__PURE__ */ jsx("iframe", {
-										src: "https://maps.google.com/maps?q=Levent%20199,%20Esentepe%20Mahallesi,%20%C5%9Ei%C5%9Fli,%20%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed",
-										width: "100%",
-										height: "400",
-										style: { border: 0 },
-										allowFullScreen: true,
-										loading: "lazy",
-										referrerPolicy: "no-referrer-when-downgrade",
-										title: "Kutup Grup Konum"
-									})
-								}),
-								/* @__PURE__ */ jsxs("div", {
-									className: contact_module_default.workingHours,
-									children: [/* @__PURE__ */ jsx("h3", {
-										className: contact_module_default.hoursTitle,
-										children: "Çalışma Saatleri"
-									}), /* @__PURE__ */ jsxs("ul", {
-										className: contact_module_default.hoursList,
-										children: [
-											/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", { children: "Pazartesi - Cuma:" }), /* @__PURE__ */ jsx("strong", { children: "09:00 - 18:00" })] }),
-											/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", { children: "Cumartesi:" }), /* @__PURE__ */ jsx("strong", { children: "Randevuyla" })] }),
-											/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", { children: "Pazar:" }), /* @__PURE__ */ jsx("strong", { children: "Kapalı" })] })
-										]
-									})]
-								})
-							]
-						})]
-					}),
-					/* @__PURE__ */ jsx("section", {
-						className: contact_module_default.whatsappSection,
-						children: /* @__PURE__ */ jsxs("div", {
-							className: contact_module_default.whatsappCard,
-							children: [
-								/* @__PURE__ */ jsx("div", {
-									className: contact_module_default.whatsappIcon,
-									children: /* @__PURE__ */ jsx("svg", {
-										width: "24",
-										height: "24",
-										viewBox: "0 0 24 24",
-										fill: "none",
-										stroke: "currentColor",
-										strokeWidth: "1.5",
-										strokeLinecap: "round",
-										strokeLinejoin: "round",
-										children: /* @__PURE__ */ jsx("path", { d: "M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" })
-									})
-								}),
-								/* @__PURE__ */ jsxs("div", {
-									className: contact_module_default.whatsappContent,
-									children: [/* @__PURE__ */ jsx("h3", { children: "Hızlı İletişim için WhatsApp" }), /* @__PURE__ */ jsx("p", { children: "Acil durumlar için WhatsApp üzerinden bize ulaşabilirsiniz" })]
-								}),
-								/* @__PURE__ */ jsx("a", {
-									href: "https://wa.me/905335176609",
-									target: "_blank",
-									rel: "noopener noreferrer",
-									className: contact_module_default.whatsappButton,
-									children: "WhatsApp ile İletişim"
-								})
-							]
-						})
-					})
-				]
-			})]
-		}),
-		/* @__PURE__ */ jsx(Footer, {})
-	] });
-}
-//#endregion
-//#region src/pages/References.tsx
-function ReferanslarPageClient() {
-	return /* @__PURE__ */ jsxs("div", {
-		className: "maintenance-page",
-		children: [
-			/* @__PURE__ */ jsx(Header, {}),
-			/* @__PURE__ */ jsxs("main", {
-				className: "maintenance-main",
-				children: [
-					/* @__PURE__ */ jsx("div", { className: "maintenance-bg-grid" }),
-					/* @__PURE__ */ jsx("div", { className: "maintenance-glow-1" }),
-					/* @__PURE__ */ jsx("div", { className: "maintenance-glow-2" }),
-					/* @__PURE__ */ jsx("div", {
-						className: "maintenance-container",
-						children: /* @__PURE__ */ jsxs("div", {
-							className: "maintenance-card",
-							children: [
-								/* @__PURE__ */ jsx("div", {
-									className: "maintenance-icon-wrapper",
-									children: /* @__PURE__ */ jsx("svg", {
-										width: "48",
-										height: "48",
-										viewBox: "0 0 24 24",
-										fill: "none",
-										stroke: "currentColor",
-										strokeWidth: "1.5",
-										strokeLinecap: "round",
-										strokeLinejoin: "round",
-										children: /* @__PURE__ */ jsx("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" })
-									})
-								}),
-								/* @__PURE__ */ jsx("p", {
-									className: "maintenance-eyebrow",
-									children: "Yapım Aşamasında"
-								}),
-								/* @__PURE__ */ jsx("h1", {
-									className: "maintenance-title",
-									children: "Referanslarımız Yakında Burada"
-								}),
-								/* @__PURE__ */ jsx("p", {
-									className: "maintenance-description",
-									children: "Endüstriyel dağcılık ve jeoteknik saha çalışmalarımıza ait izinli proje portföyü ve vaka analizleri hazırlanıyor. Hizmet kapsamı ve proje ihtiyaçlarınız hakkında bilgi almak için bizimle iletişime geçebilirsiniz."
-								}),
-								/* @__PURE__ */ jsxs("div", {
-									className: "maintenance-buttons",
-									children: [/* @__PURE__ */ jsx(Link$1, {
-										href: "/iletisim",
-										className: "btn btn-primary",
-										children: "Bizimle İletişime Geçin"
-									}), /* @__PURE__ */ jsx(Link$1, {
-										href: "/",
-										className: "btn btn-secondary",
-										children: "Anasayfaya Dön"
-									})]
-								})
-							]
-						})
-					})
-				]
-			}),
-			/* @__PURE__ */ jsx(Footer, {}),
-			/* @__PURE__ */ jsx("style", {
-				jsx: true,
-				children: `
-                .maintenance-page {
-                    min-height: 100vh;
-                    display: flex;
-                    flex-direction: column;
-                    background: #030712;
-                    overflow: hidden;
-                    position: relative;
-                }
-
-                .maintenance-main {
-                    flex: 1;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: var(--spacing-16) 0;
-                    margin-top: 80px;
-                    position: relative;
-                }
-
-                .maintenance-bg-grid {
-                    position: absolute;
-                    inset: 0;
-                    background-image:
-                        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-                    background-size: 40px 40px;
-                    pointer-events: none;
-                }
-
-                .maintenance-glow-1 {
-                    position: absolute;
-                    top: 20%;
-                    left: 10%;
-                    width: 400px;
-                    height: 400px;
-                    background: radial-gradient(circle, rgba(62, 146, 204, 0.1) 0%, transparent 70%);
-                    pointer-events: none;
-                }
-
-                .maintenance-glow-2 {
-                    position: absolute;
-                    bottom: 20%;
-                    right: 10%;
-                    width: 500px;
-                    height: 500px;
-                    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
-                    pointer-events: none;
-                }
-
-                .maintenance-container {
-                    max-width: 700px;
-                    width: 100%;
-                    padding: 0 var(--spacing-6);
-                    position: relative;
-                    z-index: 2;
-                }
-
-                .maintenance-card {
-                    background: rgba(255, 255, 255, 0.02);
-                    backdrop-filter: blur(20px);
-                    -webkit-backdrop-filter: blur(20px);
-                    border: 1px solid rgba(255, 255, 255, 0.05);
-                    border-radius: 24px;
-                    padding: var(--spacing-10) var(--spacing-8);
-                    text-align: center;
-                    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-                }
-
-                .maintenance-icon-wrapper {
-                    width: 90px;
-                    height: 90px;
-                    border-radius: 22px;
-                    background: linear-gradient(135deg, rgba(62, 146, 204, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%);
-                    color: var(--color-arctic-blue);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin: 0 auto var(--spacing-6);
-                    border: 1px solid rgba(62, 146, 204, 0.2);
-                    box-shadow: 0 10px 25px rgba(62, 146, 204, 0.1);
-                    animation: float-anim 4s ease-in-out infinite;
-                }
-
-                @keyframes float-anim {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-8px); }
-                }
-
-                .maintenance-eyebrow {
-                    font-size: 0.85rem;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 0.18em;
-                    color: var(--color-arctic-blue);
-                    margin-bottom: var(--spacing-3);
-                }
-
-                .maintenance-title {
-                    font-size: 2.2rem;
-                    color: white;
-                    margin-bottom: var(--spacing-4);
-                    font-family: var(--font-heading);
-                    font-weight: 800;
-                    letter-spacing: -0.02em;
-                    line-height: 1.25;
-                }
-
-                .maintenance-description {
-                    font-size: 1rem;
-                    color: rgba(255, 255, 255, 0.6);
-                    line-height: 1.6;
-                    margin-bottom: var(--spacing-8);
-                    max-width: 580px;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-
-                .maintenance-buttons {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: var(--spacing-4);
-                    flex-wrap: wrap;
-                }
-
-                .btn {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 12px 28px;
-                    border-radius: var(--radius-full);
-                    font-weight: 700;
-                    font-size: 0.9rem;
-                    font-family: var(--font-heading);
-                    text-decoration: none;
-                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-                    border: 1px solid transparent;
-                }
-
-                .btn-primary {
-                    background: linear-gradient(135deg, var(--color-deep-navy) 0%, var(--color-arctic-blue) 100%);
-                    color: white;
-                    box-shadow: 0 4px 15px rgba(62, 146, 204, 0.2);
-                }
-                .btn-primary:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 25px rgba(62, 146, 204, 0.35);
-                }
-
-                .btn-secondary {
-                    background: rgba(255, 255, 255, 0.05);
-                    color: white;
-                    border-color: rgba(255, 255, 255, 0.1);
-                }
-                .btn-secondary:hover {
-                    background: rgba(255, 255, 255, 0.08);
-                    transform: translateY(-2px);
-                }
-
-                @media (max-width: 640px) {
-                    .maintenance-title {
-                        font-size: 1.8rem;
-                    }
-                    .maintenance-card {
-                        padding: var(--spacing-8) var(--spacing-5);
-                    }
-                    .maintenance-buttons {
-                        flex-direction: column;
-                        width: 100%;
-                    }
-                    .btn {
-                        width: 100%;
-                    }
-                }
-            `
-			})
-		]
-	});
-}
-var sss_module_default = {
-	sssPage: "_sssPage_rsv0q_1",
-	hero: "_hero_rsv0q_6",
-	heroContent: "_heroContent_rsv0q_14",
-	heroTitle: "_heroTitle_rsv0q_20",
-	fadeInUp: "_fadeInUp_rsv0q_1",
-	heroSubtitle: "_heroSubtitle_rsv0q_28",
-	container: "_container_rsv0q_34",
-	filterSection: "_filterSection_rsv0q_41",
-	filterButtons: "_filterButtons_rsv0q_46",
-	filterButton: "_filterButton_rsv0q_46",
-	filterButtonActive: "_filterButtonActive_rsv0q_71",
-	filterCount: "_filterCount_rsv0q_77",
-	faqList: "_faqList_rsv0q_83",
-	faqItem: "_faqItem_rsv0q_90",
-	faqItemOpen: "_faqItemOpen_rsv0q_104",
-	faqQuestion: "_faqQuestion_rsv0q_109",
-	faqQuestionText: "_faqQuestionText_rsv0q_128",
-	faqCategory: "_faqCategory_rsv0q_135",
-	faqIcon: "_faqIcon_rsv0q_147",
-	faqAnswer: "_faqAnswer_rsv0q_166",
-	ctaSection: "_ctaSection_rsv0q_184",
-	ctaCard: "_ctaCard_rsv0q_188",
-	ctaTitle: "_ctaTitle_rsv0q_195",
-	ctaText: "_ctaText_rsv0q_202",
-	ctaButton: "_ctaButton_rsv0q_208"
-};
-//#endregion
-//#region src/pages/FAQ.tsx
-var FAQS = [
-	{
-		id: 1,
-		category: "Genel",
-		question: "Kutup Grup hangi hizmetleri sunuyor?",
-		answer: "Endüstriyel dağcılık, iple erişim, yüksek yapı çalışmaları ve jeoteknik uygulamalarla ilgili hizmet başlıklarını Hizmetler sayfasında bulabilirsiniz. Bir işin uygulanabilirliği; yapı, görev, erişim ve saha koşulları incelendikten sonra netleştirilir."
-	},
-	{
-		id: 2,
-		category: "Genel",
-		question: "Hangi bölgelerde hizmet veriyorsunuz?",
-		answer: "Hizmet alanı; projenin kapsamı, saha koşulları ve ekip planına göre belirlenir. İletişim sayfasındaki bilgilerle yapı, görev ve konum bilgisini paylaşarak ön değerlendirme başlatabilirsiniz."
-	},
-	{
-		id: 3,
-		category: "Sertifikasyon",
-		question: "IRATA nedir ve neden önemlidir?",
-		answer: "IRATA (Industrial Rope Access Trade Association), endüstriyel iple erişim alanında eğitim, yetkinlik ve uygulama çerçevesi sunan uluslararası bir kuruluştur. Bir şirketin veya personelin güncel belge durumu ayrıca doğrulanmalıdır; sertifika ifadesi tek başına saha risk değerlendirmesinin yerine geçmez."
-	},
-	{
-		id: 4,
-		category: "Sertifikasyon",
-		question: "SPRAT ve IRATA arasındaki fark nedir?",
-		answer: "SPRAT (Society of Professional Rope Access Technicians) ve IRATA, iple erişim alanında eğitim ve uygulama çerçeveleri sunan iki ayrı kuruluştur. Kapsam, seviye ve güncel belge durumu personel ve proje bazında doğrulanmalıdır."
-	},
-	{
-		id: 5,
-		category: "Güvenlik",
-		question: "İş güvenliği önlemleriniz nelerdir?",
-		answer: "İşin kapsamına göre risk değerlendirmesi, iş metodu, ekipman kontrolü, çalışma alanının ve çevrenin korunması, iletişim düzeni ve kurtarma planı ele alınır. Gerekli yetkinlik ve belgeler proje öncesi doğrulanır; tek bir standart veya sertifika her saha için yeterli kabul edilmez."
-	},
-	{
-		id: 6,
-		category: "Güvenlik",
-		question: "Proje öncesi hangi iş güvenliği bilgileri paylaşılır?",
-		answer: "İşin niteliğine göre görev, sorumluluk, yetkinlik, ekipman, saha kuralları, sigorta ve gerekli belge kapsamı teklif veya sözleşme öncesi karşılıklı olarak netleştirilir. Kesin bilgiler proje özelindeki kayıtlarla doğrulanmalıdır."
-	},
-	{
-		id: 7,
-		category: "Proje Süreci",
-		question: "Proje süreci nasıl işliyor?",
-		answer: "Süreç genellikle ilk görüşme ve bilgi toplama, saha keşfi veya teknik inceleme, risk ve yöntem değerlendirmesi, kapsamı açık teklif, sözleşme, saha uygulaması, kontrol ve teslim kayıtlarından oluşur. Bakım veya takip ihtiyacı varsa kapsamı ayrıca yazılı olarak belirlenir."
-	},
-	{
-		id: 8,
-		category: "Proje Süreci",
-		question: "Teklif almak için ne yapmam gerekiyor?",
-		answer: "İletişim sayfasındaki form, telefon veya e-posta üzerinden yapı, konum, görev, erişim ve beklenen çıktı hakkında temel bilgileri paylaşabilirsiniz. Teklif süresi; kapsamın açıklığı, saha incelemesi ve gerekli teknik değerlendirmeye göre netleştirilir."
-	},
-	{
-		id: 9,
-		category: "Hizmet Detayları",
-		question: "Cephe temizliği ne kadar sürer?",
-		answer: "Cephe temizliği süresi binanın yüksekliği, toplam alanı, yüzey ve kirlilik türü, erişim yöntemi, çevre güvenliği ve hava koşullarına göre değişir. Takvim, saha bilgileri ve iş kapsamı incelendikten sonra gerçekçi biçimde belirlenir."
-	},
-	{
-		id: 10,
-		category: "Hizmet Detayları",
-		question: "Kaya bariyeri fiyatı nasıl hesaplanır?",
-		answer: "Kaya bariyeri maliyeti; kaynak alan, hareket yolu, tasarım senaryosu, gerekli enerji kapasitesi, güzergâh uzunluğu, zemin ve ankraj koşulları, erişim ve montaj gereklilikleriyle birlikte değerlendirilir. Kesin kapsam ve fiyat için saha verisi gerekir; ilgili ürün standardı üretici ve tasarım dokümanlarından doğrulanmalıdır."
-	},
-	{
-		id: 11,
-		category: "Hizmet Detayları",
-		question: "Rüzgar türbini bakımı ne sıklıkla yapılmalıdır?",
-		answer: "Rüzgâr türbinlerinde bakım periyodu; üretici talimatları, işletme koşulları, ekipmanın durumu ve saha riskine göre belirlenir. Fırtına veya olağan dışı olay sonrasında ek kontrol gerekebilir. Takvim ve bakım kapsamı proje dokümanında açıkça yazılmalıdır."
-	},
-	{
-		id: 12,
-		category: "Hizmet Detayları",
-		question: "Şev örtüleme nedir ve neden gereklidir?",
-		answer: "Şev örtüleme, eğimli arazilerde yüzey erozyonunu ve gevşek malzemenin hareketini sınırlamaya veya yönlendirmeye yardımcı olabilen jeoteknik bir uygulamadır. Ağ, ankraj, drenaj ve diğer önlemlerin seçimi; yamaç geometrisi, zemin, su ve beklenen hareket türü incelenerek yapılır. Her sahada kalan risk ayrıca değerlendirilir."
-	},
-	{
-		id: 13,
-		category: "Teknik",
-		question: "Hangi ekipmanları kullanıyorsunuz?",
-		answer: "Ekipman seçimi; işin türü, erişim yöntemi, yükler, çevre, kullanıcı uyumu ve üretici talimatlarına göre yapılır. İp, bağlantı elemanı, düşüş durdurma veya kurtarma ekipmanı için uygunluk, kullanım ömrü, kontrol ve kayıt gereklilikleri proje öncesi doğrulanmalıdır."
-	},
-	{
-		id: 14,
-		category: "Teknik",
-		question: "ATEX bölgelerinde çalışabiliyor musunuz?",
-		answer: "ATEX riski bulunan alanlarda işe başlamadan önce bölge sınıflandırması, izin sistemi, gaz ölçümü, ekipman uygunluğu, statik elektrik ve acil durum prosedürleri yetkili işveren ve uzmanlarla birlikte doğrulanmalıdır. Çalışma yetkisi, personel ve ekipman kapsamı proje özelinde yazılı olarak teyit edilmeden varsayılmamalıdır."
-	},
-	{
-		id: 15,
-		category: "Fiyatlandırma",
-		question: "Fiyatlarınız neden farklılık gösterir?",
-		answer: "Her proje kendine özgüdür. Fiyatlandırmada çalışma yüksekliği, tehlike ve erişilebilirlik, malzeme, ekipman, çevre güvenliği, proje süresi ve mevsimsel koşullar gibi unsurlar etkili olabilir. Kapsam netleşmeden verilen birim fiyat, gerçek işi ve kalan riskleri temsil etmeyebilir."
-	},
-	{
-		id: 16,
-		category: "Fiyatlandırma",
-		question: "Ödeme koşullarınız nedir?",
-		answer: "Ödeme koşulları; işin kapsamı, malzeme ve ekipman gereklilikleri, süre ve tarafların mutabakatına göre teklif ve sözleşmede yazılı olarak belirlenir. Avans, hakediş, teslim ve faturalama koşulları imza öncesi açık olmalıdır."
-	},
-	{
-		id: 17,
-		category: "Garanti",
-		question: "Garanti ve bakım koşulları nasıl belirlenir?",
-		answer: "Garanti ve bakım koşulları; işin türü, kullanılan malzeme, üretici şartları, montaj ve teslim kapsamı, kontrol sıklığı ve tarafların sözleşmesine göre belirlenir. Süre, kapsam, istisnalar ve bakım sorumlulukları yazılı belgede açıkça yer almalıdır."
-	},
-	{
-		id: 18,
-		category: "Acil Durum",
-		question: "Acil durumlar için nasıl ulaşabilirim?",
-		answer: "Acil durumlarda önce saha ve işverenin mevcut acil durum prosedürü, yerel acil servisler ve yetkili sorumlular devreye alınmalıdır. İletişim, müdahale kapsamı, ulaşılabilir kişiler ve olası yanıt süresi proje öncesi hazırlanan plana göre yazılı olarak netleştirilmelidir."
-	}
-];
-var CATEGORIES = [
-	"Tümü",
-	"Genel",
-	"Sertifikasyon",
-	"Güvenlik",
-	"Proje Süreci",
-	"Hizmet Detayları",
-	"Teknik",
-	"Fiyatlandırma",
-	"Garanti",
-	"Acil Durum"
-];
-function SSSPageClient() {
-	const [selectedCategory, setSelectedCategory] = useState("Tümü");
-	const [openId, setOpenId] = useState(null);
-	const filteredFAQs = selectedCategory === "Tümü" ? FAQS : FAQS.filter((faq) => faq.category === selectedCategory);
-	const toggleFAQ = (id) => {
-		setOpenId(openId === id ? null : id);
-	};
-	const faqSchema = generateFAQSchema(FAQS.map((faq) => ({
-		question: faq.question,
-		answer: faq.answer
-	})));
-	return /* @__PURE__ */ jsxs("div", {
-		className: sss_module_default.sssPage,
-		children: [
-			/* @__PURE__ */ jsx(StructuredData, { data: faqSchema }),
-			/* @__PURE__ */ jsx("section", {
-				className: sss_module_default.hero,
-				children: /* @__PURE__ */ jsxs("div", {
-					className: sss_module_default.heroContent,
-					children: [/* @__PURE__ */ jsx("h1", {
-						className: sss_module_default.heroTitle,
-						children: "Sıkça Sorulan Sorular"
-					}), /* @__PURE__ */ jsx("p", {
-						className: sss_module_default.heroSubtitle,
-						children: "Kutup Grup hizmetleri hakkında merak ettikleriniz"
-					})]
-				})
-			}),
-			/* @__PURE__ */ jsxs("div", {
-				className: sss_module_default.container,
-				children: [
-					/* @__PURE__ */ jsxs("section", {
-						className: sss_module_default.filterSection,
-						children: [/* @__PURE__ */ jsx("div", {
-							className: sss_module_default.filterButtons,
-							children: CATEGORIES.map((category) => /* @__PURE__ */ jsx("button", {
-								onClick: () => setSelectedCategory(category),
-								className: `${sss_module_default.filterButton} ${selectedCategory === category ? sss_module_default.filterButtonActive : ""}`,
-								children: category
-							}, category))
-						}), /* @__PURE__ */ jsxs("p", {
-							className: sss_module_default.filterCount,
-							children: [filteredFAQs.length, " soru görüntüleniyor"]
-						})]
-					}),
-					/* @__PURE__ */ jsx("section", {
-						className: sss_module_default.faqList,
-						children: filteredFAQs.map((faq) => /* @__PURE__ */ jsxs("div", {
-							className: `${sss_module_default.faqItem} ${openId === faq.id ? sss_module_default.faqItemOpen : ""}`,
-							children: [/* @__PURE__ */ jsxs("button", {
-								className: sss_module_default.faqQuestion,
-								onClick: () => toggleFAQ(faq.id),
-								children: [/* @__PURE__ */ jsxs("span", {
-									className: sss_module_default.faqQuestionText,
-									children: [/* @__PURE__ */ jsx("span", {
-										className: sss_module_default.faqCategory,
-										children: faq.category
-									}), faq.question]
-								}), /* @__PURE__ */ jsx("span", {
-									className: sss_module_default.faqIcon,
-									children: openId === faq.id ? "−" : "+"
-								})]
-							}), /* @__PURE__ */ jsx("div", {
-								className: sss_module_default.faqAnswer,
-								children: /* @__PURE__ */ jsx("p", { children: faq.answer })
-							})]
-						}, faq.id))
-					}),
-					/* @__PURE__ */ jsx("section", {
-						className: sss_module_default.ctaSection,
-						children: /* @__PURE__ */ jsxs("div", {
-							className: sss_module_default.ctaCard,
-							children: [
-								/* @__PURE__ */ jsx("h2", {
-									className: sss_module_default.ctaTitle,
-									children: "Sorunuza Cevap Bulamadınız mı?"
-								}),
-								/* @__PURE__ */ jsx("p", {
-									className: sss_module_default.ctaText,
-									children: "Bizimle iletişime geçin, size yardımcı olmaktan mutluluk duyarız"
-								}),
-								/* @__PURE__ */ jsx(Link$1, {
-									href: "/iletisim",
-									className: sss_module_default.ctaButton,
-									children: "İletişime Geçin"
-								})
-							]
-						})
-					})
-				]
-			})
-		]
-	});
-}
-var legal_module_default = {
-	legalPage: "_legalPage_1qufr_1",
-	hero: "_hero_1qufr_6",
-	heroContent: "_heroContent_1qufr_14",
-	heroTitle: "_heroTitle_1qufr_20",
-	heroSubtitle: "_heroSubtitle_1qufr_27",
-	container: "_container_1qufr_33",
-	content: "_content_1qufr_39",
-	section: "_section_1qufr_46",
-	contactBox: "_contactBox_1qufr_117",
-	warningBox: "_warningBox_1qufr_134",
-	tableContainer: "_tableContainer_1qufr_148",
-	table: "_table_1qufr_148",
-	buttonGroup: "_buttonGroup_1qufr_188",
-	primaryButton: "_primaryButton_1qufr_195"
-};
-//#endregion
-//#region src/pages/Privacy.tsx
-function GizlilikPolitikasiClient() {
-	return /* @__PURE__ */ jsxs("div", {
-		className: legal_module_default.legalPage,
-		children: [/* @__PURE__ */ jsx("section", {
-			className: legal_module_default.hero,
-			children: /* @__PURE__ */ jsxs("div", {
-				className: legal_module_default.heroContent,
-				children: [/* @__PURE__ */ jsx("h1", {
-					className: legal_module_default.heroTitle,
-					children: "Gizlilik Politikası ve KVKK"
-				}), /* @__PURE__ */ jsx("p", {
-					className: legal_module_default.heroSubtitle,
-					children: "Son Güncelleme: 15 Şubat 2026"
-				})]
-			})
-		}), /* @__PURE__ */ jsx("div", {
-			className: legal_module_default.container,
-			children: /* @__PURE__ */ jsxs("article", {
-				className: legal_module_default.content,
-				children: [
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "1. Giriş" }), /* @__PURE__ */ jsx("p", { children: "Kutup Grup olarak, kişisel verilerinizin gizliliğini ve güvenliğini korumayı en önemli önceliklerimiz arasında tutmaktayız. Bu Gizlilik Politikası, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "2. Veri Sorumlusu" }),
-							/* @__PURE__ */ jsx("p", { children: "KVKK kapsamında veri sorumlusu Kutup Grup olup, toplanan kişisel verilerinizin işlenme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan taraf Kutup Grup'tur." }),
-							/* @__PURE__ */ jsxs("div", {
-								className: legal_module_default.contactBox,
-								children: [
-									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Adres:" }), " Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul"] }),
-									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " kvkk@kutupgrup.com"] }),
-									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })
-								]
-							})
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "3. Toplanan Kişisel Veriler" }),
-							/* @__PURE__ */ jsx("p", { children: "Şirketimiz tarafından toplanan kişisel veriler aşağıdaki kategorilerde sınıflandırılmaktadır:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Kimlik Bilgileri:" }), " Ad, soyad, T.C. kimlik numarası (yasal zorunluluk halinde)"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İletişim Bilgileri:" }), " Telefon numarası, e-posta adresi, açık adres"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Müşteri İşlem Bilgileri:" }), " Talep edilen hizmet bilgileri, proje detayları, teklif bilgileri"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İşlem Güvenliği Bilgileri:" }), " IP adresi, çerez verileri, oturum kayıtları"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Finansal Bilgiler:" }), " Fatura bilgileri, ödeme bilgileri (ödeme işlemcisi üzerinden)"] })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "4. Kişisel Verilerin İşlenme Amaçları" }),
-							/* @__PURE__ */ jsx("p", { children: "Toplanan kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsx("li", { children: "Hizmet taleplerinizi değerlendirmek ve teklif sunmak" }),
-								/* @__PURE__ */ jsx("li", { children: "Sözleşme süreçlerini yürütmek ve hizmet sağlamak" }),
-								/* @__PURE__ */ jsx("li", { children: "Faturalandırma ve ödeme işlemlerini gerçekleştirmek" }),
-								/* @__PURE__ */ jsx("li", { children: "Yasal yükümlülükleri yerine getirmek" }),
-								/* @__PURE__ */ jsx("li", { children: "Müşteri memnuniyetini ölçmek ve hizmet kalitesini artırmak" }),
-								/* @__PURE__ */ jsx("li", { children: "İstatistiksel analiz ve raporlama yapmak" }),
-								/* @__PURE__ */ jsx("li", { children: "Pazarlama ve iletişim faaliyetleri yürütmek (açık rıza ile)" })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "5. Kişisel Verilerin Aktarımı" }),
-							/* @__PURE__ */ jsx("p", { children: "Kişisel verileriniz, KVKK'nın 8. ve 9. maddelerinde belirtilen şartlar çerçevesinde ve bu Gizlilik Politikası'nda belirtilen amaçlarla sınırlı olarak:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsx("li", { children: "İş ortaklarımız ve tedarikçilerimiz ile (proje gereksinimleri kapsamında)" }),
-								/* @__PURE__ */ jsx("li", { children: "Yasal yükümlülükler gereği kamu kurum ve kuruluşları ile" }),
-								/* @__PURE__ */ jsx("li", { children: "Hukuki işlemlerin yürütülmesi amacıyla hukuk danışmanları ve denetçiler ile" }),
-								/* @__PURE__ */ jsx("li", { children: "Bilişim altyapı hizmeti sağlayıcıları ile (veri güvenliği sağlanarak)" })
-							] }),
-							/* @__PURE__ */ jsx("p", { children: "paylaşılabilmektedir." })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "6. Kişisel Verilerin Saklanma Süresi" }),
-							/* @__PURE__ */ jsx("p", { children: "Kişisel verileriniz, ilgili mevzuatta öngörülen ve işlendikleri amaç için gerekli olan azami süre ve herhalde kanuni zamanaşımı süreleri kadar muhafaza edilmektedir. Saklama süreleri sona erdiğinde kişisel veriler silinir, yok edilir veya anonim hale getirilir." }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Sözleşme ve Fatura Bilgileri:" }), " 10 yıl (Vergi Usul Kanunu gereği)"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İletişim Kayıtları:" }), " 2 yıl"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Pazarlama Onayları:" }), " Onay geri çekilene kadar"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Website Logları:" }), " 6 ay"] })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "7. KVKK Kapsamındaki Haklarınız" }),
-							/* @__PURE__ */ jsx("p", { children: "KVKK'nın 11. maddesi uyarınca, kişisel veri sahibi olarak aşağıdaki haklara sahipsiniz:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin işlenip işlenmediğini öğrenme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme" }),
-								/* @__PURE__ */ jsx("li", { children: "Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme" }),
-								/* @__PURE__ */ jsx("li", { children: "KVKK'da öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin aktarıldığı üçüncü kişilere yukarıdaki değişikliklerin bildirilmesini isteme" }),
-								/* @__PURE__ */ jsx("li", { children: "İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize sonuç çıkmasına itiraz etme" }),
-								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme" })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "8. Haklarınızı Kullanma" }),
-							/* @__PURE__ */ jsx("p", { children: "Yukarıda belirtilen haklarınızı kullanmak için kimliğinizi tespit edici belgeler ile birlikte talebinizi;" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Yazılı olarak:" }), " Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul adresine"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta ile:" }), " kvkk@kutupgrup.com adresine"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "KEP adresi ile:" }), " kutupgrup@hs03.kep.tr adresine"] })
-							] }),
-							/* @__PURE__ */ jsx("p", { children: "iletebilirsiniz. Talebiniz en geç 30 gün içinde ücretsiz olarak sonuçlandırılacaktır. Ancak, işlemin ayrıca bir maliyeti gerektirmesi hâlinde, Kişisel Verileri Koruma Kurulu tarafından belirlenen tarifedeki ücret alınabilir." })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "9. Çerezler (Cookies)" }), /* @__PURE__ */ jsxs("p", { children: [
-							"Web sitemizde kullanıcı deneyimini geliştirmek amacıyla çerezler kullanılmaktadır. Çerezlerin kullanımı hakkında detaylı bilgi için ",
-							/* @__PURE__ */ jsx("a", {
-								href: "/cerez-politikasi",
-								children: "Çerez Politikamızı"
-							}),
-							" inceleyebilirsiniz."
-						] })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "10. Güvenlik" }), /* @__PURE__ */ jsx("p", { children: "Kişisel verilerinizin güvenliğini sağlamak için teknik ve idari tedbirler alınmaktadır. Verileriniz, yetkisiz erişime, kaybolmaya, kötüye kullanıma karşı korunmaktadır. SSL sertifikası, güvenlik duvarları, şifreleme teknolojileri ve erişim kontrolleri kullanılarak verileriniz korunmaktadır." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "11. Değişiklikler" }), /* @__PURE__ */ jsx("p", { children: "Bu Gizlilik Politikası'nda yapılacak değişiklikler web sitemizde yayınlanacaktır. Politika'nın güncel versiyonunu düzenli olarak kontrol etmenizi öneririz." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "12. İletişim" }),
-							/* @__PURE__ */ jsx("p", { children: "Gizlilik Politikamız ile ilgili sorularınız için bizimle iletişime geçebilirsiniz:" }),
-							/* @__PURE__ */ jsxs("div", {
-								className: legal_module_default.contactBox,
-								children: [/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " kvkk@kutupgrup.com"] }), /* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })]
-							})
-						]
-					})
-				]
-			})
-		})]
-	});
-}
-//#endregion
-//#region src/pages/Cookies.tsx
-function CerezPolitikasiClient() {
-	return /* @__PURE__ */ jsxs("div", {
-		className: legal_module_default.legalPage,
-		children: [/* @__PURE__ */ jsx("section", {
-			className: legal_module_default.hero,
-			children: /* @__PURE__ */ jsxs("div", {
-				className: legal_module_default.heroContent,
-				children: [/* @__PURE__ */ jsx("h1", {
-					className: legal_module_default.heroTitle,
-					children: "Çerez Politikası"
-				}), /* @__PURE__ */ jsx("p", {
-					className: legal_module_default.heroSubtitle,
-					children: "Son Güncelleme: 15 Şubat 2026"
-				})]
-			})
-		}), /* @__PURE__ */ jsx("div", {
-			className: legal_module_default.container,
-			children: /* @__PURE__ */ jsxs("article", {
-				className: legal_module_default.content,
-				children: [
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "1. Giriş" }), /* @__PURE__ */ jsx("p", { children: "Bu Çerez Politikası, Kutup Grup'un web sitesinde (kutupgrup.com) kullanılan çerezler ve benzeri teknolojiler hakkında sizi bilgilendirmek amacıyla hazırlanmıştır. Web sitemizi ziyaret ettiğinizde çerezlerin kullanımına ilişkin tercihlerinizi belirtebilirsiniz." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "2. Çerez Nedir?" }), /* @__PURE__ */ jsx("p", { children: "Çerezler, bir web sitesini ziyaret ettiğinizde bilgisayarınıza veya mobil cihazınıza kaydedilen küçük metin dosyalarıdır.  Çerezler, web sitelerinin daha verimli çalışmasını sağlamak ve web sitesi sahiplerine bilgi sağlamak için yaygın olarak kullanılır." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "3. Çerez Türleri" }),
-							/* @__PURE__ */ jsx("p", { children: "Web sitemizde kullanılan çerezler aşağıdaki kategorilerde sınıflandırılabilir:" }),
-							/* @__PURE__ */ jsx("div", {
-								className: legal_module_default.tableContainer,
-								children: /* @__PURE__ */ jsxs("table", {
-									className: legal_module_default.table,
-									children: [/* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { children: [
-										/* @__PURE__ */ jsx("th", { children: "Çerez Türü" }),
-										/* @__PURE__ */ jsx("th", { children: "Amaç" }),
-										/* @__PURE__ */ jsx("th", { children: "Süre" })
-									] }) }), /* @__PURE__ */ jsxs("tbody", { children: [
-										/* @__PURE__ */ jsxs("tr", { children: [
-											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Zorunlu Çerezler" }) }),
-											/* @__PURE__ */ jsx("td", { children: "Web sitesinin temel işlevlerini yerine getirmesi için gereklidir" }),
-											/* @__PURE__ */ jsx("td", { children: "Oturum / Kalıcı" })
-										] }),
-										/* @__PURE__ */ jsxs("tr", { children: [
-											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Performans Çerezleri" }) }),
-											/* @__PURE__ */ jsx("td", { children: "Web sitesinin performansını analiz etmek ve iyileştirmek için kullanılır" }),
-											/* @__PURE__ */ jsx("td", { children: "1-2 yıl" })
-										] }),
-										/* @__PURE__ */ jsxs("tr", { children: [
-											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "İşlevsellik Çerezleri" }) }),
-											/* @__PURE__ */ jsx("td", { children: "Tercihlerinizi hatırlamak ve kişiselleştirilmiş deneyim sunmak için kullanılır" }),
-											/* @__PURE__ */ jsx("td", { children: "1 yıl" })
-										] }),
-										/* @__PURE__ */ jsxs("tr", { children: [
-											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Hedefleme/Reklam Çerezleri" }) }),
-											/* @__PURE__ */ jsx("td", { children: "İlgi alanlarınıza uygun reklamlar göstermek için kullanılır" }),
-											/* @__PURE__ */ jsx("td", { children: "1-2 yıl" })
-										] })
-									] })]
-								})
-							})
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "4. Kullandığımız Çerezler" }),
-							/* @__PURE__ */ jsx("h3", { children: "4.1. Zorunlu Çerezler" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Oturum Çerezleri:" }), " Web sitesinde gezinmenizi sağlar ve güvenlik için gereklidir"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Form Çerezleri:" }), " İletişim formlarının doğru çalışmasını sağlar"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Güvenlik Çerezleri:" }), " Güvenlik önlemlerini destekler ve kötüye kullanımı önler"] })
-							] }),
-							/* @__PURE__ */ jsx("h3", { children: "4.2. Analitik Çerezler" }),
-							/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Google Analytics:" }), " Ziyaretçi istatistikleri, sayfa görüntülemeleri, kaynak analizi"] }), /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Kullanım verileri:" }), " Hangi sayfaların ziyaret edildiği, ne kadar süre kalındığı"] })] }),
-							/* @__PURE__ */ jsx("h3", { children: "4.3. İşlevsellik Çerezleri" }),
-							/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Dil tercihleri:" }), " Seçtiğiniz dil ayarını hatırlar"] }), /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Filtreleme tercihleri:" }), " Hizmet filtreleme seçimlerinizi saklar"] })] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "5. Üçüncü Taraf Çerezleri" }),
-							/* @__PURE__ */ jsx("p", { children: "Web sitemizde aşağıdaki üçüncü taraf hizmetleri kullanılmaktadır:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [
-									/* @__PURE__ */ jsx("strong", { children: "Google Analytics:" }),
-									" Web sitesi performansını ve kullanıcı davranışlarını analiz etmek için. Daha fazla bilgi için: ",
-									/* @__PURE__ */ jsx("a", {
-										href: "https://policies.google.com/privacy",
-										target: "_blank",
-										rel: "noopener",
-										children: "Google Gizlilik Politikası"
-									})
-								] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Google Maps:" }), " Konum bilgilerini görüntülemek için."] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Font Providers (Google Fonts):" }), " Web fontlarını yüklemek için."] })
-							] })
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "6. Çerezleri Nasıl Kontrol Edebilirsiniz?" }),
-							/* @__PURE__ */ jsx("p", { children: "Çerezleri kontrol etmek ve yönetmek için tarayıcı ayarlarınızı kullanabilirsiniz. Çoğu tarayıcı otomatik olarak çerezleri kabul eder, ancak bunu değiştirmek için tarayıcı ayarlarınızı düzenleyebilirsiniz." }),
-							/* @__PURE__ */ jsx("h3", { children: "Popüler Tarayıcılarda Çerez Ayarları:" }),
-							/* @__PURE__ */ jsxs("ul", { children: [
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Chrome:" }), " Ayarlar → Gizlilik ve güvenlik → Çerezler ve diğer site verileri"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Firefox:" }), " Ayarlar → Gizlilik ve Güvenlik → Çerezler ve Site Verileri"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Safari:" }), " Tercihler → Gizlilik → Çerezleri ve web sitesi verilerini yönet"] }),
-								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Edge:" }), " Ayarlar → Çerezler ve site izinleri → Çerezleri yönet ve sil"] })
-							] }),
-							/* @__PURE__ */ jsx("div", {
-								className: legal_module_default.warningBox,
-								children: /* @__PURE__ */ jsxs("p", { children: [
-									"⚠️ ",
-									/* @__PURE__ */ jsx("strong", { children: "Önemli:" }),
-									" Çerezleri tamamen devre dışı bırakırsanız, web sitemizin bazı özellikleri düzgün çalışmayabilir veya bazı hizmetlere erişiminiz kısıtlanabilir."
-								] })
-							})
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "7. Çerez Tercihlerinizi Değiştirme" }),
-							/* @__PURE__ */ jsx("p", { children: "Çerez tercihlerinizi istediğiniz zaman değiştirebilirsiniz. Daha önce verdiğiniz onayı geri çekmek için tarayıcınızın ayarlarından çerezleri silebilir veya bu sayfanın altındaki bağlantıyı kullanabilirsiniz." }),
-							/* @__PURE__ */ jsx("div", {
-								className: legal_module_default.buttonGroup,
-								children: /* @__PURE__ */ jsx("button", {
-									className: legal_module_default.primaryButton,
-									children: "Çerez Tercihlerini Yönet"
-								})
-							})
-						]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "8. \"Do Not Track\" (İzleme Yapma) Sinyalleri" }), /* @__PURE__ */ jsx("p", { children: "Bazı tarayıcılar \"Do Not Track\" (DNT) sinyali gönderme özelliğine sahiptir. Şu anda DNT sinyallerini nasıl ele alacağımız konusunda evrensel bir standart bulunmamaktadır. Bu nedenle, web sitemiz şu anda DNT sinyallerine otomatik olarak yanıt vermemektedir." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "9. Çocukların Gizliliği" }), /* @__PURE__ */ jsx("p", { children: "Web sitemiz 18 yaşın altındaki çocuklara yönelik değildir ve bilerek 18 yaşın altındaki bireylerden kişisel veri toplamayız." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [/* @__PURE__ */ jsx("h2", { children: "10. Politika Güncellemeleri" }), /* @__PURE__ */ jsx("p", { children: "Bu Çerez Politikası'nı zaman zaman güncelleyebiliriz. Yapılan değişiklikler bu sayfada yayınlanacaktır ve \"Son Güncelleme\" tarihi değiştirilecektir. Düzenli olarak bu sayfayı kontrol etmenizi öneririz." })]
-					}),
-					/* @__PURE__ */ jsxs("section", {
-						className: legal_module_default.section,
-						children: [
-							/* @__PURE__ */ jsx("h2", { children: "11. İletişim" }),
-							/* @__PURE__ */ jsx("p", { children: "Çerez Politikamız hakkında sorularınız için bizimle iletişime geçebilirsiniz:" }),
-							/* @__PURE__ */ jsxs("div", {
-								className: legal_module_default.contactBox,
-								children: [/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " info@kutupgrup.com"] }), /* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })]
-							})
-						]
-					})
-				]
-			})
-		})]
-	});
 }
 //#endregion
 //#region src/lib/blog-content.ts
@@ -9828,6 +7285,2674 @@ var BLOG_POSTS = [
 	}
 ];
 var getBlogPost = (slug) => BLOG_POSTS.find((post) => post.slug === slug);
+//#endregion
+//#region src/components/services/ServiceContentClient.tsx
+var SERVICE_ICON_MAP = {
+	"💡": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("path", { d: "M9 18h6" }),
+			/* @__PURE__ */ jsx("path", { d: "M10 22h4" }),
+			/* @__PURE__ */ jsx("path", { d: "M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14" })
+		]
+	}),
+	"⚓": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("circle", {
+				cx: "12",
+				cy: "5",
+				r: "3"
+			}),
+			/* @__PURE__ */ jsx("line", {
+				x1: "12",
+				y1: "22",
+				x2: "12",
+				y2: "8"
+			}),
+			/* @__PURE__ */ jsx("path", { d: "M5 12H2a10 10 0 0020 0h-3" })
+		]
+	}),
+	"✨": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("path", { d: "m12 3-1.912 5.813a2 2 0 01-1.275 1.275L3 12l5.813 1.912a2 2 0 011.275 1.275L12 21l1.912-5.813a2 2 0 011.275-1.275L21 12l-5.813-1.912a2 2 0 01-1.275-1.275L12 3z" }),
+			/* @__PURE__ */ jsx("path", { d: "M5 3v4" }),
+			/* @__PURE__ */ jsx("path", { d: "M19 17v4" }),
+			/* @__PURE__ */ jsx("path", { d: "M3 5h4" }),
+			/* @__PURE__ */ jsx("path", { d: "M17 19h4" })
+		]
+	}),
+	"🛡️": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [/* @__PURE__ */ jsx("path", { d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" }), /* @__PURE__ */ jsx("path", { d: "m9 12 2 2 4-4" })]
+	}),
+	"🔗": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [/* @__PURE__ */ jsx("path", { d: "M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" }), /* @__PURE__ */ jsx("path", { d: "M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" })]
+	}),
+	"🏔️": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [/* @__PURE__ */ jsx("path", { d: "m8 3 4 8 5-5 5 15H2L8 3z" }), /* @__PURE__ */ jsx("path", { d: "m4.14 15.08 2.86-2.7 3 2.7" })]
+	}),
+	"🧱": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("rect", {
+				x: "1",
+				y: "6",
+				width: "22",
+				height: "4",
+				rx: "1"
+			}),
+			/* @__PURE__ */ jsx("rect", {
+				x: "1",
+				y: "14",
+				width: "22",
+				height: "4",
+				rx: "1"
+			}),
+			/* @__PURE__ */ jsx("line", {
+				x1: "12",
+				y1: "6",
+				x2: "12",
+				y2: "10"
+			}),
+			/* @__PURE__ */ jsx("line", {
+				x1: "6",
+				y1: "14",
+				x2: "6",
+				y2: "18"
+			}),
+			/* @__PURE__ */ jsx("line", {
+				x1: "18",
+				y1: "14",
+				x2: "18",
+				y2: "18"
+			})
+		]
+	}),
+	"⚗️": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("path", { d: "M10 2v6l-6 10a1 1 0 00.87 1.5h14.26a1 1 0 00.87-1.5L14 8V2" }),
+			/* @__PURE__ */ jsx("line", {
+				x1: "8.5",
+				y1: "2",
+				x2: "15.5",
+				y2: "2"
+			}),
+			/* @__PURE__ */ jsx("path", { d: "M7 16h10" })
+		]
+	}),
+	"🛑": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [/* @__PURE__ */ jsx("path", { d: "M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" }), /* @__PURE__ */ jsx("line", {
+			x1: "4.93",
+			y1: "4.93",
+			x2: "19.07",
+			y2: "19.07"
+		})]
+	}),
+	"🔀": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("polyline", { points: "16 3 21 3 21 8" }),
+			/* @__PURE__ */ jsx("line", {
+				x1: "4",
+				y1: "20",
+				x2: "21",
+				y2: "3"
+			}),
+			/* @__PURE__ */ jsx("polyline", { points: "21 16 21 21 16 21" }),
+			/* @__PURE__ */ jsx("line", {
+				x1: "15",
+				y1: "15",
+				x2: "21",
+				y2: "21"
+			}),
+			/* @__PURE__ */ jsx("line", {
+				x1: "4",
+				y1: "4",
+				x2: "9",
+				y2: "9"
+			})
+		]
+	}),
+	"🚧": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("rect", {
+				x: "2",
+				y: "6",
+				width: "20",
+				height: "12",
+				rx: "2"
+			}),
+			/* @__PURE__ */ jsx("path", { d: "M12 6v12" }),
+			/* @__PURE__ */ jsx("path", { d: "M2 12h20" })
+		]
+	}),
+	"🌲": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("path", { d: "M17 22v-2" }),
+			/* @__PURE__ */ jsx("path", { d: "M7 22v-2" }),
+			/* @__PURE__ */ jsx("path", { d: "M17 13H7l5-10 5 10z" }),
+			/* @__PURE__ */ jsx("path", { d: "M19 18H5l2-5h10l2 5z" })
+		]
+	}),
+	"🚑": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("path", { d: "M10 10H6" }),
+			/* @__PURE__ */ jsx("path", { d: "M8 8v4" }),
+			/* @__PURE__ */ jsx("path", { d: "M22 18v-7a2 2 0 00-.67-1.49L17 6H3a1 1 0 00-1 1v11" }),
+			/* @__PURE__ */ jsx("circle", {
+				cx: "7",
+				cy: "18",
+				r: "2"
+			}),
+			/* @__PURE__ */ jsx("path", { d: "M9 18h6" }),
+			/* @__PURE__ */ jsx("circle", {
+				cx: "17",
+				cy: "18",
+				r: "2"
+			})
+		]
+	}),
+	"💨": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("path", { d: "M17.7 7.7a2.5 2.5 0 111.8 4.3H2" }),
+			/* @__PURE__ */ jsx("path", { d: "M9.6 4.6A2 2 0 1111 8H2" }),
+			/* @__PURE__ */ jsx("path", { d: "M12.6 19.4A2 2 0 1014 16H2" })
+		]
+	}),
+	"🪨": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("path", { d: "M11 18l1.5-6.5L18 9l-2-5-6 1L4 10l3 4 4 4z" }),
+			/* @__PURE__ */ jsx("path", { d: "M20 21l-3-3" }),
+			/* @__PURE__ */ jsx("path", { d: "M8 21l-2-6" })
+		]
+	}),
+	"❄️": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("line", {
+				x1: "12",
+				y1: "2",
+				x2: "12",
+				y2: "22"
+			}),
+			/* @__PURE__ */ jsx("line", {
+				x1: "2",
+				y1: "12",
+				x2: "22",
+				y2: "12"
+			}),
+			/* @__PURE__ */ jsx("path", { d: "M20 16l-4-4 4-4" }),
+			/* @__PURE__ */ jsx("path", { d: "M4 8l4 4-4 4" }),
+			/* @__PURE__ */ jsx("path", { d: "M16 4l-4 4-4-4" }),
+			/* @__PURE__ */ jsx("path", { d: "M8 20l4-4 4 4" })
+		]
+	}),
+	"🎭": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("path", { d: "M2 12a5 5 0 005 5 8 8 0 001.5-.2 5 5 0 007 0A8 8 0 0017 17a5 5 0 005-5V7h-5a8 8 0 00-10 0H2v5z" }),
+			/* @__PURE__ */ jsx("path", { d: "M6 11a.5.5 0 001 0 .5.5 0 00-1 0z" }),
+			/* @__PURE__ */ jsx("path", { d: "M17 11a.5.5 0 001 0 .5.5 0 00-1 0z" })
+		]
+	}),
+	"🎓": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [/* @__PURE__ */ jsx("path", { d: "M22 10v6M2 10l10-5 10 5-10 5z" }), /* @__PURE__ */ jsx("path", { d: "M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5" })]
+	}),
+	"📜": /* @__PURE__ */ jsxs("svg", {
+		width: "48",
+		height: "48",
+		viewBox: "0 0 24 24",
+		fill: "none",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round",
+		children: [
+			/* @__PURE__ */ jsx("path", { d: "M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" }),
+			/* @__PURE__ */ jsx("polyline", { points: "14 2 14 8 20 8" }),
+			/* @__PURE__ */ jsx("line", {
+				x1: "16",
+				y1: "13",
+				x2: "8",
+				y2: "13"
+			}),
+			/* @__PURE__ */ jsx("line", {
+				x1: "16",
+				y1: "17",
+				x2: "8",
+				y2: "17"
+			}),
+			/* @__PURE__ */ jsx("polyline", { points: "10 9 9 9 8 9" })
+		]
+	})
+};
+var FallbackIcon = () => /* @__PURE__ */ jsxs("svg", {
+	width: "48",
+	height: "48",
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: "1.5",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	children: [
+		/* @__PURE__ */ jsx("circle", {
+			cx: "12",
+			cy: "12",
+			r: "10"
+		}),
+		/* @__PURE__ */ jsx("line", {
+			x1: "12",
+			y1: "16",
+			x2: "12",
+			y2: "12"
+		}),
+		/* @__PURE__ */ jsx("line", {
+			x1: "12",
+			y1: "8",
+			x2: "12.01",
+			y2: "8"
+		})
+	]
+});
+var BuildingIcon = () => /* @__PURE__ */ jsxs("svg", {
+	width: "28",
+	height: "28",
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: "1.5",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	children: [
+		/* @__PURE__ */ jsx("rect", {
+			x: "4",
+			y: "2",
+			width: "16",
+			height: "20",
+			rx: "2",
+			ry: "2"
+		}),
+		/* @__PURE__ */ jsx("path", { d: "M9 22v-4h6v4" }),
+		/* @__PURE__ */ jsx("line", {
+			x1: "8",
+			y1: "6",
+			x2: "10",
+			y2: "6"
+		}),
+		/* @__PURE__ */ jsx("line", {
+			x1: "14",
+			y1: "6",
+			x2: "16",
+			y2: "6"
+		}),
+		/* @__PURE__ */ jsx("line", {
+			x1: "8",
+			y1: "10",
+			x2: "10",
+			y2: "10"
+		}),
+		/* @__PURE__ */ jsx("line", {
+			x1: "14",
+			y1: "10",
+			x2: "16",
+			y2: "10"
+		}),
+		/* @__PURE__ */ jsx("line", {
+			x1: "8",
+			y1: "14",
+			x2: "10",
+			y2: "14"
+		}),
+		/* @__PURE__ */ jsx("line", {
+			x1: "14",
+			y1: "14",
+			x2: "16",
+			y2: "14"
+		})
+	]
+});
+var CheckIcon = () => /* @__PURE__ */ jsx("svg", {
+	width: "18",
+	height: "18",
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "var(--color-arctic-blue, #3E92CC)",
+	strokeWidth: "2.5",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	children: /* @__PURE__ */ jsx("polyline", { points: "20 6 9 17 4 12" })
+});
+function getServiceIcon(icon) {
+	return SERVICE_ICON_MAP[icon] || /* @__PURE__ */ jsx(FallbackIcon, {});
+}
+function getRelatedServiceTitle(slug) {
+	const service = SERVICES_DATA[slug];
+	return service ? service.title : slug;
+}
+function getRelatedPostTitle(slug) {
+	const post = getBlogPost(slug);
+	return post ? post.title : slug;
+}
+function renderRichText(content, className) {
+	return content.split(/\n\s*\n/u).map((paragraph) => paragraph.trim()).filter(Boolean).map((paragraph, index) => /* @__PURE__ */ jsx("p", {
+		className,
+		children: paragraph
+	}, index));
+}
+function ServiceContentClient({ service }) {
+	return /* @__PURE__ */ jsxs(Fragment, { children: [/* @__PURE__ */ jsxs("main", {
+		className: "service-page",
+		"aria-labelledby": "service-page-title",
+		children: [/* @__PURE__ */ jsx("section", {
+			className: "service-hero",
+			children: /* @__PURE__ */ jsxs("div", {
+				className: "container",
+				children: [/* @__PURE__ */ jsxs("div", {
+					className: "breadcrumb",
+					children: [
+						/* @__PURE__ */ jsx(Link$1, {
+							href: "/",
+							children: "Anasayfa"
+						}),
+						/* @__PURE__ */ jsx("span", { children: " / " }),
+						/* @__PURE__ */ jsx(Link$1, {
+							href: "/hizmetler",
+							children: "Hizmetler"
+						}),
+						/* @__PURE__ */ jsx("span", { children: " / " }),
+						/* @__PURE__ */ jsx("span", { children: service.title })
+					]
+				}), /* @__PURE__ */ jsxs("div", {
+					className: "service-hero-layout",
+					children: [/* @__PURE__ */ jsxs("div", {
+						className: "service-hero-text",
+						children: [
+							/* @__PURE__ */ jsx("h1", {
+								id: "service-page-title",
+								children: service.title
+							}),
+							/* @__PURE__ */ jsx("p", {
+								className: "service-intro",
+								children: service.intro
+							}),
+							/* @__PURE__ */ jsx(Link$1, {
+								href: "/iletisim",
+								className: "btn btn-cta",
+								children: "Teklif talebi oluşturun"
+							})
+						]
+					}), service.heroImage && /* @__PURE__ */ jsx("div", {
+						className: "service-hero-image",
+						children: /* @__PURE__ */ jsx(Image, {
+							src: service.heroImage,
+							alt: `${service.title} uygulaması`,
+							width: 560,
+							height: 400,
+							priority: true,
+							style: {
+								objectFit: "cover",
+								borderRadius: "16px",
+								width: "100%",
+								height: "auto"
+							}
+						})
+					})]
+				})]
+			})
+		}), /* @__PURE__ */ jsx("section", {
+			className: "section",
+			children: /* @__PURE__ */ jsx("div", {
+				className: "container",
+				children: /* @__PURE__ */ jsxs("div", {
+					className: "service-content",
+					children: [/* @__PURE__ */ jsxs("article", {
+						className: "service-article",
+						children: [
+							service.sections.map((section, index) => /* @__PURE__ */ jsxs("section", {
+								className: "content-section",
+								"aria-labelledby": `service-section-${index}`,
+								children: [/* @__PURE__ */ jsx("h2", {
+									id: `service-section-${index}`,
+									children: section.heading
+								}), renderRichText(section.content)]
+							}, index)),
+							service.slug === "jeoteknik-uygulamalar" && /* @__PURE__ */ jsxs("section", {
+								className: "content-section sub-services-section",
+								"aria-labelledby": "service-sub-services-title",
+								children: [
+									/* @__PURE__ */ jsx("h2", {
+										id: "service-sub-services-title",
+										children: "Jeoteknik Çözümlerimiz & Hizmetlerimiz"
+									}),
+									/* @__PURE__ */ jsx("p", {
+										className: "sub-services-intro",
+										children: "Zorlu arazi koşullarında kaya düşmesi, şev stabilizasyonu ve yamaç güvenliği başlıkları; saha verileri ve proje gereklilikleri birlikte değerlendirilerek ele alınır. İlgili hizmet başlıklarını aşağıda inceleyebilirsiniz:"
+									}),
+									/* @__PURE__ */ jsx("div", {
+										className: "sub-services-grid",
+										children: Object.values(SERVICES_DATA).filter((s) => s.category === "jeoteknik" && s.slug !== "jeoteknik-uygulamalar").map((s) => /* @__PURE__ */ jsxs("div", {
+											className: "sub-service-card",
+											children: [s.heroImage && /* @__PURE__ */ jsx("div", {
+												className: "sub-service-image-wrapper",
+												children: /* @__PURE__ */ jsx(Image, {
+													src: s.heroImage,
+													alt: s.title,
+													width: 360,
+													height: 200,
+													className: "sub-service-img"
+												})
+											}), /* @__PURE__ */ jsxs("div", {
+												className: "sub-service-content-wrap",
+												children: [
+													/* @__PURE__ */ jsxs("div", {
+														className: "sub-service-header",
+														children: [/* @__PURE__ */ jsx("span", {
+															className: "sub-service-icon",
+															children: getServiceIcon(s.icon)
+														}), /* @__PURE__ */ jsx("h3", { children: s.title })]
+													}),
+													/* @__PURE__ */ jsx("p", { children: s.intro }),
+													/* @__PURE__ */ jsxs(Link$1, {
+														href: `/hizmetler/${s.slug}`,
+														className: "sub-service-link",
+														children: ["Detaylı Bilgi", /* @__PURE__ */ jsxs("svg", {
+															width: "16",
+															height: "16",
+															viewBox: "0 0 24 24",
+															fill: "none",
+															stroke: "currentColor",
+															strokeWidth: "2.5",
+															strokeLinecap: "round",
+															strokeLinejoin: "round",
+															children: [/* @__PURE__ */ jsx("path", { d: "M5 12h14" }), /* @__PURE__ */ jsx("path", { d: "m12 5 7 7-7 7" })]
+														})]
+													})
+												]
+											})]
+										}, s.slug))
+									})
+								]
+							}),
+							service.advantages.length > 0 && /* @__PURE__ */ jsxs("section", {
+								className: "content-section",
+								"aria-labelledby": "service-advantages-title",
+								children: [/* @__PURE__ */ jsx("h2", {
+									id: "service-advantages-title",
+									children: "Avantajlarımız"
+								}), /* @__PURE__ */ jsx("ul", {
+									className: "advantages-list",
+									children: service.advantages.map((advantage, index) => /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", {
+										className: "check-icon",
+										children: /* @__PURE__ */ jsx(CheckIcon, {})
+									}), advantage] }, index))
+								})]
+							}),
+							service.applications.length > 0 && /* @__PURE__ */ jsxs("section", {
+								className: "content-section",
+								"aria-labelledby": "service-applications-title",
+								children: [/* @__PURE__ */ jsx("h2", {
+									id: "service-applications-title",
+									children: "Uygulama Alanları"
+								}), /* @__PURE__ */ jsx("div", {
+									className: "applications-grid",
+									children: service.applications.map((app, index) => /* @__PURE__ */ jsxs("div", {
+										className: "application-card",
+										children: [/* @__PURE__ */ jsx("span", {
+											className: "app-icon",
+											children: /* @__PURE__ */ jsx(BuildingIcon, {})
+										}), /* @__PURE__ */ jsx("p", { children: app })]
+									}, index))
+								})]
+							}),
+							service.technicalDetails.length > 0 && /* @__PURE__ */ jsxs("section", {
+								className: "content-section",
+								"aria-labelledby": "service-technical-title",
+								children: [/* @__PURE__ */ jsx("h2", {
+									id: "service-technical-title",
+									children: "Teknik Detaylar"
+								}), /* @__PURE__ */ jsx("ul", {
+									className: "tech-list",
+									children: service.technicalDetails.map((detail, index) => /* @__PURE__ */ jsx("li", { children: detail }, index))
+								})]
+							}),
+							service.faqs.length > 0 && /* @__PURE__ */ jsxs("section", {
+								className: "content-section",
+								"aria-labelledby": "service-faq-title",
+								children: [/* @__PURE__ */ jsx("h2", {
+									id: "service-faq-title",
+									children: "Sıkça Sorulan Sorular"
+								}), /* @__PURE__ */ jsx("div", {
+									className: "faq-list",
+									children: service.faqs.map((faq, index) => /* @__PURE__ */ jsxs("div", {
+										className: "faq-item",
+										children: [/* @__PURE__ */ jsx("h3", { children: faq.question }), /* @__PURE__ */ jsx("p", { children: faq.answer })]
+									}, index))
+								})]
+							}),
+							service.relatedPosts.length > 0 && /* @__PURE__ */ jsxs("section", {
+								className: "content-section related-reading-section",
+								"aria-labelledby": "service-related-reading-title",
+								children: [
+									/* @__PURE__ */ jsx("h2", {
+										id: "service-related-reading-title",
+										children: "İlgili teknik yazılar"
+									}),
+									/* @__PURE__ */ jsx("p", { children: "Hizmet kapsamını değerlendirirken aşağıdaki teknik yazılar, saha planlaması ve risk başlıkları için ek bağlam sunar." }),
+									/* @__PURE__ */ jsx("ul", {
+										className: "related-reading-list",
+										children: service.relatedPosts.map((postSlug) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link$1, {
+											href: `/blog/${postSlug}`,
+											children: getRelatedPostTitle(postSlug)
+										}) }, postSlug))
+									})
+								]
+							})
+						]
+					}), /* @__PURE__ */ jsxs("aside", {
+						className: "service-sidebar",
+						children: [
+							/* @__PURE__ */ jsxs("div", {
+								className: "sidebar-card card-premium",
+								children: [
+									/* @__PURE__ */ jsx("h3", { children: "İletişime Geçin" }),
+									/* @__PURE__ */ jsx("p", { children: "Projenizin kapsamını ve ilk değerlendirme adımlarını birlikte netleştirelim." }),
+									/* @__PURE__ */ jsx(Link$1, {
+										href: "/iletisim",
+										className: "btn btn-primary",
+										style: { width: "100%" },
+										children: "Teklif İsteyin"
+									})
+								]
+							}),
+							service.relatedServices.length > 0 && /* @__PURE__ */ jsxs("nav", {
+								className: "sidebar-card",
+								"aria-label": "İlgili hizmetler",
+								children: [/* @__PURE__ */ jsx("h3", { children: "İlgili Hizmetler" }), /* @__PURE__ */ jsx("ul", {
+									className: "related-services",
+									children: service.relatedServices.map((relatedSlug, index) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(Link$1, {
+										href: `/hizmetler/${relatedSlug}`,
+										children: getRelatedServiceTitle(relatedSlug)
+									}) }, index))
+								})]
+							}),
+							service.whyChooseUs.length > 0 && /* @__PURE__ */ jsxs("div", {
+								className: "sidebar-card",
+								children: [/* @__PURE__ */ jsx("h3", { children: "Neden Kutup Grup?" }), /* @__PURE__ */ jsx("ul", {
+									className: "why-list",
+									children: service.whyChooseUs.map((reason, index) => /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", {
+										className: "check-icon",
+										children: /* @__PURE__ */ jsx(CheckIcon, {})
+									}), reason] }, index))
+								})]
+							})
+						]
+					})]
+				})
+			})
+		})]
+	}), /* @__PURE__ */ jsx("style", {
+		jsx: true,
+		children: `
+        /* Sub Services Grid (for Category Page) */
+        .sub-services-section {
+          margin-top: var(--spacing-8);
+        }
+        .sub-services-intro {
+          margin-bottom: var(--spacing-8) !important;
+          font-size: 1.05rem !important;
+        }
+        .sub-services-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: var(--spacing-6);
+        }
+        @media (min-width: 640px) {
+          .sub-services-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+        .sub-service-card {
+          background: white;
+          border: 1px solid var(--border-default);
+          border-radius: 16px;
+          overflow: hidden;
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 4px 12px rgba(10, 36, 99, 0.02);
+        }
+        .sub-service-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(16, 185, 129, 0.3);
+          box-shadow: 0 12px 24px rgba(10, 36, 99, 0.06);
+        }
+        .sub-service-image-wrapper {
+          width: 100%;
+          height: 180px;
+          position: relative;
+          overflow: hidden;
+          background: var(--bg-secondary);
+        }
+        .sub-service-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+        .sub-service-card:hover .sub-service-img {
+          transform: scale(1.06);
+        }
+        .sub-service-content-wrap {
+          padding: var(--spacing-5) var(--spacing-6) var(--spacing-6);
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+        }
+        .sub-service-header {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-4);
+          margin-bottom: var(--spacing-4);
+        }
+        .sub-service-icon {
+          width: 44px;
+          height: 44px;
+          border-radius: 10px;
+          background: rgba(16, 185, 129, 0.1);
+          color: #10B981;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transition: all 0.3s ease;
+        }
+        .sub-service-card:hover .sub-service-icon {
+          transform: scale(1.08) rotate(2deg);
+        }
+        .sub-service-icon :global(svg) {
+          width: 22px;
+          height: 22px;
+        }
+        .sub-service-header h3 {
+          margin: 0;
+          font-size: 1.15rem;
+          color: var(--color-deep-navy);
+          font-family: var(--font-heading);
+          font-weight: 700;
+        }
+        .sub-service-card p {
+          color: var(--text-secondary);
+          font-size: 0.9rem;
+          line-height: 1.6;
+          margin-bottom: var(--spacing-5);
+          flex: 1;
+        }
+        .sub-service-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          color: #10B981;
+          font-weight: 700;
+          font-size: 0.9rem;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          width: fit-content;
+        }
+        .sub-service-link svg {
+          transition: transform 0.2s ease;
+        }
+        .sub-service-link:hover {
+          color: var(--color-deep-navy);
+        }
+        .sub-service-link:hover svg {
+          transform: translateX(4px);
+        }
+
+        .service-page {
+          margin-top: 80px;
+        }
+        
+        .service-hero {
+          background: var(--gradient-subtle);
+          padding: var(--spacing-12) 0 var(--spacing-16);
+          border-bottom: 1px solid var(--border-default);
+          position: relative;
+        }
+
+        .service-hero-layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: var(--spacing-10);
+          align-items: center;
+        }
+
+        .service-hero-image {
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 20px 40px rgba(10, 36, 99, 0.15);
+          border: 3px solid rgba(62,146,204,0.15);
+        }
+        
+        .breadcrumb {
+          margin-bottom: var(--spacing-6);
+          color: var(--text-secondary);
+          font-size: var(--font-size-sm);
+        }
+        
+        .breadcrumb a {
+          color: var(--color-arctic-blue);
+        }
+        
+        .breadcrumb span {
+          margin: 0 var(--spacing-2);
+        }
+        
+        .service-hero-text {
+          text-align: left;
+        }
+        
+        .service-icon-wrap {
+          width: 80px;
+          height: 80px;
+          border-radius: 20px;
+          background: linear-gradient(135deg, rgba(62, 146, 204, 0.12), rgba(10, 36, 99, 0.08));
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto var(--spacing-6);
+          color: var(--color-arctic-blue);
+        }
+        
+        .service-hero-content h1 {
+          font-size: var(--font-size-h1);
+          color: var(--color-deep-navy);
+          margin-bottom: var(--spacing-6);
+        }
+        
+        .service-intro {
+          font-size: var(--font-size-lg);
+          color: var(--text-secondary);
+          line-height: var(--line-height-relaxed);
+          margin-bottom: var(--spacing-8);
+        }
+        
+        .service-content {
+          display: grid;
+          grid-template-columns: 1fr 350px;
+          gap: var(--spacing-12);
+        }
+        
+        .service-article {
+          max-width: 100%;
+        }
+        
+        .content-section {
+          margin-bottom: var(--spacing-12);
+        }
+        
+        .content-section h2 {
+          font-size: var(--font-size-h3);
+          color: var(--color-deep-navy);
+          margin-bottom: var(--spacing-6);
+          padding-bottom: var(--spacing-3);
+          border-bottom: 3px solid var(--color-ice-blue);
+        }
+        
+        .content-section p {
+          font-size: var(--font-size-base);
+          line-height: var(--line-height-relaxed);
+          color: var(--text-secondary);
+          margin-bottom: var(--spacing-4);
+        }
+
+        .related-reading-list {
+          margin: 0;
+          padding-left: var(--spacing-6);
+        }
+
+        .related-reading-list li {
+          margin-bottom: var(--spacing-3);
+          color: var(--text-secondary);
+        }
+
+        .related-reading-list a {
+          color: var(--color-arctic-blue);
+          font-weight: 600;
+        }
+        
+        .advantages-list, .tech-list, .why-list {
+          list-style: none;
+          padding: 0;
+        }
+        
+        .advantages-list li, .why-list li {
+          padding: var(--spacing-3) 0;
+          color: var(--text-secondary);
+          border-bottom: 1px solid var(--border-default);
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-3);
+        }
+        
+        .tech-list li {
+          padding: var(--spacing-3) 0;
+          color: var(--text-secondary);
+          border-bottom: 1px solid var(--border-default);
+          padding-left: var(--spacing-4);
+          position: relative;
+        }
+
+        .tech-list li::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--color-arctic-blue);
+        }
+        
+        .check-icon {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+        }
+        
+        .applications-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: var(--spacing-4);
+        }
+        
+        .application-card {
+          background: var(--bg-secondary);
+          padding: var(--spacing-5);
+          border-radius: var(--radius-base);
+          text-align: center;
+          border: 1px solid var(--border-default);
+          transition: all 0.3s ease;
+        }
+
+        .application-card:hover {
+          border-color: var(--color-arctic-blue);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(62,146,204,0.1);
+        }
+        
+        .app-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: var(--spacing-3);
+          color: var(--color-arctic-blue);
+        }
+        
+        .application-card p {
+          font-size: var(--font-size-sm);
+          color: var(--text-primary);
+          margin: 0;
+        }
+        
+        .faq-list {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-6);
+        }
+        
+        .faq-item {
+          background: var(--bg-secondary);
+          padding: var(--spacing-6);
+          border-radius: var(--radius-base);
+          border-left: 4px solid var(--color-arctic-blue);
+        }
+        
+        .faq-item h3 {
+          font-size: var(--font-size-lg);
+          color: var(--color-deep-navy);
+          margin-bottom: var(--spacing-3);
+        }
+        
+        .faq-item p {
+          margin: 0;
+        }
+        
+        .service-sidebar {
+          position: sticky;
+          top: 100px;
+          align-self: start;
+        }
+        
+        .sidebar-card {
+          background: white;
+          border: 2px solid var(--border-default);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-6);
+          margin-bottom: var(--spacing-6);
+        }
+        
+        .sidebar-card h3 {
+          font-size: var(--font-size-h5);
+          color: var(--color-deep-navy);
+          margin-bottom: var(--spacing-4);
+        }
+        
+        .sidebar-card p {
+          color: var(--text-secondary);
+          margin-bottom: var(--spacing-4);
+        }
+        
+        .related-services {
+          list-style: none;
+          padding: 0;
+        }
+        
+        .related-services li {
+          margin-bottom: var(--spacing-3);
+        }
+        
+        .related-services a {
+          color: var(--text-primary);
+          display: block;
+          padding: var(--spacing-3);
+          border-radius: var(--radius-sm);
+          transition: background 0.2s ease;
+          font-size: var(--font-size-sm);
+        }
+        
+        .related-services a:hover {
+          background: var(--bg-secondary);
+          color: var(--color-arctic-blue);
+        }
+        
+        @media (max-width: 1024px) {
+          .service-content {
+            grid-template-columns: 1fr;
+          }
+          
+          .service-sidebar {
+            position: static;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .service-hero-layout {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-6);
+          }
+
+          .service-hero-image {
+            order: -1;
+          }
+
+          .service-hero-text {
+            text-align: center;
+          }
+
+          .service-hero-text h1 {
+            font-size: 1.65rem;
+            line-height: 1.25;
+          }
+
+          .service-intro {
+            font-size: 0.95rem;
+          }
+
+          .service-icon-wrap {
+            margin: 0 auto var(--spacing-5);
+          }
+
+          .btn-cta {
+            display: inline-flex;
+            margin: 0 auto;
+          }
+
+          .service-hero {
+            padding: var(--spacing-8) 0 var(--spacing-10);
+          }
+          
+          .applications-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .section-content h2 {
+            font-size: 1.35rem;
+          }
+
+          .section-content p {
+            font-size: 0.92rem;
+            line-height: 1.7;
+          }
+
+          .sidebar-card {
+            padding: var(--spacing-5);
+          }
+
+          .breadcrumb {
+            font-size: 0.8rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .service-page {
+            margin-top: 70px;
+          }
+
+          .service-hero {
+            padding: var(--spacing-6) 0 var(--spacing-8);
+          }
+
+          .service-hero-text h1 {
+            font-size: 1.4rem;
+          }
+
+          .service-intro {
+            font-size: 0.9rem;
+          }
+
+          .service-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+          }
+
+          .section-content {
+            padding: var(--spacing-8) 0;
+          }
+
+          .section-content h2 {
+            font-size: 1.2rem;
+          }
+
+          .application-card {
+            padding: var(--spacing-4);
+          }
+
+          .why-list li {
+            font-size: 0.88rem;
+          }
+        }
+      `
+	})] });
+}
+//#endregion
+//#region src/pages/ServiceDetail.tsx
+function ServiceDetail() {
+	const { slug } = useParams();
+	const decodedSlug = decodeURIComponent(slug || "");
+	if (decodedSlug === "deflektör-tip-ortuleme" || slug === "deflekt%C3%B6r-tip-ortuleme") return /* @__PURE__ */ jsx(Navigate, {
+		to: "/hizmetler/deflektor-tip-ortuleme",
+		replace: true
+	});
+	const service = SERVICES_DATA[decodedSlug];
+	if (!service) return /* @__PURE__ */ jsx(Navigate, {
+		to: "/404",
+		replace: true
+	});
+	const serviceSchema = generateServiceSchema({
+		name: service.title,
+		description: service.metaDescription,
+		url: `https://kutupgrup.com/hizmetler/${service.slug}`,
+		serviceType: service.title,
+		category: service.category,
+		image: service.heroImage ? `https://kutupgrup.com${service.heroImage}` : void 0,
+		updatedAt: service.updatedAt
+	});
+	const faqSchema = service.faqs.length > 0 ? generateFAQSchema(service.faqs) : null;
+	const breadcrumbSchema = generateBreadcrumbSchema([
+		{
+			name: "Anasayfa",
+			url: "https://kutupgrup.com"
+		},
+		{
+			name: "Hizmetler",
+			url: "https://kutupgrup.com/hizmetler"
+		},
+		{
+			name: service.title,
+			url: `https://kutupgrup.com/hizmetler/${service.slug}`
+		}
+	]);
+	return /* @__PURE__ */ jsxs(Fragment, { children: [
+		/* @__PURE__ */ jsx(Header, {}),
+		/* @__PURE__ */ jsx("script", {
+			type: "application/ld+json",
+			dangerouslySetInnerHTML: { __html: JSON.stringify(serviceSchema) }
+		}),
+		faqSchema && /* @__PURE__ */ jsx("script", {
+			type: "application/ld+json",
+			dangerouslySetInnerHTML: { __html: JSON.stringify(faqSchema) }
+		}),
+		/* @__PURE__ */ jsx("script", {
+			type: "application/ld+json",
+			dangerouslySetInnerHTML: { __html: JSON.stringify(breadcrumbSchema) }
+		}),
+		/* @__PURE__ */ jsx(ServiceContentClient, { service }),
+		/* @__PURE__ */ jsx(Footer, {})
+	] });
+}
+var contact_module_default = {
+	contactPage: "_contactPage_zjsfs_1",
+	hero: "_hero_zjsfs_7",
+	heroContent: "_heroContent_zjsfs_15",
+	heroTitle: "_heroTitle_zjsfs_21",
+	fadeInUp: "_fadeInUp_zjsfs_1",
+	heroSubtitle: "_heroSubtitle_zjsfs_29",
+	container: "_container_zjsfs_36",
+	contactInfo: "_contactInfo_zjsfs_43",
+	infoCard: "_infoCard_zjsfs_50",
+	infoIcon: "_infoIcon_zjsfs_66",
+	infoTitle: "_infoTitle_zjsfs_71",
+	infoText: "_infoText_zjsfs_78",
+	contentGrid: "_contentGrid_zjsfs_94",
+	sectionTitle: "_sectionTitle_zjsfs_107",
+	formSection: "_formSection_zjsfs_115",
+	contactForm: "_contactForm_zjsfs_122",
+	formGroup: "_formGroup_zjsfs_128",
+	formRow: "_formRow_zjsfs_134",
+	label: "_label_zjsfs_146",
+	required: "_required_zjsfs_152",
+	input: "_input_zjsfs_156",
+	select: "_select_zjsfs_157",
+	textarea: "_textarea_zjsfs_158",
+	inputError: "_inputError_zjsfs_183",
+	errorText: "_errorText_zjsfs_191",
+	checkboxLabel: "_checkboxLabel_zjsfs_202",
+	checkbox: "_checkbox_zjsfs_202",
+	submitButton: "_submitButton_zjsfs_225",
+	successMessage: "_successMessage_zjsfs_247",
+	errorMessage: "_errorMessage_zjsfs_256",
+	mapSection: "_mapSection_zjsfs_266",
+	mapContainer: "_mapContainer_zjsfs_273",
+	workingHours: "_workingHours_zjsfs_279",
+	hoursTitle: "_hoursTitle_zjsfs_286",
+	hoursList: "_hoursList_zjsfs_293",
+	whatsappSection: "_whatsappSection_zjsfs_316",
+	whatsappCard: "_whatsappCard_zjsfs_320",
+	whatsappIcon: "_whatsappIcon_zjsfs_337",
+	whatsappContent: "_whatsappContent_zjsfs_341",
+	whatsappButton: "_whatsappButton_zjsfs_356"
+};
+//#endregion
+//#region src/pages/Contact.tsx
+function ContactPageClient() {
+	const [formData, setFormData] = useState({
+		ad_soyad: "",
+		email: "",
+		telefon: "",
+		konu: "",
+		mesaj: "",
+		kvkk_onay: false
+	});
+	const [errors, setErrors] = useState({});
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [submitStatus, setSubmitStatus] = useState("idle");
+	const validateForm = () => {
+		const newErrors = {};
+		if (!formData.ad_soyad.trim()) newErrors.ad_soyad = "Ad Soyad gereklidir";
+		if (!formData.email.trim()) newErrors.email = "E-posta gereklidir";
+		else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Geçerli bir e-posta adresi girin";
+		if (!formData.telefon.trim()) newErrors.telefon = "Telefon gereklidir";
+		else if (!/^[0-9\s\-\+\(\)]{10,}$/.test(formData.telefon)) newErrors.telefon = "Geçerli bir telefon numarası girin";
+		if (!formData.mesaj.trim()) newErrors.mesaj = "Mesaj gereklidir";
+		else if (formData.mesaj.trim().length < 10) newErrors.mesaj = "Mesaj en az 10 karakter olmalıdır";
+		if (!formData.kvkk_onay) newErrors.kvkk_onay = "KVKK metnini onaylamanız gerekmektedir";
+		setErrors(newErrors);
+		return Object.keys(newErrors).length === 0;
+	};
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		if (!validateForm()) return;
+		setIsSubmitting(true);
+		setSubmitStatus("idle");
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData)
+			});
+			const data = await response.json();
+			if (response.ok && data.success) {
+				setSubmitStatus("success");
+				setFormData({
+					ad_soyad: "",
+					email: "",
+					telefon: "",
+					konu: "",
+					mesaj: "",
+					kvkk_onay: false
+				});
+				setErrors({});
+			} else {
+				console.error("Form submission failed:", data.message);
+				setSubmitStatus("error");
+			}
+		} catch (error) {
+			console.error("Form submission error:", error);
+			setSubmitStatus("error");
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
+	const handleChange = (e) => {
+		const { name, value, type } = e.target;
+		if (type === "checkbox") {
+			const checked = e.target.checked;
+			setFormData((prev) => ({
+				...prev,
+				[name]: checked
+			}));
+		} else setFormData((prev) => ({
+			...prev,
+			[name]: value
+		}));
+		if (errors[name]) setErrors((prev) => {
+			const newErrors = { ...prev };
+			delete newErrors[name];
+			return newErrors;
+		});
+	};
+	return /* @__PURE__ */ jsxs("div", { children: [
+		/* @__PURE__ */ jsx(Header, {}),
+		/* @__PURE__ */ jsxs("div", {
+			className: contact_module_default.contactPage,
+			children: [/* @__PURE__ */ jsx("section", {
+				className: contact_module_default.hero,
+				children: /* @__PURE__ */ jsxs("div", {
+					className: contact_module_default.heroContent,
+					children: [/* @__PURE__ */ jsx("h1", {
+						className: contact_module_default.heroTitle,
+						children: "İletişime Geçin"
+					}), /* @__PURE__ */ jsx("p", {
+						className: contact_module_default.heroSubtitle,
+						children: "Projenizin kapsamını ve gerekli değerlendirme adımlarını birlikte netleştirelim"
+					})]
+				})
+			}), /* @__PURE__ */ jsxs("div", {
+				className: contact_module_default.container,
+				children: [
+					/* @__PURE__ */ jsxs("section", {
+						className: contact_module_default.contactInfo,
+						children: [
+							/* @__PURE__ */ jsxs("div", {
+								className: contact_module_default.infoCard,
+								children: [
+									/* @__PURE__ */ jsx("div", {
+										className: contact_module_default.infoIcon,
+										children: /* @__PURE__ */ jsxs("svg", {
+											width: "24",
+											height: "24",
+											viewBox: "0 0 24 24",
+											fill: "none",
+											stroke: "currentColor",
+											strokeWidth: "1.5",
+											strokeLinecap: "round",
+											strokeLinejoin: "round",
+											children: [/* @__PURE__ */ jsx("path", { d: "M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z" }), /* @__PURE__ */ jsx("circle", {
+												cx: "12",
+												cy: "10",
+												r: "3"
+											})]
+										})
+									}),
+									/* @__PURE__ */ jsx("h3", {
+										className: contact_module_default.infoTitle,
+										children: "Şirket Bilgileri"
+									}),
+									/* @__PURE__ */ jsxs("div", {
+										className: contact_module_default.infoText,
+										style: {
+											textAlign: "left",
+											width: "100%"
+										},
+										children: [
+											/* @__PURE__ */ jsx("strong", {
+												style: {
+													display: "block",
+													marginBottom: "12px"
+												},
+												children: "KUTUP GRUP İNŞAAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ"
+											}),
+											/* @__PURE__ */ jsxs("div", {
+												style: { marginBottom: "12px" },
+												children: [
+													/* @__PURE__ */ jsx("strong", {
+														style: { color: "var(--color-arctic-blue)" },
+														children: "İstanbul Merkez (Genel Müdürlük):"
+													}),
+													/* @__PURE__ */ jsx("br", {}),
+													"Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul"
+												]
+											}),
+											/* @__PURE__ */ jsxs("div", { children: [
+												/* @__PURE__ */ jsx("strong", {
+													style: { color: "var(--color-arctic-blue)" },
+													children: "Balıkesir Şubesi:"
+												}),
+												/* @__PURE__ */ jsx("br", {}),
+												"Soma Cd. 111A Altıeylül Balıkesir / Türkiye"
+											] })
+										]
+									})
+								]
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: contact_module_default.infoCard,
+								children: [
+									/* @__PURE__ */ jsx("div", {
+										className: contact_module_default.infoIcon,
+										children: /* @__PURE__ */ jsx("svg", {
+											width: "24",
+											height: "24",
+											viewBox: "0 0 24 24",
+											fill: "none",
+											stroke: "currentColor",
+											strokeWidth: "1.5",
+											strokeLinecap: "round",
+											strokeLinejoin: "round",
+											children: /* @__PURE__ */ jsx("path", { d: "M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" })
+										})
+									}),
+									/* @__PURE__ */ jsx("h3", {
+										className: contact_module_default.infoTitle,
+										children: "Telefon"
+									}),
+									/* @__PURE__ */ jsx("p", {
+										className: contact_module_default.infoText,
+										children: /* @__PURE__ */ jsx("a", {
+											href: "tel:+905335176609",
+											children: "+90 (533) 517 66 09"
+										})
+									})
+								]
+							}),
+							/* @__PURE__ */ jsxs("div", {
+								className: contact_module_default.infoCard,
+								children: [
+									/* @__PURE__ */ jsx("div", {
+										className: contact_module_default.infoIcon,
+										children: /* @__PURE__ */ jsxs("svg", {
+											width: "24",
+											height: "24",
+											viewBox: "0 0 24 24",
+											fill: "none",
+											stroke: "currentColor",
+											strokeWidth: "1.5",
+											strokeLinecap: "round",
+											strokeLinejoin: "round",
+											children: [/* @__PURE__ */ jsx("path", { d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" }), /* @__PURE__ */ jsx("polyline", { points: "22,6 12,13 2,6" })]
+										})
+									}),
+									/* @__PURE__ */ jsx("h3", {
+										className: contact_module_default.infoTitle,
+										children: "E-posta"
+									}),
+									/* @__PURE__ */ jsx("p", {
+										className: contact_module_default.infoText,
+										children: /* @__PURE__ */ jsx("a", {
+											href: "mailto:info@kutupgrup.com",
+											children: "info@kutupgrup.com"
+										})
+									})
+								]
+							})
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: contact_module_default.contentGrid,
+						children: [/* @__PURE__ */ jsxs("div", {
+							className: contact_module_default.formSection,
+							children: [
+								/* @__PURE__ */ jsx("h2", {
+									className: contact_module_default.sectionTitle,
+									children: "Bize Mesaj Gönderin"
+								}),
+								submitStatus === "success" && /* @__PURE__ */ jsx("div", {
+									className: contact_module_default.successMessage,
+									children: "✓ Mesajınız alınmıştır. Gerekli görülürse iletişim bilgileriniz üzerinden dönüş yapılacaktır."
+								}),
+								submitStatus === "error" && /* @__PURE__ */ jsx("div", {
+									className: contact_module_default.errorMessage,
+									children: "✗ Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya telefon ile iletişime geçin."
+								}),
+								/* @__PURE__ */ jsxs("form", {
+									onSubmit: handleSubmit,
+									className: contact_module_default.contactForm,
+									children: [
+										/* @__PURE__ */ jsxs("div", {
+											className: contact_module_default.formGroup,
+											children: [
+												/* @__PURE__ */ jsxs("label", {
+													htmlFor: "ad_soyad",
+													className: contact_module_default.label,
+													children: ["Ad Soyad ", /* @__PURE__ */ jsx("span", {
+														className: contact_module_default.required,
+														children: "*"
+													})]
+												}),
+												/* @__PURE__ */ jsx("input", {
+													type: "text",
+													id: "ad_soyad",
+													name: "ad_soyad",
+													value: formData.ad_soyad,
+													onChange: handleChange,
+													className: `${contact_module_default.input} ${errors.ad_soyad ? contact_module_default.inputError : ""}`,
+													placeholder: "Adınız ve Soyadınız"
+												}),
+												errors.ad_soyad && /* @__PURE__ */ jsx("span", {
+													className: contact_module_default.errorText,
+													children: errors.ad_soyad
+												})
+											]
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: contact_module_default.formRow,
+											children: [/* @__PURE__ */ jsxs("div", {
+												className: contact_module_default.formGroup,
+												children: [
+													/* @__PURE__ */ jsxs("label", {
+														htmlFor: "email",
+														className: contact_module_default.label,
+														children: ["E-posta ", /* @__PURE__ */ jsx("span", {
+															className: contact_module_default.required,
+															children: "*"
+														})]
+													}),
+													/* @__PURE__ */ jsx("input", {
+														type: "email",
+														id: "email",
+														name: "email",
+														value: formData.email,
+														onChange: handleChange,
+														className: `${contact_module_default.input} ${errors.email ? contact_module_default.inputError : ""}`,
+														placeholder: "ornek@email.com"
+													}),
+													errors.email && /* @__PURE__ */ jsx("span", {
+														className: contact_module_default.errorText,
+														children: errors.email
+													})
+												]
+											}), /* @__PURE__ */ jsxs("div", {
+												className: contact_module_default.formGroup,
+												children: [
+													/* @__PURE__ */ jsxs("label", {
+														htmlFor: "telefon",
+														className: contact_module_default.label,
+														children: ["Telefon ", /* @__PURE__ */ jsx("span", {
+															className: contact_module_default.required,
+															children: "*"
+														})]
+													}),
+													/* @__PURE__ */ jsx("input", {
+														type: "tel",
+														id: "telefon",
+														name: "telefon",
+														value: formData.telefon,
+														onChange: handleChange,
+														className: `${contact_module_default.input} ${errors.telefon ? contact_module_default.inputError : ""}`,
+														placeholder: "+90 5XX XXX XX XX"
+													}),
+													errors.telefon && /* @__PURE__ */ jsx("span", {
+														className: contact_module_default.errorText,
+														children: errors.telefon
+													})
+												]
+											})]
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: contact_module_default.formGroup,
+											children: [/* @__PURE__ */ jsx("label", {
+												htmlFor: "konu",
+												className: contact_module_default.label,
+												children: "Konu"
+											}), /* @__PURE__ */ jsxs("select", {
+												id: "konu",
+												name: "konu",
+												value: formData.konu,
+												onChange: handleChange,
+												className: contact_module_default.select,
+												children: [
+													/* @__PURE__ */ jsx("option", {
+														value: "",
+														children: "Konu Seçiniz"
+													}),
+													/* @__PURE__ */ jsx("option", {
+														value: "teklif",
+														children: "Teklif Talebi"
+													}),
+													/* @__PURE__ */ jsx("option", {
+														value: "genel",
+														children: "Genel Bilgi"
+													}),
+													/* @__PURE__ */ jsx("option", {
+														value: "proje",
+														children: "Proje Danışmanlığı"
+													}),
+													/* @__PURE__ */ jsx("option", {
+														value: "diger",
+														children: "Diğer"
+													})
+												]
+											})]
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: contact_module_default.formGroup,
+											children: [
+												/* @__PURE__ */ jsxs("label", {
+													htmlFor: "mesaj",
+													className: contact_module_default.label,
+													children: ["Mesajınız ", /* @__PURE__ */ jsx("span", {
+														className: contact_module_default.required,
+														children: "*"
+													})]
+												}),
+												/* @__PURE__ */ jsx("textarea", {
+													id: "mesaj",
+													name: "mesaj",
+													value: formData.mesaj,
+													onChange: handleChange,
+													rows: 6,
+													className: `${contact_module_default.textarea} ${errors.mesaj ? contact_module_default.inputError : ""}`,
+													placeholder: "Projeniz hakkında detaylı bilgi veriniz..."
+												}),
+												errors.mesaj && /* @__PURE__ */ jsx("span", {
+													className: contact_module_default.errorText,
+													children: errors.mesaj
+												})
+											]
+										}),
+										/* @__PURE__ */ jsxs("div", {
+											className: contact_module_default.formGroup,
+											children: [/* @__PURE__ */ jsxs("label", {
+												className: contact_module_default.checkboxLabel,
+												children: [/* @__PURE__ */ jsx("input", {
+													type: "checkbox",
+													name: "kvkk_onay",
+													checked: formData.kvkk_onay,
+													onChange: handleChange,
+													className: contact_module_default.checkbox
+												}), /* @__PURE__ */ jsxs("span", { children: [
+													/* @__PURE__ */ jsx("a", {
+														href: "/gizlilik-politikasi",
+														target: "_blank",
+														rel: "noopener noreferrer",
+														children: "KVKK Aydınlatma Metni"
+													}),
+													"'ni okudum, kabul ediyorum. ",
+													/* @__PURE__ */ jsx("span", {
+														className: contact_module_default.required,
+														children: "*"
+													})
+												] })]
+											}), errors.kvkk_onay && /* @__PURE__ */ jsx("span", {
+												className: contact_module_default.errorText,
+												children: errors.kvkk_onay
+											})]
+										}),
+										/* @__PURE__ */ jsx("button", {
+											type: "submit",
+											disabled: isSubmitting,
+											className: contact_module_default.submitButton,
+											children: isSubmitting ? "Gönderiliyor..." : "Mesaj Gönder"
+										})
+									]
+								})
+							]
+						}), /* @__PURE__ */ jsxs("div", {
+							className: contact_module_default.mapSection,
+							children: [
+								/* @__PURE__ */ jsx("h2", {
+									className: contact_module_default.sectionTitle,
+									children: "Konum"
+								}),
+								/* @__PURE__ */ jsx("div", {
+									className: contact_module_default.mapContainer,
+									children: /* @__PURE__ */ jsx("iframe", {
+										src: "https://maps.google.com/maps?q=Levent%20199,%20Esentepe%20Mahallesi,%20%C5%9Ei%C5%9Fli,%20%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed",
+										width: "100%",
+										height: "400",
+										style: { border: 0 },
+										allowFullScreen: true,
+										loading: "lazy",
+										referrerPolicy: "no-referrer-when-downgrade",
+										title: "Kutup Grup Konum"
+									})
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: contact_module_default.workingHours,
+									children: [/* @__PURE__ */ jsx("h3", {
+										className: contact_module_default.hoursTitle,
+										children: "Çalışma Saatleri"
+									}), /* @__PURE__ */ jsxs("ul", {
+										className: contact_module_default.hoursList,
+										children: [
+											/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", { children: "Pazartesi - Cuma:" }), /* @__PURE__ */ jsx("strong", { children: "09:00 - 18:00" })] }),
+											/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", { children: "Cumartesi:" }), /* @__PURE__ */ jsx("strong", { children: "Randevuyla" })] }),
+											/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("span", { children: "Pazar:" }), /* @__PURE__ */ jsx("strong", { children: "Kapalı" })] })
+										]
+									})]
+								})
+							]
+						})]
+					}),
+					/* @__PURE__ */ jsx("section", {
+						className: contact_module_default.whatsappSection,
+						children: /* @__PURE__ */ jsxs("div", {
+							className: contact_module_default.whatsappCard,
+							children: [
+								/* @__PURE__ */ jsx("div", {
+									className: contact_module_default.whatsappIcon,
+									children: /* @__PURE__ */ jsx("svg", {
+										width: "24",
+										height: "24",
+										viewBox: "0 0 24 24",
+										fill: "none",
+										stroke: "currentColor",
+										strokeWidth: "1.5",
+										strokeLinecap: "round",
+										strokeLinejoin: "round",
+										children: /* @__PURE__ */ jsx("path", { d: "M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" })
+									})
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: contact_module_default.whatsappContent,
+									children: [/* @__PURE__ */ jsx("h3", { children: "Hızlı İletişim için WhatsApp" }), /* @__PURE__ */ jsx("p", { children: "Acil durumlar için WhatsApp üzerinden bize ulaşabilirsiniz" })]
+								}),
+								/* @__PURE__ */ jsx("a", {
+									href: "https://wa.me/905335176609",
+									target: "_blank",
+									rel: "noopener noreferrer",
+									className: contact_module_default.whatsappButton,
+									children: "WhatsApp ile İletişim"
+								})
+							]
+						})
+					})
+				]
+			})]
+		}),
+		/* @__PURE__ */ jsx(Footer, {})
+	] });
+}
+//#endregion
+//#region src/pages/References.tsx
+function ReferanslarPageClient() {
+	return /* @__PURE__ */ jsxs("div", {
+		className: "maintenance-page",
+		children: [
+			/* @__PURE__ */ jsx(Header, {}),
+			/* @__PURE__ */ jsxs("main", {
+				className: "maintenance-main",
+				children: [
+					/* @__PURE__ */ jsx("div", { className: "maintenance-bg-grid" }),
+					/* @__PURE__ */ jsx("div", { className: "maintenance-glow-1" }),
+					/* @__PURE__ */ jsx("div", { className: "maintenance-glow-2" }),
+					/* @__PURE__ */ jsx("div", {
+						className: "maintenance-container",
+						children: /* @__PURE__ */ jsxs("div", {
+							className: "maintenance-card",
+							children: [
+								/* @__PURE__ */ jsx("div", {
+									className: "maintenance-icon-wrapper",
+									children: /* @__PURE__ */ jsx("svg", {
+										width: "48",
+										height: "48",
+										viewBox: "0 0 24 24",
+										fill: "none",
+										stroke: "currentColor",
+										strokeWidth: "1.5",
+										strokeLinecap: "round",
+										strokeLinejoin: "round",
+										children: /* @__PURE__ */ jsx("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" })
+									})
+								}),
+								/* @__PURE__ */ jsx("p", {
+									className: "maintenance-eyebrow",
+									children: "Yapım Aşamasında"
+								}),
+								/* @__PURE__ */ jsx("h1", {
+									className: "maintenance-title",
+									children: "Referanslarımız Yakında Burada"
+								}),
+								/* @__PURE__ */ jsx("p", {
+									className: "maintenance-description",
+									children: "Endüstriyel dağcılık ve jeoteknik saha çalışmalarımıza ait izinli proje portföyü ve vaka analizleri hazırlanıyor. Hizmet kapsamı ve proje ihtiyaçlarınız hakkında bilgi almak için bizimle iletişime geçebilirsiniz."
+								}),
+								/* @__PURE__ */ jsxs("div", {
+									className: "maintenance-buttons",
+									children: [/* @__PURE__ */ jsx(Link$1, {
+										href: "/iletisim",
+										className: "btn btn-primary",
+										children: "Bizimle İletişime Geçin"
+									}), /* @__PURE__ */ jsx(Link$1, {
+										href: "/",
+										className: "btn btn-secondary",
+										children: "Anasayfaya Dön"
+									})]
+								})
+							]
+						})
+					})
+				]
+			}),
+			/* @__PURE__ */ jsx(Footer, {}),
+			/* @__PURE__ */ jsx("style", {
+				jsx: true,
+				children: `
+                .maintenance-page {
+                    min-height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    background: #030712;
+                    overflow: hidden;
+                    position: relative;
+                }
+                
+                .maintenance-main {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: var(--spacing-16) 0;
+                    margin-top: 80px;
+                    position: relative;
+                }
+                
+                .maintenance-bg-grid {
+                    position: absolute;
+                    inset: 0;
+                    background-image: 
+                        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+                    background-size: 40px 40px;
+                    pointer-events: none;
+                }
+                
+                .maintenance-glow-1 {
+                    position: absolute;
+                    top: 20%;
+                    left: 10%;
+                    width: 400px;
+                    height: 400px;
+                    background: radial-gradient(circle, rgba(62, 146, 204, 0.1) 0%, transparent 70%);
+                    pointer-events: none;
+                }
+                
+                .maintenance-glow-2 {
+                    position: absolute;
+                    bottom: 20%;
+                    right: 10%;
+                    width: 500px;
+                    height: 500px;
+                    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+                    pointer-events: none;
+                }
+                
+                .maintenance-container {
+                    max-width: 700px;
+                    width: 100%;
+                    padding: 0 var(--spacing-6);
+                    position: relative;
+                    z-index: 2;
+                }
+                
+                .maintenance-card {
+                    background: rgba(255, 255, 255, 0.02);
+                    backdrop-filter: blur(20px);
+                    -webkit-backdrop-filter: blur(20px);
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    border-radius: 24px;
+                    padding: var(--spacing-10) var(--spacing-8);
+                    text-align: center;
+                    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+                }
+                
+                .maintenance-icon-wrapper {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 22px;
+                    background: linear-gradient(135deg, rgba(62, 146, 204, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%);
+                    color: var(--color-arctic-blue);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto var(--spacing-6);
+                    border: 1px solid rgba(62, 146, 204, 0.2);
+                    box-shadow: 0 10px 25px rgba(62, 146, 204, 0.1);
+                    animation: float-anim 4s ease-in-out infinite;
+                }
+                
+                @keyframes float-anim {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-8px); }
+                }
+                
+                .maintenance-eyebrow {
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.18em;
+                    color: var(--color-arctic-blue);
+                    margin-bottom: var(--spacing-3);
+                }
+                
+                .maintenance-title {
+                    font-size: 2.2rem;
+                    color: white;
+                    margin-bottom: var(--spacing-4);
+                    font-family: var(--font-heading);
+                    font-weight: 800;
+                    letter-spacing: -0.02em;
+                    line-height: 1.25;
+                }
+                
+                .maintenance-description {
+                    font-size: 1rem;
+                    color: rgba(255, 255, 255, 0.6);
+                    line-height: 1.6;
+                    margin-bottom: var(--spacing-8);
+                    max-width: 580px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
+                .maintenance-buttons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: var(--spacing-4);
+                    flex-wrap: wrap;
+                }
+                
+                .btn {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 12px 28px;
+                    border-radius: var(--radius-full);
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    font-family: var(--font-heading);
+                    text-decoration: none;
+                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                    border: 1px solid transparent;
+                }
+                
+                .btn-primary {
+                    background: linear-gradient(135deg, var(--color-deep-navy) 0%, var(--color-arctic-blue) 100%);
+                    color: white;
+                    box-shadow: 0 4px 15px rgba(62, 146, 204, 0.2);
+                }
+                .btn-primary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 25px rgba(62, 146, 204, 0.35);
+                }
+                
+                .btn-secondary {
+                    background: rgba(255, 255, 255, 0.05);
+                    color: white;
+                    border-color: rgba(255, 255, 255, 0.1);
+                }
+                .btn-secondary:hover {
+                    background: rgba(255, 255, 255, 0.08);
+                    transform: translateY(-2px);
+                }
+                
+                @media (max-width: 640px) {
+                    .maintenance-title {
+                        font-size: 1.8rem;
+                    }
+                    .maintenance-card {
+                        padding: var(--spacing-8) var(--spacing-5);
+                    }
+                    .maintenance-buttons {
+                        flex-direction: column;
+                        width: 100%;
+                    }
+                    .btn {
+                        width: 100%;
+                    }
+                }
+            `
+			})
+		]
+	});
+}
+var sss_module_default = {
+	sssPage: "_sssPage_rsv0q_1",
+	hero: "_hero_rsv0q_6",
+	heroContent: "_heroContent_rsv0q_14",
+	heroTitle: "_heroTitle_rsv0q_20",
+	fadeInUp: "_fadeInUp_rsv0q_1",
+	heroSubtitle: "_heroSubtitle_rsv0q_28",
+	container: "_container_rsv0q_34",
+	filterSection: "_filterSection_rsv0q_41",
+	filterButtons: "_filterButtons_rsv0q_46",
+	filterButton: "_filterButton_rsv0q_46",
+	filterButtonActive: "_filterButtonActive_rsv0q_71",
+	filterCount: "_filterCount_rsv0q_77",
+	faqList: "_faqList_rsv0q_83",
+	faqItem: "_faqItem_rsv0q_90",
+	faqItemOpen: "_faqItemOpen_rsv0q_104",
+	faqQuestion: "_faqQuestion_rsv0q_109",
+	faqQuestionText: "_faqQuestionText_rsv0q_128",
+	faqCategory: "_faqCategory_rsv0q_135",
+	faqIcon: "_faqIcon_rsv0q_147",
+	faqAnswer: "_faqAnswer_rsv0q_166",
+	ctaSection: "_ctaSection_rsv0q_184",
+	ctaCard: "_ctaCard_rsv0q_188",
+	ctaTitle: "_ctaTitle_rsv0q_195",
+	ctaText: "_ctaText_rsv0q_202",
+	ctaButton: "_ctaButton_rsv0q_208"
+};
+//#endregion
+//#region src/pages/FAQ.tsx
+var FAQS = [
+	{
+		id: 1,
+		category: "Genel",
+		question: "Kutup Grup hangi hizmetleri sunuyor?",
+		answer: "Endüstriyel dağcılık, iple erişim, yüksek yapı çalışmaları ve jeoteknik uygulamalarla ilgili hizmet başlıklarını Hizmetler sayfasında bulabilirsiniz. Bir işin uygulanabilirliği; yapı, görev, erişim ve saha koşulları incelendikten sonra netleştirilir."
+	},
+	{
+		id: 2,
+		category: "Genel",
+		question: "Hangi bölgelerde hizmet veriyorsunuz?",
+		answer: "Hizmet alanı; projenin kapsamı, saha koşulları ve ekip planına göre belirlenir. İletişim sayfasındaki bilgilerle yapı, görev ve konum bilgisini paylaşarak ön değerlendirme başlatabilirsiniz."
+	},
+	{
+		id: 3,
+		category: "Sertifikasyon",
+		question: "IRATA nedir ve neden önemlidir?",
+		answer: "IRATA (Industrial Rope Access Trade Association), endüstriyel iple erişim alanında eğitim, yetkinlik ve uygulama çerçevesi sunan uluslararası bir kuruluştur. Bir şirketin veya personelin güncel belge durumu ayrıca doğrulanmalıdır; sertifika ifadesi tek başına saha risk değerlendirmesinin yerine geçmez."
+	},
+	{
+		id: 4,
+		category: "Sertifikasyon",
+		question: "SPRAT ve IRATA arasındaki fark nedir?",
+		answer: "SPRAT (Society of Professional Rope Access Technicians) ve IRATA, iple erişim alanında eğitim ve uygulama çerçeveleri sunan iki ayrı kuruluştur. Kapsam, seviye ve güncel belge durumu personel ve proje bazında doğrulanmalıdır."
+	},
+	{
+		id: 5,
+		category: "Güvenlik",
+		question: "İş güvenliği önlemleriniz nelerdir?",
+		answer: "İşin kapsamına göre risk değerlendirmesi, iş metodu, ekipman kontrolü, çalışma alanının ve çevrenin korunması, iletişim düzeni ve kurtarma planı ele alınır. Gerekli yetkinlik ve belgeler proje öncesi doğrulanır; tek bir standart veya sertifika her saha için yeterli kabul edilmez."
+	},
+	{
+		id: 6,
+		category: "Güvenlik",
+		question: "Proje öncesi hangi iş güvenliği bilgileri paylaşılır?",
+		answer: "İşin niteliğine göre görev, sorumluluk, yetkinlik, ekipman, saha kuralları, sigorta ve gerekli belge kapsamı teklif veya sözleşme öncesi karşılıklı olarak netleştirilir. Kesin bilgiler proje özelindeki kayıtlarla doğrulanmalıdır."
+	},
+	{
+		id: 7,
+		category: "Proje Süreci",
+		question: "Proje süreci nasıl işliyor?",
+		answer: "Süreç genellikle ilk görüşme ve bilgi toplama, saha keşfi veya teknik inceleme, risk ve yöntem değerlendirmesi, kapsamı açık teklif, sözleşme, saha uygulaması, kontrol ve teslim kayıtlarından oluşur. Bakım veya takip ihtiyacı varsa kapsamı ayrıca yazılı olarak belirlenir."
+	},
+	{
+		id: 8,
+		category: "Proje Süreci",
+		question: "Teklif almak için ne yapmam gerekiyor?",
+		answer: "İletişim sayfasındaki form, telefon veya e-posta üzerinden yapı, konum, görev, erişim ve beklenen çıktı hakkında temel bilgileri paylaşabilirsiniz. Teklif süresi; kapsamın açıklığı, saha incelemesi ve gerekli teknik değerlendirmeye göre netleştirilir."
+	},
+	{
+		id: 9,
+		category: "Hizmet Detayları",
+		question: "Cephe temizliği ne kadar sürer?",
+		answer: "Cephe temizliği süresi binanın yüksekliği, toplam alanı, yüzey ve kirlilik türü, erişim yöntemi, çevre güvenliği ve hava koşullarına göre değişir. Takvim, saha bilgileri ve iş kapsamı incelendikten sonra gerçekçi biçimde belirlenir."
+	},
+	{
+		id: 10,
+		category: "Hizmet Detayları",
+		question: "Kaya bariyeri fiyatı nasıl hesaplanır?",
+		answer: "Kaya bariyeri maliyeti; kaynak alan, hareket yolu, tasarım senaryosu, gerekli enerji kapasitesi, güzergâh uzunluğu, zemin ve ankraj koşulları, erişim ve montaj gereklilikleriyle birlikte değerlendirilir. Kesin kapsam ve fiyat için saha verisi gerekir; ilgili ürün standardı üretici ve tasarım dokümanlarından doğrulanmalıdır."
+	},
+	{
+		id: 11,
+		category: "Hizmet Detayları",
+		question: "Rüzgar türbini bakımı ne sıklıkla yapılmalıdır?",
+		answer: "Rüzgâr türbinlerinde bakım periyodu; üretici talimatları, işletme koşulları, ekipmanın durumu ve saha riskine göre belirlenir. Fırtına veya olağan dışı olay sonrasında ek kontrol gerekebilir. Takvim ve bakım kapsamı proje dokümanında açıkça yazılmalıdır."
+	},
+	{
+		id: 12,
+		category: "Hizmet Detayları",
+		question: "Şev örtüleme nedir ve neden gereklidir?",
+		answer: "Şev örtüleme, eğimli arazilerde yüzey erozyonunu ve gevşek malzemenin hareketini sınırlamaya veya yönlendirmeye yardımcı olabilen jeoteknik bir uygulamadır. Ağ, ankraj, drenaj ve diğer önlemlerin seçimi; yamaç geometrisi, zemin, su ve beklenen hareket türü incelenerek yapılır. Her sahada kalan risk ayrıca değerlendirilir."
+	},
+	{
+		id: 13,
+		category: "Teknik",
+		question: "Hangi ekipmanları kullanıyorsunuz?",
+		answer: "Ekipman seçimi; işin türü, erişim yöntemi, yükler, çevre, kullanıcı uyumu ve üretici talimatlarına göre yapılır. İp, bağlantı elemanı, düşüş durdurma veya kurtarma ekipmanı için uygunluk, kullanım ömrü, kontrol ve kayıt gereklilikleri proje öncesi doğrulanmalıdır."
+	},
+	{
+		id: 14,
+		category: "Teknik",
+		question: "ATEX bölgelerinde çalışabiliyor musunuz?",
+		answer: "ATEX riski bulunan alanlarda işe başlamadan önce bölge sınıflandırması, izin sistemi, gaz ölçümü, ekipman uygunluğu, statik elektrik ve acil durum prosedürleri yetkili işveren ve uzmanlarla birlikte doğrulanmalıdır. Çalışma yetkisi, personel ve ekipman kapsamı proje özelinde yazılı olarak teyit edilmeden varsayılmamalıdır."
+	},
+	{
+		id: 15,
+		category: "Fiyatlandırma",
+		question: "Fiyatlarınız neden farklılık gösterir?",
+		answer: "Her proje kendine özgüdür. Fiyatlandırmada çalışma yüksekliği, tehlike ve erişilebilirlik, malzeme, ekipman, çevre güvenliği, proje süresi ve mevsimsel koşullar gibi unsurlar etkili olabilir. Kapsam netleşmeden verilen birim fiyat, gerçek işi ve kalan riskleri temsil etmeyebilir."
+	},
+	{
+		id: 16,
+		category: "Fiyatlandırma",
+		question: "Ödeme koşullarınız nedir?",
+		answer: "Ödeme koşulları; işin kapsamı, malzeme ve ekipman gereklilikleri, süre ve tarafların mutabakatına göre teklif ve sözleşmede yazılı olarak belirlenir. Avans, hakediş, teslim ve faturalama koşulları imza öncesi açık olmalıdır."
+	},
+	{
+		id: 17,
+		category: "Garanti",
+		question: "Garanti ve bakım koşulları nasıl belirlenir?",
+		answer: "Garanti ve bakım koşulları; işin türü, kullanılan malzeme, üretici şartları, montaj ve teslim kapsamı, kontrol sıklığı ve tarafların sözleşmesine göre belirlenir. Süre, kapsam, istisnalar ve bakım sorumlulukları yazılı belgede açıkça yer almalıdır."
+	},
+	{
+		id: 18,
+		category: "Acil Durum",
+		question: "Acil durumlar için nasıl ulaşabilirim?",
+		answer: "Acil durumlarda önce saha ve işverenin mevcut acil durum prosedürü, yerel acil servisler ve yetkili sorumlular devreye alınmalıdır. İletişim, müdahale kapsamı, ulaşılabilir kişiler ve olası yanıt süresi proje öncesi hazırlanan plana göre yazılı olarak netleştirilmelidir."
+	}
+];
+var CATEGORIES = [
+	"Tümü",
+	"Genel",
+	"Sertifikasyon",
+	"Güvenlik",
+	"Proje Süreci",
+	"Hizmet Detayları",
+	"Teknik",
+	"Fiyatlandırma",
+	"Garanti",
+	"Acil Durum"
+];
+function SSSPageClient() {
+	const [selectedCategory, setSelectedCategory] = useState("Tümü");
+	const [openId, setOpenId] = useState(null);
+	const filteredFAQs = selectedCategory === "Tümü" ? FAQS : FAQS.filter((faq) => faq.category === selectedCategory);
+	const toggleFAQ = (id) => {
+		setOpenId(openId === id ? null : id);
+	};
+	const faqSchema = generateFAQSchema(FAQS.map((faq) => ({
+		question: faq.question,
+		answer: faq.answer
+	})));
+	return /* @__PURE__ */ jsxs("div", {
+		className: sss_module_default.sssPage,
+		children: [
+			/* @__PURE__ */ jsx(StructuredData, { data: faqSchema }),
+			/* @__PURE__ */ jsx("section", {
+				className: sss_module_default.hero,
+				children: /* @__PURE__ */ jsxs("div", {
+					className: sss_module_default.heroContent,
+					children: [/* @__PURE__ */ jsx("h1", {
+						className: sss_module_default.heroTitle,
+						children: "Sıkça Sorulan Sorular"
+					}), /* @__PURE__ */ jsx("p", {
+						className: sss_module_default.heroSubtitle,
+						children: "Kutup Grup hizmetleri hakkında merak ettikleriniz"
+					})]
+				})
+			}),
+			/* @__PURE__ */ jsxs("div", {
+				className: sss_module_default.container,
+				children: [
+					/* @__PURE__ */ jsxs("section", {
+						className: sss_module_default.filterSection,
+						children: [/* @__PURE__ */ jsx("div", {
+							className: sss_module_default.filterButtons,
+							children: CATEGORIES.map((category) => /* @__PURE__ */ jsx("button", {
+								onClick: () => setSelectedCategory(category),
+								className: `${sss_module_default.filterButton} ${selectedCategory === category ? sss_module_default.filterButtonActive : ""}`,
+								children: category
+							}, category))
+						}), /* @__PURE__ */ jsxs("p", {
+							className: sss_module_default.filterCount,
+							children: [filteredFAQs.length, " soru görüntüleniyor"]
+						})]
+					}),
+					/* @__PURE__ */ jsx("section", {
+						className: sss_module_default.faqList,
+						children: filteredFAQs.map((faq) => /* @__PURE__ */ jsxs("div", {
+							className: `${sss_module_default.faqItem} ${openId === faq.id ? sss_module_default.faqItemOpen : ""}`,
+							children: [/* @__PURE__ */ jsxs("button", {
+								className: sss_module_default.faqQuestion,
+								onClick: () => toggleFAQ(faq.id),
+								children: [/* @__PURE__ */ jsxs("span", {
+									className: sss_module_default.faqQuestionText,
+									children: [/* @__PURE__ */ jsx("span", {
+										className: sss_module_default.faqCategory,
+										children: faq.category
+									}), faq.question]
+								}), /* @__PURE__ */ jsx("span", {
+									className: sss_module_default.faqIcon,
+									children: openId === faq.id ? "−" : "+"
+								})]
+							}), /* @__PURE__ */ jsx("div", {
+								className: sss_module_default.faqAnswer,
+								children: /* @__PURE__ */ jsx("p", { children: faq.answer })
+							})]
+						}, faq.id))
+					}),
+					/* @__PURE__ */ jsx("section", {
+						className: sss_module_default.ctaSection,
+						children: /* @__PURE__ */ jsxs("div", {
+							className: sss_module_default.ctaCard,
+							children: [
+								/* @__PURE__ */ jsx("h2", {
+									className: sss_module_default.ctaTitle,
+									children: "Sorunuza Cevap Bulamadınız mı?"
+								}),
+								/* @__PURE__ */ jsx("p", {
+									className: sss_module_default.ctaText,
+									children: "Bizimle iletişime geçin, size yardımcı olmaktan mutluluk duyarız"
+								}),
+								/* @__PURE__ */ jsx(Link$1, {
+									href: "/iletisim",
+									className: sss_module_default.ctaButton,
+									children: "İletişime Geçin"
+								})
+							]
+						})
+					})
+				]
+			})
+		]
+	});
+}
+var legal_module_default = {
+	legalPage: "_legalPage_1qufr_1",
+	hero: "_hero_1qufr_6",
+	heroContent: "_heroContent_1qufr_14",
+	heroTitle: "_heroTitle_1qufr_20",
+	heroSubtitle: "_heroSubtitle_1qufr_27",
+	container: "_container_1qufr_33",
+	content: "_content_1qufr_39",
+	section: "_section_1qufr_46",
+	contactBox: "_contactBox_1qufr_117",
+	warningBox: "_warningBox_1qufr_134",
+	tableContainer: "_tableContainer_1qufr_148",
+	table: "_table_1qufr_148",
+	buttonGroup: "_buttonGroup_1qufr_188",
+	primaryButton: "_primaryButton_1qufr_195"
+};
+//#endregion
+//#region src/pages/Privacy.tsx
+function GizlilikPolitikasiClient() {
+	return /* @__PURE__ */ jsxs("div", {
+		className: legal_module_default.legalPage,
+		children: [/* @__PURE__ */ jsx("section", {
+			className: legal_module_default.hero,
+			children: /* @__PURE__ */ jsxs("div", {
+				className: legal_module_default.heroContent,
+				children: [/* @__PURE__ */ jsx("h1", {
+					className: legal_module_default.heroTitle,
+					children: "Gizlilik Politikası ve KVKK"
+				}), /* @__PURE__ */ jsx("p", {
+					className: legal_module_default.heroSubtitle,
+					children: "Son Güncelleme: 15 Şubat 2026"
+				})]
+			})
+		}), /* @__PURE__ */ jsx("div", {
+			className: legal_module_default.container,
+			children: /* @__PURE__ */ jsxs("article", {
+				className: legal_module_default.content,
+				children: [
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [/* @__PURE__ */ jsx("h2", { children: "1. Giriş" }), /* @__PURE__ */ jsx("p", { children: "Kutup Grup olarak, kişisel verilerinizin gizliliğini ve güvenliğini korumayı en önemli önceliklerimiz arasında tutmaktayız. Bu Gizlilik Politikası, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır." })]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "2. Veri Sorumlusu" }),
+							/* @__PURE__ */ jsx("p", { children: "KVKK kapsamında veri sorumlusu Kutup Grup olup, toplanan kişisel verilerinizin işlenme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan taraf Kutup Grup'tur." }),
+							/* @__PURE__ */ jsxs("div", {
+								className: legal_module_default.contactBox,
+								children: [
+									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Adres:" }), " Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul"] }),
+									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " kvkk@kutupgrup.com"] }),
+									/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })
+								]
+							})
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "3. Toplanan Kişisel Veriler" }),
+							/* @__PURE__ */ jsx("p", { children: "Şirketimiz tarafından toplanan kişisel veriler aşağıdaki kategorilerde sınıflandırılmaktadır:" }),
+							/* @__PURE__ */ jsxs("ul", { children: [
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Kimlik Bilgileri:" }), " Ad, soyad, T.C. kimlik numarası (yasal zorunluluk halinde)"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İletişim Bilgileri:" }), " Telefon numarası, e-posta adresi, açık adres"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Müşteri İşlem Bilgileri:" }), " Talep edilen hizmet bilgileri, proje detayları, teklif bilgileri"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İşlem Güvenliği Bilgileri:" }), " IP adresi, çerez verileri, oturum kayıtları"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Finansal Bilgiler:" }), " Fatura bilgileri, ödeme bilgileri (ödeme işlemcisi üzerinden)"] })
+							] })
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "4. Kişisel Verilerin İşlenme Amaçları" }),
+							/* @__PURE__ */ jsx("p", { children: "Toplanan kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:" }),
+							/* @__PURE__ */ jsxs("ul", { children: [
+								/* @__PURE__ */ jsx("li", { children: "Hizmet taleplerinizi değerlendirmek ve teklif sunmak" }),
+								/* @__PURE__ */ jsx("li", { children: "Sözleşme süreçlerini yürütmek ve hizmet sağlamak" }),
+								/* @__PURE__ */ jsx("li", { children: "Faturalandırma ve ödeme işlemlerini gerçekleştirmek" }),
+								/* @__PURE__ */ jsx("li", { children: "Yasal yükümlülükleri yerine getirmek" }),
+								/* @__PURE__ */ jsx("li", { children: "Müşteri memnuniyetini ölçmek ve hizmet kalitesini artırmak" }),
+								/* @__PURE__ */ jsx("li", { children: "İstatistiksel analiz ve raporlama yapmak" }),
+								/* @__PURE__ */ jsx("li", { children: "Pazarlama ve iletişim faaliyetleri yürütmek (açık rıza ile)" })
+							] })
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "5. Kişisel Verilerin Aktarımı" }),
+							/* @__PURE__ */ jsx("p", { children: "Kişisel verileriniz, KVKK'nın 8. ve 9. maddelerinde belirtilen şartlar çerçevesinde ve bu Gizlilik Politikası'nda belirtilen amaçlarla sınırlı olarak:" }),
+							/* @__PURE__ */ jsxs("ul", { children: [
+								/* @__PURE__ */ jsx("li", { children: "İş ortaklarımız ve tedarikçilerimiz ile (proje gereksinimleri kapsamında)" }),
+								/* @__PURE__ */ jsx("li", { children: "Yasal yükümlülükler gereği kamu kurum ve kuruluşları ile" }),
+								/* @__PURE__ */ jsx("li", { children: "Hukuki işlemlerin yürütülmesi amacıyla hukuk danışmanları ve denetçiler ile" }),
+								/* @__PURE__ */ jsx("li", { children: "Bilişim altyapı hizmeti sağlayıcıları ile (veri güvenliği sağlanarak)" })
+							] }),
+							/* @__PURE__ */ jsx("p", { children: "paylaşılabilmektedir." })
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "6. Kişisel Verilerin Saklanma Süresi" }),
+							/* @__PURE__ */ jsx("p", { children: "Kişisel verileriniz, ilgili mevzuatta öngörülen ve işlendikleri amaç için gerekli olan azami süre ve herhalde kanuni zamanaşımı süreleri kadar muhafaza edilmektedir. Saklama süreleri sona erdiğinde kişisel veriler silinir, yok edilir veya anonim hale getirilir." }),
+							/* @__PURE__ */ jsxs("ul", { children: [
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Sözleşme ve Fatura Bilgileri:" }), " 10 yıl (Vergi Usul Kanunu gereği)"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "İletişim Kayıtları:" }), " 2 yıl"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Pazarlama Onayları:" }), " Onay geri çekilene kadar"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Website Logları:" }), " 6 ay"] })
+							] })
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "7. KVKK Kapsamındaki Haklarınız" }),
+							/* @__PURE__ */ jsx("p", { children: "KVKK'nın 11. maddesi uyarınca, kişisel veri sahibi olarak aşağıdaki haklara sahipsiniz:" }),
+							/* @__PURE__ */ jsxs("ul", { children: [
+								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin işlenip işlenmediğini öğrenme" }),
+								/* @__PURE__ */ jsx("li", { children: "Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme" }),
+								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme" }),
+								/* @__PURE__ */ jsx("li", { children: "Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme" }),
+								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme" }),
+								/* @__PURE__ */ jsx("li", { children: "KVKK'da öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme" }),
+								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin aktarıldığı üçüncü kişilere yukarıdaki değişikliklerin bildirilmesini isteme" }),
+								/* @__PURE__ */ jsx("li", { children: "İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize sonuç çıkmasına itiraz etme" }),
+								/* @__PURE__ */ jsx("li", { children: "Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme" })
+							] })
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "8. Haklarınızı Kullanma" }),
+							/* @__PURE__ */ jsx("p", { children: "Yukarıda belirtilen haklarınızı kullanmak için kimliğinizi tespit edici belgeler ile birlikte talebinizi;" }),
+							/* @__PURE__ */ jsxs("ul", { children: [
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Yazılı olarak:" }), " Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul adresine"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta ile:" }), " kvkk@kutupgrup.com adresine"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "KEP adresi ile:" }), " kutupgrup@hs03.kep.tr adresine"] })
+							] }),
+							/* @__PURE__ */ jsx("p", { children: "iletebilirsiniz. Talebiniz en geç 30 gün içinde ücretsiz olarak sonuçlandırılacaktır. Ancak, işlemin ayrıca bir maliyeti gerektirmesi hâlinde, Kişisel Verileri Koruma Kurulu tarafından belirlenen tarifedeki ücret alınabilir." })
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [/* @__PURE__ */ jsx("h2", { children: "9. Çerezler (Cookies)" }), /* @__PURE__ */ jsxs("p", { children: [
+							"Web sitemizde kullanıcı deneyimini geliştirmek amacıyla çerezler kullanılmaktadır. Çerezlerin kullanımı hakkında detaylı bilgi için ",
+							/* @__PURE__ */ jsx("a", {
+								href: "/cerez-politikasi",
+								children: "Çerez Politikamızı"
+							}),
+							" inceleyebilirsiniz."
+						] })]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [/* @__PURE__ */ jsx("h2", { children: "10. Güvenlik" }), /* @__PURE__ */ jsx("p", { children: "Kişisel verilerinizin güvenliğini sağlamak için teknik ve idari tedbirler alınmaktadır. Verileriniz, yetkisiz erişime, kaybolmaya, kötüye kullanıma karşı korunmaktadır. SSL sertifikası, güvenlik duvarları, şifreleme teknolojileri ve erişim kontrolleri kullanılarak verileriniz korunmaktadır." })]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [/* @__PURE__ */ jsx("h2", { children: "11. Değişiklikler" }), /* @__PURE__ */ jsx("p", { children: "Bu Gizlilik Politikası'nda yapılacak değişiklikler web sitemizde yayınlanacaktır. Politika'nın güncel versiyonunu düzenli olarak kontrol etmenizi öneririz." })]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "12. İletişim" }),
+							/* @__PURE__ */ jsx("p", { children: "Gizlilik Politikamız ile ilgili sorularınız için bizimle iletişime geçebilirsiniz:" }),
+							/* @__PURE__ */ jsxs("div", {
+								className: legal_module_default.contactBox,
+								children: [/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " kvkk@kutupgrup.com"] }), /* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })]
+							})
+						]
+					})
+				]
+			})
+		})]
+	});
+}
+//#endregion
+//#region src/pages/Cookies.tsx
+function CerezPolitikasiClient() {
+	return /* @__PURE__ */ jsxs("div", {
+		className: legal_module_default.legalPage,
+		children: [/* @__PURE__ */ jsx("section", {
+			className: legal_module_default.hero,
+			children: /* @__PURE__ */ jsxs("div", {
+				className: legal_module_default.heroContent,
+				children: [/* @__PURE__ */ jsx("h1", {
+					className: legal_module_default.heroTitle,
+					children: "Çerez Politikası"
+				}), /* @__PURE__ */ jsx("p", {
+					className: legal_module_default.heroSubtitle,
+					children: "Son Güncelleme: 15 Şubat 2026"
+				})]
+			})
+		}), /* @__PURE__ */ jsx("div", {
+			className: legal_module_default.container,
+			children: /* @__PURE__ */ jsxs("article", {
+				className: legal_module_default.content,
+				children: [
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [/* @__PURE__ */ jsx("h2", { children: "1. Giriş" }), /* @__PURE__ */ jsx("p", { children: "Bu Çerez Politikası, Kutup Grup'un web sitesinde (kutupgrup.com) kullanılan çerezler ve benzeri teknolojiler hakkında sizi bilgilendirmek amacıyla hazırlanmıştır. Web sitemizi ziyaret ettiğinizde çerezlerin kullanımına ilişkin tercihlerinizi belirtebilirsiniz." })]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [/* @__PURE__ */ jsx("h2", { children: "2. Çerez Nedir?" }), /* @__PURE__ */ jsx("p", { children: "Çerezler, bir web sitesini ziyaret ettiğinizde bilgisayarınıza veya mobil cihazınıza kaydedilen küçük metin dosyalarıdır.  Çerezler, web sitelerinin daha verimli çalışmasını sağlamak ve web sitesi sahiplerine bilgi sağlamak için yaygın olarak kullanılır." })]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "3. Çerez Türleri" }),
+							/* @__PURE__ */ jsx("p", { children: "Web sitemizde kullanılan çerezler aşağıdaki kategorilerde sınıflandırılabilir:" }),
+							/* @__PURE__ */ jsx("div", {
+								className: legal_module_default.tableContainer,
+								children: /* @__PURE__ */ jsxs("table", {
+									className: legal_module_default.table,
+									children: [/* @__PURE__ */ jsx("thead", { children: /* @__PURE__ */ jsxs("tr", { children: [
+										/* @__PURE__ */ jsx("th", { children: "Çerez Türü" }),
+										/* @__PURE__ */ jsx("th", { children: "Amaç" }),
+										/* @__PURE__ */ jsx("th", { children: "Süre" })
+									] }) }), /* @__PURE__ */ jsxs("tbody", { children: [
+										/* @__PURE__ */ jsxs("tr", { children: [
+											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Zorunlu Çerezler" }) }),
+											/* @__PURE__ */ jsx("td", { children: "Web sitesinin temel işlevlerini yerine getirmesi için gereklidir" }),
+											/* @__PURE__ */ jsx("td", { children: "Oturum / Kalıcı" })
+										] }),
+										/* @__PURE__ */ jsxs("tr", { children: [
+											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Performans Çerezleri" }) }),
+											/* @__PURE__ */ jsx("td", { children: "Web sitesinin performansını analiz etmek ve iyileştirmek için kullanılır" }),
+											/* @__PURE__ */ jsx("td", { children: "1-2 yıl" })
+										] }),
+										/* @__PURE__ */ jsxs("tr", { children: [
+											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "İşlevsellik Çerezleri" }) }),
+											/* @__PURE__ */ jsx("td", { children: "Tercihlerinizi hatırlamak ve kişiselleştirilmiş deneyim sunmak için kullanılır" }),
+											/* @__PURE__ */ jsx("td", { children: "1 yıl" })
+										] }),
+										/* @__PURE__ */ jsxs("tr", { children: [
+											/* @__PURE__ */ jsx("td", { children: /* @__PURE__ */ jsx("strong", { children: "Hedefleme/Reklam Çerezleri" }) }),
+											/* @__PURE__ */ jsx("td", { children: "İlgi alanlarınıza uygun reklamlar göstermek için kullanılır" }),
+											/* @__PURE__ */ jsx("td", { children: "1-2 yıl" })
+										] })
+									] })]
+								})
+							})
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "4. Kullandığımız Çerezler" }),
+							/* @__PURE__ */ jsx("h3", { children: "4.1. Zorunlu Çerezler" }),
+							/* @__PURE__ */ jsxs("ul", { children: [
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Oturum Çerezleri:" }), " Web sitesinde gezinmenizi sağlar ve güvenlik için gereklidir"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Form Çerezleri:" }), " İletişim formlarının doğru çalışmasını sağlar"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Güvenlik Çerezleri:" }), " Güvenlik önlemlerini destekler ve kötüye kullanımı önler"] })
+							] }),
+							/* @__PURE__ */ jsx("h3", { children: "4.2. Analitik Çerezler" }),
+							/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Google Analytics:" }), " Ziyaretçi istatistikleri, sayfa görüntülemeleri, kaynak analizi"] }), /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Kullanım verileri:" }), " Hangi sayfaların ziyaret edildiği, ne kadar süre kalındığı"] })] }),
+							/* @__PURE__ */ jsx("h3", { children: "4.3. İşlevsellik Çerezleri" }),
+							/* @__PURE__ */ jsxs("ul", { children: [/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Dil tercihleri:" }), " Seçtiğiniz dil ayarını hatırlar"] }), /* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Filtreleme tercihleri:" }), " Hizmet filtreleme seçimlerinizi saklar"] })] })
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "5. Üçüncü Taraf Çerezleri" }),
+							/* @__PURE__ */ jsx("p", { children: "Web sitemizde aşağıdaki üçüncü taraf hizmetleri kullanılmaktadır:" }),
+							/* @__PURE__ */ jsxs("ul", { children: [
+								/* @__PURE__ */ jsxs("li", { children: [
+									/* @__PURE__ */ jsx("strong", { children: "Google Analytics:" }),
+									" Web sitesi performansını ve kullanıcı davranışlarını analiz etmek için. Daha fazla bilgi için: ",
+									/* @__PURE__ */ jsx("a", {
+										href: "https://policies.google.com/privacy",
+										target: "_blank",
+										rel: "noopener",
+										children: "Google Gizlilik Politikası"
+									})
+								] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Google Maps:" }), " Konum bilgilerini görüntülemek için."] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Font Providers (Google Fonts):" }), " Web fontlarını yüklemek için."] })
+							] })
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "6. Çerezleri Nasıl Kontrol Edebilirsiniz?" }),
+							/* @__PURE__ */ jsx("p", { children: "Çerezleri kontrol etmek ve yönetmek için tarayıcı ayarlarınızı kullanabilirsiniz. Çoğu tarayıcı otomatik olarak çerezleri kabul eder, ancak bunu değiştirmek için tarayıcı ayarlarınızı düzenleyebilirsiniz." }),
+							/* @__PURE__ */ jsx("h3", { children: "Popüler Tarayıcılarda Çerez Ayarları:" }),
+							/* @__PURE__ */ jsxs("ul", { children: [
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Chrome:" }), " Ayarlar → Gizlilik ve güvenlik → Çerezler ve diğer site verileri"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Firefox:" }), " Ayarlar → Gizlilik ve Güvenlik → Çerezler ve Site Verileri"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Safari:" }), " Tercihler → Gizlilik → Çerezleri ve web sitesi verilerini yönet"] }),
+								/* @__PURE__ */ jsxs("li", { children: [/* @__PURE__ */ jsx("strong", { children: "Edge:" }), " Ayarlar → Çerezler ve site izinleri → Çerezleri yönet ve sil"] })
+							] }),
+							/* @__PURE__ */ jsx("div", {
+								className: legal_module_default.warningBox,
+								children: /* @__PURE__ */ jsxs("p", { children: [
+									"⚠️ ",
+									/* @__PURE__ */ jsx("strong", { children: "Önemli:" }),
+									" Çerezleri tamamen devre dışı bırakırsanız, web sitemizin bazı özellikleri düzgün çalışmayabilir veya bazı hizmetlere erişiminiz kısıtlanabilir."
+								] })
+							})
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "7. Çerez Tercihlerinizi Değiştirme" }),
+							/* @__PURE__ */ jsx("p", { children: "Çerez tercihlerinizi istediğiniz zaman değiştirebilirsiniz. Daha önce verdiğiniz onayı geri çekmek için tarayıcınızın ayarlarından çerezleri silebilir veya bu sayfanın altındaki bağlantıyı kullanabilirsiniz." }),
+							/* @__PURE__ */ jsx("div", {
+								className: legal_module_default.buttonGroup,
+								children: /* @__PURE__ */ jsx("button", {
+									className: legal_module_default.primaryButton,
+									children: "Çerez Tercihlerini Yönet"
+								})
+							})
+						]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [/* @__PURE__ */ jsx("h2", { children: "8. \"Do Not Track\" (İzleme Yapma) Sinyalleri" }), /* @__PURE__ */ jsx("p", { children: "Bazı tarayıcılar \"Do Not Track\" (DNT) sinyali gönderme özelliğine sahiptir. Şu anda DNT sinyallerini nasıl ele alacağımız konusunda evrensel bir standart bulunmamaktadır. Bu nedenle, web sitemiz şu anda DNT sinyallerine otomatik olarak yanıt vermemektedir." })]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [/* @__PURE__ */ jsx("h2", { children: "9. Çocukların Gizliliği" }), /* @__PURE__ */ jsx("p", { children: "Web sitemiz 18 yaşın altındaki çocuklara yönelik değildir ve bilerek 18 yaşın altındaki bireylerden kişisel veri toplamayız." })]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [/* @__PURE__ */ jsx("h2", { children: "10. Politika Güncellemeleri" }), /* @__PURE__ */ jsx("p", { children: "Bu Çerez Politikası'nı zaman zaman güncelleyebiliriz. Yapılan değişiklikler bu sayfada yayınlanacaktır ve \"Son Güncelleme\" tarihi değiştirilecektir. Düzenli olarak bu sayfayı kontrol etmenizi öneririz." })]
+					}),
+					/* @__PURE__ */ jsxs("section", {
+						className: legal_module_default.section,
+						children: [
+							/* @__PURE__ */ jsx("h2", { children: "11. İletişim" }),
+							/* @__PURE__ */ jsx("p", { children: "Çerez Politikamız hakkında sorularınız için bizimle iletişime geçebilirsiniz:" }),
+							/* @__PURE__ */ jsxs("div", {
+								className: legal_module_default.contactBox,
+								children: [/* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "E-posta:" }), " info@kutupgrup.com"] }), /* @__PURE__ */ jsxs("p", { children: [/* @__PURE__ */ jsx("strong", { children: "Telefon:" }), " +90 (533) 517 66 09"] })]
+							})
+						]
+					})
+				]
+			})
+		})]
+	});
+}
 var blog_module_default = {
 	page: "_page_1mgtx_1",
 	hero: "_hero_1mgtx_5",

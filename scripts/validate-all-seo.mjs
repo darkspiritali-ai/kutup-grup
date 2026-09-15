@@ -36,7 +36,13 @@ const runAllSeoValidation = () => {
   // 7. Audit AI Discoverability Files (llms.txt / llms-full.txt / robots.txt)
   runScript('node scripts/validate-llms.mjs', 'AI Discoverability Validation');
 
-  // 8. Audit long-form blog content, internal links and WebP assets
+  // 8. Audit service HTML, metadata, structured data and image assets
+  runScript('node scripts/validate-services-seo.mjs', 'Service SEO Validation');
+
+  // 9. Audit visible service copy for unsupported numeric and superiority claims
+  runScript('node scripts/validate-service-claims.mjs', 'Service Claim Validation');
+
+  // 10. Audit long-form blog content, internal links and WebP assets
   runScript('node scripts/validate-blog.mjs', 'Blog Content Validation');
 
   console.log('\n==============================================================================');

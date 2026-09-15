@@ -28,6 +28,8 @@ export default function Image({ src, alt, fill, priority, quality: _quality, cla
       className={className}
       style={finalStyle}
       loading={priority ? 'eager' : 'lazy'}
+      decoding={priority ? 'sync' : 'async'}
+      fetchPriority={priority ? 'high' : 'auto'}
       {...props}
     />
   );

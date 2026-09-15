@@ -101,7 +101,7 @@ export default function HizmetlerPageClient() {
                                                     <div className="service-card-image">
                                                         <Image
                                                             src={service.heroImage}
-                                                            alt={service.title}
+                                                            alt={`${service.title} hizmeti`}
                                                             width={400}
                                                             height={220}
                                                             style={{ objectFit: 'cover', width: '100%', height: '180px' }}

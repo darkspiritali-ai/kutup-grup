@@ -10,6 +10,7 @@ export function generateOrganizationSchema() {
     return {
         '@context': 'https://schema.org',
         '@type': 'Organization',
+        '@id': `${SITE_URL}/#organization`,
         name: SITE_NAME,
         url: SITE_URL,
         logo: `${SITE_URL}/logo/logo.png`,
@@ -30,6 +31,10 @@ export function generateServiceSchema(service: {
     name: string
     description: string
     url: string
+    serviceType?: string
+    category?: string
+    image?: string
+    updatedAt?: string
 }) {
     return {
         '@context': 'https://schema.org',
@@ -37,8 +42,14 @@ export function generateServiceSchema(service: {
         name: service.name,
         description: service.description,
         url: service.url,
+        serviceType: service.serviceType || service.name,
+        category: service.category,
+        image: service.image,
+        inLanguage: 'tr-TR',
+        ...(service.updatedAt ? { dateModified: service.updatedAt } : {}),
         provider: {
             '@type': 'Organization',
+            '@id': `${SITE_URL}/#organization`,
             name: SITE_NAME,
             url: SITE_URL,
         },
