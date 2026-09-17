@@ -1194,7 +1194,7 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['sev-ortuleme', 'yamac-yuzeyi-temizleme', 'kaya-bariyeri'],
-        relatedPosts: ['endustriyel-dagcilik-iple-erisim-rehberi'],
+        relatedPosts: ['gabion-duvar-drenaj-zemin-planlamasi', 'endustriyel-dagcilik-iple-erisim-rehberi'],
         updatedAt: '2026-09-15',
     },
 
@@ -1264,7 +1264,7 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['dis-cephe-dekoratif-aydinlatma', 'yatay-ve-dusey-yasam-hatti'],
-        relatedPosts: ['endustriyel-dagcilik-iple-erisim-rehberi'],
+        relatedPosts: ['sahne-rigging-yuk-plani-teslim-kontrolu', 'endustriyel-dagcilik-iple-erisim-rehberi'],
         updatedAt: '2026-09-15',
     },
 

@@ -233,7 +233,7 @@ export default function Header() {
         {/* Navigation Body */}
         <div className="mobile-drawer-scroll">
           <nav className="mobile-drawer-nav">
-            
+
             {/* ANASAYFA */}
             <Link href="/" className={`drawer-main-link ${isActive('/') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>
               Anasayfa
@@ -241,7 +241,7 @@ export default function Header() {
 
             {/* HİZMETLERİMİZ (Accordion) */}
             <div className="drawer-accordion-group">
-              <button 
+              <button
                 className={`drawer-main-link drawer-accordion-btn ${servicesOpen ? 'open' : ''} ${isActive('/hizmetler') ? 'active' : ''}`}
                 onClick={() => setServicesOpen(!servicesOpen)}
               >
@@ -250,13 +250,13 @@ export default function Header() {
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </button>
-              
+
               <div className={`drawer-accordion-content ${servicesOpen ? 'expanded' : ''}`}>
                 {MEGA_CATEGORIES.map((cat) => {
                   const isCatOpen = activeMobileCategory === cat.title;
                   return (
                     <div key={cat.title} className="drawer-sub-group">
-                      <button 
+                      <button
                         className={`drawer-sub-btn ${isCatOpen ? 'open' : ''}`}
                         onClick={() => toggleMobileCategory(cat.title)}
                       >
@@ -268,9 +268,9 @@ export default function Header() {
                       <div className={`drawer-sub-links-container ${isCatOpen ? 'expanded' : ''}`}>
                         <div className="drawer-sub-links">
                           {cat.services.map((s) => (
-                            <Link 
-                              key={s.href} 
-                              href={s.href} 
+                            <Link
+                              key={s.href}
+                              href={s.href}
                               className={`drawer-sub-link ${isActive(s.href) ? 'active' : ''}`}
                               onClick={() => setMobileMenuOpen(false)}
                             >

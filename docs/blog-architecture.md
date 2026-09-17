@@ -4,7 +4,7 @@ Bu plan, organik arama ve LLM keşfedilebilirliği için konu kümesi (hub-and-s
 
 ## Mimari
 
-- `/blog`: sekiz makaleyi ve konu kümelerini özetleyen ana hub.
+- `/blog`: yayınlanmış makaleleri ve konu kümelerini özetleyen ana hub.
 - Her makale: tek bir arama niyeti, tek bir canonical URL, 2.000+ Türkçe kelime, açıklayıcı H2/H3 hiyerarşisi ve doğrudan iletişim CTA'sı.
 - Her makale en az üç ilgili hizmet sayfasına, iki ilgili makaleye ve bir ana `/blog` hub'ına bağlanır.
 - Hizmet sayfaları ilgili makalelere bağlanır; blog sayfaları hizmet sayfalarının yerine geçmez.
@@ -23,6 +23,8 @@ Bu plan, organik arama ve LLM keşfedilebilirliği için konu kümesi (hub-and-s
 | 6 | Rüzgar Türbini Bakımında İple Erişim: Süreç ve Riskler | `/blog/ruzgar-turbini-bakiminda-iple-erisim` | Sektörel / ticari araştırma | Rüzgar enerji santralleri, stand-by rescue, iple erişim | `ruzgar-turbini-bakiminda-iple-erisim.webp` |
 | 7 | Kar ve Çığ Kontrolü: Risk Değerlendirme ve Koruma Sistemleri | `/blog/kar-cig-kontrolu-risk-degerlendirme-rehberi` | Teknik / risk araştırması | Kar-çığ kontrolü, kaya bariyeri, jeoteknik uygulamalar | `kar-cig-kontrolu-risk-degerlendirme-rehberi.webp` |
 | 8 | Stand-by Rescue Nedir? Yüksekte ve Kapalı Alanda Kurtarma Planı | `/blog/stand-by-rescue-kurtarma-plani-rehberi` | Güvenlik / hizmet araştırması | Stand-by rescue, IRATA eğitimi, yaşam hattı | `stand-by-rescue-kurtarma-plani-rehberi.webp` |
+| 9 | Gabion Duvarlarda Drenaj ve Zemin Planlaması | `/blog/gabion-duvar-drenaj-zemin-planlamasi` | Keşif / teklif hazırlığı / su yönetimi | Gabion duvar, jeoteknik uygulamalar, yamaç yüzeyi temizleme | `gabion-duvar-drenaj-zemin-planlamasi.webp` |
+| 10 | Sahne Rigging: Yük Planı ve Teslim Kontrolü | `/blog/sahne-rigging-yuk-plani-teslim-kontrolu` | Organizatör için yük envanteri / revizyon / teslim | Sahne rigging, yaşam hattı, stand-by rescue | `sahne-rigging-yuk-plani-teslim-kontrolu.webp` |
 
 ## Link kuralları
 
@@ -42,3 +44,9 @@ Bu plan, organik arama ve LLM keşfedilebilirliği için konu kümesi (hub-and-s
 - Şirketin proje, müşteri, sertifika, fiyat, garanti veya sonuç iddiaları kanıt yoksa genellenmiş/koşullu dille yazılmalı.
 - WebP görsel dosyası optimize edilmeli ve gerçek dosya boyutu/ölçüleri HTML'e yazılmalı.
 - Sitemap, `llms.txt` ve blog hub ile URL eşleşmesi doğrulanmalı.
+
+## Yeni yayınların veri düzeni
+
+Yeni makaleler `src/lib/blog/<slug>.ts` içinde `BlogPost` verisi olarak tutulur ve `blog-data.ts` envanterine eklenir. `route-manifest.ts` kaydı aynı canonical slug ile eklenir. Build, sitemap/llms dosyalarını ve prerender çıktısını üretir. `validate:blog` sabit makale sayısı yerine envanter/route eşleşmesini denetler. Kelime sayısı yalnızca teknik doğrulamada kullanılır; makale ve kartlarda sayaç veya uzunluk etiketi gösterilmez.
+
+17 Eylül 2026 yayınları için FHWA arşiv yayını, Maccaferri teknik açıklaması ve HSE etkinlik/kaldırma sayfaları incelendi. Yabancı kaynaklar yerel mevzuat veya proje onayı olarak sunulmadı. İki yeni görsel yapay editoryal illüstrasyon olarak üretildi ve 1774 × 887 WebP biçimine dönüştürüldü; makaledeki görsel bağlantısı mevcut şablonda canonical makale URL'sine yönelir.

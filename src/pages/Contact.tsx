@@ -169,13 +169,13 @@ export default function ContactPageClient() {
                         <h3 className={styles.infoTitle}>Şirket Bilgileri</h3>
                         <div className={styles.infoText} style={{ textAlign: 'left', width: '100%' }}>
                             <strong style={{ display: 'block', marginBottom: '12px' }}>KUTUP GRUP İNŞAAT SANAYİ VE TİCARET LİMİTED ŞİRKETİ</strong>
-                            
+
                             <div style={{ marginBottom: '12px' }}>
                                 <strong style={{ color: 'var(--color-arctic-blue)' }}>İstanbul Merkez (Genel Müdürlük):</strong>
                                 <br />
                                 Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul
                             </div>
-                            
+
                             <div>
                                 <strong style={{ color: 'var(--color-arctic-blue)' }}>Balıkesir Şubesi:</strong>
                                 <br />

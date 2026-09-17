@@ -137,7 +137,7 @@ export default function Stats() {
                         position: relative;
                         z-index: 1;
                     }
-                    
+
                     .stat-card {
                         text-align: center;
                         padding: var(--spacing-8) var(--spacing-4);
@@ -165,7 +165,7 @@ export default function Stats() {
                         color: var(--color-ice-blue);
                         margin: 0 auto var(--spacing-4);
                     }
-                    
+
                     .stat-number {
                         font-size: clamp(2.5rem, 5vw, 3.5rem);
                         font-weight: 800;
@@ -177,7 +177,7 @@ export default function Stats() {
                         margin-bottom: var(--spacing-2);
                         letter-spacing: -0.02em;
                     }
-                    
+
                     .stat-label {
                         font-size: var(--font-size-base);
                         color: rgba(255, 255, 255, 0.65);
@@ -186,7 +186,7 @@ export default function Stats() {
                         text-transform: uppercase;
                         letter-spacing: 0.05em;
                     }
-                    
+
                     @media (max-width: 768px) {
                         .stats-grid {
                             grid-template-columns: repeat(2, 1fr);

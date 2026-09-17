@@ -470,7 +470,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
         .service-page {
           margin-top: 80px;
         }
-        
+
         .service-hero {
           background: var(--gradient-subtle);
           padding: var(--spacing-12) 0 var(--spacing-16);
@@ -491,7 +491,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           box-shadow: 0 20px 40px rgba(10, 36, 99, 0.15);
           border: 3px solid rgba(62,146,204,0.15);
         }
-        
+
         .breadcrumb {
           margin-bottom: var(--spacing-6);
           color: var(--text-secondary);
@@ -512,15 +512,15 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           margin-left: var(--spacing-2);
           color: var(--text-muted);
         }
-        
+
         .breadcrumb a {
           color: var(--color-arctic-blue);
         }
-        
+
         .service-hero-text {
           text-align: left;
         }
-        
+
         .service-icon-wrap {
           width: 80px;
           height: 80px;
@@ -532,34 +532,34 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           margin: 0 auto var(--spacing-6);
           color: var(--color-arctic-blue);
         }
-        
+
         .service-hero-content h1 {
           font-size: var(--font-size-h1);
           color: var(--color-deep-navy);
           margin-bottom: var(--spacing-6);
         }
-        
+
         .service-intro {
           font-size: var(--font-size-lg);
           color: var(--text-secondary);
           line-height: var(--line-height-relaxed);
           margin-bottom: var(--spacing-8);
         }
-        
+
         .service-content {
           display: grid;
           grid-template-columns: 1fr 350px;
           gap: var(--spacing-12);
         }
-        
+
         .service-article {
           max-width: 100%;
         }
-        
+
         .content-section {
           margin-bottom: var(--spacing-12);
         }
-        
+
         .content-section h2 {
           font-size: var(--font-size-h3);
           color: var(--color-deep-navy);
@@ -567,7 +567,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           padding-bottom: var(--spacing-3);
           border-bottom: 3px solid var(--color-ice-blue);
         }
-        
+
         .content-section p {
           font-size: var(--font-size-base);
           line-height: var(--line-height-relaxed);
@@ -589,12 +589,12 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           color: var(--color-arctic-blue);
           font-weight: 600;
         }
-        
+
         .advantages-list, .tech-list, .why-list {
           list-style: none;
           padding: 0;
         }
-        
+
         .advantages-list li, .why-list li {
           padding: var(--spacing-3) 0;
           color: var(--text-secondary);
@@ -603,7 +603,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           align-items: center;
           gap: var(--spacing-3);
         }
-        
+
         .tech-list li {
           padding: var(--spacing-3) 0;
           color: var(--text-secondary);
@@ -623,19 +623,19 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           border-radius: 50%;
           background: var(--color-arctic-blue);
         }
-        
+
         .check-icon {
           flex-shrink: 0;
           display: flex;
           align-items: center;
         }
-        
+
         .applications-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
           gap: var(--spacing-4);
         }
-        
+
         .application-card {
           background: var(--bg-secondary);
           padding: var(--spacing-5);
@@ -650,7 +650,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(62,146,204,0.1);
         }
-        
+
         .app-icon {
           display: flex;
           align-items: center;
@@ -658,42 +658,42 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           margin-bottom: var(--spacing-3);
           color: var(--color-arctic-blue);
         }
-        
+
         .application-card p {
           font-size: var(--font-size-sm);
           color: var(--text-primary);
           margin: 0;
         }
-        
+
         .faq-list {
           display: flex;
           flex-direction: column;
           gap: var(--spacing-6);
         }
-        
+
         .faq-item {
           background: var(--bg-secondary);
           padding: var(--spacing-6);
           border-radius: var(--radius-base);
           border-left: 4px solid var(--color-arctic-blue);
         }
-        
+
         .faq-item h3 {
           font-size: var(--font-size-lg);
           color: var(--color-deep-navy);
           margin-bottom: var(--spacing-3);
         }
-        
+
         .faq-item p {
           margin: 0;
         }
-        
+
         .service-sidebar {
           position: sticky;
           top: 100px;
           align-self: start;
         }
-        
+
         .sidebar-card {
           background: white;
           border: 2px solid var(--border-default);
@@ -701,27 +701,27 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           padding: var(--spacing-6);
           margin-bottom: var(--spacing-6);
         }
-        
+
         .sidebar-card h3 {
           font-size: var(--font-size-h5);
           color: var(--color-deep-navy);
           margin-bottom: var(--spacing-4);
         }
-        
+
         .sidebar-card p {
           color: var(--text-secondary);
           margin-bottom: var(--spacing-4);
         }
-        
+
         .related-services {
           list-style: none;
           padding: 0;
         }
-        
+
         .related-services li {
           margin-bottom: var(--spacing-3);
         }
-        
+
         .related-services a {
           color: var(--text-primary);
           display: block;
@@ -730,22 +730,22 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           transition: background 0.2s ease;
           font-size: var(--font-size-sm);
         }
-        
+
         .related-services a:hover {
           background: var(--bg-secondary);
           color: var(--color-arctic-blue);
         }
-        
+
         @media (max-width: 1024px) {
           .service-content {
             grid-template-columns: 1fr;
           }
-          
+
           .service-sidebar {
             position: static;
           }
         }
-        
+
         @media (max-width: 768px) {
           .service-hero-layout {
             grid-template-columns: 1fr;
@@ -781,7 +781,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           .service-hero {
             padding: var(--spacing-8) 0 var(--spacing-10);
           }
-          
+
           .applications-grid {
             grid-template-columns: 1fr;
           }

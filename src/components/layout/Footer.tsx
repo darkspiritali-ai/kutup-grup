@@ -234,7 +234,7 @@ export default function Footer() {
                 <style jsx>{`
         .footer {
           background: #030712;
-          background-image: 
+          background-image:
             radial-gradient(circle at 100% 0%, rgba(62, 146, 204, 0.15) 0%, transparent 40%),
             radial-gradient(circle at 0% 100%, rgba(165, 216, 221, 0.1) 0%, transparent 40%),
             linear-gradient(rgba(3, 7, 18, 0.6) 0%, #030712 100%),
@@ -258,7 +258,7 @@ export default function Footer() {
           background: linear-gradient(90deg, transparent, rgba(62, 146, 204, 0.5), transparent);
           z-index: 10;
         }
-        
+
         .newsletter-wrapper {
           position: relative;
           margin-top: 0;
@@ -287,7 +287,7 @@ export default function Footer() {
             gap: 6px 0;
           }
         }
-        
+
         .footer-col h4 {
           color: var(--color-polar-white);
           font-size: var(--font-size-base);
@@ -309,7 +309,7 @@ export default function Footer() {
           background: linear-gradient(90deg, var(--color-arctic-blue), var(--color-ice-blue));
           border-radius: 2px;
         }
-        
+
         .logo-container {
           margin-bottom: var(--spacing-4);
           opacity: 0.95;
@@ -319,7 +319,7 @@ export default function Footer() {
           object-fit: contain;
           filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
         }
-        
+
         .footer-desc {
           color: rgba(255, 255, 255, 0.7);
           line-height: var(--line-height-relaxed);
@@ -352,17 +352,17 @@ export default function Footer() {
           transform: translateY(-4px);
           box-shadow: 0 8px 16px rgba(62, 146, 204, 0.3);
         }
-        
+
         .footer-col ul {
           list-style: none;
           padding: 0;
           margin: 0;
         }
-        
+
         .footer-col li {
           margin-bottom: var(--spacing-4);
         }
-        
+
         :global(.sliding-link) {
           color: rgba(255, 255, 255, 0.7) !important;
           display: inline-flex;
@@ -391,7 +391,7 @@ export default function Footer() {
           margin-right: 8px;
           opacity: 1;
         }
-        
+
         .contact-info li {
           margin-bottom: var(--spacing-4);
         }
@@ -433,7 +433,7 @@ export default function Footer() {
           transform: scale(1.05);
           box-shadow: 0 0 10px rgba(62, 146, 204, 0.15);
         }
-        
+
         .footer-bottom {
           padding-top: var(--spacing-8);
           border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -447,7 +447,7 @@ export default function Footer() {
           align-items: center;
           gap: var(--spacing-4);
         }
-        
+
         .footer-bottom p.copyright {
           color: rgba(255, 255, 255, 0.45);
           margin: 0;
@@ -477,7 +477,7 @@ export default function Footer() {
           color: rgba(255, 255, 255, 0.2);
           font-size: 0.8rem;
         }
-        
+
         @media (max-width: 1024px) {
           .footer-grid {
             grid-template-columns: 1fr 1fr;

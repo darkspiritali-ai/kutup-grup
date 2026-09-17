@@ -15,11 +15,11 @@ export default function NotFound() {
           transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
         >
           <div className="logo-wrap">
-            <Image 
-              src="/logo/logo.png" 
-              alt="Kutup Grup" 
-              width={140} 
-              height={67} 
+            <Image
+              src="/logo/logo.png"
+              alt="Kutup Grup"
+              width={140}
+              height={67}
               style={{ filter: 'brightness(0) invert(1)' }}
             />
           </div>

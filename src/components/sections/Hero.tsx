@@ -38,7 +38,7 @@ export default function Hero() {
               <br />
               Bizim İşimiz
             </h1>
-            
+
             <p className="hero-subtitle">
               Endüstriyel dağcılık, jeoteknik uygulamalar ve yüksek yapı çözümlerinde
               saha koşullarına göre planlı çalışma yaklaşımı sunuyoruz. İşin kapsamını,
@@ -98,7 +98,7 @@ export default function Hero() {
           padding-top: 80px;
           background: #030712;
         }
-        
+
         /* Full width background image container */
         .hero-bg {
           position: absolute;
@@ -112,7 +112,7 @@ export default function Hero() {
           0% { transform: scale(1.02); }
           100% { transform: scale(1.08); }
         }
-        
+
         /* Brightened premium overlay for readability without dimming the image */
         .hero-overlay {
           position: absolute;
@@ -120,20 +120,20 @@ export default function Hero() {
           background: linear-gradient(180deg, rgba(3, 7, 18, 0.3) 0%, rgba(3, 7, 18, 0.65) 100%);
           z-index: 1;
         }
-        
+
         .hero-content {
           position: relative;
           z-index: 2;
           width: 100%;
           padding: var(--spacing-20) 0;
         }
-        
+
         .hero-text {
           max-width: 840px;
           text-align: center;
           margin: 0 auto;
         }
-        
+
         /* Badge */
         .hero-badge {
           display: inline-flex;
@@ -152,16 +152,16 @@ export default function Hero() {
           margin-bottom: var(--spacing-8);
           animation: fadeInDown 0.8s ease-out;
         }
-        
+
         .hero-badge svg {
           color: var(--color-arctic-blue);
         }
-        
+
         @keyframes fadeInDown {
           from { opacity: 0; transform: translateY(-10px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .hero-title {
           font-size: clamp(2.6rem, 5.5vw, 4.4rem);
           font-weight: 800;
@@ -172,7 +172,7 @@ export default function Hero() {
           text-shadow: 0 4px 16px rgba(3, 7, 18, 0.85);
           animation: fadeIn 0.8s ease-out 0.1s both;
         }
-        
+
         .hero-gradient-text {
           background: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #00f2fe 100%);
           background-size: 200% auto;
@@ -182,17 +182,17 @@ export default function Hero() {
           animation: gradientText 6s ease infinite;
           font-weight: 900;
         }
-        
+
         @keyframes gradientText {
           0%, 100% { background-position: 0% center; }
           50% { background-position: 100% center; }
         }
-        
+
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        
+
         .hero-subtitle {
           font-size: var(--font-size-lg);
           color: rgba(255, 255, 255, 0.95);
@@ -204,7 +204,7 @@ export default function Hero() {
           text-shadow: 0 2px 10px rgba(3, 7, 18, 0.9);
           animation: fadeIn 0.8s ease-out 0.2s both;
         }
-        
+
         .hero-cta {
           display: flex;
           gap: var(--spacing-4);
@@ -254,7 +254,7 @@ export default function Hero() {
           transform: translateY(-2px);
           border-color: #ffffff !important;
         }
-        
+
         /* Trust bar */
         .hero-trust {
           display: flex;
@@ -264,7 +264,7 @@ export default function Hero() {
           margin-top: var(--spacing-12);
           animation: fadeIn 0.8s ease-out 0.5s both;
         }
-        
+
         .trust-item {
           display: flex;
           align-items: center;
@@ -274,18 +274,18 @@ export default function Hero() {
           font-weight: 500;
           text-shadow: 0 2px 8px rgba(3, 7, 18, 0.8);
         }
-        
+
         .trust-item svg {
           color: var(--color-success-green);
           flex-shrink: 0;
         }
-        
+
         .trust-divider {
           width: 1px;
           height: 20px;
           background: rgba(255, 255, 255, 0.25);
         }
-        
+
         /* Scroll indicator */
         .scroll-indicator {
           position: absolute;
@@ -294,7 +294,7 @@ export default function Hero() {
           transform: translateX(-50%);
           z-index: 2;
         }
-        
+
         .scroll-line {
           width: 2px;
           height: 40px;
@@ -303,7 +303,7 @@ export default function Hero() {
           position: relative;
           overflow: hidden;
         }
-        
+
         .scroll-line::after {
           content: '';
           position: absolute;
@@ -315,33 +315,33 @@ export default function Hero() {
           border-radius: 2px;
           animation: scrollDown 1.8s ease-in-out infinite;
         }
-        
+
         @keyframes scrollDown {
           0% { top: -50%; }
           100% { top: 150%; }
         }
-        
+
         @media (max-width: 768px) {
           .hero {
             min-height: 85vh;
             padding: var(--spacing-12) 0;
           }
-          
+
           .hero-cta {
             flex-direction: column;
             align-items: center;
           }
-          
+
           .hero-cta .btn {
             width: 100%;
             max-width: 300px;
           }
-          
+
           .hero-trust {
             flex-direction: column;
             gap: var(--spacing-3);
           }
-          
+
           .trust-divider {
             display: none;
           }

@@ -185,33 +185,33 @@ export default function Home() {
           margin-bottom: var(--spacing-2);
           font-family: var(--font-heading);
         }
-        
+
         .section-title {
           font-size: var(--font-size-h2);
           color: var(--color-deep-navy);
           margin-bottom: var(--spacing-4);
           letter-spacing: -0.02em;
         }
-        
+
         .section-subtitle {
           font-size: var(--font-size-lg);
           color: var(--text-secondary);
           max-width: 600px;
           margin: 0 auto;
         }
-        
+
         /* Features Grid */
         .features-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: var(--spacing-6);
         }
-        
+
         .feature-card {
           text-align: center;
           padding: var(--spacing-8) var(--spacing-6);
         }
-        
+
         .feature-icon {
           width: 60px;
           height: 60px;
@@ -222,17 +222,17 @@ export default function Home() {
           margin: 0 auto var(--spacing-5);
           transition: transform 0.3s ease;
         }
-        
+
         .feature-card:hover .feature-icon {
           transform: scale(1.12) rotate(3deg);
         }
-        
+
         .feature-card h3 {
           font-size: var(--font-size-h5);
           color: var(--color-deep-navy);
           margin-bottom: var(--spacing-3);
         }
-        
+
         .feature-card p {
           color: var(--text-secondary);
           line-height: var(--line-height-relaxed);
@@ -383,7 +383,7 @@ export default function Home() {
           bottom: -60px;
           left: -40px;
         }
-        
+
         .cta-content {
           position: relative;
           z-index: 1;
@@ -395,7 +395,7 @@ export default function Home() {
           margin-bottom: var(--spacing-4);
           letter-spacing: -0.02em;
         }
-        
+
         .cta-content p {
           font-size: var(--font-size-lg);
           color: rgba(255, 255, 255, 0.85);
@@ -404,7 +404,7 @@ export default function Home() {
           margin-left: auto;
           margin-right: auto;
         }
-        
+
         :global(.btn-cta-white) {
           display: inline-flex;
           align-items: center;
@@ -427,7 +427,7 @@ export default function Home() {
           color: var(--color-deep-navy) !important;
           background: #f8fafc !important;
         }
-        
+
         @media (max-width: 768px) {
           .features-grid {
             grid-template-columns: 1fr;

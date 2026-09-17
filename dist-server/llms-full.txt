@@ -920,6 +920,34 @@ Teslim; risk alanlarını, gözlem tarihini, önerilen kontrolleri ve ek veri ih
 
 Aşağıdaki yazılar Kutup Grup blogunda yayınlanan editoryal içeriklerdir. Kaynak bağlantıları ve içerik kapsamı ilgili sayfada yer alır; yazılar belirli bir saha için mühendislik raporu veya güvenlik garantisi değildir.
 
+### Gabion Duvarlarda Drenaj ve Zemin Planlaması
+
+**Canonical URL:** https://kutupgrup.com/blog/gabion-duvar-drenaj-zemin-planlamasi
+
+**Özet:** Taş dolgulu bir duvarın su geçirmesi, drenajın kendiliğinden çözüldüğü anlamına gelmez. Keşiften teslim dosyasına kadar hangi kararların verilmesi gerektiğini ele alıyoruz.
+
+**Konu:** gabion duvar drenajı, gabion duvar zemin hazırlığı, gabion filtre tabakası, gabion duvar bakımı
+
+**Görsel:** https://kutupgrup.com/images/blog/gabion-duvar-drenaj-zemin-planlamasi.webp — Taş dolgulu gabion duvarın yanında çakıl, filtre ve borunun kesit olarak gösterildiği peyzaj illüstrasyonu
+
+**Kaynaklar:** [Maccaferri — Mass Gravity Retaining Walls](https://www.maccaferri.com/in/solutions/mass-gravity-retaining-walls), [FHWA — HEC-11, arşiv teknik yayını: taş koruma, filtre ve gabion](https://www.fhwa.dot.gov/engineering/hydraulics/pubs/hec/hec11si.pdf)
+
+---
+
+### Sahne Rigging: Yük Planı ve Teslim Kontrolü
+
+**Canonical URL:** https://kutupgrup.com/blog/sahne-rigging-yuk-plani-teslim-kontrolu
+
+**Özet:** Sahnedeki son dakika değişikliği, yalnızca ışık planını etkilemez. Organizatör, mekan ve teknik ekip arasında yük bilgisinin nasıl tutulacağını ve teslimin nasıl yapılacağını inceliyoruz.
+
+**Konu:** sahne rigging planı, rigging yük listesi, sahne teslim kontrolü, etkinlik teknik koordinasyon
+
+**Görsel:** https://kutupgrup.com/images/blog/sahne-rigging-yuk-plani-teslim-kontrolu.webp — Boş etkinlik salonunda ışık ve ekran taşıyan sahne truss sistemi, alan bariyerleri ve ön planda plan masası
+
+**Kaynaklar:** [HSE — Planning and organising lifting operations](https://www.hse.gov.uk/work-equipment-machinery/planning-organising-lifting-operations.htm), [HSE — Venue and site design](https://www.hse.gov.uk/event-safety/venue-site-design.htm), [HSE — Managing an event](https://www.hse.gov.uk/event-safety/managing-an-event.htm), [HSE — Temporary demountable structures](https://www.hse.gov.uk/event-safety/temporary-demountable-structures.htm)
+
+---
+
 ### Endüstriyel Dağcılık ve İple Erişim Nedir?
 
 **Canonical URL:** https://kutupgrup.com/blog/endustriyel-dagcilik-iple-erisim-rehberi
@@ -1039,4 +1067,4 @@ Aşağıdaki yazılar Kutup Grup blogunda yayınlanan editoryal içeriklerdir. K
 - **Telefon**: +90 (533) 517 66 09
 - **İstanbul Genel Müdürlük**: Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul
 - **Balıkesir Şubesi**: Soma Cd. 111A Altıeylül Balıkesir / Türkiye
-- **Son Güncelleme**: 16.09.2026
+- **Son Güncelleme**: 17.09.2026

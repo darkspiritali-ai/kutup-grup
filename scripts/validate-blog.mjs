@@ -20,17 +20,37 @@ const run = async () => {
     ROUTE_MANIFEST.filter((route) => route.indexable).map((route) => route.path)
   );
 
-  if (BLOG_POSTS.length !== 8) fail(`Expected 8 blog posts, found ${BLOG_POSTS.length}.`);
+  if (BLOG_POSTS.length === 0) fail('Blog inventory must not be empty.');
+  const blogRoutes = ROUTE_MANIFEST.filter((route) => route.path.startsWith('/blog/'));
+  const postPaths = new Set(BLOG_POSTS.map((post) => `/blog/${post.slug}`));
+  if (new Set(blogRoutes.map((route) => route.path)).size !== blogRoutes.length) {
+    fail('Blog route paths must be unique.');
+  }
+  if (blogRoutes.length !== postPaths.size || blogRoutes.some((route) => !postPaths.has(route.path))) {
+    fail('Blog posts and route manifest must match exactly.');
+  }
+  if (blogRoutes.some((route) => !route.indexable || !route.includeInSitemap || !route.includeInLlms || !route.prerender)) {
+    fail('Every published blog route must be indexable, discoverable and prerendered.');
+  }
   if (new Set(BLOG_POSTS.map((post) => post.slug)).size !== BLOG_POSTS.length) {
     fail('Blog slugs must be unique.');
   }
 
-  console.log('[Blog Validation] Checking 8 long-form posts, links, metadata and WebP assets...');
+  console.log(`[Blog Validation] Checking ${BLOG_POSTS.length} long-form posts, links, metadata and WebP assets...`);
   for (const post of BLOG_POSTS) {
     const wordCount = getBlogWordCount(post);
     if (wordCount < 2000) fail(`${post.slug} has ${wordCount} words; minimum is 2000.`);
     if (!post.metaDescription || post.metaDescription.length < 80) fail(`${post.slug} has an incomplete meta description.`);
     if (!post.image.src.endsWith('.webp')) fail(`${post.slug} image must use WebP.`);
+    if (!post.image.alt || !post.image.title || !post.image.caption || post.image.width <= 0 || post.image.height <= 0) {
+      fail(`${post.slug} image metadata is incomplete.`);
+    }
+    if (post.relatedPosts.length < 2 || post.relatedPosts.some((slug) => slug === post.slug || !postPaths.has(`/blog/${slug}`))) {
+      fail(`${post.slug} needs at least two valid related posts.`);
+    }
+    if (post.relatedServices.length < 3 || post.relatedServices.some((service) => !indexableRoutes.has(service.href))) {
+      fail(`${post.slug} needs at least three valid related services.`);
+    }
 
     const imagePath = path.join(PUBLIC_DIR, post.image.src.replace(/^\//, ''));
     if (!fs.existsSync(imagePath)) fail(`${post.slug} image is missing: ${imagePath}`);

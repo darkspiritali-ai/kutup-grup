@@ -50,6 +50,8 @@ Yamaç stabilizasyonu, şev örtüleme, kaya bariyeri kurulumu gibi sarp yamaç 
 İple erişim, yüksekte çalışma, jeoteknik risk ve saha güvenliği konularında kaynaklı, editoryal yazılar. Teknik uygunluk ve proje kararı gerçek saha verileriyle ayrıca doğrulanmalıdır.
 
 - [Tüm teknik yazılar](https://kutupgrup.com/blog): Konu kümelerinin tamamı.
+- [Gabion Duvarlarda Drenaj ve Zemin Planlaması](https://kutupgrup.com/blog/gabion-duvar-drenaj-zemin-planlamasi): Gabion duvar yaptırmadan önce zemin, su akışı, filtre, taş dolgu ve bakım kararlarını değerlendirin; keşif ve teklif için gerekli bilgileri hazırlayın.
+- [Sahne Rigging: Yük Planı ve Teslim Kontrolü](https://kutupgrup.com/blog/sahne-rigging-yuk-plani-teslim-kontrolu): Sahne rigging işlerinde yük listesi, mekan bilgisi, prova değişiklikleri ve teslim kayıtlarını nasıl hazırlarsınız? Organizatörler için planlama yazısı.
 - [Endüstriyel Dağcılık ve İple Erişim Nedir?](https://kutupgrup.com/blog/endustriyel-dagcilik-iple-erisim-rehberi): Endüstriyel dağcılık ve iple erişimin ne olduğunu, hangi işlerde kullanıldığını, risk değerlendirmesini ve güvenli çalışma sürecini öğrenin.
 - [Yüksekte Çalışma Güvenliği ve Yaşam Hattı Seçimi](https://kutupgrup.com/blog/yuksekte-calisma-guvenligi-yasam-hatti-rehberi): Yüksekte çalışma güvenliğinde risk değerlendirmesi, toplu korunma, yaşam hattı seçimi, ekipman kontrolü ve kurtarma planını öğrenin.
 - [Kaya Düşmesi Risk Analizi ve Kaya Bariyeri Seçimi](https://kutupgrup.com/blog/kaya-dusmesi-risk-analizi-kaya-bariyeri-rehberi): Kaya düşmesi risk analizi nasıl yapılır? Kaya bariyeri seçiminde jeoloji, enerji, güzergâh, bakım ve saha koşullarını anlatan teknik yazı.

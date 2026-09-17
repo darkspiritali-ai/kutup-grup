@@ -1,3 +1,5 @@
+import { gabionDrenajPost } from './blog/gabion-duvar-drenaj-zemin-planlamasi.ts';
+import { sahneRiggingPost } from './blog/sahne-rigging-yuk-plani-teslim-kontrolu.ts';
 import {
   cepheTemizligiContent,
   endustriyelDagcilikContent,
@@ -68,6 +70,8 @@ export const BLOG_HUB = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  gabionDrenajPost,
+  sahneRiggingPost,
   {
     slug: 'endustriyel-dagcilik-iple-erisim-rehberi',
     title: 'Endüstriyel Dağcılık ve İple Erişim Nedir?',

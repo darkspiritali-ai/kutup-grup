@@ -27,11 +27,11 @@ export default function Preloader() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Image 
-          src="/logo/logo.png" 
-          alt="Kutup Grup" 
-          width={180} 
-          height={86} 
+        <Image
+          src="/logo/logo.png"
+          alt="Kutup Grup"
+          width={180}
+          height={86}
           style={{ filter: 'brightness(0) invert(1)' }}
           priority
         />
