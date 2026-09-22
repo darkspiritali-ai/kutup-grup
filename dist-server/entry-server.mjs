@@ -4457,7 +4457,7 @@ var RAW_SERVICES_DATA = {
 			"yatay-ve-dusey-yasam-hatti",
 			"guvenlik-agi-kurulumu"
 		],
-		relatedPosts: ["yuksek-yapilarda-cephe-temizligi-iple-erisim"],
+		relatedPosts: ["dis-cephe-aydinlatma-bakim-gece-kabulu", "yuksek-yapilarda-cephe-temizligi-iple-erisim"],
 		updatedAt: "2026-09-15"
 	},
 	"tersane-ve-offshore-hizmetleri": {
@@ -4658,7 +4658,7 @@ var RAW_SERVICES_DATA = {
 			"tersane-ve-offshore-hizmetleri",
 			"dis-cephe-dekoratif-aydinlatma"
 		],
-		relatedPosts: ["yuksekte-calisma-guvenligi-yasam-hatti-rehberi"],
+		relatedPosts: ["guvenlik-agi-teslim-kullanim-kontrolu", "yuksekte-calisma-guvenligi-yasam-hatti-rehberi"],
 		updatedAt: "2026-09-15"
 	},
 	"yatay-ve-dusey-yasam-hatti": {
@@ -6514,6 +6514,280 @@ function HizmetlerPageClient() {
 	] });
 }
 //#endregion
+//#region src/lib/blog/guvenlik-agi-teslim-kullanim-kontrolu.ts
+var guvenlikAgiTeslimPost = {
+	"slug": "guvenlik-agi-teslim-kullanim-kontrolu",
+	"title": "Güvenlik Ağı: Teslim ve Kullanım Kontrolü",
+	"metaDescription": "Güvenlik ağı tesliminde kullanım amacı, alt boşluk, kontrol kayıtları, revizyon ve kurtarma hazırlığını değerlendirin; keşif için gerekli bilgileri hazırlayın.",
+	"excerpt": "Kurulan ağın neyi koruduğu, hangi koşullarda kullanılacağı ve değişikliklerin nasıl yönetileceği teslim dosyasında açıkça görünmeli.",
+	"category": "Güvenlik Ağı ve Saha Yönetimi",
+	"publishedAt": "2026-09-22",
+	"updatedAt": "2026-09-22",
+	"image": {
+		"src": "/images/blog/guvenlik-agi-teslim-kullanim-kontrolu.webp",
+		"alt": "Çelik taşıyıcılar arasında gerilmiş turkuaz ağ, altında boş alan ve önde kontrol panosu bulunan yapı illüstrasyonu",
+		"title": "Güvenlik ağında teslim kaydı ve alt boşluk",
+		"caption": "Güvenlik ağı, çevresindeki yapı ve kontrol kayıtlarının birlikte ele alındığı kavramsal sahne; ölçülü montaj detayı değildir.",
+		"width": 1774,
+		"height": 887
+	},
+	"keywords": [
+		"güvenlik ağı teslimi",
+		"güvenlik ağı kontrolü",
+		"güvenlik ağı kullanım koşulları",
+		"güvenlik ağı keşfi"
+	],
+	"sections": [
+		{
+			"heading": "Ağın kurulmuş olması teslimin tamamlandığı anlamına gelmez",
+			"paragraphs": ["Bir şantiyede tavana bakıp açıklığın ağla kapandığını görmek rahatlatıcı olabilir. İşletme veya saha sorumlusu için asıl soru, görünen ağın hangi görevi üstlendiğidir. İnsan düşmesini karşılamak üzere seçilen bir sistemle küçük parçaların alt kata ulaşmasını sınırlayan bir örtü aynı kabul ölçütleriyle değerlendirilemez. Kurulumun bittiği gün bu ayrım belgelerde görünmüyorsa sonraki ekipler korumanın sınırlarını kendi varsayımlarıyla doldurur. Teslim görüşmesi, ağın rengi ve kapladığı alan kadar kullanım amacını da açıklığa kavuşturmalıdır.", "Kutup Grup’un <a href=\"/hizmetler/guvenlik-agi-kurulumu\">güvenlik ağı kurulumu</a> kapsamı; açıklık geometrisi, taşıyıcı yüzeyler, kullanım amacı ve kontrol ihtiyacının birlikte incelenmesine dayanır. Bu yazı, söz konusu değerlendirmeyi işverenin hazırlayabileceği bilgi ve kayıtlar üzerinden ele alır. Genel yüksekte çalışma yaklaşımı için <a href=\"/blog\">teknik yazılar bölümündeki</a> diğer içerikler de okunabilir. Burada belirli bir açıklık için ağ boyutu, bağlantı aralığı veya taşıma kapasitesi önerilmez; bunlar seçilen sistem ve yapıya göre doğrulanır."]
+		},
+		{
+			"heading": "Önce korunacak kişiyi ve faaliyeti tarif edin",
+			"paragraphs": ["İhtiyacı “şu boşluğa ağ gerekiyor” diye anlatmak kolaydır. Ancak o boşluğun yanında kimin, hangi araçlarla, ne kadar süre çalışacağı bilinmeden uygunluk değerlendirilemez. Çatı kaplama işi, tesisat montajı ve bakım erişimi birbirinden farklı hareketler içerir. Saha krokisinde işin başladığı ve bittiği noktalar, geçişler ve aynı anda kullanılan katlar gösterilmelidir. Çalışmanın yalnızca gündüz yapılacağı düşünülüyorsa bu varsayım da yazılmalıdır; vardiya değiştiğinde kısıtlar görünür kalır.", "İnsan düşmesine karşı seçilmiş bir ağ, üzerine her türlü malzemenin bırakılabileceği bir depolama alanı değildir. İnce parçaların tutulması, kıvılcım etkisi veya kimyasal temas gibi ihtiyaçlar ayrıca tanımlanmalıdır. Birbirine benzer görünen ürünlerin görevleri farklı olabilir. Satın alma talebinde tek başına “emniyet ağı” demek yerine korunacak faaliyet ve kabul edilmeyen kullanım belirtilirse teklif veren taraf neyi değerlendirdiğini açıklayabilir. Böylece sonradan ortaya çıkan yeni bir beklenti, eski teslimin içinde varsayılmaz."]
+		},
+		{
+			"heading": "Düşmeyi önleme kararı ağ seçiminden önce gelir",
+			"paragraphs": ["<a href=\"https://www.hse.gov.uk/construction/safetytopics/assess.htm\" target=\"_blank\" rel=\"noopener noreferrer\">HSE’nin yüksekte çalışma değerlendirmesi</a>, önce yüksekte çalışmadan kaçınmayı, ardından düşmeyi önlemeyi ve kalan riskin sonuçlarını azaltmayı ele alır. Ağın bulunması bu sıralamayı ortadan kaldırmaz. İşin yer seviyesinde yapılabilecek kısmı, mevcut güvenli çalışma alanı ve toplu korunma olanakları görev planında karşılaştırılmalıdır. Kaynak Birleşik Krallık uygulamasını anlatır; Türkiye’deki proje için hukuki uygunluk belgesi olarak kullanılamaz.", "İşveren açısından yararlı soru, “neden ağ seçildi?” sorusudur. Cevap yalnızca hızlı kurulum veya dar alan olmamalıdır; görevin koşullarıyla ilişki kurulmalıdır. <a href=\"/blog/yuksekte-calisma-guvenligi-yasam-hatti-rehberi\">Yüksekte çalışma ve yaşam hattı seçimi</a> yazısı bu genel karar çerçevesini tamamlar. Ağ seçilmiş olsa da çalışma kenarları, erişim yolları ve diğer ekiplerin korunması ayrıca değerlendirilir. Farklı önlemlerin hangi bölgede devrede olduğu açıkça gösterildiğinde çalışanlar tek bir görünür sisteme gereğinden fazla anlam yüklemez."]
+		},
+		{
+			"heading": "Keşif dosyasında yalnızca açıklığın ölçüsü bulunmasın",
+			"paragraphs": ["İlk inceleme için açıklığın genel fotoğrafı, bulunduğu kat, yakın çevresindeki taşıyıcılar ve altındaki kullanım kaydedilebilir. Fotoğrafın çekildiği yön ve tarih belirtilirse daha sonra değişen koşullar anlaşılır. Mevcut çizimler paylaşılırken son revizyon olup olmadıkları da söylenmelidir. Eski bir mimari planı güncel uygulama çizimi gibi sunmak, özellikle sonradan eklenen tesisatların gözden kaçmasına yol açabilir. Bilinmeyen ölçüleri tahminle doldurmak yerine yerinde doğrulanacak alan olarak işaretlemek daha kullanışlıdır.", "Ağın altındaki makine, raf, boru, asılı tesisat ve hareketli ekipmanlar ayrı ayrı gösterilmelidir. Kurulum için erişilebilen bir köşe, kullanım sırasında forklift trafiğiyle kapanabilir. Üst katın iş programı ile alt katın sevkiyat düzeni birlikte paylaşılmalıdır. Zemindeki geçici istif alanları da keşif bilgisine dahildir. İlk dosyanın amacı sistemi uzaktan onaylamak değildir; yerinde hangi noktaların inceleneceğini belirlemek ve teklifin eksik veriye dayanan kısımlarını açık tutmaktır."]
+		},
+		{
+			"heading": "Alt boşluk kullanım boyunca korunmalıdır",
+			"paragraphs": ["<a href=\"https://www.hse.gov.uk/construction/safetytopics/safety-nets.htm\" target=\"_blank\" rel=\"noopener noreferrer\">HSE’nin güvenlik ağları açıklaması</a>, ağın yük altında şekil değiştirerek çalıştığını ve altında yeterli boşluk bulunması gerektiğini vurgular. Bu boşluğun miktarı genel bir blog bilgisinden alınamaz; sistemin teknik dokümanı ve yerleşimiyle doğrulanmalıdır. Kabul sırasında çekilen fotoğrafta alanın boş olması, bir hafta sonra da aynı durumda kalacağını göstermez. Sonradan yerleştirilen bir raf veya malzeme yığını ilk kabul koşulunu değiştirebilir.", "Bu nedenle alt alanın kullanımını kimin yönettiği teslim notunda bulunmalıdır. Ağ kurulum ekibi ayrıldıktan sonra depolama kararını veren kişi, koruma için ayrılan hacmi bilmelidir. İşverenin alan planında bu hacim yalnızca bir çizgiyle değil, sahada anlaşılır bir tanımla gösterilebilir. Bir başka ekip burayı geçici bekletme alanı yapmak istediğinde onay süreci devreye girmelidir. Korunan boşluk, kullanılmayan ve serbestçe doldurulabilecek bir yer gibi görülmemelidir."]
+		},
+		{
+			"heading": "Taşıyıcı yapı ile ağ aynı dosyada buluşmalı",
+			"paragraphs": ["Bir ağın ürün belgesinin bulunması, bağlandığı yapının kendiliğinden uygun olduğu anlamına gelmez. Kirişin veya ankrajın sahadaki durumu, taşıyıcı sisteme ilişkin bilgiler ve bağlantı çözümü birlikte değerlendirilir. İşveren, mevcut yapı belgelerini ve daha önceki müdahaleleri paylaşabilir. Korozyon, onarım veya sonradan eklenen kaplamalar hakkındaki bilgiler gizlenmemelidir. Görünen bir çelik parçanın hangi amaçla yerleştirildiği bilinmiyorsa yalnızca sağlam göründüğü için taşıyıcı nokta kabul edilmez.", "Teklif görüşmesinde yapısal uygunluğu kimin değerlendireceği ve hangi belgenin beklendiği sorulmalıdır. Kurulum kapsamıyla yapı incelemesi farklı taraflara ait olabilir; önemli olan aradaki boşluğun sahipsiz kalmamasıdır. Mevcut <a href=\"/hizmetler/yatay-ve-dusey-yasam-hatti\">yatay ve düşey yaşam hattı</a> veya başka erişim sistemleri varsa bunların bağlantıları da ağınkiyle karıştırılmamalıdır. Aynı noktayı birden fazla amaçla kullanma kararı ayrıca incelenmeden teslim belgesine uygunluk ifadesi eklenmemelidir."]
+		},
+		{
+			"heading": "Teklifleri aynı kapsam üzerinden karşılaştırın",
+			"paragraphs": ["İki teklifte aynı metrekare yazması eşdeğer hizmet sunulduğunu göstermez. Birinde keşif ve kurulum sonrası kontrol bulunurken diğerinde yalnızca malzeme teslimi olabilir. Söküm, yeniden yerleştirme, alan kapatma ve belge hazırlama kapsamları ayrı satırlarda okunmalıdır. İşin ilerleyen aşamasında ağın başka bir açıklığa taşınacağı biliniyorsa bu ihtiyaç baştan açıklanır. Böylece ilk kurulum bedelinin sonraki her değişikliği içerdiği varsayımı önlenir.", "Karşılaştırma dosyasına açık sorular eklemek yararlıdır: Hangi sistem öneriliyor, hangi kullanım için, hangi bilgiler henüz bekleniyor ve kabul kim tarafından yapılacak? “Gerekli kontroller yapılacaktır” ifadesinin hangi kayıtları kapsadığı netleştirilmelidir. Belirsizlikler yalnızca ticari konu değildir; iş programını da etkiler. Kontrol için gerekli kişi veya yapı belgesi sahaya geç ulaşırsa montaj tamamlandığı halde alan kullanıma açılamayabilir. Bu bekleme olasılığı teklifin zaman planında görünür olmalıdır."]
+		},
+		{
+			"heading": "Montaj, kullanım ve söküm ayrı çalışma evreleridir",
+			"paragraphs": ["Kurulum ekibi ağ tamamlanmadan önce çalışır; dolayısıyla tamamlanmış ağın sağlayacağı koruma montaj evresinin gerekçesi olamaz. Montaj erişimi, malzeme taşıma, alt alanın ayrılması ve diğer işlerle koordinasyon ayrıca planlanır. Aynı durum söküm sırasında da geçerlidir. İşverenin programında yalnızca ağın kullanılacağı günler değil, bu iki hazırlık evresi için gereken alan ve erişim süreleri de yer almalıdır. Dar bir sevkiyat saatine sıkıştırılmış söküm, baştan görüşülmesi gereken bir kısıttır.", "Kurulum sırasında başka ekibin kablo çekmesi veya açıklıktan malzeme geçirmesi bekleniyorsa çakışma giderilmelidir. Plan değiştiğinde karar verecek saha sorumlusu ulaşılabilir olmalıdır. Çalışmayı durdurma ve yeniden başlatma koşulları günlük koordinasyonda paylaşılır. Bunları yazmak, herkesin birbirinin işini bildiğini varsaymaktan daha güvenilirdir. Özellikle taşeronların farklı saatlerde sahaya girdiği işlerde tek bir güncel alan planı üzerinden konuşmak yanlış anlaşılmayı azaltır."]
+		},
+		{
+			"heading": "Teslim kaydı hangi alanı kapsadığını göstermeli",
+			"paragraphs": ["Teslim dosyasında sistemin kimliği, kurulduğu yer, tarih, amaç, incelenen kapsam ve kullanım kısıtları birlikte bulunmalıdır. Alanın numarasıyla fotoğrafları eşleştirmek, benzer açıklıkların karışmasını önler. Ağın bir bölümü henüz tamamlanmamışsa bunu genel bir “kurulum bitti” ifadesi altında bırakmamak gerekir. Kullanıma açılan bölüm ile kapalı kalan bölüm sahada da aynı şekilde tanımlanmalıdır. İmzanın varlığı, belgenin kapsamındaki belirsizliği tek başına gidermez.", "HSE’nin güvenlik ağları sayfası, kurulum sonrası yetkin kişi incelemesini ve teslim kaydını özellikle ele alır. İşveren teslim görüşmesinde teknik kontrolün kim tarafından yapıldığını, açık bulguları ve yeniden inceleme gerektiren durumları sorabilir. Belgeyi alan kişinin yalnızca arşive kaldırması yeterli değildir; kullanım sınırlarını işi yürütenlere aktarması gerekir. Ürün bilgisi, kurulum kontrolü ve günlük saha yönetimi birbirini tamamlayan farklı kayıtlardır. Biri mevcut diye diğerinin tamamlandığı varsayılmamalıdır."]
+		},
+		{
+			"heading": "Günlük gözlem ile teknik muayeneyi karıştırmayın",
+			"paragraphs": ["Saha sorumlusu gözle görülen bir yırtığı, ağ üzerinde birikmiş malzemeyi veya alt alana eklenen engeli fark edebilir. Bu gözlem değerlidir; fakat sistemin tüm teknik uygunluğunu onaylamakla aynı şey değildir. Kayıtta “alan gözlemlendi” ile “yetkin kişi tarafından teknik kontrol yapıldı” ifadeleri birbirinin yerine kullanılmamalıdır. Gözlemin kim tarafından, hangi kapsamda ve ne zaman yapıldığı yazılırsa sonraki ekipler belgenin ne söylediğini doğru okuyabilir.", "Kontrol takvimi seçilen sistemin talimatları, saha koşulları ve geçerli yükümlülükler dikkate alınarak belirlenmelidir. HSE’nin kendi bağlamındaki haftalık kontrol yaklaşımı, Türkiye’de her ağ için tek başına yeterli bir takvim sayılmaz. Hasar, darbe, değişiklik veya olağandışı çevresel etki rutin tarihi beklememelidir. Takvimde yalnızca kontrol günü değil, tespit edilen sorunun kime bildirileceği de yer almalıdır. Bildirim yapılmış olmasıyla sorunun kapatılmış olması farklı durumlardır."]
+		},
+		{
+			"heading": "Ağın üzerinde malzeme birikirse iş tanımı değişir",
+			"paragraphs": ["Ağa düşen parçalar bazen “nasıl olsa aşağı inmedi” düşüncesiyle bırakılır. Oysa birikme, sistemin mevcut durumunu ve alt alanın kullanımını yeniden değerlendirmeyi gerektirir. Malzemeyi almak için ağın üzerine çıkmak veya bağlantıları rastgele gevşetmek bir temizlik yöntemi olarak kabul edilemez. Bildirim, alanın kullanımına ilişkin karar ve uygun müdahale yöntemi yetkin kişilerce belirlenmelidir. İşverenin burada yapacağı katkı, sorunu görünür kılmak ve yetkisiz müdahaleyi engellemektir.", "Benzer biçimde kaynak, kesim, kimyasal temizlik veya sıcak yüzey yakınındaki işler ağ üzerinde yeni etkiler oluşturabilir. Bu faaliyetlerin ilk kullanım planında bulunup bulunmadığı kontrol edilir. <a href=\"/hizmetler/hassas-endustriyel-alan-korumasi\">Hassas endüstriyel alan koruması</a> kapsamında ele alınan çevre ve proses bilgileri, birlikte yürüyen işlerin sınırını belirlemeye yardımcı olur. Sistem seçiminin dışında kalan bir tehlike, ağın mevcut olması gerekçesiyle çözülmüş sayılmaz; çalışma yöntemi tekrar gözden geçirilir."]
+		},
+		{
+			"heading": "Revizyon küçük görünse de yeniden değerlendirilir",
+			"paragraphs": ["Bir tesisat geçişi için ağın köşesini kısa süreli açmak, saha ekibine önemsiz bir değişiklik gibi gelebilir. Ancak açıklığın sürekliliği ve kullanım sınırı değişmiştir. Talebi kimin yaptığı, hangi bölgenin etkilendiği ve geçici durumda nasıl korunacağı belirlenmeden bağlantılara müdahale edilmemelidir. İlk teslim belgesinin tarihi, değiştirilmiş düzenin onay tarihi olarak kullanılamaz. Saha çizimi ve gerçek kurulum birlikte güncellenmelidir.", "Revizyon kaydı uzun bir rapor olmak zorunda değildir; kararın izlenebilmesi yeterlidir. Talep edilen değişiklik, inceleyen kişi, alınan karar, uygulama zamanı ve yeniden kullanım durumu anlaşılır biçimde yazılır. Birden fazla ekibin bulunduğu sahada eski çizimin dolaşımda kalması önlenmelidir. Ağ başka bir açıklığa taşınıyorsa bu işlem yalnızca adres değişikliği değildir. Yeni geometrinin, taşıyıcıların, çevrenin ve erişimin değerlendirilmesi gerekir; önceki uygunluk otomatik olarak yeni yere taşınmaz."]
+		},
+		{
+			"heading": "Düşme veya darbe sonrası normal kullanıma dönülmez",
+			"paragraphs": ["Bir kişinin ağa düşmesi ya da sistemi etkileyebilecek bir darbe yaşanması halinde ilk öncelik acil durum düzeninin işletilmesidir. Ardından etkilenen alandaki faaliyet, yetkin değerlendirme tamamlanmadan olağan kullanımına dönmemelidir. Ağın dışarıdan sağlam görünmesi yeterli kanıt değildir. Olayın zamanı, yeri, bilinen koşulları ve yapılan müdahaleler kaydedilir. Kimin hangi kararla alanı yeniden kullanıma açtığı da sonradan anlaşılabilmelidir.", "HSE’nin ağlar açıklaması, düşme sonrası kurulum sorumlusuna haber verilmesini ve tekrar kullanım öncesi incelemeyi belirtir. Bu, işverenin kendi başına ağın hasarsız olduğuna karar vermesi anlamına gelmez. Kurtarma sırasında sisteme veya çevredeki elemanlara müdahale edilmişse bunlar ayrıca bildirilir. Olayı yalnızca iş güvenliği dosyasında tutup bakım kayıtlarına aktarmamak, başka bir ekibin sistem geçmişini bilmeden çalışmasına yol açabilir. Kayıtlar aynı alan kimliği üzerinden ilişkilendirilmelidir."]
+		},
+		{
+			"heading": "Kurtarma hazırlığı teslim görüşmesinin parçasıdır",
+			"paragraphs": ["Ağa düşen kişiye erişim, haberleşme ve ilk yardım organizasyonu kurulumdan sonra düşünülecek ayrıntılar değildir. Planın sahadaki erişim noktalarıyla uyumlu olması gerekir. İşveren; acil durumda görevi üstlenecek kişileri, iletişim kanallarını ve alanın diğer kullanımlarının nasıl durdurulacağını netleştirmelidir. Bir telefon numarasının listeye yazılması, uygulanabilir kurtarma düzeninin kurulduğunu göstermez. Planın görev ve saha için nasıl doğrulandığı ayrıca sorulmalıdır.", "<a href=\"/blog/stand-by-rescue-kurtarma-plani-rehberi\">Stand-by rescue ve kurtarma planı</a> yazısında ele alınan görev paylaşımı bu noktada önem kazanır. Gerekiyorsa <a href=\"/hizmetler/stand-by-rescue-hizmeti\">stand-by ve rescue hizmeti</a> kapsamı keşifte ayrıca görüşülür. Burada belirli kurtarma manevraları tarif edilmez; uygulama eğitim, yetkinlik ve sahaya uygun ekipman gerektirir. Teslim toplantısının çıktısı, acil durumda herkesin aynı kişiden farklı görevler beklediği bir düzen yerine, sorumlulukların açık biçimde paylaşılması olmalıdır."]
+		},
+		{
+			"heading": "Örnek teslim dosyası nasıl okunur?",
+			"paragraphs": [
+				"Varsayımsal bir atrium işinde iki açıklığın aynı gün tamamlandığını düşünelim. Birinci açıklığın altında boş alan, ikincisinin altında taşınması planlanan bir tesisat platformu vardır. Dosyada yalnızca “iki adet ağ teslim edildi” yazması, ikinci açıklıktaki koşullu durumu saklar. Daha açıklayıcı kayıt, her açıklığı ayrı kimlikle tanımlar; kontrol sonucunu, giderilecek eksiği ve kullanım durumunu kendi satırında gösterir. Platform taşınana kadar ikinci alanın durumu sahada da aynı kayıtla uyumlu tutulur. Bu örnek bir Kutup Grup projesini anlatmaz; kabul belgesindeki kapsam farkını görünür kılar.",
+				"Aynı dosyaya ürün kayıtları ve yerleşim çizimi eklenebilir, fakat eklerin hangi revizyona ait olduğu kontrol edilmelidir. Fotoğraflar yalnızca genel görünümden oluşuyorsa açık bulgunun nerede olduğu anlaşılmayabilir. Bulguyu tarif eden yakın görüntü ile alanı tanıtan geniş görüntünün eşleşmesi incelemeyi kolaylaştırır. Bununla birlikte fotoğraf, erişilemeyen bütün noktaların kontrol edildiğini kanıtlamaz. Teknik incelemenin sınırı yazılmalı, tamamlanmayan bölümün sorumlusu ve takip zamanı belirlenmelidir. İşveren belgeyi okurken en çok bu açık uçlara bakmalıdır.",
+				"Saha toplantısında üç soruya verilen yanıtlar tutarlı olmalıdır: Bugün hangi alan kullanılabilir, hangi koşul korunmalıdır ve koşul değişirse kime başvurulur? Belgede uygun görünen bir yer sahada kapalıysa veya tersi yaşanıyorsa durum açıklığa kavuşturulur. Sözlü olarak “sorun yok” denmesi ile kayıtta eksik bulunması arasındaki fark giderilmeden dosya kapatılmaz. Teslim, tek seferlik imzadan çok sonraki vardiyanın doğru karar verebilmesi için oluşturulan bilgi devridir."
+			]
+		},
+		{
+			"heading": "Kullanım bittiğinde sistemin geçmişi kaybolmasın",
+			"paragraphs": ["Sökülen ağın tekrar kullanılacağı düşünülüyorsa ürün kimliği, kullanım süresi, kontroller, olaylar ve müdahaleler kayıtlı kalmalıdır. Malzemenin depoya dönmesi teknik olarak yeniden kullanıma hazır olduğu anlamına gelmez. Saklama ve değerlendirme koşulları üretici talimatlarıyla ilişkilendirilmelidir. İşveren, farklı sahalardan gelen parçaların kimliklerinin karışmasını önleyen bir teslim düzeni isteyebilir. Eksik geçmiş, sonraki iş için açık bir değerlendirme konusu olarak bırakılmalıdır.", "Bir sonraki keşif görüşmesine açıklığın fotoğrafını, güncel çizimini, çalışma programını ve alt alan kullanımını birlikte götürmek iyi bir başlangıçtır. Mevcut ağ varsa eski teslim kaydı ve değişiklik geçmişi de eklenir. Kutup Grup ile <a href=\"/iletisim\">saha kapsamını görüşürken</a> insan düşmesi, malzeme düşmesi ve proses etkilerini ayrı ihtiyaçlar olarak belirtin. Teklifin neyi kapsadığını ve kullanıma açılmadan önce hangi bilgilerin tamamlanacağını bu dosya üzerinden konuşabilirsiniz. Karar verilemeyen noktaların açık kalması, yanlış bir kesinlikten daha değerlidir."]
+		}
+	],
+	"faqs": [
+		{
+			"question": "Güvenlik ağı ile malzeme tutucu ağ aynı amaçla mı kullanılır?",
+			"answer": "Hayır. Personel düşmesini karşılamak ve malzeme düşmesini sınırlamak farklı ihtiyaçlardır. Seçilen sistemin amacı, kapasitesi ve kullanım koşulları teknik belgeler ve saha değerlendirmesiyle doğrulanmalıdır."
+		},
+		{
+			"question": "Güvenlik ağı tesliminde hangi bilgiler istenmeli?",
+			"answer": "Kurulan alanın kimliği, sistem ve ürün bilgileri, kontrolün kapsamı ve tarihi, kullanım kısıtları, açık bulgular ve takip sorumluları birlikte istenmelidir. Belge ile sahadaki durum eşleşmelidir."
+		},
+		{
+			"question": "Ağın altındaki alan depolama için kullanılabilir mi?",
+			"answer": "Ağın çalışması için gereken boşluk sistemin teknik değerlendirmesiyle belirlenir ve kullanım boyunca korunur. Sonradan raf veya malzeme ekleme kararı uygunluk değerlendirmesi yapılmadan alınmamalıdır."
+		},
+		{
+			"question": "Bir bağlantı değiştirildiğinde eski teslim kaydı geçerli olur mu?",
+			"answer": "Değiştirilmiş düzen için önceki uygunluk otomatik olarak varsayılamaz. Değişiklik, etkilenen alan ve yeniden kullanım kararı yetkin değerlendirmeyle kayıt altına alınmalıdır."
+		}
+	],
+	"relatedServices": [
+		{
+			"label": "Güvenlik Ağı Kurulumu",
+			"href": "/hizmetler/guvenlik-agi-kurulumu"
+		},
+		{
+			"label": "Yatay ve Düşey Yaşam Hattı",
+			"href": "/hizmetler/yatay-ve-dusey-yasam-hatti"
+		},
+		{
+			"label": "Stand-by ve Rescue Hizmeti",
+			"href": "/hizmetler/stand-by-rescue-hizmeti"
+		},
+		{
+			"label": "Hassas Endüstriyel Alan Koruması",
+			"href": "/hizmetler/hassas-endustriyel-alan-korumasi"
+		}
+	],
+	"relatedPosts": ["yuksekte-calisma-guvenligi-yasam-hatti-rehberi", "stand-by-rescue-kurtarma-plani-rehberi"],
+	"sources": [{
+		"label": "HSE — Safety nets and soft landing systems",
+		"url": "https://www.hse.gov.uk/construction/safetytopics/safety-nets.htm"
+	}, {
+		"label": "HSE — Assessing all work at height",
+		"url": "https://www.hse.gov.uk/construction/safetytopics/assess.htm"
+	}]
+};
+//#endregion
+//#region src/lib/blog/dis-cephe-aydinlatma-bakim-gece-kabulu.ts
+var cepheAydinlatmaBakimPost = {
+	"slug": "dis-cephe-aydinlatma-bakim-gece-kabulu",
+	"title": "Dış Cephe Aydınlatması: Bakım Erişimi ve Gece Kabulü",
+	"metaDescription": "Dış cephe aydınlatmasında keşif, bakım erişimi, armatür kayıtları ve gece kabulünü planlayın; teklif kapsamını ve işletmeye devredilecek bilgileri netleştirin.",
+	"excerpt": "Cephede istenen gece görünümünü bakım erişimi, kontrol senaryoları ve teslim kayıtlarıyla birlikte değerlendirmek için bina yöneticilerine çalışma çerçevesi.",
+	"category": "Cephe Aydınlatması ve Bakım",
+	"publishedAt": "2026-09-22",
+	"updatedAt": "2026-09-22",
+	"image": {
+		"src": "/images/blog/dis-cephe-aydinlatma-bakim-gece-kabulu.webp",
+		"alt": "Alacakaranlıkta sıcak ışıkla aydınlatılmış taş ve cam cephe, önde cephe çizimi ve örnek armatür bulunan illüstrasyon",
+		"title": "Cephe aydınlatmasında gece görünümü ve bakım planı",
+		"caption": "Hayali bir binanın gece aydınlatmasıyla ürün ve yerleşim dosyasını bir araya getiren editoryal sahne; uygulama projesi değildir.",
+		"width": 1774,
+		"height": 887
+	},
+	"keywords": [
+		"dış cephe aydınlatma bakımı",
+		"cephe aydınlatma gece kabulü",
+		"aydınlatma bakım erişimi",
+		"cephe aydınlatma keşfi"
+	],
+	"sections": [
+		{
+			"heading": "Gece görünümü kadar sonraki bakım gününü de düşünün",
+			"paragraphs": ["Dış cephe aydınlatması çoğu zaman bir gece görseli üzerinden konuşulur. Taş yüzeyin dokusu, girişin vurgusu veya üst katların silueti hemen dikkat çeker. Buna karşılık arızalı bir armatüre nasıl ulaşılacağı, sürücünün nerede bulunduğu ve cephe temizliği sırasında hangi parçaların korunacağı daha geç gündeme gelir. İşletme devraldıktan sonra bu soruların cevabını bulmak zorlaşabilir. İyi hazırlanmış bir iş kapsamı, istenen görüntüyle bakımın gerçek koşullarını aynı masada buluşturur.", "Kutup Grup’un <a href=\"/hizmetler/dis-cephe-dekoratif-aydinlatma\">dış cephe dekoratif aydınlatma</a> hizmetinde cephe malzemesi, erişim yöntemi, elektrik altyapısı ve uygulama kapsamı birlikte değerlendirilir. Bu yazı, bina yöneticisinin keşif öncesinde hazırlayacağı bilgileri, teklif sırasında soracağı soruları ve teslimde görmek isteyeceği kayıtları ele alır. Elektrik bağlantısı veya yüksekte montaj tarifi vermez. <a href=\"/blog\">Teknik yazılar bölümündeki</a> erişim ve cephe bakımı içerikleriyle birlikte okunabilir; aydınlatma kararını yalnızca ürün kataloğuna bırakmamak için bir çalışma çerçevesi sunar."]
+		},
+		{
+			"heading": "Beklentiyi fotoğraf yerine kullanım senaryosuyla anlatın",
+			"paragraphs": ["Bir başka binanın fotoğrafı görsel beklentiyi anlatabilir, ancak o yapının cephe malzemesi, çevresi ve bakım olanakları sizin yapınızla aynı olmayabilir. İlk görüşmede hangi mimari öğenin görünür olacağı, hangi yüzeylerin karanlık kalacağı ve ışığın hangi saatlerde kullanılacağı konuşulmalıdır. Girişin anlaşılır olmasıyla bütün cephenin dikkat çekmesi farklı amaçlardır. Dekoratif aydınlatmanın acil durum veya kaçış aydınlatmasıyla aynı görevde olmadığı da baştan belirtilmelidir.", "Bina içinde gece çalışan ofisler, konut pencereleri veya dinlenme alanları varsa bunların beklentileri dosyaya eklenir. Sadece caddeden bakıldığında güzel görünen bir düzen, içeriden bakıldığında rahatsızlık yaratabilir. İşverenin mimari beklentiyi bir kullanım notuyla tamamlaması tasarım görüşmesini somutlaştırır. Örneğin hafta içi olağan çalışma, özel etkinlik ve kapalı saatler için farklı ihtiyaçlar olabilir. Her senaryoyu kullanacak kişinin kim olduğu ve ayarı değiştirme yetkisi de işletme tarafında belirlenmelidir."]
+		},
+		{
+			"heading": "Keşif dosyasında gündüz ve gece bilgisi birlikte bulunsun",
+			"paragraphs": ["Cephe fotoğraflarının yalnızca yakın plan olması yeterli değildir. Genel görünüm, yapı çevresindeki yollar, komşu binalar, girişler ve zemin kullanımı da gösterilmelidir. Gece çekimlerinde mevcut aydınlatmanın açık olup olmadığı belirtilirse görüntü daha doğru yorumlanır. Fotoğrafın otomatik pozlaması karanlık alanları olduğundan aydınlık gösterebilir; bu nedenle fotoğrafın ölçüm yerine geçmediği bilinmelidir. Dosya, sahada kontrol edilecek soruları belirler; tek başına aydınlatma performansını kanıtlamaz.", "Mevcut cephe çizimi, elektrik projesi, armatür envanteri ve önceki bakım kayıtları varsa tarihleriyle paylaşılır. Eksik belgeler için “mevcut değil” yazmak, eski bir dosyayı güncel sanmaktan daha iyidir. Binanın kullanım saatleri, giriş izinleri ve erişim kısıtları da aynı paket içinde bulunmalıdır. Çatı kapısının yalnızca belirli bir sorumlu tarafından açılması bile bakım programını etkiler. Keşif ziyaretinde bu ayrıntıların görülmesi, fiyat ve süre konuşmasının daha gerçekçi varsayımlara dayanmasını sağlar."]
+		},
+		{
+			"heading": "Cephe malzemesi sabitleme ve kablo güzergâhını etkiler",
+			"paragraphs": ["Taş kaplama, metal panel, cam yüzey ve sıvalı cephe aynı montaj ayrıntısıyla ele alınamaz. Görünen kaplama ile arkasındaki taşıyıcı birbirinden ayrılmalıdır. Mevcut derz, su tahliye yolu, hareket payı ve bakım kapağı gibi öğeler yerleşim kararını etkileyebilir. İşveren, cepheye daha önce yapılmış müdahaleleri ve bilinen su alma sorunlarını paylaşmalıdır. Aydınlatmanın dış görünüşe katkısı konuşulurken yapı kabuğunun işlevi gözden kaçmamalıdır.", "Armatürün yerini seçmek, kablonun nereden geçeceği ve bakımda hangi parçalara dokunulacağıyla birlikte düşünülür. Teklifte sabitleme çözümünün kim tarafından değerlendirileceği, cepheyle ilgili izinler ve onarım sınırları açıklanmalıdır. Ürünün dış ortama uygun olarak tanımlanması, bütün montajın her cephede uygun olduğu anlamına gelmez. Bağlantı elemanları, ürünün talimatları ve yapı koşulları ayrıca doğrulanır. Genel bir görsel üzerinden kesin delik yeri veya bağlantı tarifi vermek bu nedenle sağlıklı bir yaklaşım değildir."]
+		},
+		{
+			"heading": "İlk montajda kullanılan erişim daha sonra da mümkün mü?",
+			"paragraphs": ["Yeni bir binada cephe çalışması sırasında kurulu iskele kullanılabilir; işletme döneminde aynı olanak bulunmayabilir. Armatürün değişimi için her defasında farklı bir erişim düzeni kurulacaksa bu durum tasarım kararına geri beslenmelidir. Bakım için gereken yaklaşım alanı, ekipman yerleşimi, çatı erişimi ve alt alan kapatma ihtiyacı keşifte sorulur. Erişilebilirlik, yalnızca armatürün önüne ulaşmak değil, gereken işi uygun koşullarda yapabilmektir.", "<a href=\"/blog/endustriyel-dagcilik-iple-erisim-rehberi\">Endüstriyel dağcılık ve iple erişim</a> yazısında açıklanan yöntem seçimi, bu bakım değerlendirmesini tamamlar. İple erişim, platform veya başka bir seçenek; görev, yapı ve çevre koşullarına göre karşılaştırılır. Mevcut <a href=\"/hizmetler/yatay-ve-dusey-yasam-hatti\">yaşam hattı sisteminin</a> bulunması, her armatüre uygun erişim sağlandığı anlamına gelmez. Kullanım amacı, bağlantı koşulları ve kurtarma yaklaşımı ayrıca incelenir. Teklifte erişimin varsayımları yazılırsa sonraki bakım maliyetinin hangi koşullara bağlı olduğu anlaşılır."]
+		},
+		{
+			"heading": "Armatür envanteri bir satın alma listesinden fazlasıdır",
+			"paragraphs": ["Ürün adı ve adet, teklif için gerekli olsa da bakım için tek başına yeterli değildir. Armatürün cephedeki konumu, ürün kodu, ilgili kontrol bölgesi ve ulaşım notu aynı kimlikle eşleştirilebilir. Ürün ailesi içinde farklı ışık dağılımı veya kontrol özelliği bulunabileceği için benzer görünen iki parçanın eşdeğer olduğu varsayılmamalıdır. Değişim gerektiren bir durumda doğru ürünü tanımlayabilmek, arıza tespitinin ilk aşamasını kolaylaştırır.", "Sürücü, bağlantı kutusu ve kontrol bileşenleri armatürden farklı yerde olabilir. Bu bileşenlerin konumunun belgelenmesi, dış cepheye çıkmadan önce yapılabilecek değerlendirmeyi de etkiler. İşverenin teknik dosyasında ürün dokümanları ve sahadaki konum çizimi birbirine bağlanmalıdır. Ürün değişikliği yapılırsa eski kodun üzerine sessizce yazmak yerine tarih ve değişim gerekçesi kaydedilir. Böylece bakım ekibi, aynı cephede neden farklı parçalar bulunduğunu tahmin etmek zorunda kalmaz."]
+		},
+		{
+			"heading": "Elektrik işi ile erişim işinin sorumluluk sınırını yazın",
+			"paragraphs": ["Bir armatüre ulaşabilmek, elektriksel müdahaleyi yapmaya yetkin olmakla aynı şey değildir. Keşif ve teklif sırasında erişim, elektriksel değerlendirme, montaj, kontrol ve devreye alma görevlerini kimin üstleneceği açıklanmalıdır. <a href=\"https://www.hse.gov.uk/electricity/withequip.htm\" target=\"_blank\" rel=\"noopener noreferrer\">HSE’nin elektrik ekipmanında çalışma açıklaması</a>, yetkinlik ve enerjinin güvenli biçimde ayrılması konularını ele alır. Kaynak Birleşik Krallık bağlamındadır; Türkiye’deki tesisin mevzuat ve proje değerlendirmesinin yerini tutmaz.", "İşveren açısından yapılacak iş, bir bağlantı yöntemini tarif etmek değil, sorumluluk boşluğu bırakmamaktır. Elektrik kesintisinin hangi sistemleri etkilediği, kesinti talebini kimin onaylayacağı ve yeniden devreye alma kararının kimde olduğu planlanır. Pano adı, devre bilgisi ve güncel çizim arasındaki uyumsuzluklar uygulamadan önce çözülmelidir. Bu yazı enerjili çalışma önermez; elektriksel işlemler uygun yetkinlik, tesis prosedürü ve sahaya özel güvenlik düzeni gerektirir. Erişim ekibinin programıyla elektrik işinin programı birlikte hazırlanmalıdır."]
+		},
+		{
+			"heading": "Işığın nereye ulaşmaması gerektiğini de belirleyin",
+			"paragraphs": ["<a href=\"https://darksky.org/resources/guides-and-how-tos/lighting-principles/\" target=\"_blank\" rel=\"noopener noreferrer\">DarkSky ve Illuminating Engineering Society’nin dış aydınlatma ilkeleri</a>, ışığın bir amaca hizmet etmesini, hedeflenmesini, gereğinden parlak olmamasını, kontrol edilmesini ve uygun yerlerde daha sıcak renklerin değerlendirilmesini önerir. Cephe için pratik karşılığı, yalnızca aydınlatılacak yüzeyi değil, komşu pencereyi, gökyüzünü ve çevredeki yaşam alanlarını da düşünmektir. Bu ilkeler bir ürünün veya şirketin sertifikalı olduğunu göstermez.", "İşveren keşif dosyasında rahatsızlık oluşturabilecek bakış noktalarını işaretleyebilir. Bir karşı bina penceresi, girişte bekleyen kişi veya sürücünün yaklaşım yönü aynı ışığı farklı algılar. Tasarım görüşmesinde bu noktaların nasıl kontrol edileceği konuşulur. Daha fazla armatür eklemek her zaman daha iyi bir görünüm sağlamaz. Bazı yüzeylerin karanlık bırakılması mimari anlatımın parçası olabilir. Kararın gece denemesinde nasıl değerlendirileceği baştan belirlenirse teslim yalnızca “bütün lambalar yanıyor” kontrolüne indirgenmez."]
+		},
+		{
+			"heading": "Numune denemesi kararları erkenden görünür kılar",
+			"paragraphs": ["Tüm cepheye uygulamadan önce temsil edici bir bölümün nasıl değerlendirileceği görüşülebilir. Numune alanı seçilirken sadece kolay erişilen yüzey değil, gerçek cephe dokusunu ve çevre etkisini temsil etmesi önemlidir. Denemede ürünün yönü, görünürlüğü ve istenen etki birlikte incelenir. Numune yapılması her proje için aynı şekilde mümkün olmayabilir; kapsamı ve sınırı teklif sırasında açıklanmalıdır. Sayısal performans beklentileri varsa bunların nasıl ölçüleceği yetkin tasarım sorumlusunca belirlenir.", "Karar notunda hangi ürünün, hangi senaryoda ve nereden bakılarak değerlendirildiği yazılır. Telefonla çekilmiş tek bir gece fotoğrafı yerine gözlem koşullarını anlatan kısa bir kayıt daha kullanışlıdır. Görsel onay veren kişi ile teknik uygunluğu değerlendiren kişinin görevleri farklı olabilir. Numunedeki olumlu izlenim, başka bir cephe malzemesinde aynı sonucun kesin elde edileceği anlamına gelmez. Sonraki değişiklikler numune kararından sapıyorsa bunlar açıkça görüşülmeli ve kayda geçirilmelidir."]
+		},
+		{
+			"heading": "Çalışma saatleri ve kontrol senaryoları işletmeye göre kurulmalı",
+			"paragraphs": ["Aydınlatmanın ne zaman açılacağı kadar ne zaman kısılacağı veya kapanacağı da konuşulmalıdır. Bina kapanış saati, gece personeli, özel etkinlikler ve komşu kullanım birlikte değerlendirilir. Tek bir sürekli açık senaryo, işletmenin bütün ihtiyaçlarını temsil etmeyebilir. Ayarların kim tarafından değiştirilebildiği ve değişikliğin nerede kaydedildiği işletme düzeninde yer almalıdır. Bir sorunu çözmek için geçici yapılan ayarın aylarca unutulması böylece önlenebilir.", "Kontrol sisteminin elektrik kesintisi sonrasında hangi duruma döneceği, saat ayarının nasıl yönetileceği ve olağan dışı bir durumda işletmenin ne yapacağı teslimde açıklanır. Bunlar ürünün mevcut özelliklerine göre doğrulanır; her sistemde uzaktan erişim veya otomasyon bulunduğu varsayılmaz. Yönetim arayüzü varsa kullanım bilgileri yetkili kişilere güvenli biçimde aktarılır. Teknik dosyaya herkese açık erişim bilgisi yazmak yerine yetki devri ayrı yürütülmelidir. Kullanılmayan bir özelliği varmış gibi pazarlamak yerine gerçek senaryoların çalışması gösterilir."]
+		},
+		{
+			"heading": "Enerji beklentisini ölçülebilir varsayımlara bağlayın",
+			"paragraphs": ["LED kullanılması, her projede aynı oranda tasarruf sağlanacağını göstermez. Mevcut sistemin gücü, yeni yerleşimdeki ürün sayısı, kullanım süresi ve kontrol senaryosu bilinmeden karşılaştırma eksik kalır. Yeni aydınlatma daha geniş bir alanı kapsıyorsa eski faturayla doğrudan kıyaslamak da yanıltıcı olabilir. İşveren tasarruf iddiası yerine hesapta kullanılan kabulleri ve varsa ölçüm yöntemini istemelidir. Sonuç, bu varsayımların geçerli olduğu koşullarla birlikte okunur.", "Bir teklif daha düşük ürün gücü sunarken daha uzun çalışma süresi varsayıyor olabilir. Karşılaştırma tablosunda ürünler kadar çalışma senaryoları da yan yana konmalıdır. Bakım erişimi, değiştirilebilir parçalar ve duruş ihtiyacı toplam işletme değerlendirmesinin diğer parçalarıdır. Bu bilgiler sabit bir geri ödeme süresi vaadine dönüştürülmemelidir. Gerçek kullanım başladıktan sonra izlenecek veri ve sorumlu kişi belirlenirse başlangıç tahminiyle işletme deneyimi arasında anlamlı bir karşılaştırma yapılabilir."]
+		},
+		{
+			"heading": "Cephe temizliği ile aydınlatma bakımı aynı takvimde konuşulsun",
+			"paragraphs": ["Armatürlerin ve kablo güzergâhlarının bulunduğu yüzeylerde temizlik çalışması planlanırken ürün talimatları dikkate alınmalıdır. Kullanılacak yöntem ve malzemenin aydınlatma bileşenleriyle ilişkisi değerlendirilir. Temizlik ekibinin güzergâhı ile montaj elemanları çakışabilir; bakım erişimi için bırakılmış kapağın üzeri kapatılabilir. Bu nedenle cephe ve aydınlatma kayıtlarının ayrı dosyalarda birbirinden habersiz tutulması işletme açısından güçlük yaratır.", "<a href=\"/hizmetler/ic-ve-dis-cephe-temizlik-hizmetleri\">İç ve dış cephe temizliği</a> kapsamı görüşülürken aydınlatma envanteri paylaşılabilir. <a href=\"/blog/yuksek-yapilarda-cephe-temizligi-iple-erisim\">Yüksek yapılarda cephe temizliği</a> yazısındaki yüzey ve erişim değerlendirmesi bu koordinasyona yardımcı olur. Aynı erişim organizasyonunda birden fazla işin yapılması düşünülebilir; ancak görevler uyumlu değilse yalnızca zaman kazanmak için birleştirilmemelidir. Elektriksel kontroller, temizlik ve mekanik bakım kendi yetkinlik ve kabul koşullarıyla planlanmalıdır. Hangi işin önce yapılacağı ürün ve saha gereklilikleriyle belirlenir."]
+		},
+		{
+			"heading": "Gece kabulü için bakış noktaları önceden seçilsin",
+			"paragraphs": ["Teslimde bütün armatürlerin çalışması kontrol edilir; ancak görsel kabul bundan daha geniştir. Giriş yaklaşımı, karşı kaldırım ve ilgili iç mekân gibi bakış noktaları önceden belirlenebilir. Her noktanın erişim izni ve güvenliği dikkate alınır. İstenen mimari etkiyle rahatsızlık oluşturan parlaklık aynı görüşmede değerlendirilmelidir. Gündüz kontrolde görünmeyen bir kablo gölgesi veya cephe birleşimi gece algısını değiştirebilir; tespitler konumla ilişkilendirilerek kaydedilir.", "Fotoğrafların hangi senaryoda ve mümkün olduğunca karşılaştırılabilir koşullarda çekildiği belirtilir. Fotoğraf bir destek kaydıdır; istenen teknik ölçüm varsa onun yerine geçmez. İşveren, görsel olarak kabul edilen bölümlerle düzeltme bekleyen bölümleri ayırmalıdır. Renk veya yön ayarı sonradan değiştirilecekse kimin, hangi kapsamda ve ne zaman müdahale edeceği yazılır. Böylece teslimden sonra yapılan her değişiklik yeni bir memnuniyetsizlik görüşmesine dönüşmek yerine önceki kabul kaydı üzerinden ele alınabilir."]
+		},
+		{
+			"heading": "Arıza bildirimi bakımın ilk verisini oluşturur",
+			"paragraphs": ["“Cephe ışıkları çalışmıyor” ifadesi arızanın sınırını anlatmaz. İşletme personeli güvenli bulunduğu yerden hangi bölümün etkilendiğini, ne zaman fark edildiğini ve durumun sürekli mi aralıklı mı olduğunu kaydedebilir. Bilinen bir kesinti veya senaryo değişikliği varsa bildirimde belirtilir. Bu bilgi, teknik ekibin görevi tanımlamasına yardımcı olur; personelin panoya veya armatüre müdahale etmesini gerektirmez. Hasarlı veya şüpheli elektrik ekipmanına müdahale yetkin kişilere bırakılmalıdır.", "Bakım kaydında yalnızca değiştirilen parça değil, yapılan işlemin nedeni ve devreye alma sonucu da bulunmalıdır. Tekrarlayan bir arızada önceki müdahaleler görülebilirse her ziyaret sıfırdan başlamaz. Cephede yeni su izi veya mekanik hasar gözlenmişse ilgili yapı sorumlusuna aktarılır. Sorunun aydınlatma bileşeninden mi başka bir yapı etkisinden mi kaynaklandığı incelemeyle belirlenir. Bir parça değişiminin bütün sistemin durumunu doğruladığı varsayılmamalıdır."]
+		},
+		{
+			"heading": "Aynı ürünle hazırlanmış iki teklif neden farklı olabilir?",
+			"paragraphs": [
+				"Varsayımsal bir bina için iki teklifin aynı armatür modelini içerdiğini düşünelim. İlk teklif montajı ve gündüz çalışırlık kontrolünü, ikinci teklif bunlara ek olarak gece senaryo ayarını ve uygulanan yerleşim dosyasını kapsıyor olsun. Yalnızca ürün adedi ile toplam bedeli karşılaştırmak bu farkı göstermez. İşveren kendi kabul beklentisini yazıp her iki teklifin aynı ihtiyaca yanıt verip vermediğini sormalıdır. Bu örnek gerçek bir müşteri veya proje sonucu değildir; hizmet kapsamının ürün listesinden neden ayrı okunacağını gösterir.",
+				"Bakım erişimi de benzer bir fark yaratabilir. Bir teklifte çatı erişiminin işletme tarafından sağlanacağı, diğerinde zemin kullanım izninin henüz alınmadığı varsayılmış olabilir. İzinlerin hangi tarihte ve kim tarafından tamamlanacağı belli değilse kurulum takvimi kesinleşmiş sayılmaz. Hava koşulları nedeniyle ertelenebilecek dış çalışma ile içeride hazırlanabilecek belgeler ayrı planlanabilir. Bu ayrım, bekleme yaşandığında hangi işlerin ilerleyebileceğini gösterir; belirli bir bitiş günü veya kesintisiz çalışma garantisi üretmez.",
+				"Karşılaştırma sırasında üç ayrı liste hazırlamak işe yarar: teslim edilecek ürünler, yapılacak saha işleri ve işletmeye devredilecek bilgiler. Açık sorular bu listelerin ilgili satırına eklenir. Örneğin yedek parça temini bir ürün konusu, gece ayarı saha işi, senaryo yedeğinin teslimi ise bilgi devridir. Hepsini “anahtar teslim” ifadesinin içine bırakmak yerine kapsamın açıklanması istenir. Sözleşme ve teknik kabul ayrıntıları ilgili sorumlularla tamamlanırken görsel beklentiler de aynı sürümde tutulur; eski bir sunum son karar sanılmaz."
+			]
+		},
+		{
+			"heading": "Teslim dosyası bir sonraki sorumluya da anlaşılır gelmeli",
+			"paragraphs": ["Uygulanan yerleşim, ürün kodları, kontrol senaryoları, bakım erişim notları, yapılan kontroller ve açık kalan işler aynı teslim düzeninde bulunmalıdır. Dosyanın yalnızca tasarım görsellerini içermesi işletmeye yeterli bilgi sağlamaz. Sahadaki son durumun çizimlerle eşleştiği doğrulanmalıdır. Ürün talimatlarının nerede saklandığı ve bakım talebinin nasıl açılacağı belirtilir. Yönetici değiştiğinde bilgi kişisel mesajlaşma geçmişlerinde kaybolmamalıdır.", "Teklif görüşmesine hazırlanırken cephe fotoğrafları, mevcut çizimler, istenen çalışma saatleri ve bakım erişimi hakkında bilinen kısıtları bir araya getirin. Kutup Grup ile <a href=\"/iletisim\">keşif ve uygulama kapsamını görüşürken</a> görsel beklentiyi bu işletme bilgileriyle birlikte paylaşın. Hangi değerlendirmelerin yerinde yapılacağı, hangi uzmanlıkların gerektiği ve kabulde hangi kayıtların sunulacağı netleşsin. Binanın gece görünümüne karar verirken armatür değişimi gereken ilk bakım gününün nasıl işleyeceğini de aynı dosyada görebilmek, işletme için somut bir avantajdır."]
+		}
+	],
+	"faqs": [
+		{
+			"question": "Dış cephe aydınlatması keşfi için hangi bilgiler hazırlanmalı?",
+			"answer": "Gündüz ve gece fotoğrafları, mevcut cephe ve elektrik çizimleri, ürün kayıtları, çalışma saatleri, görsel beklenti ve bakım erişimi kısıtları başlangıç dosyasında birlikte bulunmalıdır."
+		},
+		{
+			"question": "İlk montajdaki erişim yöntemi bakım için de uygun mudur?",
+			"answer": "Her zaman değil. Montajda bulunan iskele işletme döneminde bulunmayabilir. Bakım görevi, yaklaşım alanı, çatı ve zemin kullanımı ile kurtarma koşulları ayrıca değerlendirilmelidir."
+		},
+		{
+			"question": "Gece kabulünde yalnızca armatürlerin yanması yeterli mi?",
+			"answer": "Çalışırlık kontrolüne ek olarak belirlenen bakış noktalarından görsel etki, kontrol senaryoları, komşu alanlara ışık etkisi ve açık düzeltmeler değerlendirilir. Gerekli teknik ölçümler fotoğraflarla ikame edilmez."
+		},
+		{
+			"question": "LED kullanımı belirli bir tasarruf oranını garanti eder mi?",
+			"answer": "Hayır. Karşılaştırma mevcut ve yeni sistemin gücü, ürün sayısı, kullanım süresi ve kontrol senaryosu gibi verilerle yapılmalıdır. Sonuç ancak kullanılan varsayımlarla birlikte anlamlıdır."
+		}
+	],
+	"relatedServices": [
+		{
+			"label": "Dış Cephe Dekoratif Aydınlatma",
+			"href": "/hizmetler/dis-cephe-dekoratif-aydinlatma"
+		},
+		{
+			"label": "İç ve Dış Cephe Temizliği",
+			"href": "/hizmetler/ic-ve-dis-cephe-temizlik-hizmetleri"
+		},
+		{
+			"label": "Yatay ve Düşey Yaşam Hattı",
+			"href": "/hizmetler/yatay-ve-dusey-yasam-hatti"
+		}
+	],
+	"relatedPosts": ["endustriyel-dagcilik-iple-erisim-rehberi", "yuksek-yapilarda-cephe-temizligi-iple-erisim"],
+	"sources": [{
+		"label": "DarkSky / IES — Five Principles for Responsible Outdoor Lighting",
+		"url": "https://darksky.org/resources/guides-and-how-tos/lighting-principles/"
+	}, {
+		"label": "HSE — Work on electrical equipment, machinery or installations",
+		"url": "https://www.hse.gov.uk/electricity/withequip.htm"
+	}]
+};
+//#endregion
 //#region src/lib/blog/gabion-duvar-drenaj-zemin-planlamasi.ts
 var gabionDrenajPost = {
 	slug: "gabion-duvar-drenaj-zemin-planlamasi",
@@ -7473,6 +7747,8 @@ var BLOG_HUB = {
 	excerpt: "Kutup Grup blogu; yüksekte çalışma, iple erişim, kaya düşmesi, şev stabilizasyonu ve saha güvenliği konularında karar vermeyi kolaylaştıran teknik yazılar sunar."
 };
 var BLOG_POSTS = [
+	guvenlikAgiTeslimPost,
+	cepheAydinlatmaBakimPost,
 	gabionDrenajPost,
 	sahneRiggingPost,
 	{

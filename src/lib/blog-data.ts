@@ -1,3 +1,5 @@
+import { guvenlikAgiTeslimPost } from './blog/guvenlik-agi-teslim-kullanim-kontrolu.ts';
+import { cepheAydinlatmaBakimPost } from './blog/dis-cephe-aydinlatma-bakim-gece-kabulu.ts';
 import { gabionDrenajPost } from './blog/gabion-duvar-drenaj-zemin-planlamasi.ts';
 import { sahneRiggingPost } from './blog/sahne-rigging-yuk-plani-teslim-kontrolu.ts';
 import {
@@ -70,6 +72,8 @@ export const BLOG_HUB = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  guvenlikAgiTeslimPost,
+  cepheAydinlatmaBakimPost,
   gabionDrenajPost,
   sahneRiggingPost,
   {

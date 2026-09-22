@@ -133,7 +133,7 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             'yatay-ve-dusey-yasam-hatti',
             'guvenlik-agi-kurulumu',
         ],
-        relatedPosts: ['yuksek-yapilarda-cephe-temizligi-iple-erisim'],
+        relatedPosts: ['dis-cephe-aydinlatma-bakim-gece-kabulu', 'yuksek-yapilarda-cephe-temizligi-iple-erisim'],
         updatedAt: '2026-09-15',
     },
 
@@ -317,7 +317,7 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['yatay-ve-dusey-yasam-hatti', 'tersane-ve-offshore-hizmetleri', 'dis-cephe-dekoratif-aydinlatma'],
-        relatedPosts: ['yuksekte-calisma-guvenligi-yasam-hatti-rehberi'],
+        relatedPosts: ['guvenlik-agi-teslim-kullanim-kontrolu', 'yuksekte-calisma-guvenligi-yasam-hatti-rehberi'],
         updatedAt: '2026-09-15',
     },
 

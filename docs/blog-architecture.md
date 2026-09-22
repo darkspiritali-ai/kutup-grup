@@ -25,6 +25,8 @@ Bu plan, organik arama ve LLM keşfedilebilirliği için konu kümesi (hub-and-s
 | 8 | Stand-by Rescue Nedir? Yüksekte ve Kapalı Alanda Kurtarma Planı | `/blog/stand-by-rescue-kurtarma-plani-rehberi` | Güvenlik / hizmet araştırması | Stand-by rescue, IRATA eğitimi, yaşam hattı | `stand-by-rescue-kurtarma-plani-rehberi.webp` |
 | 9 | Gabion Duvarlarda Drenaj ve Zemin Planlaması | `/blog/gabion-duvar-drenaj-zemin-planlamasi` | Keşif / teklif hazırlığı / su yönetimi | Gabion duvar, jeoteknik uygulamalar, yamaç yüzeyi temizleme | `gabion-duvar-drenaj-zemin-planlamasi.webp` |
 | 10 | Sahne Rigging: Yük Planı ve Teslim Kontrolü | `/blog/sahne-rigging-yuk-plani-teslim-kontrolu` | Organizatör için yük envanteri / revizyon / teslim | Sahne rigging, yaşam hattı, stand-by rescue | `sahne-rigging-yuk-plani-teslim-kontrolu.webp` |
+| 11 | Güvenlik Ağı: Teslim ve Kullanım Kontrolü | `/blog/guvenlik-agi-teslim-kullanim-kontrolu` | İşveren için kullanım sınırı / kabul dosyası / revizyon | Güvenlik ağı, yaşam hattı, stand-by rescue, hassas alan koruması | `guvenlik-agi-teslim-kullanim-kontrolu.webp` |
+| 12 | Dış Cephe Aydınlatması: Bakım Erişimi ve Gece Kabulü | `/blog/dis-cephe-aydinlatma-bakim-gece-kabulu` | Bina yöneticisi için bakım erişimi / gece kabulü / işletmeye devir | Dış cephe aydınlatma, cephe temizliği, yaşam hattı | `dis-cephe-aydinlatma-bakim-gece-kabulu.webp` |
 
 ## Link kuralları
 
@@ -50,3 +52,5 @@ Bu plan, organik arama ve LLM keşfedilebilirliği için konu kümesi (hub-and-s
 Yeni makaleler `src/lib/blog/<slug>.ts` içinde `BlogPost` verisi olarak tutulur ve `blog-data.ts` envanterine eklenir. `route-manifest.ts` kaydı aynı canonical slug ile eklenir. Build, sitemap/llms dosyalarını ve prerender çıktısını üretir. `validate:blog` sabit makale sayısı yerine envanter/route eşleşmesini denetler. Kelime sayısı yalnızca teknik doğrulamada kullanılır; makale ve kartlarda sayaç veya uzunluk etiketi gösterilmez.
 
 17 Eylül 2026 yayınları için FHWA arşiv yayını, Maccaferri teknik açıklaması ve HSE etkinlik/kaldırma sayfaları incelendi. Yabancı kaynaklar yerel mevzuat veya proje onayı olarak sunulmadı. İki yeni görsel yapay editoryal illüstrasyon olarak üretildi ve 1774 × 887 WebP biçimine dönüştürüldü; makaledeki görsel bağlantısı mevcut şablonda canonical makale URL'sine yönelir.
+
+22 Eylül 2026: İki yeni makale, mevcut genel güvenlik ve cephe temizliği içeriklerini tekrar etmek yerine teslim/kullanım ve bakım/gece kabulü kararlarına odaklanır. HSE ile DarkSky/IES birincil kaynakları incelendi. Kontrol kanıtları ve görsel üretim istemleri `docs/blog-quality-2026-09-22.md` dosyasındadır.

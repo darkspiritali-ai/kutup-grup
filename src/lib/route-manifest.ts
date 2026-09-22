@@ -16,6 +16,8 @@ export const ROUTE_MANIFEST: RouteManifestItem[] = [
   { path: '/iletisim', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
   { path: '/sss', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
   { path: '/blog', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },
+  { path: '/blog/guvenlik-agi-teslim-kullanim-kontrolu', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true, updatedAt: '2026-09-22' },
+  { path: '/blog/dis-cephe-aydinlatma-bakim-gece-kabulu', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true, updatedAt: '2026-09-22' },
   { path: '/blog/gabion-duvar-drenaj-zemin-planlamasi', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true, updatedAt: '2026-09-17' },
   { path: '/blog/sahne-rigging-yuk-plani-teslim-kontrolu', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true, updatedAt: '2026-09-17' },
   { path: '/blog/endustriyel-dagcilik-iple-erisim-rehberi', type: 'page', indexable: true, includeInSitemap: true, includeInLlms: true, prerender: true },

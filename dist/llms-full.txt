@@ -920,6 +920,34 @@ Teslim; risk alanlarını, gözlem tarihini, önerilen kontrolleri ve ek veri ih
 
 Aşağıdaki yazılar Kutup Grup blogunda yayınlanan editoryal içeriklerdir. Kaynak bağlantıları ve içerik kapsamı ilgili sayfada yer alır; yazılar belirli bir saha için mühendislik raporu veya güvenlik garantisi değildir.
 
+### Güvenlik Ağı: Teslim ve Kullanım Kontrolü
+
+**Canonical URL:** https://kutupgrup.com/blog/guvenlik-agi-teslim-kullanim-kontrolu
+
+**Özet:** Kurulan ağın neyi koruduğu, hangi koşullarda kullanılacağı ve değişikliklerin nasıl yönetileceği teslim dosyasında açıkça görünmeli.
+
+**Konu:** güvenlik ağı teslimi, güvenlik ağı kontrolü, güvenlik ağı kullanım koşulları, güvenlik ağı keşfi
+
+**Görsel:** https://kutupgrup.com/images/blog/guvenlik-agi-teslim-kullanim-kontrolu.webp — Çelik taşıyıcılar arasında gerilmiş turkuaz ağ, altında boş alan ve önde kontrol panosu bulunan yapı illüstrasyonu
+
+**Kaynaklar:** [HSE — Safety nets and soft landing systems](https://www.hse.gov.uk/construction/safetytopics/safety-nets.htm), [HSE — Assessing all work at height](https://www.hse.gov.uk/construction/safetytopics/assess.htm)
+
+---
+
+### Dış Cephe Aydınlatması: Bakım Erişimi ve Gece Kabulü
+
+**Canonical URL:** https://kutupgrup.com/blog/dis-cephe-aydinlatma-bakim-gece-kabulu
+
+**Özet:** Cephede istenen gece görünümünü bakım erişimi, kontrol senaryoları ve teslim kayıtlarıyla birlikte değerlendirmek için bina yöneticilerine çalışma çerçevesi.
+
+**Konu:** dış cephe aydınlatma bakımı, cephe aydınlatma gece kabulü, aydınlatma bakım erişimi, cephe aydınlatma keşfi
+
+**Görsel:** https://kutupgrup.com/images/blog/dis-cephe-aydinlatma-bakim-gece-kabulu.webp — Alacakaranlıkta sıcak ışıkla aydınlatılmış taş ve cam cephe, önde cephe çizimi ve örnek armatür bulunan illüstrasyon
+
+**Kaynaklar:** [DarkSky / IES — Five Principles for Responsible Outdoor Lighting](https://darksky.org/resources/guides-and-how-tos/lighting-principles/), [HSE — Work on electrical equipment, machinery or installations](https://www.hse.gov.uk/electricity/withequip.htm)
+
+---
+
 ### Gabion Duvarlarda Drenaj ve Zemin Planlaması
 
 **Canonical URL:** https://kutupgrup.com/blog/gabion-duvar-drenaj-zemin-planlamasi
@@ -1067,4 +1095,4 @@ Aşağıdaki yazılar Kutup Grup blogunda yayınlanan editoryal içeriklerdir. K
 - **Telefon**: +90 (533) 517 66 09
 - **İstanbul Genel Müdürlük**: Esentepe Mah. Büyükdere Cad. Levent 199 No: 199 İç Kapı No: 6 Şişli / İstanbul
 - **Balıkesir Şubesi**: Soma Cd. 111A Altıeylül Balıkesir / Türkiye
-- **Son Güncelleme**: 17.09.2026
+- **Son Güncelleme**: 22.09.2026
