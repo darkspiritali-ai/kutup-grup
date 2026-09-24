@@ -87,7 +87,7 @@ export default function Hero() {
         <div className="scroll-line" />
       </div>
 
-      <style jsx>{`
+      <style>{`
         .hero {
           position: relative;
           min-height: 100vh;

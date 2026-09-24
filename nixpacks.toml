@@ -3,6 +3,7 @@ providers = ["node"]
 [variables]
 PORT = "80"
 NIXPACKS_SPA_CADDY = "false"
+NIXPACKS_PATH = "/app/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 [phases.install]
 cmds = ["npm install --legacy-peer-deps"]

@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { SERVICES_DATA } from '@/lib/services-data';
+import { getBlogPost } from '@/lib/blog-data';
 
 interface MetaData {
   title: string;
@@ -147,52 +149,45 @@ export default function MetaHelper() {
     // 2. Handle dynamic service details route
     if (!meta && pathname.startsWith('/hizmetler/')) {
       const slug = pathname.replace('/hizmetler/', '');
-      // Dynamic import of services-data to avoid bundling issues
-      // Since it's dynamic, we can fetch it synchronously from window/global metadata or set it after checking
-      // But for client runtime, importing SERVICES_DATA from '@' is clean and fast:
-      import('@/lib/services-data').then((module) => {
-        const service = module.SERVICES_DATA[slug];
-        if (service) {
-          updateMeta(
-            service.title + ' - Kutup Grup',
-            service.metaDescription,
-            `${SITE_URL}/hizmetler/${service.slug}`,
-            'index,follow',
-            service.heroImage ? `${SITE_URL}${service.heroImage}` : DEFAULT_OG_IMAGE
-          );
-        }
-      });
+      const service = SERVICES_DATA[slug];
+      if (service) {
+        updateMeta(
+          service.title + ' - Kutup Grup',
+          service.metaDescription,
+          `${SITE_URL}/hizmetler/${service.slug}`,
+          'index,follow',
+          service.heroImage ? `${SITE_URL}${service.heroImage}` : DEFAULT_OG_IMAGE
+        );
+      }
       return;
     }
 
     if (!meta && pathname.startsWith('/blog/')) {
       const slug = pathname.replace('/blog/', '');
-      import('@/lib/blog-data').then((module) => {
-        const post = module.getBlogPost(slug);
-        if (post) {
-          updateMeta(
-            post.title,
-            post.metaDescription,
-            `${SITE_URL}/blog/${post.slug}`,
-            'index,follow',
-            `${SITE_URL}${post.image.src}`,
-            {
-              type: 'article',
-              publishedAt: post.publishedAt,
-              updatedAt: post.updatedAt,
-              section: post.category,
-            }
-          );
-        } else {
-          updateMeta(
-            'Sayfa Bulunamadı - Kutup Grup',
-            'Aradığınız sayfa mevcut değil veya taşınmış olabilir.',
-            `${SITE_URL}${pathname}`,
-            'noindex,follow',
-            DEFAULT_OG_IMAGE
-          );
-        }
-      });
+      const post = getBlogPost(slug);
+      if (post) {
+        updateMeta(
+          post.title,
+          post.metaDescription,
+          `${SITE_URL}/blog/${post.slug}`,
+          'index,follow',
+          `${SITE_URL}${post.image.src}`,
+          {
+            type: 'article',
+            publishedAt: post.publishedAt,
+            updatedAt: post.updatedAt,
+            section: post.category,
+          }
+        );
+      } else {
+        updateMeta(
+          'Sayfa Bulunamadı - Kutup Grup',
+          'Aradığınız sayfa mevcut değil veya taşınmış olabilir.',
+          `${SITE_URL}${pathname}`,
+          'noindex,follow',
+          DEFAULT_OG_IMAGE
+        );
+      }
       return;
     }
 

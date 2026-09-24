@@ -170,7 +170,7 @@ export default function Home() {
       </main>
       <Footer />
 
-      <style jsx>{`
+      <style>{`
         /* Section header shared styling */
         .section-header {
           margin-bottom: var(--spacing-12);
@@ -405,7 +405,7 @@ export default function Home() {
           margin-right: auto;
         }
 
-        :global(.btn-cta-white) {
+        .btn-cta-white {
           display: inline-flex;
           align-items: center;
           gap: var(--spacing-2);
@@ -421,7 +421,7 @@ export default function Home() {
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        :global(.btn-cta-white:hover) {
+        .btn-cta-white:hover {
           transform: translateY(-4px);
           box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
           color: var(--color-deep-navy) !important;

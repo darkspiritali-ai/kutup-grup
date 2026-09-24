@@ -112,7 +112,7 @@ export default function Stats() {
           </div>
         </div>
 
-        <style jsx>{`
+        <style>{`
                     .stats-section {
                         padding: var(--spacing-20) 0;
                         background: var(--gradient-dark);

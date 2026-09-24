@@ -1,17 +1,12 @@
-const express = require('express');
-const path = require('path');
-const fs = require('fs');
-let nodemailer;
-try {
-  nodemailer = require('nodemailer');
-} catch (err) {
-  console.warn('[Warning] nodemailer module could not be loaded:', err.message);
-}
-try {
-  require('dotenv').config();
-} catch (err) {
-  console.warn('[Warning] dotenv module could not be loaded:', err.message);
-}
+import express from 'express';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import nodemailer from 'nodemailer';
+import 'dotenv/config';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.disable('x-powered-by');
@@ -38,6 +33,8 @@ const escapeHtml = (value = '') => String(value)
   .replace(/'/g, '&#39;');
 
 const safeSubjectPart = (value = '') => String(value).replace(/[\r\n]+/g, ' ').trim().slice(0, 160);
+
+const escapeRegExp = (value = '') => String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const sensitiveProbePatterns = [
   /(^|\/)\.(?:env|git(?:-credentials)?|aws|kube|docker|netrc|npmrc|pypirc)(?:[./~]|$)/i,
@@ -356,16 +353,12 @@ app.use((req, res) => {
   let isValidService = false;
   if (reqPath.startsWith('/hizmetler/')) {
     const slug = reqPath.replace('/hizmetler/', '');
-    // Import SERVICES_DATA dynamically or parse the file to obtain dynamic slugs
-    try {
-      const servicesData = require('./src/lib/services-data.ts');
-      const SERVICES_DATA = servicesData.SERVICES_DATA || {};
-      isValidService = !!SERVICES_DATA[slug];
-    } catch (e) {
-      // Fallback: parse via regex if typescript import fails in raw node context
-      const content = fs.readFileSync(path.join(__dirname, 'src/lib/services-data.ts'), 'utf-8');
-      isValidService = content.includes(`'${slug}':`) || content.includes(`"${slug}":`);
-    }
+    // Avoid loading TypeScript source from the production server just to
+    // validate an invalid route. Parsing the route keys also keeps Node's
+    // runtime free of MODULE_TYPELESS_PACKAGE_JSON warnings.
+    const content = fs.readFileSync(path.join(__dirname, 'src/lib/services-data.ts'), 'utf-8');
+    const serviceKeyPattern = new RegExp(`['"]${escapeRegExp(slug)}['"]\\s*:`);
+    isValidService = serviceKeyPattern.test(content);
   }
 
   let isValidBlog = false;

@@ -290,7 +290,7 @@ export default function AboutPageClient() {
             </main>
             <Footer />
 
-            <style jsx>{`
+            <style>{`
                 /* Hero */
                 .about-hero {
                     position: relative;

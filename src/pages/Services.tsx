@@ -154,7 +154,7 @@ export default function HizmetlerPageClient() {
             </main>
             <Footer />
 
-            <style jsx>{`
+            <style>{`
                 /* Hero */
                 .hizmetler-hero {
                     position: relative;

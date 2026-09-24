@@ -41,9 +41,11 @@ const buildPrerenderPages = async () => {
     process.exit(1);
   }
 
-  const serverEntryPath = path.join(DIST_SERVER_DIR, 'entry-server.mjs');
-  if (!fs.existsSync(serverEntryPath)) {
-    console.error('FAIL: dist-server/entry-server.mjs not found. Ensure Vite SSR build runs before prerender.');
+  const serverEntryPath = ['entry-server.js', 'entry-server.mjs']
+    .map((fileName) => path.join(DIST_SERVER_DIR, fileName))
+    .find((filePath) => fs.existsSync(filePath));
+  if (!serverEntryPath) {
+    console.error('FAIL: dist-server/entry-server.js or entry-server.mjs not found. Ensure Vite SSR build runs before prerender.');
     process.exit(1);
   }
 

@@ -147,7 +147,7 @@ export default function ServicesShowcase() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .services-showcase-section {
           background: #f8fafc;
           padding: var(--spacing-20) 0;
@@ -179,7 +179,7 @@ export default function ServicesShowcase() {
           gap: var(--spacing-8);
         }
 
-        :global(.service-card-wrapper) {
+        .service-card-wrapper {
           height: 100%;
         }
 
@@ -229,11 +229,11 @@ export default function ServicesShowcase() {
           background: #f1f5f9;
         }
 
-        .service-card-image :global(img) {
+        .service-card-image img {
           transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
 
-        .service-card:hover .service-card-image :global(img) {
+        .service-card:hover .service-card-image img {
           transform: scale(1.06);
         }
 

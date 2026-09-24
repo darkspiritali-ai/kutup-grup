@@ -21,7 +21,8 @@ const runValidation = async () => {
   console.log('[SEO Validation] Starting local HTTP server check...');
   
   // Dynamically start Express server from server.js to test responses
-  process.env.PORT = '4000';
+  const port = Number(process.env.PORT) || 4000;
+  process.env.PORT = String(port);
   await import('../server.js');
 
   // Wait 1 second for the server to spin up
@@ -37,7 +38,7 @@ const runValidation = async () => {
   // 1. Verify indexable routes return 200
   console.log('[SEO Validation] Checking indexable routes return HTTP 200...');
   for (const url of urls) {
-    const localUrl = url.replace('https://kutupgrup.com', 'http://localhost:4000');
+    const localUrl = url.replace('https://kutupgrup.com', `http://localhost:${port}`);
     const status = await checkUrlStatus(localUrl);
     if (status !== 200) {
       console.error(`FAIL: URL ${url} returned HTTP ${status} instead of 200.`);
@@ -48,9 +49,9 @@ const runValidation = async () => {
   // 2. Verify non-existent routes return real HTTP 404 (preventing soft-404)
   console.log('[SEO Validation] Checking non-existent routes return HTTP 404...');
   const test404s = [
-    'http://localhost:4000/boyle-bir-sayfa-yok-123',
-    'http://localhost:4000/hizmetler/olmayan-hizmet',
-    'http://localhost:4000/test-404-seo'
+    `http://localhost:${port}/boyle-bir-sayfa-yok-123`,
+    `http://localhost:${port}/hizmetler/olmayan-hizmet`,
+    `http://localhost:${port}/test-404-seo`
   ];
 
   for (const url of test404s) {

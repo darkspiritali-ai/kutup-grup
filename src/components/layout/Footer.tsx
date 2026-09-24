@@ -231,7 +231,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <style jsx>{`
+                <style>{`
         .footer {
           background: #030712;
           background-image:
@@ -363,7 +363,7 @@ export default function Footer() {
           margin-bottom: var(--spacing-4);
         }
 
-        :global(.sliding-link) {
+        .sliding-link {
           color: rgba(255, 255, 255, 0.7) !important;
           display: inline-flex;
           align-items: center;
@@ -381,12 +381,12 @@ export default function Footer() {
           opacity: 0;
         }
 
-        :global(.sliding-link:hover) {
+        .sliding-link:hover {
           color: var(--color-ice-blue) !important;
           transform: translateX(6px);
         }
 
-        :global(.sliding-link:hover) .bullet {
+        .sliding-link:hover .bullet {
           width: 8px;
           margin-right: 8px;
           opacity: 1;

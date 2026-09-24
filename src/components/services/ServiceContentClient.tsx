@@ -372,7 +372,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
         </section>
       </main>
 
-      <style jsx>{`
+      <style>{`
         /* Sub Services Grid (for Category Page) */
         .sub-services-section {
           margin-top: var(--spacing-8);
@@ -449,7 +449,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
         .sub-service-card:hover .sub-service-icon {
           transform: scale(1.08) rotate(2deg);
         }
-        .sub-service-icon :global(svg) {
+        .sub-service-icon svg {
           width: 22px;
           height: 22px;
         }

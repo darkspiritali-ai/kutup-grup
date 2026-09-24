@@ -40,7 +40,7 @@ export default function ReferanslarPageClient() {
             </main>
             <Footer />
 
-            <style jsx>{`
+            <style>{`
                 .maintenance-page {
                     min-height: 100vh;
                     display: flex;

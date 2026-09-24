@@ -37,8 +37,8 @@ export default function Preloader() {
         />
       </motion.div>
 
-      <style jsx>{`
-        :global(.preloader-overlay) {
+      <style>{`
+        .preloader-overlay {
           position: fixed;
           inset: 0;
           z-index: 999999;

@@ -38,7 +38,7 @@ export default function NotFound() {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .not-found-container {
           position: relative;
           min-height: 100vh;

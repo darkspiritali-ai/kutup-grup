@@ -1,10 +1,10 @@
-const js = require("@eslint/js");
-const ts = require("@typescript-eslint/eslint-plugin");
-const tsParser = require("@typescript-eslint/parser");
-const reactHooks = require("eslint-plugin-react-hooks");
-const globals = require("globals");
+import js from '@eslint/js';
+import ts from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import reactHooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
 
-module.exports = [
+export default [
   js.configs.recommended,
   {
     files: ["**/*.{ts,tsx}"],
