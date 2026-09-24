@@ -39,9 +39,77 @@ const escapeHtml = (value = '') => String(value)
 
 const safeSubjectPart = (value = '') => String(value).replace(/[\r\n]+/g, ' ').trim().slice(0, 160);
 
-// Diagnostic log
+const sensitiveProbePatterns = [
+  /(^|\/)\.(?:env|git(?:-credentials)?|aws|kube|docker|netrc|npmrc|pypirc)(?:[./~]|$)/i,
+  /(^|\/)(?:wp-admin|wp-login\.php|wp-content|wp-includes|phpmyadmin|cgi-bin|actuator|debug|server-status|administrator|admin\/controller)(?:\/|$)/i,
+  /\.(?:php\d*|phtml|phar|jsp|jspx|asp|aspx)$/i,
+];
+
+const getDecodedPath = (requestPath) => {
+  try {
+    return decodeURIComponent(requestPath);
+  } catch {
+    return requestPath;
+  }
+};
+
+const isSensitiveProbe = (requestPath) => {
+  const decodedPath = getDecodedPath(requestPath);
+  return sensitiveProbePatterns.some((pattern) => pattern.test(decodedPath));
+};
+
+const hasMalformedEncoding = (requestUrl) => {
+  try {
+    decodeURIComponent(requestUrl);
+    return false;
+  } catch {
+    return true;
+  }
+};
+
+// Reject common secret-file and platform probes before canonical redirects or
+// static-file handling. Keep this separate from /.well-known/ so legitimate
+// ACME/security metadata can still be served if added later.
 app.use((req, res, next) => {
-  console.log(`[Diagnostic Log] Request: ${req.method} ${req.url}`);
+  if (isSensitiveProbe(req.path)) {
+    return res.status(404)
+      .set('Cache-Control', 'no-store')
+      .end();
+  }
+  next();
+});
+
+const logLevel = String(process.env.LOG_LEVEL || '').toLowerCase();
+const logAllRequests = logLevel === 'debug' || logLevel === 'info' || process.env.DIAGNOSTIC_LOGS === 'true';
+const logNotFoundResponses = process.env.LOG_404S === 'true';
+
+// Request logging is intentionally quiet in production. Internet scanners
+// generate a large amount of known 404 traffic; logging those requests adds
+// noise without improving observability. 401/403/429 client errors and all
+// server errors remain visible; 404s can be enabled with LOG_404S=true.
+app.use((req, res, next) => {
+  const startedAt = Date.now();
+  res.on('finish', () => {
+    const durationMs = Date.now() - startedAt;
+    const statusCode = res.statusCode;
+    const shouldLog = logAllRequests
+      || statusCode >= 500
+      || (statusCode >= 400 && statusCode !== 404 && !isSensitiveProbe(req.path) && !hasMalformedEncoding(req.originalUrl))
+      || (statusCode === 404 && logNotFoundResponses && !isSensitiveProbe(req.path));
+
+    if (!shouldLog) {
+      return;
+    }
+
+    const message = `[HTTP] ${req.method} ${req.originalUrl} ${statusCode} ${durationMs}ms`;
+    if (statusCode >= 500) {
+      console.error(message);
+    } else if (statusCode >= 400) {
+      console.warn(message);
+    } else {
+      console.log(message);
+    }
+  });
   next();
 });
 
@@ -53,7 +121,7 @@ const createTransporter = () => {
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
 
-  if (!host || !user || !pass || pass === 'BurayaSmtpSifreniziYazin') {
+  if (!nodemailer || !host || !user || !pass || pass === 'BurayaSmtpSifreniziYazin') {
     return null;
   }
 
@@ -131,7 +199,7 @@ app.post('/api/contact', async (req, res) => {
       await transporter.sendMail(mailOptions);
       console.log(`[Email Sent] Contact form email sent from ${email} to ${recipient}`);
     } else {
-      console.log(`[Email Logged (No active SMTP settings)] Form data:`, req.body);
+      console.warn('[Email Delivery Skipped] Contact form received but SMTP is not configured.');
     }
 
     return res.status(200).json({ success: true, message: 'Mesajınız başarıyla iletildi.' });
@@ -171,7 +239,7 @@ app.post('/api/newsletter', async (req, res) => {
       await transporter.sendMail(mailOptions);
       console.log(`[Email Sent] Newsletter subscription for ${email}`);
     } else {
-      console.log(`[Email Logged (No active SMTP settings)] Newsletter email: ${email}`);
+      console.warn('[Email Delivery Skipped] Newsletter subscription received but SMTP is not configured.');
     }
 
     return res.status(200).json({ success: true, message: 'Bülten aboneliğiniz alındı.' });
@@ -189,7 +257,7 @@ app.use((req, res, next) => {
   }
 
   const reqPath = req.path;
-  const decodedPath = decodeURIComponent(reqPath);
+  const decodedPath = getDecodedPath(reqPath);
 
   // 301 Redirect for the old Turkish-character slug
   if (decodedPath === '/hizmetler/deflektör-tip-ortuleme' || reqPath === '/hizmetler/deflekt%C3%B6r-tip-ortuleme') {
@@ -283,7 +351,7 @@ app.use((req, res) => {
   ];
 
   const reqPath = req.path;
-  
+
   // Dynamic validation for services slugs to avoid soft-404 on invalid dynamic paths
   let isValidService = false;
   if (reqPath.startsWith('/hizmetler/')) {
@@ -352,6 +420,18 @@ app.use((req, res) => {
       }
     });
   }
+});
+
+// Malformed percent-encoded URLs are common scanner traffic. Convert the
+// router's URIError into a small 400 response instead of exposing a stack
+// trace in the application log or response body.
+app.use((error, req, res, next) => {
+  if (error instanceof URIError) {
+    return res.status(400)
+      .set('Cache-Control', 'no-store')
+      .end();
+  }
+  next(error);
 });
 
 const PORT = Number(process.env.PORT) || 3000;
