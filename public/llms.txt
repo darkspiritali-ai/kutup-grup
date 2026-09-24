@@ -50,6 +50,7 @@ Yamaç stabilizasyonu, şev örtüleme, kaya bariyeri kurulumu gibi sarp yamaç 
 İple erişim, yüksekte çalışma, jeoteknik risk ve saha güvenliği konularında kaynaklı, editoryal yazılar. Teknik uygunluk ve proje kararı gerçek saha verileriyle ayrıca doğrulanmalıdır.
 
 - [Tüm teknik yazılar](https://kutupgrup.com/blog): Konu kümelerinin tamamı.
+- [Endüstriyel Bakım İçin Teklif Talebi Nasıl Hazırlanır?](https://kutupgrup.com/blog/endustriyel-bakim-teklif-talebi-hazirlama): Endüstriyel bakım teklif talebi için iş tanımı, belge listesi, dosya sürümleri ve açık soruları düzenleyin; farklı kapsamları aynı bilgilerle karşılaştırın.
 - [Güvenlik Ağı Teslimi: Kullanıma Açmadan Önce Kontrol Listesi](https://kutupgrup.com/blog/guvenlik-agi-teslim-kullanim-kontrolu): Güvenlik ağı tesliminde kullanım amacı, alt boşluk, bağlantı, kontrol ve kurtarma kayıtlarını nasıl okuyacağınızı; hangi soruları sormanız gerektiğini öğrenin.
 - [Dış Cephe Aydınlatması: Keşif, Bakım ve Gece Kabulü](https://kutupgrup.com/blog/dis-cephe-aydinlatma-bakim-gece-kabulu): Dış cephe aydınlatmasında keşif, erişim, elektrik sorumluluğu, bakım envanteri ve gece kabulünü aynı iş planında nasıl değerlendireceğinizi öğrenin.
 - [Gabion Duvarlarda Drenaj ve Zemin Planlaması](https://kutupgrup.com/blog/gabion-duvar-drenaj-zemin-planlamasi): Gabion duvar yaptırmadan önce zemin, su akışı, filtre, taş dolgu ve bakım kararlarını değerlendirin; keşif ve teklif için gerekli bilgileri hazırlayın.

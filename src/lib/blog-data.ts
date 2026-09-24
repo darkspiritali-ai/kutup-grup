@@ -1,3 +1,4 @@
+import { bakimTeklifTalebiPost } from './blog/endustriyel-bakim-teklif-talebi-hazirlama.ts';
 import { guvenlikAgiTeslimPost } from './blog/guvenlik-agi-teslim-kullanim-kontrolu.ts';
 import { cepheAydinlatmaBakimPost } from './blog/dis-cephe-aydinlatma-bakim-gece-kabulu.ts';
 import { gabionDrenajPost } from './blog/gabion-duvar-drenaj-zemin-planlamasi.ts';
@@ -72,6 +73,7 @@ export const BLOG_HUB = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  bakimTeklifTalebiPost,
   guvenlikAgiTeslimPost,
   cepheAydinlatmaBakimPost,
   gabionDrenajPost,
