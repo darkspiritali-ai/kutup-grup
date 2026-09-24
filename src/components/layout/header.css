@@ -129,12 +129,6 @@
   transform: translateY(0);
   pointer-events: auto;
 }
-.nav-mega-trigger:focus-within .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
 .mega-inner {
   max-width: 1200px;
   margin: 0 auto;

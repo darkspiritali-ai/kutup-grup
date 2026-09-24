@@ -1,6 +1,6 @@
 
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type FocusEvent, type MouseEvent } from 'react';
 import Image from '@/components/ui/Image';
 import Link from '@/components/ui/Link';
 import { useLocation } from 'react-router-dom';
@@ -113,6 +113,18 @@ export default function Header() {
     megaTimeoutRef.current = setTimeout(() => setMegaOpen(false), 200);
   };
 
+  const closeMegaMenu = (event?: MouseEvent<HTMLAnchorElement>) => {
+    if (megaTimeoutRef.current) clearTimeout(megaTimeoutRef.current);
+    setMegaOpen(false);
+    event?.currentTarget.blur();
+  };
+
+  const handleMegaBlur = (event: FocusEvent<HTMLElement>) => {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      handleMegaLeave();
+    }
+  };
+
   useEffect(() => () => {
     if (megaTimeoutRef.current) clearTimeout(megaTimeoutRef.current);
   }, []);
@@ -126,15 +138,17 @@ export default function Header() {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <nav className="nav">
-          <Link href="/" className="logo">
+          <Link href="/" className="logo" onClick={closeMegaMenu}>
             <Image src="/logo/logo.png" alt="Kutup Grup" width={125} height={60} priority />
           </Link>
 
           {/* Desktop Navigation */}
           <ul className="nav-menu">
-            <li><Link href="/" className={isActive('/') ? 'active' : ''}>Anasayfa</Link></li>
+            <li><Link href="/" className={isActive('/') ? 'active' : ''} onClick={closeMegaMenu}>Anasayfa</Link></li>
             <li
               className="nav-mega-trigger"
+              onFocusCapture={handleMegaEnter}
+              onBlurCapture={handleMegaBlur}
             >
               <button
                 type="button"
@@ -169,7 +183,11 @@ export default function Header() {
                         <ul className="mega-list">
                           {cat.services.map((s) => (
                             <li key={s.href}>
-                              <Link href={s.href} className={`mega-link ${isActive(s.href) ? 'mega-link-active' : ''}`}>
+                              <Link
+                                href={s.href}
+                                className={`mega-link ${isActive(s.href) ? 'mega-link-active' : ''}`}
+                                onClick={closeMegaMenu}
+                              >
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={cat.color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mega-arrow">
                                   <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                                 </svg>
@@ -190,7 +208,7 @@ export default function Header() {
                         <h5 className="mega-cta-title">Endüstriyel dağcılık ve jeoteknik çözümler</h5>
                         <p className="mega-cta-desc">Hizmet kapsamını ve saha gerekliliklerini birlikte değerlendirelim.</p>
                       </div>
-                      <Link href="/hizmetler" className="mega-cta-btn">
+                      <Link href="/hizmetler" className="mega-cta-btn" onClick={closeMegaMenu}>
                         Tüm Hizmetleri Gör
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
                       </Link>
@@ -199,13 +217,13 @@ export default function Header() {
                 </div>
               </div>
             </li>
-            <li><Link href="/hakkimizda" className={isActive('/hakkimizda') ? 'active' : ''}>Hakkımızda</Link></li>
-            <li><Link href="/blog" className={isActive('/blog') ? 'active' : ''}>Blog</Link></li>
+            <li><Link href="/hakkimizda" className={isActive('/hakkimizda') ? 'active' : ''} onClick={closeMegaMenu}>Hakkımızda</Link></li>
+            <li><Link href="/blog" className={isActive('/blog') ? 'active' : ''} onClick={closeMegaMenu}>Blog</Link></li>
             {/* <li><Link href="/referanslar" className={isActive('/referanslar') ? 'active' : ''}>Referanslar</Link></li> */}
-            <li><Link href="/iletisim" className={isActive('/iletisim') ? 'active' : ''}>İletişim</Link></li>
+            <li><Link href="/iletisim" className={isActive('/iletisim') ? 'active' : ''} onClick={closeMegaMenu}>İletişim</Link></li>
           </ul>
 
-          <Link href="/iletisim" className="btn btn-primary nav-cta desktop-only">
+          <Link href="/iletisim" className="btn btn-primary nav-cta desktop-only" onClick={closeMegaMenu}>
             Teklif Alın
           </Link>
 
