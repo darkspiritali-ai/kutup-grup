@@ -76,7 +76,6 @@ export default function Header() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeMobileCategory, setActiveMobileCategory] = useState<string | null>(null);
-  const megaRef = useRef<HTMLLIElement>(null);
   const megaTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { pathname } = useLocation();
 
@@ -114,6 +113,10 @@ export default function Header() {
     megaTimeoutRef.current = setTimeout(() => setMegaOpen(false), 200);
   };
 
+  useEffect(() => () => {
+    if (megaTimeoutRef.current) clearTimeout(megaTimeoutRef.current);
+  }, []);
+
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
     return pathname.startsWith(href);
@@ -131,20 +134,28 @@ export default function Header() {
           <ul className="nav-menu">
             <li><Link href="/" className={isActive('/') ? 'active' : ''}>Anasayfa</Link></li>
             <li
-              ref={megaRef}
               className="nav-mega-trigger"
-              onMouseEnter={handleMegaEnter}
-              onMouseLeave={handleMegaLeave}
             >
-              <span className={`nav-mega-label ${isActive('/hizmetler') ? 'active' : ''}`}>
+              <button
+                type="button"
+                className={`nav-mega-label ${isActive('/hizmetler') ? 'active' : ''}`}
+                aria-haspopup="true"
+                aria-expanded={megaOpen}
+                onMouseEnter={handleMegaEnter}
+                onMouseLeave={handleMegaLeave}
+              >
                 Hizmetlerimiz
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`mega-chevron ${megaOpen ? 'open' : ''}`}>
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
-              </span>
+              </button>
 
               {/* === MEGA MENU === */}
-              <div className={`mega-menu ${megaOpen ? 'active' : ''}`}>
+              <div
+                className={`mega-menu ${megaOpen ? 'active' : ''}`}
+                onMouseEnter={handleMegaEnter}
+                onMouseLeave={handleMegaLeave}
+              >
                 <div className="mega-inner">
                   <div className="mega-columns">
                     {MEGA_CATEGORIES.map((cat) => (
