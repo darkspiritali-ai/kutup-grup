@@ -166,7 +166,7 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
               <article className="service-article">
                 {service.galleryImages && service.galleryImages.length > 0 && (
                   <section className="content-section service-gallery-section" aria-labelledby="service-gallery-title">
-                    <h2 id="service-gallery-title">Deflektör tip örtüleme uygulamalarından görseller</h2>
+                    <h2 id="service-gallery-title">{service.title} uygulamalarından görseller</h2>
                     <div className="service-gallery">
                       {service.galleryImages.map((image) => (
                         <figure key={image.src} className="service-gallery-item">

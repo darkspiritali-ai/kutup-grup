@@ -870,6 +870,13 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
         title: 'Moloz Bariyer Sistemleri',
         metaDescription: 'Moloz bariyer sistemleri için yamaç, akış ve düşme risklerinin değerlendirilmesi; sistem seçimi, montaj ve bakım adımlarını planlayın.',
         heroImage: '/services/moloz-bariyer.webp',
+        galleryImages: [
+            {
+                src: '/services/moloz-bariyeri-1.webp',
+                alt: 'Dağlık arazide dere yatağını koruyan moloz bariyer sistemi',
+                caption: 'Dere yatağı ve yamaç altı için uygulanan moloz bariyer sistemi',
+            },
+        ],
         keywords: ['moloz bariyeri', 'debris barrier', 'inşaat güvenlik bariyeri', 'yıkım moloz koruması', 'enkaz bariyeri'],
         category: 'jeoteknik',
         icon: '🚧',
