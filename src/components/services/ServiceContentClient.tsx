@@ -164,6 +164,27 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           <div className="container">
             <div className="service-content">
               <article className="service-article">
+                {service.galleryImages && service.galleryImages.length > 0 && (
+                  <section className="content-section service-gallery-section" aria-labelledby="service-gallery-title">
+                    <h2 id="service-gallery-title">Deflektör tip örtüleme uygulamalarından görseller</h2>
+                    <div className="service-gallery">
+                      {service.galleryImages.map((image) => (
+                        <figure key={image.src} className="service-gallery-item">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width={960}
+                            height={540}
+                            loading="lazy"
+                            className="service-gallery-image"
+                          />
+                          <figcaption>{image.caption}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  </section>
+                )}
+
                 {service.sections.map((section, index) => (
                   <section key={index} className="content-section" aria-labelledby={`service-section-${index}`}>
                     <h2 id={`service-section-${index}`}>{section.heading}</h2>
@@ -492,6 +513,34 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
           border: 3px solid rgba(62,146,204,0.15);
         }
 
+        .service-gallery {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: var(--spacing-5);
+        }
+
+        .service-gallery-item {
+          margin: 0;
+          overflow: hidden;
+          border: 1px solid var(--border-default);
+          border-radius: var(--radius-lg);
+          background: var(--bg-secondary);
+        }
+
+        .service-gallery-image {
+          display: block;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+        }
+
+        .service-gallery-item figcaption {
+          padding: var(--spacing-3) var(--spacing-4);
+          color: var(--text-secondary);
+          font-size: var(--font-size-sm);
+          line-height: 1.5;
+        }
+
         .breadcrumb {
           margin-bottom: var(--spacing-6);
           color: var(--text-secondary);
@@ -754,6 +803,10 @@ export default function ServiceContentClient({ service }: ServiceContentClientPr
 
           .service-hero-image {
             order: -1;
+          }
+
+          .service-gallery {
+            grid-template-columns: 1fr;
           }
 
           .service-hero-text {

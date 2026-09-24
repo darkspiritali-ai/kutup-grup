@@ -8,6 +8,7 @@ export interface ServiceContent {
     category: 'endustriyel' | 'jeoteknik' | 'diger';
     icon: string;
     heroImage?: string;
+    galleryImages?: ServiceGalleryImage[];
     intro: string;
     sections: ServiceSection[];
     advantages: string[];
@@ -18,6 +19,12 @@ export interface ServiceContent {
     relatedServices: string[];
     relatedPosts: string[];
     updatedAt?: string;
+}
+
+export interface ServiceGalleryImage {
+    src: string;
+    alt: string;
+    caption: string;
 }
 
 export interface ServiceSection {
@@ -133,7 +140,7 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             'yatay-ve-dusey-yasam-hatti',
             'guvenlik-agi-kurulumu',
         ],
-        relatedPosts: ['dis-cephe-aydinlatma-bakim-gece-kabulu', 'yuksek-yapilarda-cephe-temizligi-iple-erisim'],
+        relatedPosts: ['yuksek-yapilarda-cephe-temizligi-iple-erisim'],
         updatedAt: '2026-09-15',
     },
 
@@ -317,7 +324,7 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
             },
         ],
         relatedServices: ['yatay-ve-dusey-yasam-hatti', 'tersane-ve-offshore-hizmetleri', 'dis-cephe-dekoratif-aydinlatma'],
-        relatedPosts: ['guvenlik-agi-teslim-kullanim-kontrolu', 'yuksekte-calisma-guvenligi-yasam-hatti-rehberi'],
+        relatedPosts: ['yuksekte-calisma-guvenligi-yasam-hatti-rehberi'],
         updatedAt: '2026-09-15',
     },
 
@@ -774,7 +781,24 @@ const RAW_SERVICES_DATA: Record<string, ServiceContent> = {
         keywords: ['deflektör örtüleme', 'çelik halat ağ', 'yönlendirici örtü', 'aktif yamaç koruma', 'high-tensile mesh'],
         category: 'jeoteknik',
         icon: '🔀',
-        heroImage: '/services/deflektor-tip.webp',
+        heroImage: '/services/deflektor-tip-ortuleme-1.webp',
+        galleryImages: [
+            {
+                src: '/services/deflektor-tip-ortuleme-3.webp',
+                alt: 'Kayalık arazide çelik halat ağ ile uygulanan deflektör tip şev örtüleme',
+                caption: 'Kayalık arazide çelik halat ağ ve ankraj uygulaması',
+            },
+            {
+                src: '/services/deflektor-tip-ortuleme-4.webp',
+                alt: 'Tünel yaklaşımında ankrajlı deflektör tip şev örtüleme sistemi',
+                caption: 'Tünel yaklaşımında yamaç koruma ve yönlendirme uygulaması',
+            },
+            {
+                src: '/services/deflektor-tip-ortuleme-5.webp',
+                alt: 'Yerleşim yakınındaki yamaçta uygulanan çelik ağ örtüleme sistemi',
+                caption: 'Yerleşim ve altyapı çevresinde şev yüzeyi koruması',
+            },
+        ],
         intro: 'Yüksek enerjili kaya düşmelerine karşı deflektör tip örtüleme sistemleri uyguluyoruz. Çelik halat ağ ve ankrajlarla yamaç yüzeyini kaplayarak taşları kontrollü yönlendiriyor, düşme hızını azaltıyoruz.',
         sections: [
             {
